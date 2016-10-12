@@ -43,13 +43,13 @@ describe 'InlineResponse2002Response' do
       expect(@instance).to be_instance_of(YextClient::InlineResponse2002Response)
     end
   end
-  describe 'test attribute "count"' do
+  describe 'test attribute "data"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "locations"' do
+  describe 'test attribute "id"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **Integer** | Total number of Listings that meet filter criteria (ignores limit/offset) | [optional] 
-**listings** | [**Array&lt;Listing&gt;**](Listing.md) |  | [optional] 
+**status** | **String** |  | [optional] 
+**url** | **String** | When status&#x3D;DONE, contains the URL to download the report data as a text file. | [optional] 
 
 

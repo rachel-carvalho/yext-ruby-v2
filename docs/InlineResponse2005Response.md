@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **Integer** | Total number of Publisher Suggestions that meet filter criteria (ignores limit/offset) | [optional] 
-**suggestions** | [**Array&lt;PublisherSuggestion&gt;**](PublisherSuggestion.md) |  | [optional] 
+**count** | **Integer** | Total number of Location Folders in the Account | [optional] 
+**folders** | [**Array&lt;Folder&gt;**](Folder.md) |  | [optional] 
 
 

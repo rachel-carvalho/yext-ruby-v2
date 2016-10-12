@@ -43,7 +43,7 @@ module YextClient
     def self.swagger_types
       {
         :'meta' => :'ResponseMeta',
-        :'response' => :'InlineResponse2008Response'
+        :'response' => :'Array<Publisher>'
       }
     end
 
@@ -60,7 +60,9 @@ module YextClient
       end
 
       if attributes.has_key?(:'response')
-        self.response = attributes[:'response']
+        if (value = attributes[:'response']).is_a?(Array)
+          self.response = value
+        end
       end
 
     end

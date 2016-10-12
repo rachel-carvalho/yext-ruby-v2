@@ -105,9 +105,9 @@ module YextClient
     # Get available Categories.  All Locations are required to have an associated Category to assist with organization and search. Yext provides a hierarchy of business categories for this purpose, exposed by this API. 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :language Only categories that apply to this language will be returned. (default to en)
-    # @option opts [String] :country Only categories that apply in this country will be returned. (default to us)
-    # @return [InlineResponse2007]
+    # @option opts [String] :language Only categories that apply to this language will be returned.  **Example:** en  (default to en)
+    # @option opts [String] :country Only categories that apply in this country will be returned.  **Example:** US  (default to US)
+    # @return [InlineResponse20013]
     def get_business_categories(v, opts = {})
       data, _status_code, _headers = get_business_categories_with_http_info(v, opts)
       return data
@@ -117,9 +117,9 @@ module YextClient
     # Get available Categories.  All Locations are required to have an associated Category to assist with organization and search. Yext provides a hierarchy of business categories for this purpose, exposed by this API. 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :language Only categories that apply to this language will be returned.
-    # @option opts [String] :country Only categories that apply in this country will be returned.
-    # @return [Array<(InlineResponse2007, Fixnum, Hash)>] InlineResponse2007 data, response status code and response headers
+    # @option opts [String] :language Only categories that apply to this language will be returned.  **Example:** en 
+    # @option opts [String] :country Only categories that apply in this country will be returned.  **Example:** US 
+    # @return [Array<(InlineResponse20013, Fixnum, Hash)>] InlineResponse20013 data, response status code and response headers
     def get_business_categories_with_http_info(v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationsApi.get_business_categories ..."
@@ -162,7 +162,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2007')
+        :return_type => 'InlineResponse20013')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationsApi#get_business_categories\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -174,9 +174,9 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param account_id 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :offset Number of results to skip. Used to page through results (default to 0)
+    # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
     # @option opts [Integer] :limit Number of results to return (default to 100)
-    # @return [InlineResponse200]
+    # @return [InlineResponse2004]
     def get_custom_fields(v, account_id, opts = {})
       data, _status_code, _headers = get_custom_fields_with_http_info(v, account_id, opts)
       return data
@@ -187,9 +187,9 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param account_id 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :offset Number of results to skip. Used to page through results
+    # @option opts [Integer] :offset Number of results to skip. Used to page through results
     # @option opts [Integer] :limit Number of results to return
-    # @return [Array<(InlineResponse200, Fixnum, Hash)>] InlineResponse200 data, response status code and response headers
+    # @return [Array<(InlineResponse2004, Fixnum, Hash)>] InlineResponse2004 data, response status code and response headers
     def get_custom_fields_with_http_info(v, account_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationsApi.get_custom_fields ..."
@@ -238,7 +238,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse200')
+        :return_type => 'InlineResponse2004')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationsApi#get_custom_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -249,7 +249,7 @@ module YextClient
     # Use the Google Attributes API to retrieve a complete list of Google's location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locationsvia the googleKeywords field in the Locations API.
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2008]
+    # @return [InlineResponse20014]
     def get_google_keywords(v, opts = {})
       data, _status_code, _headers = get_google_keywords_with_http_info(v, opts)
       return data
@@ -259,7 +259,7 @@ module YextClient
     # Use the Google Attributes API to retrieve a complete list of Google&#39;s location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locationsvia the googleKeywords field in the Locations API.
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2008, Fixnum, Hash)>] InlineResponse2008 data, response status code and response headers
+    # @return [Array<(InlineResponse20014, Fixnum, Hash)>] InlineResponse20014 data, response status code and response headers
     def get_google_keywords_with_http_info(v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationsApi.get_google_keywords ..."
@@ -300,7 +300,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2008')
+        :return_type => 'InlineResponse20014')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationsApi#get_google_keywords\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -382,9 +382,9 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :offset Number of results to skip. Used to page through results (default to 0)
+    # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
     # @option opts [Integer] :limit Number of results to return (default to 100)
-    # @return [InlineResponse2001]
+    # @return [InlineResponse2005]
     def get_location_folders(account_id, v, opts = {})
       data, _status_code, _headers = get_location_folders_with_http_info(account_id, v, opts)
       return data
@@ -395,9 +395,9 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :offset Number of results to skip. Used to page through results
+    # @option opts [Integer] :offset Number of results to skip. Used to page through results
     # @option opts [Integer] :limit Number of results to return
-    # @return [Array<(InlineResponse2001, Fixnum, Hash)>] InlineResponse2001 data, response status code and response headers
+    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
     def get_location_folders_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationsApi.get_location_folders ..."
@@ -446,7 +446,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2001')
+        :return_type => 'InlineResponse2005')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationsApi#get_location_folders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -459,8 +459,8 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
-    # @option opts [String] :offset Number of results to skip. Used to page through results (default to 0)
-    # @return [InlineResponse2002]
+    # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
+    # @return [InlineResponse2006]
     def get_locations(account_id, v, opts = {})
       data, _status_code, _headers = get_locations_with_http_info(account_id, v, opts)
       return data
@@ -472,8 +472,8 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
-    # @option opts [String] :offset Number of results to skip. Used to page through results
-    # @return [Array<(InlineResponse2002, Fixnum, Hash)>] InlineResponse2002 data, response status code and response headers
+    # @option opts [Integer] :offset Number of results to skip. Used to page through results
+    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
     def get_locations_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationsApi.get_locations ..."
@@ -522,7 +522,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2002')
+        :return_type => 'InlineResponse2006')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationsApi#get_locations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

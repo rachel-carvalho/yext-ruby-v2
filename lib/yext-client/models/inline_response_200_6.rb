@@ -43,7 +43,7 @@ module YextClient
     def self.swagger_types
       {
         :'meta' => :'ResponseMeta',
-        :'response' => :'PublisherSuggestion'
+        :'response' => :'InlineResponse2006Response'
       }
     end
 

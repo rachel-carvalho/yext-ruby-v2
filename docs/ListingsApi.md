@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **get_publisher_suggestion**
-> InlineResponse2006 get_publisher_suggestion(account_id, vsuggestion_id, )
+> InlineResponse20010 get_publisher_suggestion(account_id, vsuggestion_id, )
 
 Publisher Suggestions: Get
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 
 # **list_listings**
-> InlineResponse2003 list_listings(account_id, v, opts)
+> InlineResponse2007 list_listings(account_id, v, opts)
 
 Listings: List
 
@@ -100,8 +100,8 @@ v = "v_example" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 20, # Integer | Number of results to return
-  offset: "0", # String | Number of results to skip. Used to page through results
-  location_ids: ["location_ids_example"], # Array<String> | Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+  offset: 0, # Integer | Number of results to skip. Used to page through results
+  location_ids: ["location_ids_example"], # Array<String> | Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
   publisher_ids: ["publisher_ids_example"], # Array<String> | Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
 }
 
@@ -121,13 +121,13 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
  **limit** | **Integer**| Number of results to return | [optional] [default to 20]
- **offset** | **String**| Number of results to skip. Used to page through results | [optional] [default to 0]
- **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789  | [optional] 
+ **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
+ **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789  | [optional] 
  **publisher_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP  | [optional] 
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 
 # **list_publisher_suggestions**
-> InlineResponse2005 list_publisher_suggestions(account_id, v, opts)
+> InlineResponse2009 list_publisher_suggestions(account_id, v, opts)
 
 Publisher Suggestions: List
 
@@ -167,8 +167,8 @@ v = "v_example" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 10, # Integer | Number of results to return
-  offset: "0", # String | Number of results to skip. Used to page through results
-  location_ids: ["location_ids_example"], # Array<String> | Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+  offset: 0, # Integer | Number of results to skip. Used to page through results
+  location_ids: ["location_ids_example"], # Array<String> | Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
   publisher_ids: ["publisher_ids_example"], # Array<String> | Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
   statuses: ["statuses_example"] # Array<String> | When specified, only Publisher Suggestions with the provided statuses will be returned  **Example:** PENDING,EXPIRED 
 }
@@ -189,14 +189,14 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
  **limit** | **Integer**| Number of results to return | [optional] [default to 10]
- **offset** | **String**| Number of results to skip. Used to page through results | [optional] [default to 0]
- **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789  | [optional] 
+ **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
+ **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789  | [optional] 
  **publisher_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP  | [optional] 
  **statuses** | [**Array&lt;String&gt;**](String.md)| When specified, only Publisher Suggestions with the provided statuses will be returned  **Example:** PENDING,EXPIRED  | [optional] 
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 
 # **list_publishers**
-> InlineResponse2004 list_publishers(account_id, v, opts)
+> InlineResponse2008 list_publishers(account_id, v, opts)
 
 Publishers: List
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 Listings: Opt In
 
-Opts designated locations into designated publishers **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you get a 400 error.
+Opts designated locations into designated publishers  **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you will receive a 400 error response. 
 
 ### Example
 ```ruby
@@ -296,7 +296,7 @@ account_id = "account_id_example" # String |
 v = "v_example" # String | A date in `YYYYMMDD` format
 
 opts = { 
-  location_ids: ["location_ids_example"], # Array<String> | Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+  location_ids: ["location_ids_example"], # Array<String> | Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
   publisher_ids: ["publisher_ids_example"], # Array<String> | Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
 }
 
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
- **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789  | [optional] 
+ **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789  | [optional] 
  **publisher_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP  | [optional] 
 
 ### Return type
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 Listings: Opt Out
 
-Opts designated locations out of designated publishers  **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you get a 400 error. 
+Opts designated locations out of designated publishers  **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you will receive a 400 error response. 
 
 ### Example
 ```ruby
@@ -359,7 +359,7 @@ account_id = "account_id_example" # String |
 v = "v_example" # String | A date in `YYYYMMDD` format
 
 opts = { 
-  location_ids: ["location_ids_example"], # Array<String> | Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+  location_ids: ["location_ids_example"], # Array<String> | Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
   publisher_ids: ["publisher_ids_example"], # Array<String> | Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
 }
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
- **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789  | [optional] 
+ **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789  | [optional] 
  **publisher_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP  | [optional] 
 
 ### Return type

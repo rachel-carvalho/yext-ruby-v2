@@ -38,7 +38,7 @@ module YextClient
     # List of Publisher's alternate brands where listings are syndicated
     attr_accessor :alternate_brands
 
-    # List of countries where this Publisher publishes listings. Countries are donated by ISO 3166 2-letter country codes
+    # List of countries where this Publisher publishes listings. Countries are denoted by ISO 3166 2-letter country codes
     attr_accessor :supported_countries
 
     # List of Location types that are supported by this Publisher

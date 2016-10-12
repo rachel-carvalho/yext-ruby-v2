@@ -26,17 +26,17 @@ require 'date'
 module YextClient
 
   class InlineResponse2005Response
-    # Total number of Publisher Suggestions that meet filter criteria (ignores limit/offset)
+    # Total number of Location Folders in the Account
     attr_accessor :count
 
-    attr_accessor :suggestions
+    attr_accessor :folders
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'count' => :'count',
-        :'suggestions' => :'suggestions'
+        :'folders' => :'folders'
       }
     end
 
@@ -44,7 +44,7 @@ module YextClient
     def self.swagger_types
       {
         :'count' => :'Integer',
-        :'suggestions' => :'Array<PublisherSuggestion>'
+        :'folders' => :'Array<Folder>'
       }
     end
 
@@ -60,9 +60,9 @@ module YextClient
         self.count = attributes[:'count']
       end
 
-      if attributes.has_key?(:'suggestions')
-        if (value = attributes[:'suggestions']).is_a?(Array)
-          self.suggestions = value
+      if attributes.has_key?(:'folders')
+        if (value = attributes[:'folders']).is_a?(Array)
+          self.folders = value
         end
       end
 
@@ -87,7 +87,7 @@ module YextClient
       return true if self.equal?(o)
       self.class == o.class &&
           count == o.count &&
-          suggestions == o.suggestions
+          folders == o.folders
     end
 
     # @see the `==` method
@@ -99,7 +99,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, suggestions].hash
+      [count, folders].hash
     end
 
     # Builds the object from hash

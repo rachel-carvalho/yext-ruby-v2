@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**categories** | [**Array&lt;Category&gt;**](Category.md) | List of Categories | [optional] 
+**count** | **Integer** | Total number of Listings that meet filter criteria (ignores limit/offset) | [optional] 
+**listings** | [**Array&lt;Listing&gt;**](Listing.md) |  | [optional] 
 
 

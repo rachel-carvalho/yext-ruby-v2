@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **Integer** | Total number of Custom Fields in the account | [optional] 
-**custom_fields** | [**Array&lt;CustomField&gt;**](CustomField.md) |  | [optional] 
+**count** | **Integer** | Total number of activities that meet the filter criteria (ignores limit / offset) | [optional] 
+**activities** | [**Array&lt;Activity&gt;**](Activity.md) |  | [optional] 
 
 

@@ -29,14 +29,38 @@ module YextClient
     # Unique code for the warning/unavailable reason
     attr_accessor :code
 
+    attr_accessor :type
+
     # Explanation of the warning/unavailable reason
     attr_accessor :message
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'code' => :'code',
+        :'type' => :'type',
         :'message' => :'message'
       }
     end
@@ -45,6 +69,7 @@ module YextClient
     def self.swagger_types
       {
         :'code' => :'String',
+        :'type' => :'String',
         :'message' => :'String'
       }
     end
@@ -59,6 +84,10 @@ module YextClient
 
       if attributes.has_key?(:'code')
         self.code = attributes[:'code']
+      end
+
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
       if attributes.has_key?(:'message')
@@ -77,7 +106,19 @@ module YextClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      type_validator = EnumAttributeValidator.new('String', ["UNAVAILABLE_REASON", "WARNING"])
+      return false unless type_validator.valid?(@type)
       return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] type Object to be assigned
+    def type=(type)
+      validator = EnumAttributeValidator.new('String', ["UNAVAILABLE_REASON", "WARNING"])
+      unless validator.valid?(type)
+        fail ArgumentError, "invalid value for 'type', must be one of #{validator.allowable_values}."
+      end
+      @type = type
     end
 
     # Checks equality by comparing each attribute.
@@ -86,6 +127,7 @@ module YextClient
       return true if self.equal?(o)
       self.class == o.class &&
           code == o.code &&
+          type == o.type &&
           message == o.message
     end
 
@@ -98,7 +140,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [code, message].hash
+      [code, type, message].hash
     end
 
     # Builds the object from hash

@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 
 # **get_business_categories**
-> InlineResponse2007 get_business_categories(v, opts)
+> InlineResponse20013 get_business_categories(v, opts)
 
 Categories: List
 
@@ -98,8 +98,8 @@ api_instance = YextClient::LocationsApi.new
 v = "v_example" # String | A date in `YYYYMMDD` format
 
 opts = { 
-  language: "en", # String | Only categories that apply to this language will be returned.
-  country: "us" # String | Only categories that apply in this country will be returned.
+  language: "en", # String | Only categories that apply to this language will be returned.  **Example:** en 
+  country: "US" # String | Only categories that apply in this country will be returned.  **Example:** US 
 }
 
 begin
@@ -116,12 +116,12 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
- **language** | **String**| Only categories that apply to this language will be returned. | [optional] [default to en]
- **country** | **String**| Only categories that apply in this country will be returned. | [optional] [default to us]
+ **language** | **String**| Only categories that apply to this language will be returned.  **Example:** en  | [optional] [default to en]
+ **country** | **String**| Only categories that apply in this country will be returned.  **Example:** US  | [optional] [default to US]
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 
 # **get_custom_fields**
-> InlineResponse200 get_custom_fields(vaccount_id, , opts)
+> InlineResponse2004 get_custom_fields(vaccount_id, , opts)
 
 Custom Fields: List
 
@@ -160,7 +160,7 @@ v = "v_example" # String | A date in `YYYYMMDD` format
 account_id = "account_id_example" # String | 
 
 opts = { 
-  offset: "0", # String | Number of results to skip. Used to page through results
+  offset: 0, # Integer | Number of results to skip. Used to page through results
   limit: 100 # Integer | Number of results to return
 }
 
@@ -179,12 +179,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
  **account_id** | **String**|  | 
- **offset** | **String**| Number of results to skip. Used to page through results | [optional] [default to 0]
+ **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
  **limit** | **Integer**| Number of results to return | [optional] [default to 100]
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 
 # **get_google_keywords**
-> InlineResponse2008 get_google_keywords(v)
+> InlineResponse20014 get_google_keywords(v)
 
 Google Fields: List
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 
 # **get_location_folders**
-> InlineResponse2001 get_location_folders(account_id, v, opts)
+> InlineResponse2005 get_location_folders(account_id, v, opts)
 
 Folders: List
 
@@ -337,7 +337,7 @@ account_id = "account_id_example" # String |
 v = "v_example" # String | A date in `YYYYMMDD` format
 
 opts = { 
-  offset: "0", # String | Number of results to skip. Used to page through results
+  offset: 0, # Integer | Number of results to skip. Used to page through results
   limit: 100 # Integer | Number of results to return
 }
 
@@ -356,12 +356,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
- **offset** | **String**| Number of results to skip. Used to page through results | [optional] [default to 0]
+ **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
  **limit** | **Integer**| Number of results to return | [optional] [default to 100]
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 
 # **get_locations**
-> InlineResponse2002 get_locations(account_id, v, opts)
+> InlineResponse2006 get_locations(account_id, v, opts)
 
 Locations: List
 
@@ -401,7 +401,7 @@ v = "v_example" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 10, # Integer | Number of results to return
-  offset: "0", # String | Number of results to skip. Used to page through results
+  offset: 0, # Integer | Number of results to skip. Used to page through results
 }
 
 begin
@@ -420,11 +420,11 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
  **limit** | **Integer**| Number of results to return | [optional] [default to 10]
- **offset** | **String**| Number of results to skip. Used to page through results | [optional] [default to 0]
+ **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 

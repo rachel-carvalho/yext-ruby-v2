@@ -26,21 +26,25 @@ require 'date'
 module YextClient
 
   class InlineResponse2007Response
-    # List of Categories
-    attr_accessor :categories
+    # Total number of Listings that meet filter criteria (ignores limit/offset)
+    attr_accessor :count
+
+    attr_accessor :listings
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'categories' => :'categories'
+        :'count' => :'count',
+        :'listings' => :'listings'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'categories' => :'Array<Category>'
+        :'count' => :'Integer',
+        :'listings' => :'Array<Listing>'
       }
     end
 
@@ -52,9 +56,13 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'categories')
-        if (value = attributes[:'categories']).is_a?(Array)
-          self.categories = value
+      if attributes.has_key?(:'count')
+        self.count = attributes[:'count']
+      end
+
+      if attributes.has_key?(:'listings')
+        if (value = attributes[:'listings']).is_a?(Array)
+          self.listings = value
         end
       end
 
@@ -78,7 +86,8 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          categories == o.categories
+          count == o.count &&
+          listings == o.listings
     end
 
     # @see the `==` method
@@ -90,7 +99,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [categories].hash
+      [count, listings].hash
     end
 
     # Builds the object from hash

@@ -26,25 +26,26 @@ require 'date'
 module YextClient
 
   class InlineResponse2002Response
-    # Total number of Locations that meet filter criteria (ignores limit / offset)
-    attr_accessor :count
+    # Array with the contents of the report, as specified in the request. This is returned for a synchronous request
+    attr_accessor :data
 
-    attr_accessor :locations
+    # the ID of the report. This is returned for an asynchronous request
+    attr_accessor :id
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count',
-        :'locations' => :'locations'
+        :'data' => :'data',
+        :'id' => :'id'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'count' => :'Integer',
-        :'locations' => :'Array<Location>'
+        :'data' => :'Array<Hash<String, String>>',
+        :'id' => :'Integer'
       }
     end
 
@@ -56,14 +57,14 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'count')
-        self.count = attributes[:'count']
+      if attributes.has_key?(:'data')
+        if (value = attributes[:'data']).is_a?(Array)
+          self.data = value
+        end
       end
 
-      if attributes.has_key?(:'locations')
-        if (value = attributes[:'locations']).is_a?(Array)
-          self.locations = value
-        end
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
       end
 
     end
@@ -86,8 +87,8 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count &&
-          locations == o.locations
+          data == o.data &&
+          id == o.id
     end
 
     # @see the `==` method
@@ -99,7 +100,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, locations].hash
+      [data, id].hash
     end
 
     # Builds the object from hash

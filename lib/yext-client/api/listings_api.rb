@@ -37,7 +37,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param suggestion_id 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2006]
+    # @return [InlineResponse20010]
     def get_publisher_suggestion(account_id, v, suggestion_id, opts = {})
       data, _status_code, _headers = get_publisher_suggestion_with_http_info(account_id, v, suggestion_id, opts)
       return data
@@ -49,7 +49,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param suggestion_id 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(InlineResponse20010, Fixnum, Hash)>] InlineResponse20010 data, response status code and response headers
     def get_publisher_suggestion_with_http_info(account_id, v, suggestion_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ListingsApi.get_publisher_suggestion ..."
@@ -94,7 +94,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'InlineResponse20010')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ListingsApi#get_publisher_suggestion\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -107,10 +107,10 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 20)
-    # @option opts [String] :offset Number of results to skip. Used to page through results (default to 0)
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+    # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [InlineResponse2003]
+    # @return [InlineResponse2007]
     def list_listings(account_id, v, opts = {})
       data, _status_code, _headers = list_listings_with_http_info(account_id, v, opts)
       return data
@@ -122,10 +122,10 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
-    # @option opts [String] :offset Number of results to skip. Used to page through results
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+    # @option opts [Integer] :offset Number of results to skip. Used to page through results
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [Array<(InlineResponse2003, Fixnum, Hash)>] InlineResponse2003 data, response status code and response headers
+    # @return [Array<(InlineResponse2007, Fixnum, Hash)>] InlineResponse2007 data, response status code and response headers
     def list_listings_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ListingsApi.list_listings ..."
@@ -176,7 +176,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2003')
+        :return_type => 'InlineResponse2007')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ListingsApi#list_listings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -189,11 +189,11 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
-    # @option opts [String] :offset Number of results to skip. Used to page through results (default to 0)
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+    # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Publisher Suggestions with the provided statuses will be returned  **Example:** PENDING,EXPIRED 
-    # @return [InlineResponse2005]
+    # @return [InlineResponse2009]
     def list_publisher_suggestions(account_id, v, opts = {})
       data, _status_code, _headers = list_publisher_suggestions_with_http_info(account_id, v, opts)
       return data
@@ -205,11 +205,11 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
-    # @option opts [String] :offset Number of results to skip. Used to page through results
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+    # @option opts [Integer] :offset Number of results to skip. Used to page through results
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Publisher Suggestions with the provided statuses will be returned  **Example:** PENDING,EXPIRED 
-    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
+    # @return [Array<(InlineResponse2009, Fixnum, Hash)>] InlineResponse2009 data, response status code and response headers
     def list_publisher_suggestions_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ListingsApi.list_publisher_suggestions ..."
@@ -264,7 +264,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :return_type => 'InlineResponse2009')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ListingsApi#list_publisher_suggestions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -277,7 +277,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
     # @option opts [String] :subset **ALL** - return all publishers  **RELEVANT_ONLY** - only return publishers relevant to the account based on supported countries and location types  (default to RELEVANT_ONLY)
-    # @return [InlineResponse2004]
+    # @return [InlineResponse2008]
     def list_publishers(account_id, v, opts = {})
       data, _status_code, _headers = list_publishers_with_http_info(account_id, v, opts)
       return data
@@ -289,7 +289,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
     # @option opts [String] :subset **ALL** - return all publishers  **RELEVANT_ONLY** - only return publishers relevant to the account based on supported countries and location types 
-    # @return [Array<(InlineResponse2004, Fixnum, Hash)>] InlineResponse2004 data, response status code and response headers
+    # @return [Array<(InlineResponse2008, Fixnum, Hash)>] InlineResponse2008 data, response status code and response headers
     def list_publishers_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ListingsApi.list_publishers ..."
@@ -336,7 +336,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2004')
+        :return_type => 'InlineResponse2008')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ListingsApi#list_publishers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -344,11 +344,11 @@ module YextClient
     end
 
     # Listings: Opt In
-    # Opts designated locations into designated publishers **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you get a 400 error.
+    # Opts designated locations into designated publishers  **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you will receive a 400 error response. 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @return [InlineResponseDefault]
     def opt_in_listings(account_id, v, opts = {})
@@ -357,11 +357,11 @@ module YextClient
     end
 
     # Listings: Opt In
-    # Opts designated locations into designated publishers **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you get a 400 error.
+    # Opts designated locations into designated publishers  **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you will receive a 400 error response. 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
     def opt_in_listings_with_http_info(account_id, v, opts = {})
@@ -416,11 +416,11 @@ module YextClient
     end
 
     # Listings: Opt Out
-    # Opts designated locations out of designated publishers  **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you get a 400 error. 
+    # Opts designated locations out of designated publishers  **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you will receive a 400 error response. 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @return [InlineResponseDefault]
     def opt_out_listings(account_id, v, opts = {})
@@ -429,11 +429,11 @@ module YextClient
     end
 
     # Listings: Opt Out
-    # Opts designated locations out of designated publishers  **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you get a 400 error. 
+    # Opts designated locations out of designated publishers  **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you will receive a 400 error response. 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
     def opt_out_listings_with_http_info(account_id, v, opts = {})

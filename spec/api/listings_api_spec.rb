@@ -50,7 +50,7 @@ describe 'ListingsApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param suggestion_id 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2006]
+  # @return [InlineResponse20010]
   describe 'get_publisher_suggestion test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -64,10 +64,10 @@ describe 'ListingsApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return
-  # @option opts [String] :offset Number of results to skip. Used to page through results
-  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+  # @option opts [Integer] :offset Number of results to skip. Used to page through results
+  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-  # @return [InlineResponse2003]
+  # @return [InlineResponse2007]
   describe 'list_listings test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -81,11 +81,11 @@ describe 'ListingsApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return
-  # @option opts [String] :offset Number of results to skip. Used to page through results
-  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+  # @option opts [Integer] :offset Number of results to skip. Used to page through results
+  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
   # @option opts [Array<String>] :statuses When specified, only Publisher Suggestions with the provided statuses will be returned  **Example:** PENDING,EXPIRED 
-  # @return [InlineResponse2005]
+  # @return [InlineResponse2009]
   describe 'list_publisher_suggestions test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -99,7 +99,7 @@ describe 'ListingsApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
   # @option opts [String] :subset **ALL** - return all publishers  **RELEVANT_ONLY** - only return publishers relevant to the account based on supported countries and location types 
-  # @return [InlineResponse2004]
+  # @return [InlineResponse2008]
   describe 'list_publishers test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -108,11 +108,11 @@ describe 'ListingsApi' do
 
   # unit tests for opt_in_listings
   # Listings: Opt In
-  # Opts designated locations into designated publishers **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you get a 400 error.
+  # Opts designated locations into designated publishers  **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you will receive a 400 error response. 
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
-  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
   # @return [InlineResponseDefault]
   describe 'opt_in_listings test' do
@@ -123,11 +123,11 @@ describe 'ListingsApi' do
 
   # unit tests for opt_out_listings
   # Listings: Opt Out
-  # Opts designated locations out of designated publishers  **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you get a 400 error. 
+  # Opts designated locations out of designated publishers  **NOTE:** The number of Location IDs multiplied by the number of Publisher IDs is capped at 100. If you exceed this, you will receive a 400 error response. 
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
-  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** 123,456,789 
+  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
   # @return [InlineResponseDefault]
   describe 'opt_out_listings test' do

@@ -43,13 +43,13 @@ describe 'InlineResponse2001Response' do
       expect(@instance).to be_instance_of(YextClient::InlineResponse2001Response)
     end
   end
-  describe 'test attribute "count"' do
+  describe 'test attribute "standard_max_date"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "folders"' do
+  describe 'test attribute "bing_max_date"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

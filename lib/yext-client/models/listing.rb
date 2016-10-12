@@ -29,7 +29,7 @@ module YextClient
     # ID of this listing
     attr_accessor :id
 
-    # ID of location associated with this listing
+    # ID of the location associated with this listing
     attr_accessor :location_id
 
     # ID of publisher associated with this listing 

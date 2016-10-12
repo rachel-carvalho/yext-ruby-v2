@@ -62,9 +62,9 @@ describe 'LocationsApi' do
   # Get available Categories.  All Locations are required to have an associated Category to assist with organization and search. Yext provides a hierarchy of business categories for this purpose, exposed by this API. 
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :language Only categories that apply to this language will be returned.
-  # @option opts [String] :country Only categories that apply in this country will be returned.
-  # @return [InlineResponse2007]
+  # @option opts [String] :language Only categories that apply to this language will be returned.  **Example:** en 
+  # @option opts [String] :country Only categories that apply in this country will be returned.  **Example:** US 
+  # @return [InlineResponse20013]
   describe 'get_business_categories test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -77,9 +77,9 @@ describe 'LocationsApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param account_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :offset Number of results to skip. Used to page through results
+  # @option opts [Integer] :offset Number of results to skip. Used to page through results
   # @option opts [Integer] :limit Number of results to return
-  # @return [InlineResponse200]
+  # @return [InlineResponse2004]
   describe 'get_custom_fields test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -91,7 +91,7 @@ describe 'LocationsApi' do
   # Use the Google Attributes API to retrieve a complete list of Google&#39;s location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locationsvia the googleKeywords field in the Locations API.
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2008]
+  # @return [InlineResponse20014]
   describe 'get_google_keywords test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -118,9 +118,9 @@ describe 'LocationsApi' do
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :offset Number of results to skip. Used to page through results
+  # @option opts [Integer] :offset Number of results to skip. Used to page through results
   # @option opts [Integer] :limit Number of results to return
-  # @return [InlineResponse2001]
+  # @return [InlineResponse2005]
   describe 'get_location_folders test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -134,8 +134,8 @@ describe 'LocationsApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return
-  # @option opts [String] :offset Number of results to skip. Used to page through results
-  # @return [InlineResponse2002]
+  # @option opts [Integer] :offset Number of results to skip. Used to page through results
+  # @return [InlineResponse2006]
   describe 'get_locations test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

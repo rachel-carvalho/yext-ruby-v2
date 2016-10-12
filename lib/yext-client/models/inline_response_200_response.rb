@@ -26,17 +26,17 @@ require 'date'
 module YextClient
 
   class InlineResponse200Response
-    # Total number of Custom Fields in the account
+    # Total number of activities that meet the filter criteria (ignores limit / offset)
     attr_accessor :count
 
-    attr_accessor :custom_fields
+    attr_accessor :activities
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'count' => :'count',
-        :'custom_fields' => :'customFields'
+        :'activities' => :'activities'
       }
     end
 
@@ -44,7 +44,7 @@ module YextClient
     def self.swagger_types
       {
         :'count' => :'Integer',
-        :'custom_fields' => :'Array<CustomField>'
+        :'activities' => :'Array<Activity>'
       }
     end
 
@@ -60,9 +60,9 @@ module YextClient
         self.count = attributes[:'count']
       end
 
-      if attributes.has_key?(:'customFields')
-        if (value = attributes[:'customFields']).is_a?(Array)
-          self.custom_fields = value
+      if attributes.has_key?(:'activities')
+        if (value = attributes[:'activities']).is_a?(Array)
+          self.activities = value
         end
       end
 
@@ -87,7 +87,7 @@ module YextClient
       return true if self.equal?(o)
       self.class == o.class &&
           count == o.count &&
-          custom_fields == o.custom_fields
+          activities == o.activities
     end
 
     # @see the `==` method
@@ -99,7 +99,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, custom_fields].hash
+      [count, activities].hash
     end
 
     # Builds the object from hash

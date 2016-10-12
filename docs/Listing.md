@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | ID of this listing | [optional] 
-**location_id** | **String** | ID of location associated with this listing | [optional] 
+**location_id** | **String** | ID of the location associated with this listing | [optional] 
 **publisher_id** | **String** | ID of publisher associated with this listing  | [optional] 
 **status** | **String** |  | [optional] 
 **additional_status** | **String** |  | [optional] 
