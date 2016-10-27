@@ -66,10 +66,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'review_id' when calling ReviewsApi.create_comment" if review_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.create_comment" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if opts[:'visibility'] && !['PUBLIC', 'PRIVATE'].include?(opts[:'visibility'])
         fail ArgumentError, 'invalid value for "visibility", must be one of PUBLIC, PRIVATE'
       end
@@ -142,10 +138,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'review_id' when calling ReviewsApi.get_review" if review_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.get_review" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/reviews/{reviewId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'reviewId' + '}', review_id.to_s)
 
@@ -244,10 +236,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling ReviewsApi.list_reviews" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.list_reviews" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if opts[:'limit'] > 100.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling ReviewsApi.list_reviews, must be smaller than or equal to 100.0.'
       end

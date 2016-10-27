@@ -58,10 +58,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.create_user" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.create_user" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'user_request' is set
       fail ArgumentError, "Missing the required parameter 'user_request' when calling UserApi.create_user" if user_request.nil?
       # resource path
@@ -130,10 +126,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.delete_user" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.delete_user" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'user_id' is set
       fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.delete_user" if user_id.nil?
       # verify the required parameter 'user_request' is set
@@ -206,10 +198,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_link_optimization_task" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_link_optimization_task" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'task_ids' is set
       fail ArgumentError, "Missing the required parameter 'task_ids' when calling UserApi.get_link_optimization_task" if task_ids.nil?
       # verify the required parameter 'location_ids' is set
@@ -289,10 +277,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_optimization_tasks" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_optimization_tasks" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'task_ids' is set
       fail ArgumentError, "Missing the required parameter 'task_ids' when calling UserApi.get_optimization_tasks" if task_ids.nil?
       # verify the required parameter 'location_ids' is set
@@ -361,10 +345,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_roles" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_roles" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/roles".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -429,10 +409,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_user" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_user" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'user_id' is set
       fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.get_user" if user_id.nil?
       # resource path
@@ -501,10 +477,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_users" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_users" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling UserApi.get_users, must be smaller than or equal to 50.0.'
       end
@@ -577,10 +549,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.update_user" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.update_user" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'user_id' is set
       fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.update_user" if user_id.nil?
       # verify the required parameter 'user_request' is set

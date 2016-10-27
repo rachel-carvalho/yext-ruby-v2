@@ -34,7 +34,7 @@ account_id = "account_id_example" # String |
 
 review_id = 56 # Integer | ID of this Review
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   content: "content_example", # String | Content of the new comment.
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **review_id** | **Integer**| ID of this Review | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **content** | **String**| Content of the new comment. | [optional] 
  **visibility** | **String**|  | [optional] [default to PRIVATE]
  **parent_id** | **Integer**| If this Comment is in response to another comment, use this field to specify the ID of the parent Comment. | [optional] 
@@ -102,7 +102,7 @@ account_id = "account_id_example" # String |
 
 review_id = 56 # Integer | ID of this Review
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **review_id** | **Integer**| ID of this Review | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -160,7 +160,7 @@ api_instance = YextClient::ReviewsApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 100, # Integer | Number of results to return.
@@ -197,7 +197,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **limit** | **Integer**| Number of results to return. | [optional] [default to 100]
  **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| When provided, only reviews for the requested locations will be returned.  By default, reviews will be returned for all locations subscribed to Review Monitoring.  **Example:** loc123,loc456,loc789  | [optional] 

@@ -62,10 +62,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.create_duplicate" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.create_duplicate" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'url' is set
       fail ArgumentError, "Missing the required parameter 'url' when calling PowerListingsApi.create_duplicate" if url.nil?
       # resource path
@@ -135,10 +131,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.delete_duplicate" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.delete_duplicate" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'duplicate_id' is set
       fail ArgumentError, "Missing the required parameter 'duplicate_id' when calling PowerListingsApi.delete_duplicate" if duplicate_id.nil?
       # resource path
@@ -205,10 +197,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.get_publisher_suggestion" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.get_publisher_suggestion" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'suggestion_id' is set
       fail ArgumentError, "Missing the required parameter 'suggestion_id' when calling PowerListingsApi.get_publisher_suggestion" if suggestion_id.nil?
       # resource path
@@ -283,10 +271,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.list_duplicates" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.list_duplicates" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling PowerListingsApi.list_duplicates, must be smaller than or equal to 50.0.'
       end
@@ -369,10 +353,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.list_listings" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.list_listings" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if opts[:'limit'] > 100.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling PowerListingsApi.list_listings, must be smaller than or equal to 100.0.'
       end
@@ -453,10 +433,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.list_publisher_suggestions" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.list_publisher_suggestions" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling PowerListingsApi.list_publisher_suggestions, must be smaller than or equal to 50.0.'
       end
@@ -533,10 +509,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.list_publishers" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.list_publishers" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if opts[:'subset'] && !['ALL', 'RELEVANT_ONLY'].include?(opts[:'subset'])
         fail ArgumentError, 'invalid value for "subset", must be one of ALL, RELEVANT_ONLY'
       end
@@ -607,10 +579,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.opt_in_listings" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.opt_in_listings" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/powerlistings/listings/optin".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -679,10 +647,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.opt_out_listings" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.opt_out_listings" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/powerlistings/listings/optout".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -749,10 +713,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.suppress_duplicate" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.suppress_duplicate" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'duplicate_id' is set
       fail ArgumentError, "Missing the required parameter 'duplicate_id' when calling PowerListingsApi.suppress_duplicate" if duplicate_id.nil?
       # resource path
@@ -821,10 +781,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.update_publisher_suggestion" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.update_publisher_suggestion" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'suggestion_id' is set
       fail ArgumentError, "Missing the required parameter 'suggestion_id' when calling PowerListingsApi.update_publisher_suggestion" if suggestion_id.nil?
       # verify the required parameter 'status' is set

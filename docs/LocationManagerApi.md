@@ -61,7 +61,7 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 body = YextClient::Bio.new # Bio | 
 
@@ -80,7 +80,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **body** | [**Bio**](Bio.md)|  | 
 
 ### Return type
@@ -121,7 +121,7 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 body = YextClient::Event.new # Event | 
 
@@ -140,7 +140,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **body** | [**Event**](Event.md)|  | 
 
 ### Return type
@@ -181,7 +181,7 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 location_request = YextClient::Location.new # Location | 
 
@@ -200,7 +200,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **location_request** | [**Location**](Location.md)|  | 
 
 ### Return type
@@ -239,7 +239,7 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 body = YextClient::Menu.new # Menu | 
 
@@ -258,7 +258,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **body** | [**Menu**](Menu.md)|  | 
 
 ### Return type
@@ -299,7 +299,7 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 body = YextClient::Product.new # Product | 
 
@@ -318,7 +318,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **body** | [**Product**](Product.md)|  | 
 
 ### Return type
@@ -361,7 +361,7 @@ account_id = "account_id_example" # String |
 
 list_id = "list_id_example" # String | ID of this List
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -421,7 +421,7 @@ account_id = "account_id_example" # String |
 
 list_id = "list_id_example" # String | ID of this List
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -439,7 +439,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -483,7 +483,7 @@ location_id = "location_id_example" # String |
 
 language_code = "language_code_example" # String | Locale code
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **location_id** | **String**|  | 
  **language_code** | **String**| Locale code | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -544,7 +544,7 @@ account_id = "account_id_example" # String |
 
 list_id = "list_id_example" # String | ID of this List
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -604,7 +604,7 @@ account_id = "account_id_example" # String |
 
 list_id = "list_id_example" # String | ID of this List
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -622,7 +622,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -664,7 +664,7 @@ account_id = "account_id_example" # String |
 
 list_id = "list_id_example" # String | ID of this List
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -682,7 +682,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -722,7 +722,7 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 10, # Integer | Number of results to return
@@ -743,7 +743,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **limit** | **Integer**| Number of results to return | [optional] [default to 10]
  **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
 
@@ -783,7 +783,7 @@ end
 
 api_instance = YextClient::LocationManagerApi.new
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   language: "en", # String | Only categories that apply to this language will be returned.  **Example:** en 
@@ -803,7 +803,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **language** | **String**| Only categories that apply to this language will be returned.  **Example:** en  | [optional] [default to en]
  **country** | **String**| Only categories that apply in this country will be returned.  **Example:** US  | [optional] [default to US]
 
@@ -843,7 +843,7 @@ end
 
 api_instance = YextClient::LocationManagerApi.new
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 account_id = "account_id_example" # String | 
 
@@ -865,7 +865,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **account_id** | **String**|  | 
  **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
  **limit** | **Integer**| Number of results to return | [optional] [default to 100]
@@ -910,7 +910,7 @@ account_id = "account_id_example" # String |
 
 list_id = "list_id_example" # String | ID of this List
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -928,7 +928,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -968,7 +968,7 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 10, # Integer | Number of results to return
@@ -989,7 +989,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **limit** | **Integer**| Number of results to return | [optional] [default to 10]
  **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
 
@@ -1029,7 +1029,7 @@ end
 
 api_instance = YextClient::LocationManagerApi.new
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -1045,7 +1045,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -1089,7 +1089,7 @@ location_id = "location_id_example" # String |
 
 language_code = "language_code_example" # String | Locale code
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -1108,7 +1108,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **location_id** | **String**|  | 
  **language_code** | **String**| Locale code | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -1150,7 +1150,7 @@ account_id = "account_id_example" # String |
 
 location_id = "location_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -1168,7 +1168,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **location_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -1210,7 +1210,7 @@ account_id = "account_id_example" # String |
 
 location_id = "location_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -1228,7 +1228,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **location_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -1268,7 +1268,7 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   offset: 0 # Integer | Number of results to skip. Used to page through results
@@ -1289,7 +1289,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
  **limit** | **Integer**| Number of results to return | [optional] [default to 100]
 
@@ -1331,7 +1331,7 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 10, # Integer | Number of results to return
@@ -1352,7 +1352,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **limit** | **Integer**| Number of results to return | [optional] [default to 10]
  **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
 
@@ -1396,7 +1396,7 @@ account_id = "account_id_example" # String |
 
 list_id = "list_id_example" # String | ID of this List
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -1414,7 +1414,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -1454,7 +1454,7 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 10, # Integer | Number of results to return
@@ -1475,7 +1475,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **limit** | **Integer**| Number of results to return | [optional] [default to 10]
  **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
 
@@ -1519,7 +1519,7 @@ account_id = "account_id_example" # String |
 
 list_id = "list_id_example" # String | ID of this List
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -1537,7 +1537,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
@@ -1577,7 +1577,7 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 10, # Integer | Number of results to return
@@ -1598,7 +1598,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **limit** | **Integer**| Number of results to return | [optional] [default to 10]
  **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
 
@@ -1642,7 +1642,7 @@ account_id = "account_id_example" # String |
 
 list_id = "list_id_example" # String | ID of this List
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 body = YextClient::Bio.new # Bio | 
 
@@ -1662,7 +1662,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **body** | [**Bio**](Bio.md)|  | 
 
 ### Return type
@@ -1705,7 +1705,7 @@ account_id = "account_id_example" # String |
 
 list_id = "list_id_example" # String | ID of this List
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 body = YextClient::Event.new # Event | 
 
@@ -1725,7 +1725,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **body** | [**Event**](Event.md)|  | 
 
 ### Return type
@@ -1768,7 +1768,7 @@ account_id = "account_id_example" # String |
 
 location_id = "location_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 location_request = YextClient::Location.new # Location | 
 
@@ -1788,7 +1788,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **location_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **location_request** | [**Location**](Location.md)|  | 
 
 ### Return type
@@ -1831,7 +1831,7 @@ account_id = "account_id_example" # String |
 
 list_id = "list_id_example" # String | ID of this List
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 body = YextClient::Menu.new # Menu | 
 
@@ -1851,7 +1851,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **body** | [**Menu**](Menu.md)|  | 
 
 ### Return type
@@ -1894,7 +1894,7 @@ account_id = "account_id_example" # String |
 
 list_id = "list_id_example" # String | ID of this List
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 body = YextClient::Product.new # Product | 
 
@@ -1914,7 +1914,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **body** | [**Product**](Product.md)|  | 
 
 ### Return type
@@ -1959,7 +1959,7 @@ location_id = "location_id_example" # String |
 
 language_code = "language_code_example" # String | Locale code
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 body = YextClient::Location.new # Location | 
 
@@ -1983,7 +1983,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **location_id** | **String**|  | 
  **language_code** | **String**| Locale code | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **body** | [**Location**](Location.md)|  | 
  **primary** | **BOOLEAN**| When present and set to true, the specified profile will become the location’s primary Language Profile | [optional] 
 
