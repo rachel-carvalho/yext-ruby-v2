@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**categories** | [**Array&lt;GoogleCategory&gt;**](GoogleCategory.md) | List of Google Fields | [optional] 
+**count** | **Integer** | Total number of Event ECLs that meet filter criteria (ignores limit / offset) | [optional] 
+**events** | [**Array&lt;Event&gt;**](Event.md) |  | [optional] 
 
 

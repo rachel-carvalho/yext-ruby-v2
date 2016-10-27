@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **create_comment**
-> InlineResponse2011 create_comment(account_id, review_id, v, opts)
+> InlineResponse2014 create_comment(account_id, review_id, v, opts)
 
 Comments: Create
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**InlineResponse2014**](InlineResponse2014.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 
 # **get_review**
-> InlineResponse20012 get_review(account_id, review_id, v)
+> InlineResponse20023 get_review(account_id, review_id, v)
 
 Reviews: Get
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**InlineResponse20023**](InlineResponse20023.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 
 # **list_reviews**
-> InlineResponse20011 list_reviews(account_id, v, opts)
+> InlineResponse20022 list_reviews(account_id, v, opts)
 
 Reviews: List
 
@@ -164,7 +164,7 @@ v = "v_example" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 100, # Integer | Number of results to return.
-  offset: 0, # Integer | Number of results to skip. Used to page through results
+  offset: 0 # Integer | Number of results to skip. Used to page through results
   location_ids: ["location_ids_example"], # Array<String> | When provided, only reviews for the requested locations will be returned.  By default, reviews will be returned for all locations subscribed to Review Monitoring.  **Example:** loc123,loc456,loc789 
   folder_id: "folder_id_example", # String | When provided, only reviews for locations in the given folder and its subfolders will be included in the results.
   countries: ["countries_example"], # Array<String> | When present, only reviews for locations in the given countries will be returned. Countries are denoted by ISO 3166 2-letter country codes.
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 

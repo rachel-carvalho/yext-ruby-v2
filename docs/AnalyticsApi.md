@@ -4,7 +4,7 @@ All URIs are relative to *https://api.yext.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**activity_log**](AnalyticsApi.md#activity_log) | **GET** /accounts/{accountId}/analytics/activity | Activity Log
+[**activity_log**](AnalyticsApi.md#activity_log) | **POST** /accounts/{accountId}/analytics/activity | Activity Log
 [**create_reports**](AnalyticsApi.md#create_reports) | **GET** /accounts/{accountId}/analytics/reports | Create Reports
 [**get_max_dates**](AnalyticsApi.md#get_max_dates) | **GET** /accounts/{accountId}/analytics/maxdates | Max Dates
 [**report_status**](AnalyticsApi.md#report_status) | **GET** /accounts/{accountId}/analytics/standardreports/{reportId} | Report Status
