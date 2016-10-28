@@ -58,6 +58,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_bio" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_bio" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.create_bio" if body.nil?
       # resource path
@@ -124,6 +128,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_event" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_event" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.create_event" if body.nil?
       # resource path
@@ -190,6 +198,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_location" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_location" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # verify the required parameter 'location_request' is set
       fail ArgumentError, "Missing the required parameter 'location_request' when calling LocationManagerApi.create_location" if location_request.nil?
       # resource path
@@ -256,6 +268,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_menu" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_menu" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.create_menu" if body.nil?
       # resource path
@@ -322,6 +338,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_product" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_product" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.create_product" if body.nil?
       # resource path
@@ -390,6 +410,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.delete_bio_list" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_bio_list" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/accounts/{accountId}/bios/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -456,6 +480,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.delete_event_list" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_event_list" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/events/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -526,6 +554,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'language_code' when calling LocationManagerApi.delete_language_profile" if language_code.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_language_profile" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}/profiles/{language_code}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s).sub('{' + 'language_code' + '}', language_code.to_s)
 
@@ -592,6 +624,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.delete_menu_list" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_menu_list" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/accounts/{accountId}/menus/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -658,6 +694,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.delete_product_list" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_product_list" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/products/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -724,6 +764,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.get_bio" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_bio" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/accounts/{accountId}/bios/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -790,7 +834,11 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_bios" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_bios" if v.nil?
-      if opts[:'limit'] > 50.0
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
+      if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_bios, must be smaller than or equal to 50.0.'
       end
 
@@ -858,6 +906,10 @@ module YextClient
       end
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_business_categories" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/categories".sub('{format}','json')
 
@@ -924,9 +976,13 @@ module YextClient
       end
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_custom_fields" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # verify the required parameter 'account_id' is set
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_custom_fields" if account_id.nil?
-      if opts[:'limit'] > 1000.0
+      if !opts[:'limit'].nil? && opts[:'limit'] > 1000.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_custom_fields, must be smaller than or equal to 1000.0.'
       end
 
@@ -998,6 +1054,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.get_event" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_event" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/events/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -1064,7 +1124,11 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_events" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_events" if v.nil?
-      if opts[:'limit'] > 50.0
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
+      if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_events, must be smaller than or equal to 50.0.'
       end
 
@@ -1128,6 +1192,10 @@ module YextClient
       end
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_google_keywords" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/googlefields".sub('{format}','json')
 
@@ -1198,6 +1266,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'language_code' when calling LocationManagerApi.get_language_profile" if language_code.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_language_profile" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}/profiles/{language_code}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s).sub('{' + 'language_code' + '}', language_code.to_s)
 
@@ -1264,6 +1336,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'location_id' when calling LocationManagerApi.get_language_profiles" if location_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_language_profiles" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}/profiles".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s)
 
@@ -1330,6 +1406,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'location_id' when calling LocationManagerApi.get_location" if location_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_location" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s)
 
@@ -1396,7 +1476,11 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_location_folders" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_location_folders" if v.nil?
-      if opts[:'limit'] > 1000.0
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
+      if !opts[:'limit'].nil? && opts[:'limit'] > 1000.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_location_folders, must be smaller than or equal to 1000.0.'
       end
 
@@ -1468,7 +1552,11 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_locations" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_locations" if v.nil?
-      if opts[:'limit'] > 50.0
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
+      if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_locations, must be smaller than or equal to 50.0.'
       end
 
@@ -1540,6 +1628,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.get_menu" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_menu" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/accounts/{accountId}/menus/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -1606,7 +1698,11 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_menus" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_menus" if v.nil?
-      if opts[:'limit'] > 50.0
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
+      if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_menus, must be smaller than or equal to 50.0.'
       end
 
@@ -1678,6 +1774,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.get_product" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_product" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/products/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -1744,7 +1844,11 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_products" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_products" if v.nil?
-      if opts[:'limit'] > 50.0
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
+      if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_products, must be smaller than or equal to 50.0.'
       end
 
@@ -1818,6 +1922,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.update_bio" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_bio" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.update_bio" if body.nil?
       # resource path
@@ -1888,6 +1996,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.update_event" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_event" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.update_event" if body.nil?
       # resource path
@@ -1958,6 +2070,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'location_id' when calling LocationManagerApi.update_location" if location_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_location" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # verify the required parameter 'location_request' is set
       fail ArgumentError, "Missing the required parameter 'location_request' when calling LocationManagerApi.update_location" if location_request.nil?
       # resource path
@@ -2028,6 +2144,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.update_menu" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_menu" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.update_menu" if body.nil?
       # resource path
@@ -2098,6 +2218,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.update_product" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_product" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.update_product" if body.nil?
       # resource path
@@ -2174,6 +2298,10 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'language_code' when calling LocationManagerApi.upsert_language_profile" if language_code.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.upsert_language_profile" if v.nil?
+      # verify enum value
+      unless ['20161012'].include?(v)
+        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
+      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.upsert_language_profile" if body.nil?
       # resource path

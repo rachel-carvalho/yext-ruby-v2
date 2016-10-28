@@ -82,7 +82,7 @@ describe 'Publisher' do
   describe 'test attribute "features"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', [])
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["DUAL_SYNC", "SUBMISSION", "SUPPRESSION", "SUPPRESS_BY_URL", "REVIEW_MONITORING", "PUBLISHER_SUGGESTIONS", "ANALYTICS"])
        #validator.allowable_values.each do |value|
        #  expect { @instance.features = value }.not_to raise_error
        #end

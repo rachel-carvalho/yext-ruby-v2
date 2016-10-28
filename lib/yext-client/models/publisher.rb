@@ -160,19 +160,7 @@ module YextClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      features_validator = EnumAttributeValidator.new('Array<String>', [])
-      return false unless features_validator.valid?(@features)
       return true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] features Object to be assigned
-    def features=(features)
-      validator = EnumAttributeValidator.new('Array<String>', [])
-      unless validator.valid?(features)
-        fail ArgumentError, "invalid value for 'features', must be one of #{validator.allowable_values}."
-      end
-      @features = features
     end
 
     # Checks equality by comparing each attribute.
@@ -260,7 +248,11 @@ module YextClient
         end
       else # model
         temp_model = YextClient.const_get(type).new
-        temp_model.build_from_hash(value)
+        if defined? temp_model.isEnum 
+          value.to_s
+        else
+          temp_model.build_from_hash(value)
+        end
       end
     end
 

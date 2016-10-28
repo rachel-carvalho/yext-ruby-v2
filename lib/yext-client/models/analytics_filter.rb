@@ -255,31 +255,7 @@ module YextClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      activity_types_validator = EnumAttributeValidator.new('Array<String>', [])
-      return false unless activity_types_validator.valid?(@activity_types)
-      actors_validator = EnumAttributeValidator.new('Array<String>', [])
-      return false unless actors_validator.valid?(@actors)
       return true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] activity_types Object to be assigned
-    def activity_types=(activity_types)
-      validator = EnumAttributeValidator.new('Array<String>', [])
-      unless validator.valid?(activity_types)
-        fail ArgumentError, "invalid value for 'activity_types', must be one of #{validator.allowable_values}."
-      end
-      @activity_types = activity_types
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] actors Object to be assigned
-    def actors=(actors)
-      validator = EnumAttributeValidator.new('Array<String>', [])
-      unless validator.valid?(actors)
-        fail ArgumentError, "invalid value for 'actors', must be one of #{validator.allowable_values}."
-      end
-      @actors = actors
     end
 
     # Checks equality by comparing each attribute.
@@ -378,7 +354,11 @@ module YextClient
         end
       else # model
         temp_model = YextClient.const_get(type).new
-        temp_model.build_from_hash(value)
+        if defined? temp_model.isEnum 
+          value.to_s
+        else
+          temp_model.build_from_hash(value)
+        end
       end
     end
 

@@ -111,32 +111,8 @@ module YextClient
     # @return true if the model is valid
     def valid?
       return false if @metrics.nil?
-      metrics_validator = EnumAttributeValidator.new('Array<String>', [])
-      return false unless metrics_validator.valid?(@metrics)
       return false if @dimensions.nil?
-      dimensions_validator = EnumAttributeValidator.new('Array<String>', [])
-      return false unless dimensions_validator.valid?(@dimensions)
       return true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] metrics Object to be assigned
-    def metrics=(metrics)
-      validator = EnumAttributeValidator.new('Array<String>', [])
-      unless validator.valid?(metrics)
-        fail ArgumentError, "invalid value for 'metrics', must be one of #{validator.allowable_values}."
-      end
-      @metrics = metrics
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] dimensions Object to be assigned
-    def dimensions=(dimensions)
-      validator = EnumAttributeValidator.new('Array<String>', [])
-      unless validator.valid?(dimensions)
-        fail ArgumentError, "invalid value for 'dimensions', must be one of #{validator.allowable_values}."
-      end
-      @dimensions = dimensions
     end
 
     # Checks equality by comparing each attribute.
@@ -219,7 +195,11 @@ module YextClient
         end
       else # model
         temp_model = YextClient.const_get(type).new
-        temp_model.build_from_hash(value)
+        if defined? temp_model.isEnum 
+          value.to_s
+        else
+          temp_model.build_from_hash(value)
+        end
       end
     end
 

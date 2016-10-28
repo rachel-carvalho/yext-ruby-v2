@@ -937,52 +937,169 @@ module YextClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+
+      if !@id.nil? && @id.to_s.length > 50
+        invalid_properties.push("invalid value for 'id', the character length must be smaller than or equal to 50.")
+      end
+
+
+      if !@account_id.nil? && @account_id.to_s.length > 50
+        invalid_properties.push("invalid value for 'account_id', the character length must be smaller than or equal to 50.")
+      end
+
+
+      if !@location_name.nil? && @location_name.to_s.length > 100
+        invalid_properties.push("invalid value for 'location_name', the character length must be smaller than or equal to 100.")
+      end
+
+
+      if !@address.nil? && @address.to_s.length > 255
+        invalid_properties.push("invalid value for 'address', the character length must be smaller than or equal to 255.")
+      end
+
+
+      if !@address2.nil? && @address2.to_s.length > 255
+        invalid_properties.push("invalid value for 'address2', the character length must be smaller than or equal to 255.")
+      end
+
+
+      if !@display_address.nil? && @display_address.to_s.length > 255
+        invalid_properties.push("invalid value for 'display_address', the character length must be smaller than or equal to 255.")
+      end
+
+
+      if !@city.nil? && @city.to_s.length > 80
+        invalid_properties.push("invalid value for 'city', the character length must be smaller than or equal to 80.")
+      end
+
+
+      if !@state.nil? && @state.to_s.length > 80
+        invalid_properties.push("invalid value for 'state', the character length must be smaller than or equal to 80.")
+      end
+
+
+      if !@zip.nil? && @zip.to_s.length > 10
+        invalid_properties.push("invalid value for 'zip', the character length must be smaller than or equal to 10.")
+      end
+
+
+      if !@country_code.nil? && @country_code.to_s.length > 2
+        invalid_properties.push("invalid value for 'country_code', the character length must be smaller than or equal to 2.")
+      end
+
+
+      if !@featured_message.nil? && @featured_message.to_s.length > 50
+        invalid_properties.push("invalid value for 'featured_message', the character length must be smaller than or equal to 50.")
+      end
+
+
+      if !@featured_message_url.nil? && @featured_message_url.to_s.length > 255
+        invalid_properties.push("invalid value for 'featured_message_url', the character length must be smaller than or equal to 255.")
+      end
+
+
+      if !@website_url.nil? && @website_url.to_s.length > 255
+        invalid_properties.push("invalid value for 'website_url', the character length must be smaller than or equal to 255.")
+      end
+
+
+      if !@display_website_url.nil? && @display_website_url.to_s.length > 255
+        invalid_properties.push("invalid value for 'display_website_url', the character length must be smaller than or equal to 255.")
+      end
+
+
+      if !@reservation_url.nil? && @reservation_url.to_s.length > 255
+        invalid_properties.push("invalid value for 'reservation_url', the character length must be smaller than or equal to 255.")
+      end
+
+
+      if !@hours.nil? && @hours.to_s.length > 255
+        invalid_properties.push("invalid value for 'hours', the character length must be smaller than or equal to 255.")
+      end
+
+
+      if !@additional_hours_text.nil? && @additional_hours_text.to_s.length > 255
+        invalid_properties.push("invalid value for 'additional_hours_text', the character length must be smaller than or equal to 255.")
+      end
+
+
+      if !@description.nil? && @description.to_s.length > 5000
+        invalid_properties.push("invalid value for 'description', the character length must be smaller than or equal to 5000.")
+      end
+
+
+      if !@twitter_handle.nil? && @twitter_handle.to_s.length > 15
+        invalid_properties.push("invalid value for 'twitter_handle', the character length must be smaller than or equal to 15.")
+      end
+
+
+      if !@google_website_override.nil? && @google_website_override.to_s.length > 255
+        invalid_properties.push("invalid value for 'google_website_override', the character length must be smaller than or equal to 255.")
+      end
+
+
+      if !@facebook_page_url.nil? && @facebook_page_url.to_s.length > 255
+        invalid_properties.push("invalid value for 'facebook_page_url', the character length must be smaller than or equal to 255.")
+      end
+
+
+      if !@uber_link_text.nil? && @uber_link_text.to_s.length > 100
+        invalid_properties.push("invalid value for 'uber_link_text', the character length must be smaller than or equal to 100.")
+      end
+
+
+      if !@uber_trip_branding_text.nil? && @uber_trip_branding_text.to_s.length > 28
+        invalid_properties.push("invalid value for 'uber_trip_branding_text', the character length must be smaller than or equal to 28.")
+      end
+
+
+      if !@year_established.nil? && @year_established.to_s.length > 4
+        invalid_properties.push("invalid value for 'year_established', the character length must be smaller than or equal to 4.")
+      end
+
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @id.to_s.length < 
-      return false if @account_id.to_s.length < 
-      return false if @location_name.to_s.length < 
+      return false if !@id.nil? && @id.to_s.length > 50
+      return false if !@account_id.nil? && @account_id.to_s.length > 50
+      return false if !@location_name.nil? && @location_name.to_s.length > 100
       gender_validator = EnumAttributeValidator.new('String', ["FEMALE", "F", "MALE", "M", "UNSPECIFIED"])
       return false unless gender_validator.valid?(@gender)
-      return false if @address.to_s.length < 
-      return false if @address2.to_s.length < 
-      return false if @display_address.to_s.length < 
-      return false if @city.to_s.length < 
-      return false if @state.to_s.length < 
-      return false if @zip.to_s.length < 
-      return false if @country_code.to_s.length < 
-      return false if @featured_message.to_s.length < 
-      return false if @featured_message_url.to_s.length < 
-      return false if @website_url.to_s.length < 
-      return false if @display_website_url.to_s.length < 
-      return false if @reservation_url.to_s.length < 
-      return false if @hours.to_s.length < 
-      return false if @additional_hours_text.to_s.length < 
-      return false if @description.to_s.length < 
-      return false if @twitter_handle.to_s.length < 
-      return false if @google_website_override.to_s.length < 
-      return false if @facebook_page_url.to_s.length < 
+      return false if !@address.nil? && @address.to_s.length > 255
+      return false if !@address2.nil? && @address2.to_s.length > 255
+      return false if !@display_address.nil? && @display_address.to_s.length > 255
+      return false if !@city.nil? && @city.to_s.length > 80
+      return false if !@state.nil? && @state.to_s.length > 80
+      return false if !@zip.nil? && @zip.to_s.length > 10
+      return false if !@country_code.nil? && @country_code.to_s.length > 2
+      return false if !@featured_message.nil? && @featured_message.to_s.length > 50
+      return false if !@featured_message_url.nil? && @featured_message_url.to_s.length > 255
+      return false if !@website_url.nil? && @website_url.to_s.length > 255
+      return false if !@display_website_url.nil? && @display_website_url.to_s.length > 255
+      return false if !@reservation_url.nil? && @reservation_url.to_s.length > 255
+      return false if !@hours.nil? && @hours.to_s.length > 255
+      return false if !@additional_hours_text.nil? && @additional_hours_text.to_s.length > 255
+      return false if !@description.nil? && @description.to_s.length > 5000
+      return false if !@twitter_handle.nil? && @twitter_handle.to_s.length > 15
+      return false if !@google_website_override.nil? && @google_website_override.to_s.length > 255
+      return false if !@facebook_page_url.nil? && @facebook_page_url.to_s.length > 255
       uber_link_type_validator = EnumAttributeValidator.new('String', ["TEXT", "BUTTON"])
       return false unless uber_link_type_validator.valid?(@uber_link_type)
-      return false if @uber_link_text.to_s.length < 
-      return false if @uber_trip_branding_text.to_s.length < 
-      return false if @year_established.to_s.length < 
+      return false if !@uber_link_text.nil? && @uber_link_text.to_s.length > 100
+      return false if !@uber_trip_branding_text.nil? && @uber_trip_branding_text.to_s.length > 28
+      return false if !@year_established.nil? && @year_established.to_s.length > 4
       return true
     end
 
     # Custom attribute writer method with validation
     # @param [Object] id Value to be assigned
     def id=(id)
-      if id.nil?
-        fail ArgumentError, "id cannot be nil"
-      end
 
-      if id.to_s.length < 
-        fail ArgumentError, "invalid value for 'id', the character length must be great than or equal to ."
+      if !id.nil? && id.to_s.length > 50
+        fail ArgumentError, "invalid value for 'id', the character length must be smaller than or equal to 50."
       end
 
       @id = id
@@ -991,12 +1108,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] account_id Value to be assigned
     def account_id=(account_id)
-      if account_id.nil?
-        fail ArgumentError, "account_id cannot be nil"
-      end
 
-      if account_id.to_s.length < 
-        fail ArgumentError, "invalid value for 'account_id', the character length must be great than or equal to ."
+      if !account_id.nil? && account_id.to_s.length > 50
+        fail ArgumentError, "invalid value for 'account_id', the character length must be smaller than or equal to 50."
       end
 
       @account_id = account_id
@@ -1005,12 +1119,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] location_name Value to be assigned
     def location_name=(location_name)
-      if location_name.nil?
-        fail ArgumentError, "location_name cannot be nil"
-      end
 
-      if location_name.to_s.length < 
-        fail ArgumentError, "invalid value for 'location_name', the character length must be great than or equal to ."
+      if !location_name.nil? && location_name.to_s.length > 100
+        fail ArgumentError, "invalid value for 'location_name', the character length must be smaller than or equal to 100."
       end
 
       @location_name = location_name
@@ -1029,12 +1140,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] address Value to be assigned
     def address=(address)
-      if address.nil?
-        fail ArgumentError, "address cannot be nil"
-      end
 
-      if address.to_s.length < 
-        fail ArgumentError, "invalid value for 'address', the character length must be great than or equal to ."
+      if !address.nil? && address.to_s.length > 255
+        fail ArgumentError, "invalid value for 'address', the character length must be smaller than or equal to 255."
       end
 
       @address = address
@@ -1043,12 +1151,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] address2 Value to be assigned
     def address2=(address2)
-      if address2.nil?
-        fail ArgumentError, "address2 cannot be nil"
-      end
 
-      if address2.to_s.length < 
-        fail ArgumentError, "invalid value for 'address2', the character length must be great than or equal to ."
+      if !address2.nil? && address2.to_s.length > 255
+        fail ArgumentError, "invalid value for 'address2', the character length must be smaller than or equal to 255."
       end
 
       @address2 = address2
@@ -1057,12 +1162,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] display_address Value to be assigned
     def display_address=(display_address)
-      if display_address.nil?
-        fail ArgumentError, "display_address cannot be nil"
-      end
 
-      if display_address.to_s.length < 
-        fail ArgumentError, "invalid value for 'display_address', the character length must be great than or equal to ."
+      if !display_address.nil? && display_address.to_s.length > 255
+        fail ArgumentError, "invalid value for 'display_address', the character length must be smaller than or equal to 255."
       end
 
       @display_address = display_address
@@ -1071,12 +1173,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] city Value to be assigned
     def city=(city)
-      if city.nil?
-        fail ArgumentError, "city cannot be nil"
-      end
 
-      if city.to_s.length < 
-        fail ArgumentError, "invalid value for 'city', the character length must be great than or equal to ."
+      if !city.nil? && city.to_s.length > 80
+        fail ArgumentError, "invalid value for 'city', the character length must be smaller than or equal to 80."
       end
 
       @city = city
@@ -1085,12 +1184,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] state Value to be assigned
     def state=(state)
-      if state.nil?
-        fail ArgumentError, "state cannot be nil"
-      end
 
-      if state.to_s.length < 
-        fail ArgumentError, "invalid value for 'state', the character length must be great than or equal to ."
+      if !state.nil? && state.to_s.length > 80
+        fail ArgumentError, "invalid value for 'state', the character length must be smaller than or equal to 80."
       end
 
       @state = state
@@ -1099,12 +1195,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] zip Value to be assigned
     def zip=(zip)
-      if zip.nil?
-        fail ArgumentError, "zip cannot be nil"
-      end
 
-      if zip.to_s.length < 
-        fail ArgumentError, "invalid value for 'zip', the character length must be great than or equal to ."
+      if !zip.nil? && zip.to_s.length > 10
+        fail ArgumentError, "invalid value for 'zip', the character length must be smaller than or equal to 10."
       end
 
       @zip = zip
@@ -1113,12 +1206,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] country_code Value to be assigned
     def country_code=(country_code)
-      if country_code.nil?
-        fail ArgumentError, "country_code cannot be nil"
-      end
 
-      if country_code.to_s.length < 
-        fail ArgumentError, "invalid value for 'country_code', the character length must be great than or equal to ."
+      if !country_code.nil? && country_code.to_s.length > 2
+        fail ArgumentError, "invalid value for 'country_code', the character length must be smaller than or equal to 2."
       end
 
       @country_code = country_code
@@ -1127,12 +1217,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] featured_message Value to be assigned
     def featured_message=(featured_message)
-      if featured_message.nil?
-        fail ArgumentError, "featured_message cannot be nil"
-      end
 
-      if featured_message.to_s.length < 
-        fail ArgumentError, "invalid value for 'featured_message', the character length must be great than or equal to ."
+      if !featured_message.nil? && featured_message.to_s.length > 50
+        fail ArgumentError, "invalid value for 'featured_message', the character length must be smaller than or equal to 50."
       end
 
       @featured_message = featured_message
@@ -1141,12 +1228,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] featured_message_url Value to be assigned
     def featured_message_url=(featured_message_url)
-      if featured_message_url.nil?
-        fail ArgumentError, "featured_message_url cannot be nil"
-      end
 
-      if featured_message_url.to_s.length < 
-        fail ArgumentError, "invalid value for 'featured_message_url', the character length must be great than or equal to ."
+      if !featured_message_url.nil? && featured_message_url.to_s.length > 255
+        fail ArgumentError, "invalid value for 'featured_message_url', the character length must be smaller than or equal to 255."
       end
 
       @featured_message_url = featured_message_url
@@ -1155,12 +1239,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] website_url Value to be assigned
     def website_url=(website_url)
-      if website_url.nil?
-        fail ArgumentError, "website_url cannot be nil"
-      end
 
-      if website_url.to_s.length < 
-        fail ArgumentError, "invalid value for 'website_url', the character length must be great than or equal to ."
+      if !website_url.nil? && website_url.to_s.length > 255
+        fail ArgumentError, "invalid value for 'website_url', the character length must be smaller than or equal to 255."
       end
 
       @website_url = website_url
@@ -1169,12 +1250,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] display_website_url Value to be assigned
     def display_website_url=(display_website_url)
-      if display_website_url.nil?
-        fail ArgumentError, "display_website_url cannot be nil"
-      end
 
-      if display_website_url.to_s.length < 
-        fail ArgumentError, "invalid value for 'display_website_url', the character length must be great than or equal to ."
+      if !display_website_url.nil? && display_website_url.to_s.length > 255
+        fail ArgumentError, "invalid value for 'display_website_url', the character length must be smaller than or equal to 255."
       end
 
       @display_website_url = display_website_url
@@ -1183,12 +1261,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] reservation_url Value to be assigned
     def reservation_url=(reservation_url)
-      if reservation_url.nil?
-        fail ArgumentError, "reservation_url cannot be nil"
-      end
 
-      if reservation_url.to_s.length < 
-        fail ArgumentError, "invalid value for 'reservation_url', the character length must be great than or equal to ."
+      if !reservation_url.nil? && reservation_url.to_s.length > 255
+        fail ArgumentError, "invalid value for 'reservation_url', the character length must be smaller than or equal to 255."
       end
 
       @reservation_url = reservation_url
@@ -1197,12 +1272,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] hours Value to be assigned
     def hours=(hours)
-      if hours.nil?
-        fail ArgumentError, "hours cannot be nil"
-      end
 
-      if hours.to_s.length < 
-        fail ArgumentError, "invalid value for 'hours', the character length must be great than or equal to ."
+      if !hours.nil? && hours.to_s.length > 255
+        fail ArgumentError, "invalid value for 'hours', the character length must be smaller than or equal to 255."
       end
 
       @hours = hours
@@ -1211,12 +1283,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] additional_hours_text Value to be assigned
     def additional_hours_text=(additional_hours_text)
-      if additional_hours_text.nil?
-        fail ArgumentError, "additional_hours_text cannot be nil"
-      end
 
-      if additional_hours_text.to_s.length < 
-        fail ArgumentError, "invalid value for 'additional_hours_text', the character length must be great than or equal to ."
+      if !additional_hours_text.nil? && additional_hours_text.to_s.length > 255
+        fail ArgumentError, "invalid value for 'additional_hours_text', the character length must be smaller than or equal to 255."
       end
 
       @additional_hours_text = additional_hours_text
@@ -1225,12 +1294,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] description Value to be assigned
     def description=(description)
-      if description.nil?
-        fail ArgumentError, "description cannot be nil"
-      end
 
-      if description.to_s.length < 
-        fail ArgumentError, "invalid value for 'description', the character length must be great than or equal to ."
+      if !description.nil? && description.to_s.length > 5000
+        fail ArgumentError, "invalid value for 'description', the character length must be smaller than or equal to 5000."
       end
 
       @description = description
@@ -1239,12 +1305,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] twitter_handle Value to be assigned
     def twitter_handle=(twitter_handle)
-      if twitter_handle.nil?
-        fail ArgumentError, "twitter_handle cannot be nil"
-      end
 
-      if twitter_handle.to_s.length < 
-        fail ArgumentError, "invalid value for 'twitter_handle', the character length must be great than or equal to ."
+      if !twitter_handle.nil? && twitter_handle.to_s.length > 15
+        fail ArgumentError, "invalid value for 'twitter_handle', the character length must be smaller than or equal to 15."
       end
 
       @twitter_handle = twitter_handle
@@ -1253,12 +1316,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] google_website_override Value to be assigned
     def google_website_override=(google_website_override)
-      if google_website_override.nil?
-        fail ArgumentError, "google_website_override cannot be nil"
-      end
 
-      if google_website_override.to_s.length < 
-        fail ArgumentError, "invalid value for 'google_website_override', the character length must be great than or equal to ."
+      if !google_website_override.nil? && google_website_override.to_s.length > 255
+        fail ArgumentError, "invalid value for 'google_website_override', the character length must be smaller than or equal to 255."
       end
 
       @google_website_override = google_website_override
@@ -1267,12 +1327,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] facebook_page_url Value to be assigned
     def facebook_page_url=(facebook_page_url)
-      if facebook_page_url.nil?
-        fail ArgumentError, "facebook_page_url cannot be nil"
-      end
 
-      if facebook_page_url.to_s.length < 
-        fail ArgumentError, "invalid value for 'facebook_page_url', the character length must be great than or equal to ."
+      if !facebook_page_url.nil? && facebook_page_url.to_s.length > 255
+        fail ArgumentError, "invalid value for 'facebook_page_url', the character length must be smaller than or equal to 255."
       end
 
       @facebook_page_url = facebook_page_url
@@ -1291,12 +1348,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] uber_link_text Value to be assigned
     def uber_link_text=(uber_link_text)
-      if uber_link_text.nil?
-        fail ArgumentError, "uber_link_text cannot be nil"
-      end
 
-      if uber_link_text.to_s.length < 
-        fail ArgumentError, "invalid value for 'uber_link_text', the character length must be great than or equal to ."
+      if !uber_link_text.nil? && uber_link_text.to_s.length > 100
+        fail ArgumentError, "invalid value for 'uber_link_text', the character length must be smaller than or equal to 100."
       end
 
       @uber_link_text = uber_link_text
@@ -1305,12 +1359,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] uber_trip_branding_text Value to be assigned
     def uber_trip_branding_text=(uber_trip_branding_text)
-      if uber_trip_branding_text.nil?
-        fail ArgumentError, "uber_trip_branding_text cannot be nil"
-      end
 
-      if uber_trip_branding_text.to_s.length < 
-        fail ArgumentError, "invalid value for 'uber_trip_branding_text', the character length must be great than or equal to ."
+      if !uber_trip_branding_text.nil? && uber_trip_branding_text.to_s.length > 28
+        fail ArgumentError, "invalid value for 'uber_trip_branding_text', the character length must be smaller than or equal to 28."
       end
 
       @uber_trip_branding_text = uber_trip_branding_text
@@ -1319,12 +1370,9 @@ module YextClient
     # Custom attribute writer method with validation
     # @param [Object] year_established Value to be assigned
     def year_established=(year_established)
-      if year_established.nil?
-        fail ArgumentError, "year_established cannot be nil"
-      end
 
-      if year_established.to_s.length < 
-        fail ArgumentError, "invalid value for 'year_established', the character length must be great than or equal to ."
+      if !year_established.nil? && year_established.to_s.length > 4
+        fail ArgumentError, "invalid value for 'year_established', the character length must be smaller than or equal to 4."
       end
 
       @year_established = year_established
@@ -1498,7 +1546,11 @@ module YextClient
         end
       else # model
         temp_model = YextClient.const_get(type).new
-        temp_model.build_from_hash(value)
+        if defined? temp_model.isEnum 
+          value.to_s
+        else
+          temp_model.build_from_hash(value)
+        end
       end
     end
 

@@ -202,7 +202,11 @@ module YextClient
         end
       else # model
         temp_model = YextClient.const_get(type).new
-        temp_model.build_from_hash(value)
+        if defined? temp_model.isEnum 
+          value.to_s
+        else
+          temp_model.build_from_hash(value)
+        end
       end
     end
 

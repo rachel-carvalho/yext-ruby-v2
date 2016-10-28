@@ -29,6 +29,10 @@ module YextClient
     LOCATION = "LOCATION".freeze
     HEALTHCARE_PROFESSIONAL = "HEALTHCARE_PROFESSIONAL".freeze
     HEALTHCARE_FACILITY = "HEALTHCARE_FACILITY".freeze
+
+    def isEnum
+      true
+    end
   end
 
 end

@@ -37,7 +37,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "v_example" # String | A date in `YYYYMMDD` format
 
 user_request = YextClient::User.new # User | 
 
@@ -56,7 +56,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
  **user_request** | [**User**](User.md)|  | 
 
 ### Return type
@@ -97,7 +97,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "v_example" # String | A date in `YYYYMMDD` format
 
 user_id = "user_id_example" # String | 
 
@@ -118,7 +118,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
  **user_id** | **String**|  | 
  **user_request** | [**User**](User.md)|  | 
 
@@ -160,7 +160,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "v_example" # String | A date in `YYYYMMDD` format
 
 task_ids = "task_ids_example" # String | Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  Defaults to all available Optimization Tasks in the account. 
 
@@ -183,7 +183,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
  **task_ids** | **String**| Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  Defaults to all available Optimization Tasks in the account.  | 
  **location_ids** | **String**| Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account.  | 
  **mode** | **String**| When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress.  | [default to PENDING_ONLY]
@@ -226,7 +226,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "v_example" # String | A date in `YYYYMMDD` format
 
 task_ids = "task_ids_example" # String | Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  Defaults to all available Optimization Tasks in the account. 
 
@@ -247,7 +247,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
  **task_ids** | **String**| Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  Defaults to all available Optimization Tasks in the account.  | 
  **location_ids** | **String**| Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account.  | 
 
@@ -289,7 +289,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "v_example" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -306,7 +306,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
 
 ### Return type
 
@@ -346,7 +346,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "v_example" # String | A date in `YYYYMMDD` format
 
 user_id = "user_id_example" # String | 
 
@@ -365,7 +365,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
  **user_id** | **String**|  | 
 
 ### Return type
@@ -406,7 +406,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "v_example" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 10, # Integer | Number of results to return
@@ -427,7 +427,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
  **limit** | **Integer**| Number of results to return | [optional] [default to 10]
  **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
 
@@ -469,7 +469,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "v_example" # String | A date in `YYYYMMDD` format
 
 user_id = "user_id_example" # String | 
 
@@ -490,7 +490,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
  **user_id** | **String**|  | 
  **user_request** | [**User**](User.md)|  | 
 
