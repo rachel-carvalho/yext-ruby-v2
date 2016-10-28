@@ -24,15 +24,15 @@ limitations under the License.
 require 'date'
 
 module YextClient
-  # <msg>Area that is served by this location. It may be specified as a radius from the location's address or as a list of cities and/or postal codes.</msg>  <msg desc=\"Google My Business and serviceArea should not be translated\">**Only for Google My Business:** Currently, **serviceArea** is only supported by Google My Business and will not affect your listings on other sites.</msg> 
+  # Area that is served by this location. It may be specified as a radius from the location's address or as a list of cities and/or postal codes.  **Only for Google My Business:** Currently, **serviceArea** is only supported by Google My Business and will not affect your listings on other sites. 
   class LocationServiceArea
-    # <msg>The distance around the location that the business serves</msg>  <msg desc=\"unit and radius are constants and should not be translated\">**Requires unit:** If the service area is specified with **radius**, a value for **unit** must also be specified</msg>. 
+    # The distance around the location that the business serves  **Requires unit:** If the service area is specified with **radius**, a value for **unit** must also be specified. 
     attr_accessor :radius
 
-    # <msg>The unit in which radius is measured.</msg>  <msg desc=\"Header before a list of possible values\">One of:</msg> * km - <msg>kilometers</msg> * mi - <msg>miles</msg> 
+    # The unit in which radius is measured.  One of: * km - kilometers * mi - miles 
     attr_accessor :unit
 
-    # <msg>A list of places served by the location, where each place is either:</msg> <msg desc=\"A list of possible values for a field\">* a postal code, or * the name of a city.</msg> 
+    # A list of places served by the location, where each place is either: * a postal code, or * the name of a city. 
     attr_accessor :places
 
 

@@ -24,12 +24,12 @@ limitations under the License.
 require 'date'
 
 module YextClient
-  # <msg>A set of field-value pairs indicating whether the location is closed and, if it is closed, the date of its closing.</msg>  <msg desc=\"GET and PUT are HTTP verbs and may not need to be translated\">**NOTE:** This field does not appear in the GET response unless it has been explicitly set in a PUT request.</msg> 
+  # A set of field-value pairs indicating whether the location is closed and, if it is closed, the date of its closing.  **NOTE:** This field does not appear in the GET response unless it has been explicitly set in a PUT request. 
   class LocationClosed
-    # <msg>Indicates whether the location is closed</msg>
+    # Indicates whether the location is closed
     attr_accessor :is_closed
 
-    # <msg desc=\"closeDate, isClosed, true, and false are constants and should not be translated\">The closing date of the location * You cannot specify a value for **closeDate** if **isClosed** is false. * If you specify a value for **closeDate** but not for **isClosed**, **isClosed** is automatically added and set to true.</msg> 
+    # The closing date of the location * You cannot specify a value for **closeDate** if **isClosed** is false. * If you specify a value for **closeDate** but not for **isClosed**, **isClosed** is automatically added and set to true. 
     attr_accessor :close_date
 
 

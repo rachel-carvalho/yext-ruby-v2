@@ -26,271 +26,271 @@ require 'date'
 module YextClient
 
   class Location
-    # <msg desc=\"Describes an identifier field\">Primary key. Unique alphanumeric (Latin-1) ID assigned by the Customer.</msg>
+    # Primary key. Unique alphanumeric (Latin-1) ID assigned by the Customer.
     attr_accessor :id
 
-    # <msg desc=\"Describes an accountId field. account.id should not be translated\">Must refer to an **account.id** that already exists.</msg>
+    # Must refer to an **account.id** that already exists.
     attr_accessor :account_id
 
-    # <msg desc=\"Describes a timestamp field\">The timestamp of the most recent change to this location record.  Will be ignored when the client is saving location data to Yext.</msg>  <msg>**NOTE:** The timestamp may change even if observable fields stay the same.</msg> 
+    # The timestamp of the most recent change to this location record.  Will be ignored when the client is saving location data to Yext.  **NOTE:** The timestamp may change even if observable fields stay the same. 
     attr_accessor :timestamp
 
     attr_accessor :location_type
 
-    # <msg desc=\"Control character examples in parentheses do not get translated\">Cannot include: * inappropriate language * HTML markup or entities * a URL or domain name * a phone number * control characters ([\\x00-\\x1F\\x7F])</msg>  <msg>Should be in appropriate letter case (e.g., not in all capital letters)</msg> 
+    # Cannot include: * inappropriate language * HTML markup or entities * a URL or domain name * a phone number * control characters ([\\x00-\\x1F\\x7F])  Should be in appropriate letter case (e.g., not in all capital letters) 
     attr_accessor :location_name
 
-    # <msg>The first name of the healthcare professional</msg>  <msg desc=\"locationType and HEALTHCARE_PROFESSIONAL should not be translated\">**NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL.</msg> 
+    # The first name of the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :first_name
 
-    # <msg>The middle name of the healthcare professional</msg>  <msg desc=\"locationType and HEALTHCARE_PROFESSIONAL should not be translated\">**NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL.</msg> 
+    # The middle name of the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :middle_name
 
-    # <msg>The last name of the healthcare professional</msg>  <msg desc=\"locationType and HEALTHCARE_PROFESSIONAL should not be translated\">**NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL.</msg> 
+    # The last name of the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :last_name
 
-    # <msg desc=\"locationName should not be translated\">The name of the office where the healthcare professional works, if different from **locationName**</msg>  <msg desc=\"locationType and HEALTHCARE_PROFESSIONAL should not be translated\">**NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL.</msg> 
+    # The name of the office where the healthcare professional works, if different from **locationName**  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :office_name
 
-    # <msg>The gender of the healthcare professional</msg>  <msg desc=\"locationType and HEALTHCARE_PROFESSIONAL should not be translated\">**NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL.</msg> 
+    # The gender of the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :gender
 
-    # <msg>The National Provider Identifier (NPI) of the healthcare provider</msg>  <msg desc=\"locationType, HEALTHCARE_PROFESSIONAL, and HEALTHCARE_FACILITY should not be translated\">**NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL or HEALTHCARE_FACILITY.</msg> 
+    # The National Provider Identifier (NPI) of the healthcare provider  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL or HEALTHCARE_FACILITY. 
     attr_accessor :npi
 
-    # <msg desc=\"Describes an address field\">Must be a valid address</msg>  <msg>Cannot be a P.O. Box</msg> 
+    # Must be a valid address  Cannot be a P.O. Box 
     attr_accessor :address
 
-    # <msg>Cannot be a P.O. Box</msg>
+    # Cannot be a P.O. Box
     attr_accessor :address2
 
-    # <msg desc=\"true and false are constants and should not be translated\">If true, do not show street address on listings. Defaults to false.</msg>
+    # If true, do not show street address on listings. Defaults to false.
     attr_accessor :suppress_address
 
-    # <msg desc=\"Describes a location field\">Provides additional information to help consumers get to the location. This string appears along with the location's address (e.g. In Menlo Mall, 3rd Floor).</msg>  <msg desc=\"Describes a location field. supportAddress and true are constants and should not be translated\">It may also be used in conjunction with a hidden address (i.e., when **suppressAddress** is true) to give consumers information about where the location is found (e.g., Servicing the New York area).</msg>  <msg>Cannot be a P.O. Box</msg> 
+    # Provides additional information to help consumers get to the location. This string appears along with the location's address (e.g. In Menlo Mall, 3rd Floor).  It may also be used in conjunction with a hidden address (i.e., when **suppressAddress** is true) to give consumers information about where the location is found (e.g., Servicing the New York area).  Cannot be a P.O. Box 
     attr_accessor :display_address
 
     attr_accessor :city
 
-    # <msg desc=\"Describes a location state field. DC is a constant and should not be translated\">The two-character state code, or DC for the District of Columbia</msg>
+    # The two-character state code, or DC for the District of Columbia
     attr_accessor :state
 
-    # <msg desc=\"Describes a location postal code field\">The five- or nine-digit ZIP code (the hyphen is optional)</msg>
+    # The five- or nine-digit ZIP code (the hyphen is optional)
     attr_accessor :zip
 
-    # <msg desc=\"Describes a location country field. US is a constant and should not be translated\">The country code (two-character ISO 3166-1) of the location's country . US is the only valid value.</msg>
+    # The country code (two-character ISO 3166-1) of the location's country . US is the only valid value.
     attr_accessor :country_code
 
     attr_accessor :service_area
 
-    # <msg>Must be a valid 10-digit phone number.</msg>
+    # Must be a valid 10-digit phone number.
     attr_accessor :phone
 
-    # <msg desc=\"true and **phone** should not be translated\">Set to true if the number listed in **phone** is a tracked phone number.</msg>  <msg desc=\"isPhoneTracked and phone are constants and should not be translated. Request is a HTTP request\">**NOTE:** When updating **isPhoneTracked**, you must provide a value for **phone** in the same request.</msg> 
+    # Set to true if the number listed in **phone** is a tracked phone number.  **NOTE:** When updating **isPhoneTracked**, you must provide a value for **phone** in the same request. 
     attr_accessor :is_phone_tracked
 
-    # <msg>Must be a valid, non-toll-free 10-digit phone number.</msg>  <msg desc=\"isPhoneTracked and phone are constants and should not be translated\">Required if: * **isPhoneTracked** is true and the non-tracked number is a toll-free number, **OR** * **isPhoneTracked** is false and **phone** is a toll-free number</msg> 
+    # Must be a valid, non-toll-free 10-digit phone number.  Required if: * **isPhoneTracked** is true and the non-tracked number is a toll-free number, **OR** * **isPhoneTracked** is false and **phone** is a toll-free number 
     attr_accessor :local_phone
 
-    # <msg>Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.</msg>
+    # Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.
     attr_accessor :alternate_phone
 
-    # <msg>Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.</msg>
+    # Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.
     attr_accessor :fax_phone
 
-    # <msg>Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.</msg>
+    # Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.
     attr_accessor :mobile_phone
 
-    # <msg>Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.</msg>
+    # Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.
     attr_accessor :toll_free_phone
 
-    # <msg>Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.</msg>
+    # Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.
     attr_accessor :tty_phone
 
-    # <msg>Yext Category IDs. A Location must have at least one and at most 10 Categories.</msg>  <msg>IDs must be valid and selectable (i.e., cannot be parent categories).</msg>  <msg>**NOTE:** The list of category IDs that you send us must be comprehensive. For example, if you send us a list of IDs that does not include IDs that you sent in your last update, Yext considers the missing categories to be deleted, and we remove them from your listings.</msg> 
+    # Yext Category IDs. A Location must have at least one and at most 10 Categories.  IDs must be valid and selectable (i.e., cannot be parent categories).  **NOTE:** The list of category IDs that you send us must be comprehensive. For example, if you send us a list of IDs that does not include IDs that you sent in your last update, Yext considers the missing categories to be deleted, and we remove them from your listings. 
     attr_accessor :category_ids
 
-    # <msg desc=\"Call today! should not be translated\">The Featured Message. Default: Call today!</msg>  <msg>Cannot include: * inappropriate language * HTML markup * a URL or domain name * a phone number * control characters ([\\x00-\\x1F\\x7F]) * insufficient spacing</msg>  <msg>If you submit a Featured Message that contains profanity or more than 50 characters, it will be ignored. The success response will contain a warning message explaining why your Featured Message wasn't stored in the system.</msg> 
+    # The Featured Message. Default: Call today!  Cannot include: * inappropriate language * HTML markup * a URL or domain name * a phone number * control characters ([\\x00-\\x1F\\x7F]) * insufficient spacing  If you submit a Featured Message that contains profanity or more than 50 characters, it will be ignored. The success response will contain a warning message explaining why your Featured Message wasn't stored in the system. 
     attr_accessor :featured_message
 
-    # <msg>Valid URL to which the Featured Message is linked</msg>
+    # Valid URL to which the Featured Message is linked
     attr_accessor :featured_message_url
 
-    # <msg desc=\"displayWebsiteUrl should not be translated\">The URL of the location's website. This URL will be shown on your listings unless you specify a value for **displayWebsiteUrl**.</msg>  <msg desc=\"displayWebsiteUrl should not be translated\">Must be a valid URL and is required whenever **displayWebsiteUrl** is specified</msg> 
+    # The URL of the location's website. This URL will be shown on your listings unless you specify a value for **displayWebsiteUrl**.  Must be a valid URL and is required whenever **displayWebsiteUrl** is specified 
     attr_accessor :website_url
 
-    # <msg desc=\"displayWebsiteUrl and websiteUrl should not be translated\">The URL that is shown on your listings in place of **websiteUrl**. You can use **displayWebsiteUrl** to display a short, memorable web address that redirects consumers to the URL given in **websiteUrl**.</msg>  <msg desc=\"websiteUrl should not be translated\">Must be a valid URL and be specified along with **websiteUrl**</msg> 
+    # The URL that is shown on your listings in place of **websiteUrl**. You can use **displayWebsiteUrl** to display a short, memorable web address that redirects consumers to the URL given in **websiteUrl**.  Must be a valid URL and be specified along with **websiteUrl** 
     attr_accessor :display_website_url
 
-    # <msg>A valid URL used for reservations at this location</msg>
+    # A valid URL used for reservations at this location
     attr_accessor :reservation_url
 
-    # <msg desc=\"Describes the format of a field containing a location's hours of operation. **holidayHours** and **hours** are constants and should not be translated. closed is a constant when used as a value and should not be translated.\">Hours should be submitted as a comma-separated list of days, where each day's hours are specified as follows:  d:oh:om:ch:cm * d = day of the week –   * 1 – Sunday   * 2 – Monday   * 3 – Tuesday   * 4 – Wednesday   * 5 – Thursday   * 6 – Friday   * 7 – Saturday * oh:om = opening time in 24-hour format * ch:cm = closing time in 24-hour format  Times with single-digit hours (e.g., 9 AM) can be submitted with or without a leading zero (9:00 or 09:00).  **Example:** open 9 AM to 5 PM Monday and Tuesday, open 10 AM to 4 PM on Saturday – 2:9:00:17:00,3:9:00:17:00,7:10:00:16:00  SPECIAL CASES: * To indicate that a location is open 24 hours on a specific day, set 00:00 as both the opening and closing time for that day.   * **Example:** open all day on Saturdays – 7:00:00:00:00 * To indicate that a location is closed on a specific day, omit that day from the list or set it as closed (\"closed\" is not case sensitive).   * **Example:** closed on Sundays – 1:closed   * **NOTE:** If a location is closed seven days a week, set at least one day to closed. Otherwise, **hours** is an empty string, and we assume you are not submitting hours information for that location. * To indicate that a location has split hours on a specific day, submit a set of hours for each block of time the location is open.   * **Example:** open from 9:00 AM to 12:00 PM and again from 1:00 PM to 5:00 PM on Mondays – 2:9:00:12:00,2:13:00:17:00  **NOTE:** To set hours for specific days of the year rather than days of the week, use **holidayHours**.</msg> 
+    # Hours should be submitted as a comma-separated list of days, where each day's hours are specified as follows:  d:oh:om:ch:cm * d = day of the week –   * 1 – Sunday   * 2 – Monday   * 3 – Tuesday   * 4 – Wednesday   * 5 – Thursday   * 6 – Friday   * 7 – Saturday * oh:om = opening time in 24-hour format * ch:cm = closing time in 24-hour format  Times with single-digit hours (e.g., 9 AM) can be submitted with or without a leading zero (9:00 or 09:00).  **Example:** open 9 AM to 5 PM Monday and Tuesday, open 10 AM to 4 PM on Saturday – 2:9:00:17:00,3:9:00:17:00,7:10:00:16:00  SPECIAL CASES: * To indicate that a location is open 24 hours on a specific day, set 00:00 as both the opening and closing time for that day.   * **Example:** open all day on Saturdays – 7:00:00:00:00 * To indicate that a location is closed on a specific day, omit that day from the list or set it as closed (\"closed\" is not case sensitive).   * **Example:** closed on Sundays – 1:closed   * **NOTE:** If a location is closed seven days a week, set at least one day to closed. Otherwise, **hours** is an empty string, and we assume you are not submitting hours information for that location. * To indicate that a location has split hours on a specific day, submit a set of hours for each block of time the location is open.   * **Example:** open from 9:00 AM to 12:00 PM and again from 1:00 PM to 5:00 PM on Mondays – 2:9:00:12:00,2:13:00:17:00  **NOTE:** To set hours for specific days of the year rather than days of the week, use **holidayHours**. 
     attr_accessor :hours
 
-    # <msg desc=\"**hours** should not be translated\">Additional information about business hours that does not fit in **hours** (e.g., Closed during the winter)</msg>
+    # Additional information about business hours that does not fit in **hours** (e.g., Closed during the winter)
     attr_accessor :additional_hours_text
 
-    # <msg>Holiday hours for this location.</msg>  <msg desc=\"hours and holidayHours are constants and should not be translated\">**NOTE:** hours must be set in order for holidayHours to appear on your listings)</msg> 
+    # Holiday hours for this location.  **NOTE:** hours must be set in order for holidayHours to appear on your listings) 
     attr_accessor :holiday_hours
 
     attr_accessor :description
 
-    # <msg>A list of the conditions treated by the healthcare provider</msg>  <msg desc=\"locationType, HEALTHCARE_PROFESSIONAL, and HEALTHCARE_FACILITY should not be translated\">**NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL or HEALTHCARE_FACILITY.</msg> 
+    # A list of the conditions treated by the healthcare provider  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL or HEALTHCARE_FACILITY. 
     attr_accessor :conditions_treated
 
-    # <msg>A list of the certifications held by the healthcare professional</msg>  <msg desc=\"locationType and HEALTHCARE_PROFESSIONAL should not be translated\">**NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL.</msg> 
+    # A list of the certifications held by the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :certifications
 
-    # <msg>A list of the types of education and training completed by the healthcare professional</msg>  <msg desc=\"locationType and HEALTHCARE_PROFESSIONAL should not be translated\">**NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL.</msg> 
+    # A list of the types of education and training completed by the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :education_list
 
-    # <msg>A list of hospitals where the healthcare professional admits patients</msg>  <msg desc=\"locationType and HEALTHCARE_PROFESSIONAL should not be translated\">**NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL.</msg> 
+    # A list of hospitals where the healthcare professional admits patients  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :admitting_hospitals
 
-    # <msg>Indicates whether the healthcare provider is accepting new patients</msg>  <msg desc=\"true is a constant and should not be translated\">Default is true</msg>  <msg desc=\"locationType, HEALTHCARE_PROFESSIONAL, and HEALTHCARE_FACILITY should not be translated\">**NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL or HEALTHCARE_FACILITY.</msg> 
+    # Indicates whether the healthcare provider is accepting new patients  Default is true  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL or HEALTHCARE_FACILITY. 
     attr_accessor :accepting_new_patients
 
     attr_accessor :closed
 
-    # <msg>The payment methods accepted at this location</msg>  <msg>Valid elements depend on the location's country. For US locations, valid elements are:</msg> * AMERICANEXPRESS * CASH * CHECK * DINERSCLUB * DISCOVER * FINANCING * INVOICE * MASTERCARD * TRAVELERSCHECK * VISA 
+    # The payment methods accepted at this location  Valid elements depend on the location's country. For US locations, valid elements are: * AMERICANEXPRESS * CASH * CHECK * DINERSCLUB * DISCOVER * FINANCING * INVOICE * MASTERCARD * TRAVELERSCHECK * VISA 
     attr_accessor :payment_options
 
-    # <msg>A list of insurance policies accepted by the healthcare provider</msg>  <msg desc=\"locationType and HEALTHCARE_PROFESSIONAL should not be translated\">**NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL.</msg> 
+    # A list of insurance policies accepted by the healthcare provider  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :insurance_accepted
 
     attr_accessor :logo
 
-    # <msg>Up to 50 Photos.</msg>  <msg>**NOTE:** The list of photos that you send us must be comprehensive. For example, if you send us a list of photos that does not include photos that you sent in your last update, Yext considers the missing photos to be deleted, and we remove them from your listings.</msg> 
+    # Up to 50 Photos.  **NOTE:** The list of photos that you send us must be comprehensive. For example, if you send us a list of photos that does not include photos that you sent in your last update, Yext considers the missing photos to be deleted, and we remove them from your listings. 
     attr_accessor :photos
 
-    # <msg>A portrait of the healthcare professional</msg>  <msg desc=\"locationType and HEALTHCARE_PROFESSIONAL should not be translated\">**NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL.</msg> 
+    # A portrait of the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :headshot
 
-    # <msg>Valid YouTube URLs for embedding a video on some publisher sites.</msg>  <msg>**NOTE:** Currently, only the first URL in the Array appears in your listings.</msg> 
+    # Valid YouTube URLs for embedding a video on some publisher sites.  **NOTE:** Currently, only the first URL in the Array appears in your listings. 
     attr_accessor :video_urls
 
-    # <msg>Valid Instagram username for the location (e.g., NewCityFiat (without the leading \"@\"))</msg>
+    # Valid Instagram username for the location (e.g., NewCityFiat (without the leading \"@\"))
     attr_accessor :instagram_handle
 
-    # <msg>Valid Twitter handle for the location (e.g., JohnSmith (without the leading '@')).</msg> <msg>If you submit an invalid Twitter handle, it will be ignored. The success response will contain a warning message explaining why your Twitter handle wasn't stored in the system.</msg>
+    # Valid Twitter handle for the location (e.g., JohnSmith (without the leading '@')). If you submit an invalid Twitter handle, it will be ignored. The success response will contain a warning message explaining why your Twitter handle wasn't stored in the system.
     attr_accessor :twitter_handle
 
-    # <msg desc=\"Google My Business and websiteUrl should not be translated\">The URL you would like to submit to Google My Business in place of the one given in **websiteUrl** (if applicable).</msg>  <msg>For example, if you want to analyze the traffic driven by your Google listings separately from other traffic, enter the alternate URL that you will use for tracking in this field.</msg> 
+    # The URL you would like to submit to Google My Business in place of the one given in **websiteUrl** (if applicable).  For example, if you want to analyze the traffic driven by your Google listings separately from other traffic, enter the alternate URL that you will use for tracking in this field. 
     attr_accessor :google_website_override
 
-    # <msg>The cover photo for your business's Google profile</msg>  <msg>NOTE: Your cover photo must meet all of the following requirements: * have a 16:9 aspect ratio * be at least 480 x 270 pixels * be no more than 2120 x 1192 pixels</msg> 
+    # The cover photo for your business's Google profile  NOTE: Your cover photo must meet all of the following requirements: * have a 16:9 aspect ratio * be at least 480 x 270 pixels * be no more than 2120 x 1192 pixels 
     attr_accessor :google_cover_photo
 
-    # <msg>The profile photo for your business's Google profile</msg>  <msg>**NOTE:** Your profile picture must meet all of the following requirements: * be a square * be at least 200 x 200 pixels * be no more than 500 x 500 pixels</msg> 
+    # The profile photo for your business's Google profile  **NOTE:** Your profile picture must meet all of the following requirements: * be a square * be at least 200 x 200 pixels * be no more than 500 x 500 pixels 
     attr_accessor :google_profile_photo
 
-    # <msg>The photo Google will consider first when deciding which photo display with the location's business information on Google Maps or Search</msg>  <msg desc=\"UNSPECIFIED, COVER, PROFILE, googleCoverPhoto, and googleProfilePhoto are constants and should not be translated\">One of: * UNSPECIFIED (default) * COVER - the photo in **googleCoverPhoto** * PROFILE - the photo in **googleProfilePhoto**</msg>  <msg desc=\"googlePreferredPhoto and UNSPECIFIED should not be translated\">**NOTE:** If the value of a location's **googlePreferredPhoto** is UNSPECIFIED, **googlePreferredPhoto** will be omitted from the location's data in responses.</msg> 
+    # The photo Google will consider first when deciding which photo display with the location's business information on Google Maps or Search  One of: * UNSPECIFIED (default) * COVER - the photo in **googleCoverPhoto** * PROFILE - the photo in **googleProfilePhoto**  **NOTE:** If the value of a location's **googlePreferredPhoto** is UNSPECIFIED, **googlePreferredPhoto** will be omitted from the location's data in responses. 
     attr_accessor :google_preferred_photo
 
-    # <msg desc=\"Google My Business should not be translated\">The Google My Business attributes for this location.</msg> 
+    # The Google My Business attributes for this location. 
     attr_accessor :google_attributes
 
-    # <msg>URL for the location's Facebook Page.</msg>  <msg desc=\"Describes valid URL formats. URLs should not be translated. facebookPageUrl should not be translated\">Valid formats: * facebook.com/profile.php?id=[numId] * facebook.com/group.php?gid=[numId] * facebook.com/groups/[numId] * facebook.com/[Name] * facebook.com/pages/[Name]/[numId]  where [Name] is a String and [numId] is an Integer  If you submit a URL that is not in one of the valid formats, it will be ignored. The success response will contain a warning message explaining why the URL wasn't stored in the system.  **NOTE:** This value is automatically set to the location's Facebook Page URL. You can only manually set **facebookPageUrl** if the location meets one of the following criteria: * It is not subscribed to a Listings package that contains Facebook. * It is opted out of Facebook.</msg> 
+    # URL for the location's Facebook Page.  Valid formats: * facebook.com/profile.php?id=[numId] * facebook.com/group.php?gid=[numId] * facebook.com/groups/[numId] * facebook.com/[Name] * facebook.com/pages/[Name]/[numId]  where [Name] is a String and [numId] is an Integer  If you submit a URL that is not in one of the valid formats, it will be ignored. The success response will contain a warning message explaining why the URL wasn't stored in the system.  **NOTE:** This value is automatically set to the location's Facebook Page URL. You can only manually set **facebookPageUrl** if the location meets one of the following criteria: * It is not subscribed to a Listings package that contains Facebook. * It is opted out of Facebook. 
     attr_accessor :facebook_page_url
 
-    # <msg>The cover photo for your business's Facebook profile  Displayed as a 851 x 315 pixel image  You must have a cover photo in order for your listing to appear on Facebook.  **NOTE:** Your cover photo must be at least 400 pixels wide.</msg> 
+    # The cover photo for your business's Facebook profile  Displayed as a 851 x 315 pixel image  You must have a cover photo in order for your listing to appear on Facebook.  **NOTE:** Your cover photo must be at least 400 pixels wide. 
     attr_accessor :facebook_cover_photo
 
-    # <msg>The profile picture for your business's Facebook profile  You must have a profile picture in order for your listing to appear on Facebook.  **NOTE:** Your profile picture must be larger than 180 x 180 pixels.</msg> 
+    # The profile picture for your business's Facebook profile  You must have a profile picture in order for your listing to appear on Facebook.  **NOTE:** Your profile picture must be larger than 180 x 180 pixels. 
     attr_accessor :facebook_profile_picture
 
-    # <msg desc=\"Uber is a company name and should not be translated\">Indicates whether the embedded Uber link for this location appears as text or a button</msg>  <msg desc=\"Uber is a company name and should not be translated\">When consumers click on this link on a mobile device, the Uber app (if installed) will open with your location set as the trip destination. If the Uber app is not installed, the consumer will be prompted to download it.</msg> 
+    # Indicates whether the embedded Uber link for this location appears as text or a button  When consumers click on this link on a mobile device, the Uber app (if installed) will open with your location set as the trip destination. If the Uber app is not installed, the consumer will be prompted to download it. 
     attr_accessor :uber_link_type
 
-    # <msg desc=\"Uber is a company name and should not be translated\">The text of the embedded Uber link</msg>  <msg desc=\"'Ride there with Uber' is a constant and should not be translated\">Default is Ride there with Uber.</msg>  <msg desc=\"uberLinkType and TEXT are constants and should not be translated\">**NOTE:** This field is only available if **uberLinkType** is TEXT.</msg> 
+    # The text of the embedded Uber link  Default is Ride there with Uber.  **NOTE:** This field is only available if **uberLinkType** is TEXT. 
     attr_accessor :uber_link_text
 
-    # <msg desc=\"Uber is a company name and should not be translated\">The text of the call-to-action that will appear in the Uber app during a trip to your location (e.g., Check out our menu!)</msg>  <msg desc=\"uberTripBrandingText and uberTripBrandingUrl are constants and should not be translated\">**NOTE:** If a value for **uberTripBrandingText** is provided, a value must also be provided for **uberTripBrandingUrl**.</msg> 
+    # The text of the call-to-action that will appear in the Uber app during a trip to your location (e.g., Check out our menu!)  **NOTE:** If a value for **uberTripBrandingText** is provided, a value must also be provided for **uberTripBrandingUrl**. 
     attr_accessor :uber_trip_branding_text
 
-    # <msg desc=\"Uber is a company name and should not be translated\">The URL that the consumer will be redirected to when tapping on the call-to-action in the Uber app during a trip to your location.</msg>  <msg desc=\"uberTripBrandingUrl and uberTripBrandingText are constants and should not be translated\">**NOTE:** If a value for **uberTripBrandingUrl** is provided, a value must also be provided for **uberTripBrandingText**.</msg> 
+    # The URL that the consumer will be redirected to when tapping on the call-to-action in the Uber app during a trip to your location.  **NOTE:** If a value for **uberTripBrandingUrl** is provided, a value must also be provided for **uberTripBrandingText**. 
     attr_accessor :uber_trip_branding_url
 
-    # <msg desc=\"uberTripBrandingText and uberTripBrandingUrl are constants and should not be translated\">The ID that enables **uberTripBrandingText** and **uberTripBrandingUrl**.</msg> <msg>For more information, contact your Account Manager.</msg>
+    # The ID that enables **uberTripBrandingText** and **uberTripBrandingUrl**. For more information, contact your Account Manager.
     attr_accessor :uber_client_id
 
-    # <msg desc=\"Uber is a company name and should not be translated\">The Yext-powered code that can be copied and pasted into the markup of emails or web pages where the embedded Uber link should appear</msg>
+    # The Yext-powered code that can be copied and pasted into the markup of emails or web pages where the embedded Uber link should appear
     attr_accessor :uber_embed_code
 
-    # <msg desc=\"Uber is a company name and should not be translated\">The Yext-powered link that can be copied and pasted into the markup of Yext Pages where the embedded Uber link should appear</msg>
+    # The Yext-powered link that can be copied and pasted into the markup of Yext Pages where the embedded Uber link should appear
     attr_accessor :uber_link
 
-    # <msg desc=\"Clarifies what a yearEstablished field means\">The year that this location was opened, not the number of years it was open</msg>  <msg desc=\"Constraints on the values of a field containing a year\">Minimum of 1000, maximum of current year + 10.</msg> 
+    # The year that this location was opened, not the number of years it was open  Minimum of 1000, maximum of current year + 10. 
     attr_accessor :year_established
 
-    # <msg>Longitude where the map pin should be displayed, as provided by you</msg>  <msg desc=\"Constraints on the values of a field containing a longitude\">Between -180.0 and 180.0, inclusive</msg> 
+    # Longitude where the map pin should be displayed, as provided by you  Between -180.0 and 180.0, inclusive 
     attr_accessor :display_lat
 
-    # <msg>Longitude to use for driving directions to the location, as provided by you</msg>  <msg desc=\"Constraints on the values of a field containing a longitude\">Between -180.0 and 180.0, inclusive</msg> 
+    # Longitude to use for driving directions to the location, as provided by you  Between -180.0 and 180.0, inclusive 
     attr_accessor :routable_lat
 
-    # <msg>Longitude where the map pin should be displayed, as calculated by Yext</msg>  <msg desc=\"Constraints on the values of a field containing a longitude\">Between -180.0 and 180.0, inclusive</msg> 
+    # Longitude where the map pin should be displayed, as calculated by Yext  Between -180.0 and 180.0, inclusive 
     attr_accessor :yext_display_lat
 
-    # <msg>Longitude to use for driving directions to the location, as calculated by Yext</msg>  <msg desc=\"Constraints on the values of a field containing a longitude\">Between -180.0 and 180.0, inclusive</msg> 
+    # Longitude to use for driving directions to the location, as calculated by Yext  Between -180.0 and 180.0, inclusive 
     attr_accessor :yext_routable_lat
 
-    # <msg>Up to five emails addresses for reaching this location</msg>  <msg>Must be valid email addresses</msg> 
+    # Up to five emails addresses for reaching this location  Must be valid email addresses 
     attr_accessor :emails
 
-    # <msg>Up to 100 specialties (e.g., for food and dining: Chicago style)</msg>  <msg>All strings must be non-empty when trimmed of whitespace.</msg> 
+    # Up to 100 specialties (e.g., for food and dining: Chicago style)  All strings must be non-empty when trimmed of whitespace. 
     attr_accessor :specialties
 
-    # <msg>Up to 100 specialties (e.g., for food and dining: Chicago style)</msg>  <msg>All strings must be non-empty when trimmed of whitespace.</msg> 
+    # Up to 100 specialties (e.g., for food and dining: Chicago style)  All strings must be non-empty when trimmed of whitespace. 
     attr_accessor :associations
 
-    # <msg>Up to 100 products sold at this location</msg>  <msg>All strings must be non-empty when trimmed of whitespace.</msg> 
+    # Up to 100 products sold at this location  All strings must be non-empty when trimmed of whitespace. 
     attr_accessor :products
 
-    # <msg>Up to 100 services offered at this location</msg>  <msg>All strings must be non-empty when trimmed of whitespace.</msg> 
+    # Up to 100 services offered at this location  All strings must be non-empty when trimmed of whitespace. 
     attr_accessor :services
 
-    # <msg>Up to 100 brands sold by this location</msg>  <msg>All strings must be non-empty when trimmed of whitespace.</msg> 
+    # Up to 100 brands sold by this location  All strings must be non-empty when trimmed of whitespace. 
     attr_accessor :brands
 
-    # <msg>Up to 100 languages spoken at this location.</msg>  <msg>All strings must be non-empty when trimmed of whitespace.</msg> 
+    # Up to 100 languages spoken at this location.  All strings must be non-empty when trimmed of whitespace. 
     attr_accessor :languages
 
-    # <msg>Up to 100 keywords may be provided</msg>  <msg>All strings must be non-empty when trimmed of whitespace.</msg> 
+    # Up to 100 keywords may be provided  All strings must be non-empty when trimmed of whitespace. 
     attr_accessor :keywords
 
-    # <msg>Label to be used for this location’s Menu lists.</msg>
+    # Label to be used for this location’s Menu lists.
     attr_accessor :menus_label
 
-    # <msg>IDs of Menu lists associated with this location.</msg>
+    # IDs of Menu lists associated with this location.
     attr_accessor :menu_ids
 
-    # <msg>Label to be used for this location’s Bio lists.</msg>
+    # Label to be used for this location’s Bio lists.
     attr_accessor :bio_lists_label
 
-    # <msg>IDs of Bio lists associated with this location.</msg>
+    # IDs of Bio lists associated with this location.
     attr_accessor :bio_list_ids
 
-    # <msg>Label to be used for this location’s Product & Services lists.</msg>
+    #  Services lists.
     attr_accessor :product_lists_label
 
-    # <msg>IDs of Product lists associated with this location.</msg>
+    # IDs of Product lists associated with this location.
     attr_accessor :product_list_ids
 
-    # <msg>Label to be used for this location’s Event lists.</msg>
+    # Label to be used for this location’s Event lists.
     attr_accessor :event_lists_label
 
-    # <msg>IDs of Event lists associated with this location.</msg>
+    # IDs of Event lists associated with this location.
     attr_accessor :event_list_ids
 
-    # <msg desc=\"folderId is a constant and should not be translated\">The folder that this location is in. If the location is in the customer-level (root) folder, its folderId will be 0. Must be a valid, existing Yext Folder ID or 0</msg>
+    # The folder that this location is in. If the location is in the customer-level (root) folder, its folderId will be 0. Must be a valid, existing Yext Folder ID or 0
     attr_accessor :folder_id
 
-    # <msg>The IDs of the location labels that have been added to this location.</msg>  <msg>**NOTE:** You can only add labels that have already been created via our web interface. Currently, it is not possible to create new labels via the API.</msg> 
+    # The IDs of the location labels that have been added to this location.  **NOTE:** You can only add labels that have already been created via our web interface. Currently, it is not possible to create new labels via the API. 
     attr_accessor :label_ids
 
-    # <msg>A set of key-value pairs indicating the location's custom fields and their values. The keys are the Yext Custom Field IDs of the custom fields, and the values are the fields' contents. If the fields' contents are options, those options must be represented by their Yext IDs.</msg> 
+    # A set of key-value pairs indicating the location's custom fields and their values. The keys are the Yext Custom Field IDs of the custom fields, and the values are the fields' contents. If the fields' contents are options, those options must be represented by their Yext IDs. 
     attr_accessor :custom_fields
 
     class EnumAttributeValidator

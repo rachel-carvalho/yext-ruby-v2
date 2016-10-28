@@ -26,13 +26,13 @@ require 'date'
 module YextClient
 
   class LocationEducationList
-    # <msg>The kind of education or training completed</msg>
+    # The kind of education or training completed
     attr_accessor :type
 
-    # <msg>The name of the institution where the healthcare professional received the education or training</msg>
+    # The name of the institution where the healthcare professional received the education or training
     attr_accessor :institution_name
 
-    # <msg>The year the healthcare professional completed the education or training</msg>
+    # The year the healthcare professional completed the education or training
     attr_accessor :year_completed
 
     class EnumAttributeValidator
