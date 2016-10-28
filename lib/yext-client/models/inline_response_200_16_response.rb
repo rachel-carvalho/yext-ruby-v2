@@ -26,21 +26,20 @@ require 'date'
 module YextClient
 
   class InlineResponse20016Response
-    # ID of the new Duplicate
-    attr_accessor :id
+    attr_accessor :optimization_tasks
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id'
+        :'optimization_tasks' => :'optimizationTasks'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'id' => :'String'
+        :'optimization_tasks' => :'Array<OptimizationTask>'
       }
     end
 
@@ -52,8 +51,10 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.has_key?(:'optimizationTasks')
+        if (value = attributes[:'optimizationTasks']).is_a?(Array)
+          self.optimization_tasks = value
+        end
       end
 
     end
@@ -76,7 +77,7 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id
+          optimization_tasks == o.optimization_tasks
     end
 
     # @see the `==` method
@@ -88,7 +89,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id].hash
+      [optimization_tasks].hash
     end
 
     # Builds the object from hash

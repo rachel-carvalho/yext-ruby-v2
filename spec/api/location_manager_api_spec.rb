@@ -106,7 +106,7 @@ describe 'LocationManagerApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param body 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2009]
+  # @return [InlineResponse20011]
   describe 'create_product test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -220,7 +220,7 @@ describe 'LocationManagerApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :language Only categories that apply to this language will be returned.  **Example:** en 
   # @option opts [String] :country Only categories that apply in this country will be returned.  **Example:** US 
-  # @return [InlineResponse20026]
+  # @return [InlineResponse20030]
   describe 'get_business_categories test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -264,7 +264,7 @@ describe 'LocationManagerApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return
   # @option opts [Integer] :offset Number of results to skip. Used to page through results
-  # @return [InlineResponse2008]
+  # @return [InlineResponse20010]
   describe 'get_events test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -276,7 +276,7 @@ describe 'LocationManagerApi' do
   # Use the Google Attributes API to retrieve a complete list of Google&#39;s location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locationsvia the googleKeywords field in the Locations API.
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20027]
+  # @return [InlineResponse20031]
   describe 'get_google_keywords test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -291,7 +291,7 @@ describe 'LocationManagerApi' do
   # @param language_code Locale code
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20010]
+  # @return [InlineResponse20012]
   describe 'get_language_profile test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -305,7 +305,7 @@ describe 'LocationManagerApi' do
   # @param location_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20011]
+  # @return [InlineResponse20013]
   describe 'get_language_profiles test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -319,7 +319,7 @@ describe 'LocationManagerApi' do
   # @param location_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20010]
+  # @return [InlineResponse20012]
   describe 'get_location test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -349,7 +349,7 @@ describe 'LocationManagerApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return
   # @option opts [Integer] :offset Number of results to skip. Used to page through results
-  # @return [InlineResponse2007]
+  # @return [InlineResponse2009]
   describe 'get_locations test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -378,7 +378,7 @@ describe 'LocationManagerApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return
   # @option opts [Integer] :offset Number of results to skip. Used to page through results
-  # @return [InlineResponse20012]
+  # @return [InlineResponse20014]
   describe 'get_menus test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -392,7 +392,7 @@ describe 'LocationManagerApi' do
   # @param list_id ID of this List
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2009]
+  # @return [InlineResponse20011]
   describe 'get_product test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -407,7 +407,7 @@ describe 'LocationManagerApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return
   # @option opts [Integer] :offset Number of results to skip. Used to page through results
-  # @return [InlineResponse20021]
+  # @return [InlineResponse20025]
   describe 'get_products test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -482,7 +482,7 @@ describe 'LocationManagerApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param body 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2009]
+  # @return [InlineResponse20011]
   describe 'update_product test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -499,7 +499,7 @@ describe 'LocationManagerApi' do
   # @param body 
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :primary When present and set to true, the specified profile will become the location’s primary Language Profile
-  # @return [InlineResponse20010]
+  # @return [InlineResponse20012]
   describe 'upsert_language_profile test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

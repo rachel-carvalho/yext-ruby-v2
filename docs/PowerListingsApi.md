@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **create_duplicate**
-> InlineResponse20016 create_duplicate(account_id, vurl, opts)
+> InlineResponse20020 create_duplicate(account_id, vurl, opts)
 
 Duplicates: Create
 
@@ -40,7 +40,7 @@ api_instance = YextClient::PowerListingsApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 url = "url_example" # String | URL of the Duplicate listing
 
@@ -63,14 +63,14 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **url** | **String**| URL of the Duplicate listing | 
  **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789  | [optional] 
  **publisher_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP  | [optional] 
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20020**](InlineResponse20020.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ api_instance = YextClient::PowerListingsApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 duplicate_id = "duplicate_id_example" # String | 
 
@@ -125,7 +125,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **duplicate_id** | **String**|  | 
 
 ### Return type
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 
 # **get_publisher_suggestion**
-> InlineResponse20020 get_publisher_suggestion(account_id, vsuggestion_id, )
+> InlineResponse20024 get_publisher_suggestion(account_id, vsuggestion_id, )
 
 Publisher Suggestions: Get
 
@@ -166,7 +166,7 @@ api_instance = YextClient::PowerListingsApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 suggestion_id = "suggestion_id_example" # String | 
 
@@ -185,12 +185,12 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **suggestion_id** | **String**|  | 
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**InlineResponse20024**](InlineResponse20024.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 
 # **list_duplicates**
-> InlineResponse20015 list_duplicates(account_id, v, opts)
+> InlineResponse20019 list_duplicates(account_id, v, opts)
 
 Duplicates: List
 
@@ -226,7 +226,7 @@ api_instance = YextClient::PowerListingsApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 10, # Integer | Number of results to return
@@ -250,7 +250,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **limit** | **Integer**| Number of results to return | [optional] [default to 10]
  **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789  | [optional] 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 
 # **list_listings**
-> InlineResponse20017 list_listings(account_id, v, opts)
+> InlineResponse20021 list_listings(account_id, v, opts)
 
 Listings: List
 
@@ -295,7 +295,7 @@ api_instance = YextClient::PowerListingsApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 100, # Integer | Number of results to return
@@ -318,7 +318,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **limit** | **Integer**| Number of results to return | [optional] [default to 100]
  **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789  | [optional] 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**InlineResponse20021**](InlineResponse20021.md)
 
 ### Authorization
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 
 # **list_publisher_suggestions**
-> InlineResponse20019 list_publisher_suggestions(account_id, v, opts)
+> InlineResponse20023 list_publisher_suggestions(account_id, v, opts)
 
 Publisher Suggestions: List
 
@@ -362,7 +362,7 @@ api_instance = YextClient::PowerListingsApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 10, # Integer | Number of results to return
@@ -386,7 +386,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **limit** | **Integer**| Number of results to return | [optional] [default to 10]
  **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789  | [optional] 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**InlineResponse20023**](InlineResponse20023.md)
 
 ### Authorization
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 
 # **list_publishers**
-> InlineResponse20018 list_publishers(account_id, v, opts)
+> InlineResponse20022 list_publishers(account_id, v, opts)
 
 Publishers: List
 
@@ -431,7 +431,7 @@ api_instance = YextClient::PowerListingsApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   subset: "RELEVANT_ONLY" # String | **ALL** - return all publishers  **RELEVANT_ONLY** - only return publishers relevant to the account based on supported countries and location types 
@@ -451,12 +451,12 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **subset** | **String**| **ALL** - return all publishers  **RELEVANT_ONLY** - only return publishers relevant to the account based on supported countries and location types  | [optional] [default to RELEVANT_ONLY]
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ api_instance = YextClient::PowerListingsApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   location_ids: ["location_ids_example"], # Array<String> | Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
@@ -513,7 +513,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789  | [optional] 
  **publisher_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP  | [optional] 
 
@@ -555,7 +555,7 @@ api_instance = YextClient::PowerListingsApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   location_ids: ["location_ids_example"], # Array<String> | Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
@@ -576,7 +576,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789  | [optional] 
  **publisher_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP  | [optional] 
 
@@ -618,7 +618,7 @@ api_instance = YextClient::PowerListingsApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 duplicate_id = "duplicate_id_example" # String | 
 
@@ -637,7 +637,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **duplicate_id** | **String**|  | 
 
 ### Return type
@@ -678,7 +678,7 @@ api_instance = YextClient::PowerListingsApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 suggestion_id = "suggestion_id_example" # String | 
 
@@ -699,7 +699,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **suggestion_id** | **String**|  | 
  **status** | **String**| The status of the Publisher Suggestion | 
 

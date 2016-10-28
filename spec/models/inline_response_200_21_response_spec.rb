@@ -49,7 +49,7 @@ describe 'InlineResponse20021Response' do
     end
   end
 
-  describe 'test attribute "products"' do
+  describe 'test attribute "listings"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

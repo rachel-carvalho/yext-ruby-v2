@@ -26,21 +26,20 @@ require 'date'
 module YextClient
 
   class InlineResponse20013Response
-    # The URL where all requested task(s) for the requested location(s) can be completed.  Will be null if none of the requested tasks on the requested locations are pending and mode is PENDING_ONLY.  **Redirecting after the task:** You can automatically redirect users to a specific URL after they've completed the task. To do so, append a **continueUrl** parameter, whose value is the URL users should be redirected to, to the returned URL.
-    attr_accessor :link
+    attr_accessor :language_profiles
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'link' => :'link'
+        :'language_profiles' => :'languageProfiles'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'link' => :'String'
+        :'language_profiles' => :'Array<Location>'
       }
     end
 
@@ -52,8 +51,10 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'link')
-        self.link = attributes[:'link']
+      if attributes.has_key?(:'languageProfiles')
+        if (value = attributes[:'languageProfiles']).is_a?(Array)
+          self.language_profiles = value
+        end
       end
 
     end
@@ -76,7 +77,7 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          link == o.link
+          language_profiles == o.language_profiles
     end
 
     # @see the `==` method
@@ -88,7 +89,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [link].hash
+      [language_profiles].hash
     end
 
     # Builds the object from hash

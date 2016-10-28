@@ -40,7 +40,7 @@ module YextClient
     # @option opts [String] :content Content of the new comment.
     # @option opts [String] :visibility  (default to PRIVATE)
     # @option opts [Integer] :parent_id If this Comment is in response to another comment, use this field to specify the ID of the parent Comment.
-    # @return [InlineResponse2014]
+    # @return [InlineResponse2015]
     def create_comment(account_id, review_id, v, opts = {})
       data, _status_code, _headers = create_comment_with_http_info(account_id, review_id, v, opts)
       return data
@@ -55,7 +55,7 @@ module YextClient
     # @option opts [String] :content Content of the new comment.
     # @option opts [String] :visibility 
     # @option opts [Integer] :parent_id If this Comment is in response to another comment, use this field to specify the ID of the parent Comment.
-    # @return [Array<(InlineResponse2014, Fixnum, Hash)>] InlineResponse2014 data, response status code and response headers
+    # @return [Array<(InlineResponse2015, Fixnum, Hash)>] InlineResponse2015 data, response status code and response headers
     def create_comment_with_http_info(account_id, review_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.create_comment ..."
@@ -66,10 +66,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'review_id' when calling ReviewsApi.create_comment" if review_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.create_comment" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if opts[:'visibility'] && !['PUBLIC', 'PRIVATE'].include?(opts[:'visibility'])
         fail ArgumentError, 'invalid value for "visibility", must be one of PUBLIC, PRIVATE'
       end
@@ -106,7 +102,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2014')
+        :return_type => 'InlineResponse2015')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReviewsApi#create_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -119,7 +115,7 @@ module YextClient
     # @param review_id ID of this Review
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20023]
+    # @return [InlineResponse20027]
     def get_review(account_id, review_id, v, opts = {})
       data, _status_code, _headers = get_review_with_http_info(account_id, review_id, v, opts)
       return data
@@ -131,7 +127,7 @@ module YextClient
     # @param review_id ID of this Review
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20023, Fixnum, Hash)>] InlineResponse20023 data, response status code and response headers
+    # @return [Array<(InlineResponse20027, Fixnum, Hash)>] InlineResponse20027 data, response status code and response headers
     def get_review_with_http_info(account_id, review_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.get_review ..."
@@ -142,10 +138,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'review_id' when calling ReviewsApi.get_review" if review_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.get_review" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/reviews/{reviewId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'reviewId' + '}', review_id.to_s)
 
@@ -176,7 +168,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20023')
+        :return_type => 'InlineResponse20027')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReviewsApi#get_review\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -206,7 +198,7 @@ module YextClient
     # @option opts [Integer] :min_non_owner_comments When specified, only reviews that have at least the provided number of non-owner comments will be returned.
     # @option opts [String] :reviewer_name When specified, only reviews whose authorName contains the provided string will be returned.
     # @option opts [String] :reviewer_email When specified, only reviews whose authorEmail matches the provided email address will be returned.
-    # @return [InlineResponse20022]
+    # @return [InlineResponse20026]
     def list_reviews(account_id, v, opts = {})
       data, _status_code, _headers = list_reviews_with_http_info(account_id, v, opts)
       return data
@@ -235,7 +227,7 @@ module YextClient
     # @option opts [Integer] :min_non_owner_comments When specified, only reviews that have at least the provided number of non-owner comments will be returned.
     # @option opts [String] :reviewer_name When specified, only reviews whose authorName contains the provided string will be returned.
     # @option opts [String] :reviewer_email When specified, only reviews whose authorEmail matches the provided email address will be returned.
-    # @return [Array<(InlineResponse20022, Fixnum, Hash)>] InlineResponse20022 data, response status code and response headers
+    # @return [Array<(InlineResponse20026, Fixnum, Hash)>] InlineResponse20026 data, response status code and response headers
     def list_reviews_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.list_reviews ..."
@@ -244,10 +236,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling ReviewsApi.list_reviews" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.list_reviews" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if !opts[:'limit'].nil? && opts[:'limit'] > 100.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling ReviewsApi.list_reviews, must be smaller than or equal to 100.0.'
       end
@@ -303,7 +291,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20022')
+        :return_type => 'InlineResponse20026')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReviewsApi#list_reviews\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

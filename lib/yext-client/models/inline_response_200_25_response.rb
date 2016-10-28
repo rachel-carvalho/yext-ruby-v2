@@ -26,17 +26,17 @@ require 'date'
 module YextClient
 
   class InlineResponse20025Response
-    # Total number of Users that meet the filter criteria (ignores limit / offset)
+    # Total number of Product ECLs that meet filter criteria (ignores limit / offset)
     attr_accessor :count
 
-    attr_accessor :users
+    attr_accessor :products
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'count' => :'count',
-        :'users' => :'users'
+        :'products' => :'products'
       }
     end
 
@@ -44,7 +44,7 @@ module YextClient
     def self.swagger_types
       {
         :'count' => :'Integer',
-        :'users' => :'Array<User>'
+        :'products' => :'Array<Product>'
       }
     end
 
@@ -60,9 +60,9 @@ module YextClient
         self.count = attributes[:'count']
       end
 
-      if attributes.has_key?(:'users')
-        if (value = attributes[:'users']).is_a?(Array)
-          self.users = value
+      if attributes.has_key?(:'products')
+        if (value = attributes[:'products']).is_a?(Array)
+          self.products = value
         end
       end
 
@@ -87,7 +87,7 @@ module YextClient
       return true if self.equal?(o)
       self.class == o.class &&
           count == o.count &&
-          users == o.users
+          products == o.products
     end
 
     # @see the `==` method
@@ -99,7 +99,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, users].hash
+      [count, products].hash
     end
 
     # Builds the object from hash

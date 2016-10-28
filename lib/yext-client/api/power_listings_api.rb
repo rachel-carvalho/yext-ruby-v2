@@ -39,7 +39,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [InlineResponse20016]
+    # @return [InlineResponse20020]
     def create_duplicate(account_id, v, url, opts = {})
       data, _status_code, _headers = create_duplicate_with_http_info(account_id, v, url, opts)
       return data
@@ -53,7 +53,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
+    # @return [Array<(InlineResponse20020, Fixnum, Hash)>] InlineResponse20020 data, response status code and response headers
     def create_duplicate_with_http_info(account_id, v, url, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.create_duplicate ..."
@@ -62,10 +62,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.create_duplicate" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.create_duplicate" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'url' is set
       fail ArgumentError, "Missing the required parameter 'url' when calling PowerListingsApi.create_duplicate" if url.nil?
       # resource path
@@ -101,7 +97,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20016')
+        :return_type => 'InlineResponse20020')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#create_duplicate\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -135,10 +131,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.delete_duplicate" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.delete_duplicate" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'duplicate_id' is set
       fail ArgumentError, "Missing the required parameter 'duplicate_id' when calling PowerListingsApi.delete_duplicate" if duplicate_id.nil?
       # resource path
@@ -184,7 +176,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param suggestion_id 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20020]
+    # @return [InlineResponse20024]
     def get_publisher_suggestion(account_id, v, suggestion_id, opts = {})
       data, _status_code, _headers = get_publisher_suggestion_with_http_info(account_id, v, suggestion_id, opts)
       return data
@@ -196,7 +188,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param suggestion_id 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20020, Fixnum, Hash)>] InlineResponse20020 data, response status code and response headers
+    # @return [Array<(InlineResponse20024, Fixnum, Hash)>] InlineResponse20024 data, response status code and response headers
     def get_publisher_suggestion_with_http_info(account_id, v, suggestion_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.get_publisher_suggestion ..."
@@ -205,10 +197,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.get_publisher_suggestion" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.get_publisher_suggestion" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'suggestion_id' is set
       fail ArgumentError, "Missing the required parameter 'suggestion_id' when calling PowerListingsApi.get_publisher_suggestion" if suggestion_id.nil?
       # resource path
@@ -241,7 +229,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20020')
+        :return_type => 'InlineResponse20024')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#get_publisher_suggestion\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -258,7 +246,7 @@ module YextClient
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Duplicates with the provided statuses will be returned  **Example:** POSSIBLE_DUPLICATE,SUPPRESSION_REQUESTED 
-    # @return [InlineResponse20015]
+    # @return [InlineResponse20019]
     def list_duplicates(account_id, v, opts = {})
       data, _status_code, _headers = list_duplicates_with_http_info(account_id, v, opts)
       return data
@@ -274,7 +262,7 @@ module YextClient
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Duplicates with the provided statuses will be returned  **Example:** POSSIBLE_DUPLICATE,SUPPRESSION_REQUESTED 
-    # @return [Array<(InlineResponse20015, Fixnum, Hash)>] InlineResponse20015 data, response status code and response headers
+    # @return [Array<(InlineResponse20019, Fixnum, Hash)>] InlineResponse20019 data, response status code and response headers
     def list_duplicates_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.list_duplicates ..."
@@ -283,10 +271,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.list_duplicates" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.list_duplicates" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling PowerListingsApi.list_duplicates, must be smaller than or equal to 50.0.'
       end
@@ -329,7 +313,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20015')
+        :return_type => 'InlineResponse20019')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#list_duplicates\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -345,7 +329,7 @@ module YextClient
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [InlineResponse20017]
+    # @return [InlineResponse20021]
     def list_listings(account_id, v, opts = {})
       data, _status_code, _headers = list_listings_with_http_info(account_id, v, opts)
       return data
@@ -360,7 +344,7 @@ module YextClient
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [Array<(InlineResponse20017, Fixnum, Hash)>] InlineResponse20017 data, response status code and response headers
+    # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
     def list_listings_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.list_listings ..."
@@ -369,10 +353,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.list_listings" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.list_listings" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if !opts[:'limit'].nil? && opts[:'limit'] > 100.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling PowerListingsApi.list_listings, must be smaller than or equal to 100.0.'
       end
@@ -411,7 +391,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20017')
+        :return_type => 'InlineResponse20021')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#list_listings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -428,7 +408,7 @@ module YextClient
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Publisher Suggestions with the provided statuses will be returned  **Example:** WAITING_ON_CUSTOMER,EXPIRED 
-    # @return [InlineResponse20019]
+    # @return [InlineResponse20023]
     def list_publisher_suggestions(account_id, v, opts = {})
       data, _status_code, _headers = list_publisher_suggestions_with_http_info(account_id, v, opts)
       return data
@@ -444,7 +424,7 @@ module YextClient
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Publisher Suggestions with the provided statuses will be returned  **Example:** WAITING_ON_CUSTOMER,EXPIRED 
-    # @return [Array<(InlineResponse20019, Fixnum, Hash)>] InlineResponse20019 data, response status code and response headers
+    # @return [Array<(InlineResponse20023, Fixnum, Hash)>] InlineResponse20023 data, response status code and response headers
     def list_publisher_suggestions_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.list_publisher_suggestions ..."
@@ -453,10 +433,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.list_publisher_suggestions" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.list_publisher_suggestions" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling PowerListingsApi.list_publisher_suggestions, must be smaller than or equal to 50.0.'
       end
@@ -499,7 +475,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20019')
+        :return_type => 'InlineResponse20023')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#list_publisher_suggestions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -512,7 +488,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
     # @option opts [String] :subset **ALL** - return all publishers  **RELEVANT_ONLY** - only return publishers relevant to the account based on supported countries and location types  (default to RELEVANT_ONLY)
-    # @return [InlineResponse20018]
+    # @return [InlineResponse20022]
     def list_publishers(account_id, v, opts = {})
       data, _status_code, _headers = list_publishers_with_http_info(account_id, v, opts)
       return data
@@ -524,7 +500,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
     # @option opts [String] :subset **ALL** - return all publishers  **RELEVANT_ONLY** - only return publishers relevant to the account based on supported countries and location types 
-    # @return [Array<(InlineResponse20018, Fixnum, Hash)>] InlineResponse20018 data, response status code and response headers
+    # @return [Array<(InlineResponse20022, Fixnum, Hash)>] InlineResponse20022 data, response status code and response headers
     def list_publishers_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.list_publishers ..."
@@ -533,10 +509,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.list_publishers" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.list_publishers" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if opts[:'subset'] && !['ALL', 'RELEVANT_ONLY'].include?(opts[:'subset'])
         fail ArgumentError, 'invalid value for "subset", must be one of ALL, RELEVANT_ONLY'
       end
@@ -571,7 +543,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20018')
+        :return_type => 'InlineResponse20022')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#list_publishers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -607,10 +579,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.opt_in_listings" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.opt_in_listings" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/powerlistings/listings/optin".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -679,10 +647,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.opt_out_listings" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.opt_out_listings" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/powerlistings/listings/optout".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -749,10 +713,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.suppress_duplicate" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.suppress_duplicate" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'duplicate_id' is set
       fail ArgumentError, "Missing the required parameter 'duplicate_id' when calling PowerListingsApi.suppress_duplicate" if duplicate_id.nil?
       # resource path
@@ -821,10 +781,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.update_publisher_suggestion" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.update_publisher_suggestion" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'suggestion_id' is set
       fail ArgumentError, "Missing the required parameter 'suggestion_id' when calling PowerListingsApi.update_publisher_suggestion" if suggestion_id.nil?
       # verify the required parameter 'status' is set

@@ -43,7 +43,7 @@ describe 'InlineResponse20013Response' do
       expect(@instance).to be_instance_of(YextClient::InlineResponse20013Response)
     end
   end
-  describe 'test attribute "link"' do
+  describe 'test attribute "language_profiles"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

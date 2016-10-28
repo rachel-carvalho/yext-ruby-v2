@@ -49,7 +49,7 @@ describe 'InlineResponse2007Response' do
     end
   end
 
-  describe 'test attribute "locations"' do
+  describe 'test attribute "linked_accounts"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

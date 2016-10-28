@@ -26,17 +26,17 @@ require 'date'
 module YextClient
 
   class InlineResponse20019Response
-    # Total number of Publisher Suggestions that meet filter criteria (ignores limit/offset)
+    # Total number of locations that meet filter criteria (ignores limit/offset)
     attr_accessor :count
 
-    attr_accessor :suggestions
+    attr_accessor :duplicates
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'count' => :'count',
-        :'suggestions' => :'suggestions'
+        :'duplicates' => :'duplicates'
       }
     end
 
@@ -44,7 +44,7 @@ module YextClient
     def self.swagger_types
       {
         :'count' => :'Integer',
-        :'suggestions' => :'Array<PublisherSuggestion>'
+        :'duplicates' => :'Array<Duplicate>'
       }
     end
 
@@ -60,9 +60,9 @@ module YextClient
         self.count = attributes[:'count']
       end
 
-      if attributes.has_key?(:'suggestions')
-        if (value = attributes[:'suggestions']).is_a?(Array)
-          self.suggestions = value
+      if attributes.has_key?(:'duplicates')
+        if (value = attributes[:'duplicates']).is_a?(Array)
+          self.duplicates = value
         end
       end
 
@@ -87,7 +87,7 @@ module YextClient
       return true if self.equal?(o)
       self.class == o.class &&
           count == o.count &&
-          suggestions == o.suggestions
+          duplicates == o.duplicates
     end
 
     # @see the `==` method
@@ -99,7 +99,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, suggestions].hash
+      [count, duplicates].hash
     end
 
     # Builds the object from hash

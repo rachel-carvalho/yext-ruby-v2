@@ -26,25 +26,21 @@ require 'date'
 module YextClient
 
   class InlineResponse20015Response
-    # Total number of locations that meet filter criteria (ignores limit/offset)
-    attr_accessor :count
-
-    attr_accessor :duplicates
+    # The URL where all requested task(s) for the requested location(s) can be completed.  Will be null if none of the requested tasks on the requested locations are pending and mode is PENDING_ONLY.  **Redirecting after the task:** You can automatically redirect users to a specific URL after they've completed the task. To do so, append a **continueUrl** parameter, whose value is the URL users should be redirected to, to the returned URL.
+    attr_accessor :link
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count',
-        :'duplicates' => :'duplicates'
+        :'link' => :'link'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'count' => :'Integer',
-        :'duplicates' => :'Array<Duplicate>'
+        :'link' => :'String'
       }
     end
 
@@ -56,14 +52,8 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'count')
-        self.count = attributes[:'count']
-      end
-
-      if attributes.has_key?(:'duplicates')
-        if (value = attributes[:'duplicates']).is_a?(Array)
-          self.duplicates = value
-        end
+      if attributes.has_key?(:'link')
+        self.link = attributes[:'link']
       end
 
     end
@@ -86,8 +76,7 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count &&
-          duplicates == o.duplicates
+          link == o.link
     end
 
     # @see the `==` method
@@ -99,7 +88,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, duplicates].hash
+      [link].hash
     end
 
     # Builds the object from hash

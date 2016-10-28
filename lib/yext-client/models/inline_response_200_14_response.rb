@@ -26,20 +26,25 @@ require 'date'
 module YextClient
 
   class InlineResponse20014Response
-    attr_accessor :optimization_tasks
+    # Total number of Menu ECLs that meet filter criteria (ignores limit / offset)
+    attr_accessor :count
+
+    attr_accessor :bios
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'optimization_tasks' => :'optimizationTasks'
+        :'count' => :'count',
+        :'bios' => :'bios'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'optimization_tasks' => :'Array<OptimizationTask>'
+        :'count' => :'Integer',
+        :'bios' => :'Array<Menu>'
       }
     end
 
@@ -51,9 +56,13 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'optimizationTasks')
-        if (value = attributes[:'optimizationTasks']).is_a?(Array)
-          self.optimization_tasks = value
+      if attributes.has_key?(:'count')
+        self.count = attributes[:'count']
+      end
+
+      if attributes.has_key?(:'bios')
+        if (value = attributes[:'bios']).is_a?(Array)
+          self.bios = value
         end
       end
 
@@ -77,7 +86,8 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          optimization_tasks == o.optimization_tasks
+          count == o.count &&
+          bios == o.bios
     end
 
     # @see the `==` method
@@ -89,7 +99,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [optimization_tasks].hash
+      [count, bios].hash
     end
 
     # Builds the object from hash

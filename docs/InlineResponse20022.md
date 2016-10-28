@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **meta** | [**ResponseMeta**](ResponseMeta.md) |  | [optional] 
-**response** | [**InlineResponse20022Response**](InlineResponse20022Response.md) |  | [optional] 
+**response** | [**Array&lt;Publisher&gt;**](Publisher.md) |  | [optional] 
 
 

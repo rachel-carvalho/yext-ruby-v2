@@ -52,7 +52,7 @@ describe 'PowerListingsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-  # @return [InlineResponse20016]
+  # @return [InlineResponse20020]
   describe 'create_duplicate test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -80,7 +80,7 @@ describe 'PowerListingsApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param suggestion_id 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20020]
+  # @return [InlineResponse20024]
   describe 'get_publisher_suggestion test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -98,7 +98,7 @@ describe 'PowerListingsApi' do
   # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
   # @option opts [Array<String>] :statuses When specified, only Duplicates with the provided statuses will be returned  **Example:** POSSIBLE_DUPLICATE,SUPPRESSION_REQUESTED 
-  # @return [InlineResponse20015]
+  # @return [InlineResponse20019]
   describe 'list_duplicates test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -115,7 +115,7 @@ describe 'PowerListingsApi' do
   # @option opts [Integer] :offset Number of results to skip. Used to page through results
   # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-  # @return [InlineResponse20017]
+  # @return [InlineResponse20021]
   describe 'list_listings test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -133,7 +133,7 @@ describe 'PowerListingsApi' do
   # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
   # @option opts [Array<String>] :statuses When specified, only Publisher Suggestions with the provided statuses will be returned  **Example:** WAITING_ON_CUSTOMER,EXPIRED 
-  # @return [InlineResponse20019]
+  # @return [InlineResponse20023]
   describe 'list_publisher_suggestions test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -147,7 +147,7 @@ describe 'PowerListingsApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
   # @option opts [String] :subset **ALL** - return all publishers  **RELEVANT_ONLY** - only return publishers relevant to the account based on supported countries and location types 
-  # @return [InlineResponse20018]
+  # @return [InlineResponse20022]
   describe 'list_publishers test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

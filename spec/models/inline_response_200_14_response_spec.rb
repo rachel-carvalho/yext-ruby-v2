@@ -43,7 +43,13 @@ describe 'InlineResponse20014Response' do
       expect(@instance).to be_instance_of(YextClient::InlineResponse20014Response)
     end
   end
-  describe 'test attribute "optimization_tasks"' do
+  describe 'test attribute "count"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "bios"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

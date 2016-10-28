@@ -26,17 +26,17 @@ require 'date'
 module YextClient
 
   class InlineResponse2007Response
-    # Total number of Locations that meet filter criteria (ignores limit / offset)
+    # Total number of linked accounts that meet filter criteria (ignores limit/offset)
     attr_accessor :count
 
-    attr_accessor :locations
+    attr_accessor :linked_accounts
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'count' => :'count',
-        :'locations' => :'locations'
+        :'linked_accounts' => :'linkedAccounts'
       }
     end
 
@@ -44,7 +44,7 @@ module YextClient
     def self.swagger_types
       {
         :'count' => :'Integer',
-        :'locations' => :'Array<Location>'
+        :'linked_accounts' => :'Array<LinkedAccount>'
       }
     end
 
@@ -60,9 +60,9 @@ module YextClient
         self.count = attributes[:'count']
       end
 
-      if attributes.has_key?(:'locations')
-        if (value = attributes[:'locations']).is_a?(Array)
-          self.locations = value
+      if attributes.has_key?(:'linkedAccounts')
+        if (value = attributes[:'linkedAccounts']).is_a?(Array)
+          self.linked_accounts = value
         end
       end
 
@@ -87,7 +87,7 @@ module YextClient
       return true if self.equal?(o)
       self.class == o.class &&
           count == o.count &&
-          locations == o.locations
+          linked_accounts == o.linked_accounts
     end
 
     # @see the `==` method
@@ -99,7 +99,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, locations].hash
+      [count, linked_accounts].hash
     end
 
     # Builds the object from hash

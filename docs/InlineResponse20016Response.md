@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | ID of the new Duplicate | [optional] 
+**optimization_tasks** | [**Array&lt;OptimizationTask&gt;**](OptimizationTask.md) |  | [optional] 
 
 

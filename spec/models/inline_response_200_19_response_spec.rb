@@ -49,7 +49,7 @@ describe 'InlineResponse20019Response' do
     end
   end
 
-  describe 'test attribute "suggestions"' do
+  describe 'test attribute "duplicates"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

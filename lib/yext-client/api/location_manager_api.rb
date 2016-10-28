@@ -58,10 +58,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_bio" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_bio" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.create_bio" if body.nil?
       # resource path
@@ -128,10 +124,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_event" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_event" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.create_event" if body.nil?
       # resource path
@@ -198,10 +190,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_location" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_location" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'location_request' is set
       fail ArgumentError, "Missing the required parameter 'location_request' when calling LocationManagerApi.create_location" if location_request.nil?
       # resource path
@@ -268,10 +256,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_menu" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_menu" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.create_menu" if body.nil?
       # resource path
@@ -317,7 +301,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2009]
+    # @return [InlineResponse20011]
     def create_product(account_id, v, body, opts = {})
       data, _status_code, _headers = create_product_with_http_info(account_id, v, body, opts)
       return data
@@ -329,7 +313,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2009, Fixnum, Hash)>] InlineResponse2009 data, response status code and response headers
+    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
     def create_product_with_http_info(account_id, v, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.create_product ..."
@@ -338,10 +322,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_product" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_product" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.create_product" if body.nil?
       # resource path
@@ -374,7 +354,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2009')
+        :return_type => 'InlineResponse20011')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#create_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -410,10 +390,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.delete_bio_list" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_bio_list" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/bios/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -480,10 +456,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.delete_event_list" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_event_list" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/events/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -554,10 +526,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'language_code' when calling LocationManagerApi.delete_language_profile" if language_code.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_language_profile" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}/profiles/{language_code}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s).sub('{' + 'language_code' + '}', language_code.to_s)
 
@@ -624,10 +592,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.delete_menu_list" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_menu_list" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/menus/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -694,10 +658,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.delete_product_list" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_product_list" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/products/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -764,10 +724,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.get_bio" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_bio" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/bios/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -834,10 +790,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_bios" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_bios" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_bios, must be smaller than or equal to 50.0.'
       end
@@ -887,7 +839,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :language Only categories that apply to this language will be returned.  **Example:** en  (default to en)
     # @option opts [String] :country Only categories that apply in this country will be returned.  **Example:** US  (default to US)
-    # @return [InlineResponse20026]
+    # @return [InlineResponse20030]
     def get_business_categories(v, opts = {})
       data, _status_code, _headers = get_business_categories_with_http_info(v, opts)
       return data
@@ -899,17 +851,13 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :language Only categories that apply to this language will be returned.  **Example:** en 
     # @option opts [String] :country Only categories that apply in this country will be returned.  **Example:** US 
-    # @return [Array<(InlineResponse20026, Fixnum, Hash)>] InlineResponse20026 data, response status code and response headers
+    # @return [Array<(InlineResponse20030, Fixnum, Hash)>] InlineResponse20030 data, response status code and response headers
     def get_business_categories_with_http_info(v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_business_categories ..."
       end
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_business_categories" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/categories".sub('{format}','json')
 
@@ -942,7 +890,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20026')
+        :return_type => 'InlineResponse20030')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_business_categories\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -976,10 +924,6 @@ module YextClient
       end
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_custom_fields" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'account_id' is set
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_custom_fields" if account_id.nil?
       if !opts[:'limit'].nil? && opts[:'limit'] > 1000.0
@@ -1054,10 +998,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.get_event" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_event" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/events/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -1102,7 +1042,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
-    # @return [InlineResponse2008]
+    # @return [InlineResponse20010]
     def get_events(account_id, v, opts = {})
       data, _status_code, _headers = get_events_with_http_info(account_id, v, opts)
       return data
@@ -1115,7 +1055,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
-    # @return [Array<(InlineResponse2008, Fixnum, Hash)>] InlineResponse2008 data, response status code and response headers
+    # @return [Array<(InlineResponse20010, Fixnum, Hash)>] InlineResponse20010 data, response status code and response headers
     def get_events_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_events ..."
@@ -1124,10 +1064,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_events" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_events" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_events, must be smaller than or equal to 50.0.'
       end
@@ -1164,7 +1100,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2008')
+        :return_type => 'InlineResponse20010')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_events\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1175,7 +1111,7 @@ module YextClient
     # Use the Google Attributes API to retrieve a complete list of Google's location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locationsvia the googleKeywords field in the Locations API.
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20027]
+    # @return [InlineResponse20031]
     def get_google_keywords(v, opts = {})
       data, _status_code, _headers = get_google_keywords_with_http_info(v, opts)
       return data
@@ -1185,17 +1121,13 @@ module YextClient
     # Use the Google Attributes API to retrieve a complete list of Google&#39;s location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locationsvia the googleKeywords field in the Locations API.
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20027, Fixnum, Hash)>] InlineResponse20027 data, response status code and response headers
+    # @return [Array<(InlineResponse20031, Fixnum, Hash)>] InlineResponse20031 data, response status code and response headers
     def get_google_keywords_with_http_info(v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_google_keywords ..."
       end
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_google_keywords" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/googlefields".sub('{format}','json')
 
@@ -1226,7 +1158,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20027')
+        :return_type => 'InlineResponse20031')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_google_keywords\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1240,7 +1172,7 @@ module YextClient
     # @param language_code Locale code
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20010]
+    # @return [InlineResponse20012]
     def get_language_profile(account_id, location_id, language_code, v, opts = {})
       data, _status_code, _headers = get_language_profile_with_http_info(account_id, location_id, language_code, v, opts)
       return data
@@ -1253,7 +1185,7 @@ module YextClient
     # @param language_code Locale code
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20010, Fixnum, Hash)>] InlineResponse20010 data, response status code and response headers
+    # @return [Array<(InlineResponse20012, Fixnum, Hash)>] InlineResponse20012 data, response status code and response headers
     def get_language_profile_with_http_info(account_id, location_id, language_code, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_language_profile ..."
@@ -1266,10 +1198,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'language_code' when calling LocationManagerApi.get_language_profile" if language_code.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_language_profile" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}/profiles/{language_code}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s).sub('{' + 'language_code' + '}', language_code.to_s)
 
@@ -1300,7 +1228,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20010')
+        :return_type => 'InlineResponse20012')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_language_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1313,7 +1241,7 @@ module YextClient
     # @param location_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20011]
+    # @return [InlineResponse20013]
     def get_language_profiles(account_id, location_id, v, opts = {})
       data, _status_code, _headers = get_language_profiles_with_http_info(account_id, location_id, v, opts)
       return data
@@ -1325,7 +1253,7 @@ module YextClient
     # @param location_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
+    # @return [Array<(InlineResponse20013, Fixnum, Hash)>] InlineResponse20013 data, response status code and response headers
     def get_language_profiles_with_http_info(account_id, location_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_language_profiles ..."
@@ -1336,10 +1264,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'location_id' when calling LocationManagerApi.get_language_profiles" if location_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_language_profiles" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}/profiles".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s)
 
@@ -1370,7 +1294,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20011')
+        :return_type => 'InlineResponse20013')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_language_profiles\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1383,7 +1307,7 @@ module YextClient
     # @param location_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20010]
+    # @return [InlineResponse20012]
     def get_location(account_id, location_id, v, opts = {})
       data, _status_code, _headers = get_location_with_http_info(account_id, location_id, v, opts)
       return data
@@ -1395,7 +1319,7 @@ module YextClient
     # @param location_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20010, Fixnum, Hash)>] InlineResponse20010 data, response status code and response headers
+    # @return [Array<(InlineResponse20012, Fixnum, Hash)>] InlineResponse20012 data, response status code and response headers
     def get_location_with_http_info(account_id, location_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_location ..."
@@ -1406,10 +1330,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'location_id' when calling LocationManagerApi.get_location" if location_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_location" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s)
 
@@ -1440,7 +1360,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20010')
+        :return_type => 'InlineResponse20012')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1476,10 +1396,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_location_folders" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_location_folders" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if !opts[:'limit'].nil? && opts[:'limit'] > 1000.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_location_folders, must be smaller than or equal to 1000.0.'
       end
@@ -1530,7 +1446,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
-    # @return [InlineResponse2007]
+    # @return [InlineResponse2009]
     def get_locations(account_id, v, opts = {})
       data, _status_code, _headers = get_locations_with_http_info(account_id, v, opts)
       return data
@@ -1543,7 +1459,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
-    # @return [Array<(InlineResponse2007, Fixnum, Hash)>] InlineResponse2007 data, response status code and response headers
+    # @return [Array<(InlineResponse2009, Fixnum, Hash)>] InlineResponse2009 data, response status code and response headers
     def get_locations_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_locations ..."
@@ -1552,10 +1468,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_locations" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_locations" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_locations, must be smaller than or equal to 50.0.'
       end
@@ -1592,7 +1504,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2007')
+        :return_type => 'InlineResponse2009')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_locations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1628,10 +1540,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.get_menu" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_menu" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/menus/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -1676,7 +1584,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
-    # @return [InlineResponse20012]
+    # @return [InlineResponse20014]
     def get_menus(account_id, v, opts = {})
       data, _status_code, _headers = get_menus_with_http_info(account_id, v, opts)
       return data
@@ -1689,7 +1597,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
-    # @return [Array<(InlineResponse20012, Fixnum, Hash)>] InlineResponse20012 data, response status code and response headers
+    # @return [Array<(InlineResponse20014, Fixnum, Hash)>] InlineResponse20014 data, response status code and response headers
     def get_menus_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_menus ..."
@@ -1698,10 +1606,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_menus" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_menus" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_menus, must be smaller than or equal to 50.0.'
       end
@@ -1738,7 +1642,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20012')
+        :return_type => 'InlineResponse20014')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_menus\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1751,7 +1655,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2009]
+    # @return [InlineResponse20011]
     def get_product(account_id, list_id, v, opts = {})
       data, _status_code, _headers = get_product_with_http_info(account_id, list_id, v, opts)
       return data
@@ -1763,7 +1667,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2009, Fixnum, Hash)>] InlineResponse2009 data, response status code and response headers
+    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
     def get_product_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_product ..."
@@ -1774,10 +1678,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.get_product" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_product" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/locations/products/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -1808,7 +1708,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2009')
+        :return_type => 'InlineResponse20011')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1822,7 +1722,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
-    # @return [InlineResponse20021]
+    # @return [InlineResponse20025]
     def get_products(account_id, v, opts = {})
       data, _status_code, _headers = get_products_with_http_info(account_id, v, opts)
       return data
@@ -1835,7 +1735,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
-    # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
+    # @return [Array<(InlineResponse20025, Fixnum, Hash)>] InlineResponse20025 data, response status code and response headers
     def get_products_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_products ..."
@@ -1844,10 +1744,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_products" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_products" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_products, must be smaller than or equal to 50.0.'
       end
@@ -1884,7 +1780,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20021')
+        :return_type => 'InlineResponse20025')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_products\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1922,10 +1818,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.update_bio" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_bio" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.update_bio" if body.nil?
       # resource path
@@ -1996,10 +1888,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.update_event" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_event" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.update_event" if body.nil?
       # resource path
@@ -2070,10 +1958,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'location_id' when calling LocationManagerApi.update_location" if location_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_location" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'location_request' is set
       fail ArgumentError, "Missing the required parameter 'location_request' when calling LocationManagerApi.update_location" if location_request.nil?
       # resource path
@@ -2144,10 +2028,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.update_menu" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_menu" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.update_menu" if body.nil?
       # resource path
@@ -2194,7 +2074,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2009]
+    # @return [InlineResponse20011]
     def update_product(account_id, list_id, v, body, opts = {})
       data, _status_code, _headers = update_product_with_http_info(account_id, list_id, v, body, opts)
       return data
@@ -2207,7 +2087,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2009, Fixnum, Hash)>] InlineResponse2009 data, response status code and response headers
+    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
     def update_product_with_http_info(account_id, list_id, v, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.update_product ..."
@@ -2218,10 +2098,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.update_product" if list_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_product" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.update_product" if body.nil?
       # resource path
@@ -2254,7 +2130,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2009')
+        :return_type => 'InlineResponse20011')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#update_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -2270,7 +2146,7 @@ module YextClient
     # @param body 
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :primary When present and set to true, the specified profile will become the location’s primary Language Profile
-    # @return [InlineResponse20010]
+    # @return [InlineResponse20012]
     def upsert_language_profile(account_id, location_id, language_code, v, body, opts = {})
       data, _status_code, _headers = upsert_language_profile_with_http_info(account_id, location_id, language_code, v, body, opts)
       return data
@@ -2285,7 +2161,7 @@ module YextClient
     # @param body 
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :primary When present and set to true, the specified profile will become the location’s primary Language Profile
-    # @return [Array<(InlineResponse20010, Fixnum, Hash)>] InlineResponse20010 data, response status code and response headers
+    # @return [Array<(InlineResponse20012, Fixnum, Hash)>] InlineResponse20012 data, response status code and response headers
     def upsert_language_profile_with_http_info(account_id, location_id, language_code, v, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.upsert_language_profile ..."
@@ -2298,10 +2174,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'language_code' when calling LocationManagerApi.upsert_language_profile" if language_code.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.upsert_language_profile" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'body' is set
       fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.upsert_language_profile" if body.nil?
       # resource path
@@ -2335,7 +2207,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20010')
+        :return_type => 'InlineResponse20012')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#upsert_language_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

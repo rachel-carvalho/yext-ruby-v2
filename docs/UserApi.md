@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **create_user**
-> InlineResponse2015 create_user(account_id, vuser_request)
+> InlineResponse2016 create_user(account_id, vuser_request)
 
 Users: Create
 
@@ -37,7 +37,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 user_request = YextClient::User.new # User | 
 
@@ -56,12 +56,12 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **user_request** | [**User**](User.md)|  | 
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse2016**](InlineResponse2016.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_user**
-> InlineResponse2015 delete_user(account_id, vuser_id, user_request)
+> InlineResponse2016 delete_user(account_id, vuser_id, user_request)
 
 Users: Delete
 
@@ -97,7 +97,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 user_id = "user_id_example" # String | 
 
@@ -118,13 +118,13 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **user_id** | **String**|  | 
  **user_request** | [**User**](User.md)|  | 
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse2016**](InlineResponse2016.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 
 # **get_link_optimization_task**
-> InlineResponse20013 get_link_optimization_task(account_id, vtask_ids, location_idsmode)
+> InlineResponse20015 get_link_optimization_task(account_id, vtask_ids, location_idsmode)
 
 Optimization Tasks: Get Link
 
@@ -160,7 +160,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 task_ids = "task_ids_example" # String | Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  Defaults to all available Optimization Tasks in the account. 
 
@@ -183,14 +183,14 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **task_ids** | **String**| Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  Defaults to all available Optimization Tasks in the account.  | 
  **location_ids** | **String**| Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account.  | 
  **mode** | **String**| When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress.  | [default to PENDING_ONLY]
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 
 # **get_optimization_tasks**
-> InlineResponse20014 get_optimization_tasks(account_id, vtask_ids, location_ids)
+> InlineResponse20016 get_optimization_tasks(account_id, vtask_ids, location_ids)
 
 Optimization Tasks: List
 
@@ -226,7 +226,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 task_ids = "task_ids_example" # String | Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  Defaults to all available Optimization Tasks in the account. 
 
@@ -247,13 +247,13 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **task_ids** | **String**| Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  Defaults to all available Optimization Tasks in the account.  | 
  **location_ids** | **String**| Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account.  | 
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 
 # **get_roles**
-> InlineResponse20024 get_roles(account_id, v)
+> InlineResponse20028 get_roles(account_id, v)
 
 Roles: Get
 
@@ -289,7 +289,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 
 begin
@@ -306,11 +306,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**InlineResponse20028**](InlineResponse20028.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 
 # **get_user**
-> InlineResponse2015 get_user(account_id, vuser_id, )
+> InlineResponse2016 get_user(account_id, vuser_id, )
 
 Users: Get
 
@@ -346,7 +346,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 user_id = "user_id_example" # String | 
 
@@ -365,12 +365,12 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **user_id** | **String**|  | 
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse2016**](InlineResponse2016.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 
 # **get_users**
-> InlineResponse20025 get_users(account_id, v, opts)
+> InlineResponse20029 get_users(account_id, v, opts)
 
 Users: List
 
@@ -406,7 +406,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 opts = { 
   limit: 10, # Integer | Number of results to return
@@ -427,13 +427,13 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **limit** | **Integer**| Number of results to return | [optional] [default to 10]
  **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**InlineResponse20029**](InlineResponse20029.md)
 
 ### Authorization
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 
 # **update_user**
-> InlineResponse2015 update_user(account_id, vuser_id, user_request)
+> InlineResponse2016 update_user(account_id, vuser_id, user_request)
 
 Users: Update
 
@@ -469,7 +469,7 @@ api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "v_example" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format
 
 user_id = "user_id_example" # String | 
 
@@ -490,13 +490,13 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
  **user_id** | **String**|  | 
  **user_request** | [**User**](User.md)|  | 
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**InlineResponse2016**](InlineResponse2016.md)
 
 ### Authorization
 

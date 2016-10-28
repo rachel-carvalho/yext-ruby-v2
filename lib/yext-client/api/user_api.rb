@@ -37,7 +37,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param user_request 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2015]
+    # @return [InlineResponse2016]
     def create_user(account_id, v, user_request, opts = {})
       data, _status_code, _headers = create_user_with_http_info(account_id, v, user_request, opts)
       return data
@@ -49,7 +49,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param user_request 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2015, Fixnum, Hash)>] InlineResponse2015 data, response status code and response headers
+    # @return [Array<(InlineResponse2016, Fixnum, Hash)>] InlineResponse2016 data, response status code and response headers
     def create_user_with_http_info(account_id, v, user_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.create_user ..."
@@ -58,10 +58,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.create_user" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.create_user" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'user_request' is set
       fail ArgumentError, "Missing the required parameter 'user_request' when calling UserApi.create_user" if user_request.nil?
       # resource path
@@ -94,7 +90,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2015')
+        :return_type => 'InlineResponse2016')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#create_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -108,7 +104,7 @@ module YextClient
     # @param user_id 
     # @param user_request 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2015]
+    # @return [InlineResponse2016]
     def delete_user(account_id, v, user_id, user_request, opts = {})
       data, _status_code, _headers = delete_user_with_http_info(account_id, v, user_id, user_request, opts)
       return data
@@ -121,7 +117,7 @@ module YextClient
     # @param user_id 
     # @param user_request 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2015, Fixnum, Hash)>] InlineResponse2015 data, response status code and response headers
+    # @return [Array<(InlineResponse2016, Fixnum, Hash)>] InlineResponse2016 data, response status code and response headers
     def delete_user_with_http_info(account_id, v, user_id, user_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.delete_user ..."
@@ -130,10 +126,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.delete_user" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.delete_user" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'user_id' is set
       fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.delete_user" if user_id.nil?
       # verify the required parameter 'user_request' is set
@@ -168,7 +160,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2015')
+        :return_type => 'InlineResponse2016')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#delete_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -183,7 +175,7 @@ module YextClient
     # @param location_ids Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account. 
     # @param mode When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress. 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20013]
+    # @return [InlineResponse20015]
     def get_link_optimization_task(account_id, v, task_ids, location_ids, mode, opts = {})
       data, _status_code, _headers = get_link_optimization_task_with_http_info(account_id, v, task_ids, location_ids, mode, opts)
       return data
@@ -197,7 +189,7 @@ module YextClient
     # @param location_ids Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account. 
     # @param mode When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress. 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20013, Fixnum, Hash)>] InlineResponse20013 data, response status code and response headers
+    # @return [Array<(InlineResponse20015, Fixnum, Hash)>] InlineResponse20015 data, response status code and response headers
     def get_link_optimization_task_with_http_info(account_id, v, task_ids, location_ids, mode, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.get_link_optimization_task ..."
@@ -206,10 +198,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_link_optimization_task" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_link_optimization_task" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'task_ids' is set
       fail ArgumentError, "Missing the required parameter 'task_ids' when calling UserApi.get_link_optimization_task" if task_ids.nil?
       # verify the required parameter 'location_ids' is set
@@ -253,7 +241,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20013')
+        :return_type => 'InlineResponse20015')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#get_link_optimization_task\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -267,7 +255,7 @@ module YextClient
     # @param task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  Defaults to all available Optimization Tasks in the account. 
     # @param location_ids Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account. 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20014]
+    # @return [InlineResponse20016]
     def get_optimization_tasks(account_id, v, task_ids, location_ids, opts = {})
       data, _status_code, _headers = get_optimization_tasks_with_http_info(account_id, v, task_ids, location_ids, opts)
       return data
@@ -280,7 +268,7 @@ module YextClient
     # @param task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  Defaults to all available Optimization Tasks in the account. 
     # @param location_ids Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account. 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20014, Fixnum, Hash)>] InlineResponse20014 data, response status code and response headers
+    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
     def get_optimization_tasks_with_http_info(account_id, v, task_ids, location_ids, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.get_optimization_tasks ..."
@@ -289,10 +277,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_optimization_tasks" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_optimization_tasks" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'task_ids' is set
       fail ArgumentError, "Missing the required parameter 'task_ids' when calling UserApi.get_optimization_tasks" if task_ids.nil?
       # verify the required parameter 'location_ids' is set
@@ -329,7 +313,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20014')
+        :return_type => 'InlineResponse20016')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#get_optimization_tasks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -341,7 +325,7 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20024]
+    # @return [InlineResponse20028]
     def get_roles(account_id, v, opts = {})
       data, _status_code, _headers = get_roles_with_http_info(account_id, v, opts)
       return data
@@ -352,7 +336,7 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20024, Fixnum, Hash)>] InlineResponse20024 data, response status code and response headers
+    # @return [Array<(InlineResponse20028, Fixnum, Hash)>] InlineResponse20028 data, response status code and response headers
     def get_roles_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.get_roles ..."
@@ -361,10 +345,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_roles" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_roles" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/roles".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -395,7 +375,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20024')
+        :return_type => 'InlineResponse20028')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#get_roles\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -408,7 +388,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param user_id 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2015]
+    # @return [InlineResponse2016]
     def get_user(account_id, v, user_id, opts = {})
       data, _status_code, _headers = get_user_with_http_info(account_id, v, user_id, opts)
       return data
@@ -420,7 +400,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param user_id 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2015, Fixnum, Hash)>] InlineResponse2015 data, response status code and response headers
+    # @return [Array<(InlineResponse2016, Fixnum, Hash)>] InlineResponse2016 data, response status code and response headers
     def get_user_with_http_info(account_id, v, user_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.get_user ..."
@@ -429,10 +409,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_user" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_user" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'user_id' is set
       fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.get_user" if user_id.nil?
       # resource path
@@ -465,7 +441,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2015')
+        :return_type => 'InlineResponse2016')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#get_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -479,7 +455,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
-    # @return [InlineResponse20025]
+    # @return [InlineResponse20029]
     def get_users(account_id, v, opts = {})
       data, _status_code, _headers = get_users_with_http_info(account_id, v, opts)
       return data
@@ -492,7 +468,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
-    # @return [Array<(InlineResponse20025, Fixnum, Hash)>] InlineResponse20025 data, response status code and response headers
+    # @return [Array<(InlineResponse20029, Fixnum, Hash)>] InlineResponse20029 data, response status code and response headers
     def get_users_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.get_users ..."
@@ -501,10 +477,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_users" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_users" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
         fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling UserApi.get_users, must be smaller than or equal to 50.0.'
       end
@@ -541,7 +513,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20025')
+        :return_type => 'InlineResponse20029')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#get_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -555,7 +527,7 @@ module YextClient
     # @param user_id 
     # @param user_request 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2015]
+    # @return [InlineResponse2016]
     def update_user(account_id, v, user_id, user_request, opts = {})
       data, _status_code, _headers = update_user_with_http_info(account_id, v, user_id, user_request, opts)
       return data
@@ -568,7 +540,7 @@ module YextClient
     # @param user_id 
     # @param user_request 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2015, Fixnum, Hash)>] InlineResponse2015 data, response status code and response headers
+    # @return [Array<(InlineResponse2016, Fixnum, Hash)>] InlineResponse2016 data, response status code and response headers
     def update_user_with_http_info(account_id, v, user_id, user_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.update_user ..."
@@ -577,10 +549,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.update_user" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.update_user" if v.nil?
-      # verify enum value
-      unless ['20161012'].include?(v)
-        fail ArgumentError, "invalid value for 'v', must be one of 20161012"
-      end
       # verify the required parameter 'user_id' is set
       fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.update_user" if user_id.nil?
       # verify the required parameter 'user_request' is set
@@ -615,7 +583,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2015')
+        :return_type => 'InlineResponse2016')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#update_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

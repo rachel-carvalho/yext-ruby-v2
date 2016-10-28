@@ -26,25 +26,20 @@ require 'date'
 module YextClient
 
   class InlineResponse2008Response
-    # Total number of Event ECLs that meet filter criteria (ignores limit / offset)
-    attr_accessor :count
-
-    attr_accessor :events
+    attr_accessor :linked_account
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count',
-        :'events' => :'events'
+        :'linked_account' => :'linkedAccount'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'count' => :'Integer',
-        :'events' => :'Array<Event>'
+        :'linked_account' => :'LinkedAccount'
       }
     end
 
@@ -56,14 +51,8 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'count')
-        self.count = attributes[:'count']
-      end
-
-      if attributes.has_key?(:'events')
-        if (value = attributes[:'events']).is_a?(Array)
-          self.events = value
-        end
+      if attributes.has_key?(:'linkedAccount')
+        self.linked_account = attributes[:'linkedAccount']
       end
 
     end
@@ -86,8 +75,7 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count &&
-          events == o.events
+          linked_account == o.linked_account
     end
 
     # @see the `==` method
@@ -99,7 +87,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, events].hash
+      [linked_account].hash
     end
 
     # Builds the object from hash

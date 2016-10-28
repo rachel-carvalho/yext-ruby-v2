@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **meta** | [**ResponseMeta**](ResponseMeta.md) |  | [optional] 
-**response** | [**User**](User.md) |  | [optional] 
+**response** | [**ReviewComment**](ReviewComment.md) |  | [optional] 
 
 
