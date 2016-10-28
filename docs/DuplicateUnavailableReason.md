@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **String** | Unique code for the unavailable reason | [optional] 
 **reason** | **String** | Explanation for why the listing is unavailable | [optional] 
+**code** | **String** | Unique code for the unavailable reason | [optional] 
 
 
