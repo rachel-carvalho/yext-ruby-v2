@@ -53,7 +53,7 @@ describe 'SocialApi' do
   # @option opts [String] :message The message included in the Comment, if any.  **Example** “Hello, World!” 
   # @option opts [String] :photo_url The URL of the photo included in the Comment, if any.  **Example** “https://…” 
   # @option opts [String] :link_url The URL of the link included in the Comment, if any.  **Example** “https://…” 
-  # @return [InlineResponse2014]
+  # @return [IdResponse]
   describe 'create_comment test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -70,7 +70,7 @@ describe 'SocialApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :photo_url The URL of the photo included in the Post, if any.  **Example** \&quot;https://...\&quot; 
   # @option opts [String] :link_url The URL of the link included in the Post, if any.  **Example** \&quot;https://...\&quot; 
-  # @return [InlineResponse2014]
+  # @return [IdResponse]
   describe 'create_posts test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -84,7 +84,7 @@ describe 'SocialApi' do
   # @param post_id 
   # @param comment_id 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponseDefault]
+  # @return [ErrorResponse]
   describe 'delete_comment test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -97,7 +97,7 @@ describe 'SocialApi' do
   # @param account_id 
   # @param post_id 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponseDefault]
+  # @return [ErrorResponse]
   describe 'delete_post test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -113,7 +113,7 @@ describe 'SocialApi' do
   # @option opts [Integer] :limit Number of results to return, up to 100. Default 100.  **Example** 20 
   # @option opts [Integer] :offset Number of results to skip. Used to page through results
   # @option opts [String] :type Determines which type of Comments are returned
-  # @return [InlineResponse20018]
+  # @return [SocialCommentsResponse]
   describe 'get_comments test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -126,7 +126,7 @@ describe 'SocialApi' do
   # @param account_id 
   # @param linked_account_id 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2008]
+  # @return [LinkedAccountResponse]
   describe 'get_linked_account test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -143,7 +143,7 @@ describe 'SocialApi' do
   # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example** 123, 456, 789 
   # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example** FACEBOOK, FOURSQUARE 
   # @option opts [String] :status Used to filter for Linked Accounts with a particular status.
-  # @return [InlineResponse2007]
+  # @return [LinkedAccountsResponse]
   describe 'get_linked_accounts test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -163,7 +163,7 @@ describe 'SocialApi' do
   # @option opts [Array<String>] :location_labels Array of location labels. When present, only Posts for location with the provided labels will be returned.  **Example** [&#39;pilot stores&#39;] 
   # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example** FACEBOOK, FOURSQUARE 
   # @option opts [Array<String>] :keywords When provided, only Posts that mention the given keywords will be returned. Posts will be returned if the original post or any comments contain this string.  **Example** [&#39;pizza&#39;] 
-  # @return [InlineResponse20017]
+  # @return [SocialPostsResponse]
   describe 'get_posts test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -178,7 +178,7 @@ describe 'SocialApi' do
   # @param comment_id 
   # @param comment 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponseDefault]
+  # @return [ErrorResponse]
   describe 'update_comment test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -193,7 +193,7 @@ describe 'SocialApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Array<String>] :assign_location_ids Array of Location IDs to be assigned to this Linked Account.  Use this field to assign this Linked Account to Locations without affecting any other assigned Locations.  
   # @option opts [Array<String>] :unassign_location_ids Array of Location IDs to be unassigned from this Linked Account.  Use this field to unassign this Linked Account from Locations without affecting any other assigned Locations. 
-  # @return [InlineResponseDefault]
+  # @return [ErrorResponse]
   describe 'update_linked_account test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

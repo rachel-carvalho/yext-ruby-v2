@@ -36,7 +36,7 @@ module YextClient
     # @param account_id 
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityLogRequest] :body 
-    # @return [InlineResponse200]
+    # @return [ActivitiesResponse]
     def activity_log(account_id, opts = {})
       data, _status_code, _headers = activity_log_with_http_info(account_id, opts)
       return data
@@ -47,7 +47,7 @@ module YextClient
     # @param account_id 
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityLogRequest] :body 
-    # @return [Array<(InlineResponse200, Fixnum, Hash)>] InlineResponse200 data, response status code and response headers
+    # @return [Array<(ActivitiesResponse, Fixnum, Hash)>] ActivitiesResponse data, response status code and response headers
     def activity_log_with_http_info(account_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: AnalyticsApi.activity_log ..."
@@ -83,7 +83,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse200')
+        :return_type => 'ActivitiesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AnalyticsApi#activity_log\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -97,7 +97,7 @@ module YextClient
     # @option opts [BOOLEAN] :async Defaults to false.  When true, the report’s ID will be returned immediately and the report results can be fetched later.  When false, the report results will be returned immediately, but an error may occur if the data requested is too large
     # @option opts [String] :callback Optional.  When async&#x3D;true and callback is specified, the provided URL will be called when the report is ready.  The URL must of of the form:       POST https://[your domain]/[your path]  It must accept the following parameters:      id:     (int)     - The ID of the report that is ready      status: (string)  - one of [DONE, FAILED]      url:    (string)  - When status&#x3D;DONE, contains the URL to download the report data as a text file. 
     # @option opts [CreateReportRequestBody] :body JSON object containing any filters to be applied to the report
-    # @return [InlineResponse2002]
+    # @return [CreateReportsResponse]
     def create_reports(account_id, opts = {})
       data, _status_code, _headers = create_reports_with_http_info(account_id, opts)
       return data
@@ -110,7 +110,7 @@ module YextClient
     # @option opts [BOOLEAN] :async Defaults to false.  When true, the report’s ID will be returned immediately and the report results can be fetched later.  When false, the report results will be returned immediately, but an error may occur if the data requested is too large
     # @option opts [String] :callback Optional.  When async&#x3D;true and callback is specified, the provided URL will be called when the report is ready.  The URL must of of the form:       POST https://[your domain]/[your path]  It must accept the following parameters:      id:     (int)     - The ID of the report that is ready      status: (string)  - one of [DONE, FAILED]      url:    (string)  - When status&#x3D;DONE, contains the URL to download the report data as a text file. 
     # @option opts [CreateReportRequestBody] :body JSON object containing any filters to be applied to the report
-    # @return [Array<(InlineResponse2002, Fixnum, Hash)>] InlineResponse2002 data, response status code and response headers
+    # @return [Array<(CreateReportsResponse, Fixnum, Hash)>] CreateReportsResponse data, response status code and response headers
     def create_reports_with_http_info(account_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: AnalyticsApi.create_reports ..."
@@ -148,7 +148,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2002')
+        :return_type => 'CreateReportsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AnalyticsApi#create_reports\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -159,7 +159,7 @@ module YextClient
     # The dates through which reporting data is available.
     # @param account_id 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2001]
+    # @return [MaximumDatesResponse]
     def get_max_dates(account_id, opts = {})
       data, _status_code, _headers = get_max_dates_with_http_info(account_id, opts)
       return data
@@ -169,7 +169,7 @@ module YextClient
     # The dates through which reporting data is available.
     # @param account_id 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2001, Fixnum, Hash)>] InlineResponse2001 data, response status code and response headers
+    # @return [Array<(MaximumDatesResponse, Fixnum, Hash)>] MaximumDatesResponse data, response status code and response headers
     def get_max_dates_with_http_info(account_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: AnalyticsApi.get_max_dates ..."
@@ -205,7 +205,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2001')
+        :return_type => 'MaximumDatesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AnalyticsApi#get_max_dates\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -217,7 +217,7 @@ module YextClient
     # @param account_id 
     # @param report_id 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2003]
+    # @return [ReportStatusResponse]
     def report_status(account_id, report_id, opts = {})
       data, _status_code, _headers = report_status_with_http_info(account_id, report_id, opts)
       return data
@@ -228,7 +228,7 @@ module YextClient
     # @param account_id 
     # @param report_id 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2003, Fixnum, Hash)>] InlineResponse2003 data, response status code and response headers
+    # @return [Array<(ReportStatusResponse, Fixnum, Hash)>] ReportStatusResponse data, response status code and response headers
     def report_status_with_http_info(account_id, report_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: AnalyticsApi.report_status ..."
@@ -266,7 +266,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2003')
+        :return_type => 'ReportStatusResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: AnalyticsApi#report_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

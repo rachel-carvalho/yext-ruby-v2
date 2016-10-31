@@ -40,7 +40,7 @@ module YextClient
     # @option opts [String] :content Content of the new comment.
     # @option opts [String] :visibility  (default to PRIVATE)
     # @option opts [Integer] :parent_id If this Comment is in response to another comment, use this field to specify the ID of the parent Comment.
-    # @return [InlineResponse2015]
+    # @return [ErrorResponse]
     def create_comment(account_id, review_id, v, opts = {})
       data, _status_code, _headers = create_comment_with_http_info(account_id, review_id, v, opts)
       return data
@@ -55,7 +55,7 @@ module YextClient
     # @option opts [String] :content Content of the new comment.
     # @option opts [String] :visibility 
     # @option opts [Integer] :parent_id If this Comment is in response to another comment, use this field to specify the ID of the parent Comment.
-    # @return [Array<(InlineResponse2015, Fixnum, Hash)>] InlineResponse2015 data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def create_comment_with_http_info(account_id, review_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.create_comment ..."
@@ -102,9 +102,70 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2015')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReviewsApi#create_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Review Invitations: create
+    # Sends review invitations to one or more consumers.
+    # @param account_id 
+    # @param reviews 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<CreateReviewInvitationResponse>]
+    def create_review_invites(account_id, reviews, opts = {})
+      data, _status_code, _headers = create_review_invites_with_http_info(account_id, reviews, opts)
+      return data
+    end
+
+    # Review Invitations: create
+    # Sends review invitations to one or more consumers.
+    # @param account_id 
+    # @param reviews 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Array<CreateReviewInvitationResponse>, Fixnum, Hash)>] Array<CreateReviewInvitationResponse> data, response status code and response headers
+    def create_review_invites_with_http_info(account_id, reviews, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ReviewsApi.create_review_invites ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ReviewsApi.create_review_invites" if account_id.nil?
+      # verify the required parameter 'reviews' is set
+      fail ArgumentError, "Missing the required parameter 'reviews' when calling ReviewsApi.create_review_invites" if reviews.nil?
+      # resource path
+      local_var_path = "/accounts/{accountId}/reviewinvites".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      local_header_accept = ['application/json']
+      local_header_accept_result = @api_client.select_header_accept(local_header_accept) and header_params['Accept'] = local_header_accept_result
+
+      # HTTP header 'Content-Type'
+      local_header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(local_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(reviews)
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Array<CreateReviewInvitationResponse>')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ReviewsApi#create_review_invites\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -115,7 +176,7 @@ module YextClient
     # @param review_id ID of this Review
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20027]
+    # @return [ReviewResponse]
     def get_review(account_id, review_id, v, opts = {})
       data, _status_code, _headers = get_review_with_http_info(account_id, review_id, v, opts)
       return data
@@ -127,7 +188,7 @@ module YextClient
     # @param review_id ID of this Review
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20027, Fixnum, Hash)>] InlineResponse20027 data, response status code and response headers
+    # @return [Array<(ReviewResponse, Fixnum, Hash)>] ReviewResponse data, response status code and response headers
     def get_review_with_http_info(account_id, review_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.get_review ..."
@@ -168,7 +229,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20027')
+        :return_type => 'ReviewResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReviewsApi#get_review\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -198,7 +259,7 @@ module YextClient
     # @option opts [Integer] :min_non_owner_comments When specified, only reviews that have at least the provided number of non-owner comments will be returned.
     # @option opts [String] :reviewer_name When specified, only reviews whose authorName contains the provided string will be returned.
     # @option opts [String] :reviewer_email When specified, only reviews whose authorEmail matches the provided email address will be returned.
-    # @return [InlineResponse20026]
+    # @return [ReviewsResponse]
     def list_reviews(account_id, v, opts = {})
       data, _status_code, _headers = list_reviews_with_http_info(account_id, v, opts)
       return data
@@ -227,7 +288,7 @@ module YextClient
     # @option opts [Integer] :min_non_owner_comments When specified, only reviews that have at least the provided number of non-owner comments will be returned.
     # @option opts [String] :reviewer_name When specified, only reviews whose authorName contains the provided string will be returned.
     # @option opts [String] :reviewer_email When specified, only reviews whose authorEmail matches the provided email address will be returned.
-    # @return [Array<(InlineResponse20026, Fixnum, Hash)>] InlineResponse20026 data, response status code and response headers
+    # @return [Array<(ReviewsResponse, Fixnum, Hash)>] ReviewsResponse data, response status code and response headers
     def list_reviews_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.list_reviews ..."
@@ -291,7 +352,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20026')
+        :return_type => 'ReviewsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReviewsApi#list_reviews\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

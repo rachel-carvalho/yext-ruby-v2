@@ -40,7 +40,7 @@ module YextClient
     # @option opts [String] :message The message included in the Comment, if any.  **Example** “Hello, World!” 
     # @option opts [String] :photo_url The URL of the photo included in the Comment, if any.  **Example** “https://…” 
     # @option opts [String] :link_url The URL of the link included in the Comment, if any.  **Example** “https://…” 
-    # @return [InlineResponse2014]
+    # @return [IdResponse]
     def create_comment(account_id, post_id, parent_id, opts = {})
       data, _status_code, _headers = create_comment_with_http_info(account_id, post_id, parent_id, opts)
       return data
@@ -55,7 +55,7 @@ module YextClient
     # @option opts [String] :message The message included in the Comment, if any.  **Example** “Hello, World!” 
     # @option opts [String] :photo_url The URL of the photo included in the Comment, if any.  **Example** “https://…” 
     # @option opts [String] :link_url The URL of the link included in the Comment, if any.  **Example** “https://…” 
-    # @return [Array<(InlineResponse2014, Fixnum, Hash)>] InlineResponse2014 data, response status code and response headers
+    # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_comment_with_http_info(account_id, post_id, parent_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SocialApi.create_comment ..."
@@ -99,7 +99,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2014')
+        :return_type => 'IdResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialApi#create_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -115,7 +115,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :photo_url The URL of the photo included in the Post, if any.  **Example** \&quot;https://...\&quot; 
     # @option opts [String] :link_url The URL of the link included in the Post, if any.  **Example** \&quot;https://...\&quot; 
-    # @return [InlineResponse2014]
+    # @return [IdResponse]
     def create_posts(account_id, location_ids, publisher_ids, message, opts = {})
       data, _status_code, _headers = create_posts_with_http_info(account_id, location_ids, publisher_ids, message, opts)
       return data
@@ -130,7 +130,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :photo_url The URL of the photo included in the Post, if any.  **Example** \&quot;https://...\&quot; 
     # @option opts [String] :link_url The URL of the link included in the Post, if any.  **Example** \&quot;https://...\&quot; 
-    # @return [Array<(InlineResponse2014, Fixnum, Hash)>] InlineResponse2014 data, response status code and response headers
+    # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_posts_with_http_info(account_id, location_ids, publisher_ids, message, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SocialApi.create_posts ..."
@@ -177,7 +177,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2014')
+        :return_type => 'IdResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialApi#create_posts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -190,7 +190,7 @@ module YextClient
     # @param post_id 
     # @param comment_id 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def delete_comment(account_id, post_id, comment_id, opts = {})
       data, _status_code, _headers = delete_comment_with_http_info(account_id, post_id, comment_id, opts)
       return data
@@ -202,7 +202,7 @@ module YextClient
     # @param post_id 
     # @param comment_id 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def delete_comment_with_http_info(account_id, post_id, comment_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SocialApi.delete_comment ..."
@@ -242,7 +242,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialApi#delete_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -254,7 +254,7 @@ module YextClient
     # @param account_id 
     # @param post_id 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def delete_post(account_id, post_id, opts = {})
       data, _status_code, _headers = delete_post_with_http_info(account_id, post_id, opts)
       return data
@@ -265,7 +265,7 @@ module YextClient
     # @param account_id 
     # @param post_id 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def delete_post_with_http_info(account_id, post_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SocialApi.delete_post ..."
@@ -303,7 +303,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialApi#delete_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -318,7 +318,7 @@ module YextClient
     # @option opts [Integer] :limit Number of results to return, up to 100. Default 100.  **Example** 20  (default to 100)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
     # @option opts [String] :type Determines which type of Comments are returned
-    # @return [InlineResponse20018]
+    # @return [SocialCommentsResponse]
     def get_comments(account_id, post_id, opts = {})
       data, _status_code, _headers = get_comments_with_http_info(account_id, post_id, opts)
       return data
@@ -332,7 +332,7 @@ module YextClient
     # @option opts [Integer] :limit Number of results to return, up to 100. Default 100.  **Example** 20 
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
     # @option opts [String] :type Determines which type of Comments are returned
-    # @return [Array<(InlineResponse20018, Fixnum, Hash)>] InlineResponse20018 data, response status code and response headers
+    # @return [Array<(SocialCommentsResponse, Fixnum, Hash)>] SocialCommentsResponse data, response status code and response headers
     def get_comments_with_http_info(account_id, post_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SocialApi.get_comments ..."
@@ -380,7 +380,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20018')
+        :return_type => 'SocialCommentsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialApi#get_comments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -392,7 +392,7 @@ module YextClient
     # @param account_id 
     # @param linked_account_id 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2008]
+    # @return [LinkedAccountResponse]
     def get_linked_account(account_id, linked_account_id, opts = {})
       data, _status_code, _headers = get_linked_account_with_http_info(account_id, linked_account_id, opts)
       return data
@@ -403,7 +403,7 @@ module YextClient
     # @param account_id 
     # @param linked_account_id 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2008, Fixnum, Hash)>] InlineResponse2008 data, response status code and response headers
+    # @return [Array<(LinkedAccountResponse, Fixnum, Hash)>] LinkedAccountResponse data, response status code and response headers
     def get_linked_account_with_http_info(account_id, linked_account_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SocialApi.get_linked_account ..."
@@ -441,7 +441,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2008')
+        :return_type => 'LinkedAccountResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialApi#get_linked_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -457,7 +457,7 @@ module YextClient
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example** 123, 456, 789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example** FACEBOOK, FOURSQUARE 
     # @option opts [String] :status Used to filter for Linked Accounts with a particular status. (default to ALL)
-    # @return [InlineResponse2007]
+    # @return [LinkedAccountsResponse]
     def get_linked_accounts(account_id, opts = {})
       data, _status_code, _headers = get_linked_accounts_with_http_info(account_id, opts)
       return data
@@ -472,7 +472,7 @@ module YextClient
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example** 123, 456, 789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example** FACEBOOK, FOURSQUARE 
     # @option opts [String] :status Used to filter for Linked Accounts with a particular status.
-    # @return [Array<(InlineResponse2007, Fixnum, Hash)>] InlineResponse2007 data, response status code and response headers
+    # @return [Array<(LinkedAccountsResponse, Fixnum, Hash)>] LinkedAccountsResponse data, response status code and response headers
     def get_linked_accounts_with_http_info(account_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SocialApi.get_linked_accounts ..."
@@ -520,7 +520,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2007')
+        :return_type => 'LinkedAccountsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialApi#get_linked_accounts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -539,7 +539,7 @@ module YextClient
     # @option opts [Array<String>] :location_labels Array of location labels. When present, only Posts for location with the provided labels will be returned.  **Example** [&#39;pilot stores&#39;] 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example** FACEBOOK, FOURSQUARE 
     # @option opts [Array<String>] :keywords When provided, only Posts that mention the given keywords will be returned. Posts will be returned if the original post or any comments contain this string.  **Example** [&#39;pizza&#39;] 
-    # @return [InlineResponse20017]
+    # @return [SocialPostsResponse]
     def get_posts(account_id, opts = {})
       data, _status_code, _headers = get_posts_with_http_info(account_id, opts)
       return data
@@ -557,7 +557,7 @@ module YextClient
     # @option opts [Array<String>] :location_labels Array of location labels. When present, only Posts for location with the provided labels will be returned.  **Example** [&#39;pilot stores&#39;] 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example** FACEBOOK, FOURSQUARE 
     # @option opts [Array<String>] :keywords When provided, only Posts that mention the given keywords will be returned. Posts will be returned if the original post or any comments contain this string.  **Example** [&#39;pizza&#39;] 
-    # @return [Array<(InlineResponse20017, Fixnum, Hash)>] InlineResponse20017 data, response status code and response headers
+    # @return [Array<(SocialPostsResponse, Fixnum, Hash)>] SocialPostsResponse data, response status code and response headers
     def get_posts_with_http_info(account_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SocialApi.get_posts ..."
@@ -605,7 +605,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20017')
+        :return_type => 'SocialPostsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialApi#get_posts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -619,7 +619,7 @@ module YextClient
     # @param comment_id 
     # @param comment 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def update_comment(account_id, post_id, comment_id, comment, opts = {})
       data, _status_code, _headers = update_comment_with_http_info(account_id, post_id, comment_id, comment, opts)
       return data
@@ -632,7 +632,7 @@ module YextClient
     # @param comment_id 
     # @param comment 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def update_comment_with_http_info(account_id, post_id, comment_id, comment, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SocialApi.update_comment ..."
@@ -674,7 +674,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialApi#update_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -688,7 +688,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :assign_location_ids Array of Location IDs to be assigned to this Linked Account.  Use this field to assign this Linked Account to Locations without affecting any other assigned Locations.  
     # @option opts [Array<String>] :unassign_location_ids Array of Location IDs to be unassigned from this Linked Account.  Use this field to unassign this Linked Account from Locations without affecting any other assigned Locations. 
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def update_linked_account(account_id, linked_account_id, opts = {})
       data, _status_code, _headers = update_linked_account_with_http_info(account_id, linked_account_id, opts)
       return data
@@ -701,7 +701,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :assign_location_ids Array of Location IDs to be assigned to this Linked Account.  Use this field to assign this Linked Account to Locations without affecting any other assigned Locations.  
     # @option opts [Array<String>] :unassign_location_ids Array of Location IDs to be unassigned from this Linked Account.  Use this field to unassign this Linked Account from Locations without affecting any other assigned Locations. 
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def update_linked_account_with_http_info(account_id, linked_account_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: SocialApi.update_linked_account ..."
@@ -741,7 +741,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SocialApi#update_linked_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

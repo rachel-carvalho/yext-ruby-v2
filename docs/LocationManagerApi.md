@@ -39,7 +39,7 @@ Method | HTTP request | Description
 
 
 # **create_bio**
-> InlineResponse201 create_bio(account_id, vbody)
+> IdResponse create_bio(account_id, vbody)
 
 Bios: Create
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse201**](InlineResponse201.md)
+[**IdResponse**](IdResponse.md)
 
 ### Authorization
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 
 # **create_event**
-> InlineResponse2012 create_event(account_id, vbody)
+> IdResponse create_event(account_id, vbody)
 
 Events: Create
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2012**](InlineResponse2012.md)
+[**IdResponse**](IdResponse.md)
 
 ### Authorization
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 
 # **create_location**
-> InlineResponse2011 create_location(account_id, vlocation_request)
+> IdResponse create_location(account_id, vlocation_request)
 
 Locations: Create
 
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**IdResponse**](IdResponse.md)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 
 # **create_menu**
-> InlineResponse2013 create_menu(account_id, vbody)
+> IdResponse create_menu(account_id, vbody)
 
 Menus: Create
 
@@ -263,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2013**](InlineResponse2013.md)
+[**IdResponse**](IdResponse.md)
 
 ### Authorization
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 
 # **create_product**
-> InlineResponse20011 create_product(account_id, vbody)
+> IdResponse create_product(account_id, vbody)
 
 Products: Create
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**IdResponse**](IdResponse.md)
 
 ### Authorization
 
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_bio_list**
-> InlineResponseDefault delete_bio_list(account_id, list_id, v)
+> ErrorResponse delete_bio_list(account_id, list_id, v)
 
 Bios: Delete
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_event_list**
-> InlineResponseDefault delete_event_list(account_id, list_id, v)
+> ErrorResponse delete_event_list(account_id, list_id, v)
 
 Events: Delete
 
@@ -443,7 +443,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_language_profile**
-> InlineResponseDefault delete_language_profile(account_id, location_id, language_code, v)
+> ErrorResponse delete_language_profile(account_id, location_id, language_code, v)
 
 Language Profiles: Delete
 
@@ -506,7 +506,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_menu_list**
-> InlineResponseDefault delete_menu_list(account_id, list_id, v)
+> ErrorResponse delete_menu_list(account_id, list_id, v)
 
 Menus: Delete
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_product_list**
-> InlineResponseDefault delete_product_list(account_id, list_id, v)
+> ErrorResponse delete_product_list(account_id, list_id, v)
 
 Products: Delete
 
@@ -626,7 +626,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 
@@ -640,7 +640,7 @@ Name | Type | Description  | Notes
 
 
 # **get_bio**
-> InlineResponse201 get_bio(account_id, list_id, v)
+> BioListResponse get_bio(account_id, list_id, v)
 
 Bios: Get
 
@@ -686,7 +686,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse201**](InlineResponse201.md)
+[**BioListResponse**](BioListResponse.md)
 
 ### Authorization
 
@@ -700,7 +700,7 @@ Name | Type | Description  | Notes
 
 
 # **get_bios**
-> InlineResponse2004 get_bios(account_id, v, opts)
+> BioListsResponse get_bios(account_id, v, opts)
 
 Bios: List
 
@@ -749,7 +749,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](InlineResponse2004.md)
+[**BioListsResponse**](BioListsResponse.md)
 
 ### Authorization
 
@@ -763,7 +763,7 @@ Name | Type | Description  | Notes
 
 
 # **get_business_categories**
-> InlineResponse20030 get_business_categories(v, opts)
+> BusinessCategoriesResponse get_business_categories(v, opts)
 
 Categories: List
 
@@ -809,7 +809,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20030**](InlineResponse20030.md)
+[**BusinessCategoriesResponse**](BusinessCategoriesResponse.md)
 
 ### Authorization
 
@@ -823,7 +823,7 @@ Name | Type | Description  | Notes
 
 
 # **get_custom_fields**
-> InlineResponse2005 get_custom_fields(vaccount_id, , opts)
+> CustomFieldsResponse get_custom_fields(vaccount_id, , opts)
 
 Custom Fields: List
 
@@ -872,7 +872,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**CustomFieldsResponse**](CustomFieldsResponse.md)
 
 ### Authorization
 
@@ -886,7 +886,7 @@ Name | Type | Description  | Notes
 
 
 # **get_event**
-> InlineResponse2012 get_event(account_id, list_id, v)
+> EventListResponse get_event(account_id, list_id, v)
 
 Events: Get
 
@@ -932,7 +932,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2012**](InlineResponse2012.md)
+[**EventListResponse**](EventListResponse.md)
 
 ### Authorization
 
@@ -946,7 +946,7 @@ Name | Type | Description  | Notes
 
 
 # **get_events**
-> InlineResponse20010 get_events(account_id, v, opts)
+> EventListsResponse get_events(account_id, v, opts)
 
 Events: List
 
@@ -995,7 +995,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**EventListsResponse**](EventListsResponse.md)
 
 ### Authorization
 
@@ -1009,7 +1009,7 @@ Name | Type | Description  | Notes
 
 
 # **get_google_keywords**
-> InlineResponse20031 get_google_keywords(v)
+> GoogleFieldsResponse get_google_keywords(v)
 
 Google Fields: List
 
@@ -1049,7 +1049,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](InlineResponse20031.md)
+[**GoogleFieldsResponse**](GoogleFieldsResponse.md)
 
 ### Authorization
 
@@ -1063,7 +1063,7 @@ Name | Type | Description  | Notes
 
 
 # **get_language_profile**
-> InlineResponse20012 get_language_profile(account_id, location_id, language_code, v)
+> LocationResponse get_language_profile(account_id, location_id, language_code, v)
 
 Language Profiles: Get
 
@@ -1112,7 +1112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**LocationResponse**](LocationResponse.md)
 
 ### Authorization
 
@@ -1126,7 +1126,7 @@ Name | Type | Description  | Notes
 
 
 # **get_language_profiles**
-> InlineResponse20013 get_language_profiles(account_id, location_id, v)
+> LanguageProfilesResponse get_language_profiles(account_id, location_id, v)
 
 Language Profiles: List
 
@@ -1172,7 +1172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**LanguageProfilesResponse**](LanguageProfilesResponse.md)
 
 ### Authorization
 
@@ -1186,7 +1186,7 @@ Name | Type | Description  | Notes
 
 
 # **get_location**
-> InlineResponse20012 get_location(account_id, location_id, v)
+> LocationResponse get_location(account_id, location_id, v)
 
 Locations: Get
 
@@ -1232,7 +1232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**LocationResponse**](LocationResponse.md)
 
 ### Authorization
 
@@ -1246,7 +1246,7 @@ Name | Type | Description  | Notes
 
 
 # **get_location_folders**
-> InlineResponse2006 get_location_folders(account_id, v, opts)
+> FoldersResponse get_location_folders(account_id, v, opts)
 
 Folders: List
 
@@ -1295,7 +1295,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**FoldersResponse**](FoldersResponse.md)
 
 ### Authorization
 
@@ -1309,7 +1309,7 @@ Name | Type | Description  | Notes
 
 
 # **get_locations**
-> InlineResponse2009 get_locations(account_id, v, opts)
+> LocationsResponse get_locations(account_id, v, opts)
 
 Locations: List
 
@@ -1358,7 +1358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**LocationsResponse**](LocationsResponse.md)
 
 ### Authorization
 
@@ -1372,7 +1372,7 @@ Name | Type | Description  | Notes
 
 
 # **get_menu**
-> InlineResponse2013 get_menu(account_id, list_id, v)
+> MenuListResponse get_menu(account_id, list_id, v)
 
 Menus: Get
 
@@ -1418,7 +1418,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2013**](InlineResponse2013.md)
+[**MenuListResponse**](MenuListResponse.md)
 
 ### Authorization
 
@@ -1432,7 +1432,7 @@ Name | Type | Description  | Notes
 
 
 # **get_menus**
-> InlineResponse20014 get_menus(account_id, v, opts)
+> MenuListsResponse get_menus(account_id, v, opts)
 
 Menus: List
 
@@ -1481,7 +1481,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**MenuListsResponse**](MenuListsResponse.md)
 
 ### Authorization
 
@@ -1495,7 +1495,7 @@ Name | Type | Description  | Notes
 
 
 # **get_product**
-> InlineResponse20011 get_product(account_id, list_id, v)
+> ProductListResponse get_product(account_id, list_id, v)
 
 Products: Get
 
@@ -1541,7 +1541,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**ProductListResponse**](ProductListResponse.md)
 
 ### Authorization
 
@@ -1555,7 +1555,7 @@ Name | Type | Description  | Notes
 
 
 # **get_products**
-> InlineResponse20025 get_products(account_id, v, opts)
+> ProductListsResponse get_products(account_id, v, opts)
 
 Products: List
 
@@ -1604,7 +1604,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](InlineResponse20025.md)
+[**ProductListsResponse**](ProductListsResponse.md)
 
 ### Authorization
 
@@ -1618,7 +1618,7 @@ Name | Type | Description  | Notes
 
 
 # **update_bio**
-> InlineResponse201 update_bio(account_id, list_id, vbody)
+> BioListResponse update_bio(account_id, list_id, vbody)
 
 Bios: Update
 
@@ -1667,7 +1667,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse201**](InlineResponse201.md)
+[**BioListResponse**](BioListResponse.md)
 
 ### Authorization
 
@@ -1681,7 +1681,7 @@ Name | Type | Description  | Notes
 
 
 # **update_event**
-> InlineResponse2012 update_event(account_id, list_id, vbody)
+> EventListResponse update_event(account_id, list_id, vbody)
 
 Events: Update
 
@@ -1730,7 +1730,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2012**](InlineResponse2012.md)
+[**EventListResponse**](EventListResponse.md)
 
 ### Authorization
 
@@ -1744,7 +1744,7 @@ Name | Type | Description  | Notes
 
 
 # **update_location**
-> InlineResponse2011 update_location(account_id, location_id, vlocation_request)
+> IdResponse update_location(account_id, location_id, vlocation_request)
 
 Locations: Update
 
@@ -1793,7 +1793,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2011**](InlineResponse2011.md)
+[**IdResponse**](IdResponse.md)
 
 ### Authorization
 
@@ -1807,7 +1807,7 @@ Name | Type | Description  | Notes
 
 
 # **update_menu**
-> InlineResponse2013 update_menu(account_id, list_id, vbody)
+> MenuListResponse update_menu(account_id, list_id, vbody)
 
 Menus: Update
 
@@ -1856,7 +1856,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2013**](InlineResponse2013.md)
+[**MenuListResponse**](MenuListResponse.md)
 
 ### Authorization
 
@@ -1870,7 +1870,7 @@ Name | Type | Description  | Notes
 
 
 # **update_product**
-> InlineResponse20011 update_product(account_id, list_id, vbody)
+> ProductListResponse update_product(account_id, list_id, vbody)
 
 Products: Update
 
@@ -1919,7 +1919,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**ProductListResponse**](ProductListResponse.md)
 
 ### Authorization
 
@@ -1933,7 +1933,7 @@ Name | Type | Description  | Notes
 
 
 # **upsert_language_profile**
-> InlineResponse20012 upsert_language_profile(account_id, location_id, language_code, vbody, opts)
+> LocationResponse upsert_language_profile(account_id, location_id, language_code, vbody, opts)
 
 Language Profiles: Upsert
 
@@ -1989,7 +1989,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20012**](InlineResponse20012.md)
+[**LocationResponse**](LocationResponse.md)
 
 ### Authorization
 

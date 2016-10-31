@@ -39,7 +39,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [InlineResponse20020]
+    # @return [IdResponse]
     def create_duplicate(account_id, v, url, opts = {})
       data, _status_code, _headers = create_duplicate_with_http_info(account_id, v, url, opts)
       return data
@@ -53,7 +53,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [Array<(InlineResponse20020, Fixnum, Hash)>] InlineResponse20020 data, response status code and response headers
+    # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_duplicate_with_http_info(account_id, v, url, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.create_duplicate ..."
@@ -97,7 +97,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20020')
+        :return_type => 'IdResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#create_duplicate\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -110,7 +110,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param duplicate_id 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def delete_duplicate(account_id, v, duplicate_id, opts = {})
       data, _status_code, _headers = delete_duplicate_with_http_info(account_id, v, duplicate_id, opts)
       return data
@@ -122,7 +122,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param duplicate_id 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def delete_duplicate_with_http_info(account_id, v, duplicate_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.delete_duplicate ..."
@@ -163,7 +163,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#delete_duplicate\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -176,7 +176,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param suggestion_id 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20024]
+    # @return [PublisherSuggestionResponse]
     def get_publisher_suggestion(account_id, v, suggestion_id, opts = {})
       data, _status_code, _headers = get_publisher_suggestion_with_http_info(account_id, v, suggestion_id, opts)
       return data
@@ -188,7 +188,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param suggestion_id 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20024, Fixnum, Hash)>] InlineResponse20024 data, response status code and response headers
+    # @return [Array<(PublisherSuggestionResponse, Fixnum, Hash)>] PublisherSuggestionResponse data, response status code and response headers
     def get_publisher_suggestion_with_http_info(account_id, v, suggestion_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.get_publisher_suggestion ..."
@@ -229,7 +229,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20024')
+        :return_type => 'PublisherSuggestionResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#get_publisher_suggestion\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -246,7 +246,7 @@ module YextClient
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Duplicates with the provided statuses will be returned  **Example:** POSSIBLE_DUPLICATE,SUPPRESSION_REQUESTED 
-    # @return [InlineResponse20019]
+    # @return [DuplicatesResponse]
     def list_duplicates(account_id, v, opts = {})
       data, _status_code, _headers = list_duplicates_with_http_info(account_id, v, opts)
       return data
@@ -262,7 +262,7 @@ module YextClient
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Duplicates with the provided statuses will be returned  **Example:** POSSIBLE_DUPLICATE,SUPPRESSION_REQUESTED 
-    # @return [Array<(InlineResponse20019, Fixnum, Hash)>] InlineResponse20019 data, response status code and response headers
+    # @return [Array<(DuplicatesResponse, Fixnum, Hash)>] DuplicatesResponse data, response status code and response headers
     def list_duplicates_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.list_duplicates ..."
@@ -313,7 +313,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20019')
+        :return_type => 'DuplicatesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#list_duplicates\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -329,7 +329,7 @@ module YextClient
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [InlineResponse20021]
+    # @return [ListingsResponse]
     def list_listings(account_id, v, opts = {})
       data, _status_code, _headers = list_listings_with_http_info(account_id, v, opts)
       return data
@@ -344,7 +344,7 @@ module YextClient
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [Array<(InlineResponse20021, Fixnum, Hash)>] InlineResponse20021 data, response status code and response headers
+    # @return [Array<(ListingsResponse, Fixnum, Hash)>] ListingsResponse data, response status code and response headers
     def list_listings_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.list_listings ..."
@@ -391,7 +391,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20021')
+        :return_type => 'ListingsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#list_listings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -408,7 +408,7 @@ module YextClient
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Publisher Suggestions with the provided statuses will be returned  **Example:** WAITING_ON_CUSTOMER,EXPIRED 
-    # @return [InlineResponse20023]
+    # @return [PublisherSuggestionsResponse]
     def list_publisher_suggestions(account_id, v, opts = {})
       data, _status_code, _headers = list_publisher_suggestions_with_http_info(account_id, v, opts)
       return data
@@ -424,7 +424,7 @@ module YextClient
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Publisher Suggestions with the provided statuses will be returned  **Example:** WAITING_ON_CUSTOMER,EXPIRED 
-    # @return [Array<(InlineResponse20023, Fixnum, Hash)>] InlineResponse20023 data, response status code and response headers
+    # @return [Array<(PublisherSuggestionsResponse, Fixnum, Hash)>] PublisherSuggestionsResponse data, response status code and response headers
     def list_publisher_suggestions_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.list_publisher_suggestions ..."
@@ -475,7 +475,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20023')
+        :return_type => 'PublisherSuggestionsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#list_publisher_suggestions\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -488,7 +488,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
     # @option opts [String] :subset **ALL** - return all publishers  **RELEVANT_ONLY** - only return publishers relevant to the account based on supported countries and location types  (default to RELEVANT_ONLY)
-    # @return [InlineResponse20022]
+    # @return [PublishersResponse]
     def list_publishers(account_id, v, opts = {})
       data, _status_code, _headers = list_publishers_with_http_info(account_id, v, opts)
       return data
@@ -500,7 +500,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
     # @option opts [String] :subset **ALL** - return all publishers  **RELEVANT_ONLY** - only return publishers relevant to the account based on supported countries and location types 
-    # @return [Array<(InlineResponse20022, Fixnum, Hash)>] InlineResponse20022 data, response status code and response headers
+    # @return [Array<(PublishersResponse, Fixnum, Hash)>] PublishersResponse data, response status code and response headers
     def list_publishers_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.list_publishers ..."
@@ -543,7 +543,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20022')
+        :return_type => 'PublishersResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#list_publishers\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -557,7 +557,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def opt_in_listings(account_id, v, opts = {})
       data, _status_code, _headers = opt_in_listings_with_http_info(account_id, v, opts)
       return data
@@ -570,7 +570,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def opt_in_listings_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.opt_in_listings ..."
@@ -611,7 +611,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#opt_in_listings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -625,7 +625,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def opt_out_listings(account_id, v, opts = {})
       data, _status_code, _headers = opt_out_listings_with_http_info(account_id, v, opts)
       return data
@@ -638,7 +638,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example:** MAPQUEST,YELP 
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def opt_out_listings_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.opt_out_listings ..."
@@ -679,7 +679,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#opt_out_listings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -692,7 +692,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param duplicate_id 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def suppress_duplicate(account_id, v, duplicate_id, opts = {})
       data, _status_code, _headers = suppress_duplicate_with_http_info(account_id, v, duplicate_id, opts)
       return data
@@ -704,7 +704,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param duplicate_id 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def suppress_duplicate_with_http_info(account_id, v, duplicate_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.suppress_duplicate ..."
@@ -745,7 +745,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#suppress_duplicate\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -759,7 +759,7 @@ module YextClient
     # @param suggestion_id 
     # @param status The status of the Publisher Suggestion
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def update_publisher_suggestion(account_id, v, suggestion_id, status, opts = {})
       data, _status_code, _headers = update_publisher_suggestion_with_http_info(account_id, v, suggestion_id, status, opts)
       return data
@@ -772,7 +772,7 @@ module YextClient
     # @param suggestion_id 
     # @param status The status of the Publisher Suggestion
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def update_publisher_suggestion_with_http_info(account_id, v, suggestion_id, status, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: PowerListingsApi.update_publisher_suggestion ..."
@@ -820,7 +820,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: PowerListingsApi#update_publisher_suggestion\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

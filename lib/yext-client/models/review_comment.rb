@@ -28,6 +28,9 @@ module YextClient
   class ReviewComment
     attr_accessor :author_role
 
+    # The date of the comment as reported by the publisher.  If edits impact the comment date on the publisher, then this date may change.  This date always comes from the publisher and we respect whatever they have.
+    attr_accessor :publisher_date
+
     attr_accessor :visibility
 
     # The email address of the person who wrote the comment (if we have it).
@@ -71,6 +74,7 @@ module YextClient
     def self.attribute_map
       {
         :'author_role' => :'authorRole',
+        :'publisher_date' => :'publisherDate',
         :'visibility' => :'visibility',
         :'author_email' => :'authorEmail',
         :'author_name' => :'authorName',
@@ -84,6 +88,7 @@ module YextClient
     def self.swagger_types
       {
         :'author_role' => :'String',
+        :'publisher_date' => :'String',
         :'visibility' => :'String',
         :'author_email' => :'String',
         :'author_name' => :'String',
@@ -103,6 +108,10 @@ module YextClient
 
       if attributes.has_key?(:'authorRole')
         self.author_role = attributes[:'authorRole']
+      end
+
+      if attributes.has_key?(:'publisherDate')
+        self.publisher_date = attributes[:'publisherDate']
       end
 
       if attributes.has_key?(:'visibility')
@@ -174,6 +183,7 @@ module YextClient
       return true if self.equal?(o)
       self.class == o.class &&
           author_role == o.author_role &&
+          publisher_date == o.publisher_date &&
           visibility == o.visibility &&
           author_email == o.author_email &&
           author_name == o.author_name &&
@@ -191,7 +201,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [author_role, visibility, author_email, author_name, parent_id, message, id].hash
+      [author_role, publisher_date, visibility, author_email, author_name, parent_id, message, id].hash
     end
 
     # Builds the object from hash

@@ -50,7 +50,7 @@ describe 'UserApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param user_request 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2016]
+  # @return [IdResponse]
   describe 'create_user test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -65,7 +65,7 @@ describe 'UserApi' do
   # @param user_id 
   # @param user_request 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2016]
+  # @return [UserResponse]
   describe 'delete_user test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -81,7 +81,7 @@ describe 'UserApi' do
   # @param location_ids Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account. 
   # @param mode When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress. 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20015]
+  # @return [OptimizationTaskLinksResponse]
   describe 'get_link_optimization_task test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -96,7 +96,7 @@ describe 'UserApi' do
   # @param task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  Defaults to all available Optimization Tasks in the account. 
   # @param location_ids Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account. 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20016]
+  # @return [OptimizationTasksResponse]
   describe 'get_optimization_tasks test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -109,7 +109,7 @@ describe 'UserApi' do
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20028]
+  # @return [RolesResponse]
   describe 'get_roles test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -123,7 +123,7 @@ describe 'UserApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param user_id 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2016]
+  # @return [UserResponse]
   describe 'get_user test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -138,7 +138,7 @@ describe 'UserApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return
   # @option opts [Integer] :offset Number of results to skip. Used to page through results
-  # @return [InlineResponse20029]
+  # @return [UsersResponse]
   describe 'get_users test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -153,7 +153,7 @@ describe 'UserApi' do
   # @param user_id 
   # @param user_request 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2016]
+  # @return [UserResponse]
   describe 'update_user test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

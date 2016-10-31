@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **activity_log**
-> InlineResponse200 activity_log(account_id, , opts)
+> ActivitiesResponse activity_log(account_id, , opts)
 
 Activity Log
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**ActivitiesResponse**](ActivitiesResponse.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 
 # **create_reports**
-> InlineResponse2002 create_reports(account_id, , opts)
+> CreateReportsResponse create_reports(account_id, , opts)
 
 Create Reports
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**CreateReportsResponse**](CreateReportsResponse.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 
 # **get_max_dates**
-> InlineResponse2001 get_max_dates(account_id, )
+> MaximumDatesResponse get_max_dates(account_id, )
 
 Max Dates
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**MaximumDatesResponse**](MaximumDatesResponse.md)
 
 ### Authorization
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 
 # **report_status**
-> InlineResponse2003 report_status(account_id, report_id)
+> ReportStatusResponse report_status(account_id, report_id)
 
 Report Status
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**ReportStatusResponse**](ReportStatusResponse.md)
 
 ### Authorization
 

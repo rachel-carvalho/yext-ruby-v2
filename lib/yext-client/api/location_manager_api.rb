@@ -37,7 +37,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse201]
+    # @return [IdResponse]
     def create_bio(account_id, v, body, opts = {})
       data, _status_code, _headers = create_bio_with_http_info(account_id, v, body, opts)
       return data
@@ -49,7 +49,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse201, Fixnum, Hash)>] InlineResponse201 data, response status code and response headers
+    # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_bio_with_http_info(account_id, v, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.create_bio ..."
@@ -90,7 +90,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse201')
+        :return_type => 'IdResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#create_bio\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -103,7 +103,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2012]
+    # @return [IdResponse]
     def create_event(account_id, v, body, opts = {})
       data, _status_code, _headers = create_event_with_http_info(account_id, v, body, opts)
       return data
@@ -115,7 +115,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2012, Fixnum, Hash)>] InlineResponse2012 data, response status code and response headers
+    # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_event_with_http_info(account_id, v, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.create_event ..."
@@ -156,7 +156,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2012')
+        :return_type => 'IdResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#create_event\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -169,7 +169,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param location_request 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2011]
+    # @return [IdResponse]
     def create_location(account_id, v, location_request, opts = {})
       data, _status_code, _headers = create_location_with_http_info(account_id, v, location_request, opts)
       return data
@@ -181,7 +181,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param location_request 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2011, Fixnum, Hash)>] InlineResponse2011 data, response status code and response headers
+    # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_location_with_http_info(account_id, v, location_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.create_location ..."
@@ -222,7 +222,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2011')
+        :return_type => 'IdResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#create_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -235,7 +235,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2013]
+    # @return [IdResponse]
     def create_menu(account_id, v, body, opts = {})
       data, _status_code, _headers = create_menu_with_http_info(account_id, v, body, opts)
       return data
@@ -247,7 +247,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2013, Fixnum, Hash)>] InlineResponse2013 data, response status code and response headers
+    # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_menu_with_http_info(account_id, v, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.create_menu ..."
@@ -288,7 +288,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2013')
+        :return_type => 'IdResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#create_menu\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -301,7 +301,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20011]
+    # @return [IdResponse]
     def create_product(account_id, v, body, opts = {})
       data, _status_code, _headers = create_product_with_http_info(account_id, v, body, opts)
       return data
@@ -313,7 +313,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
+    # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_product_with_http_info(account_id, v, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.create_product ..."
@@ -354,7 +354,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20011')
+        :return_type => 'IdResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#create_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -367,7 +367,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def delete_bio_list(account_id, list_id, v, opts = {})
       data, _status_code, _headers = delete_bio_list_with_http_info(account_id, list_id, v, opts)
       return data
@@ -379,7 +379,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def delete_bio_list_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.delete_bio_list ..."
@@ -420,7 +420,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#delete_bio_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -433,7 +433,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def delete_event_list(account_id, list_id, v, opts = {})
       data, _status_code, _headers = delete_event_list_with_http_info(account_id, list_id, v, opts)
       return data
@@ -445,7 +445,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def delete_event_list_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.delete_event_list ..."
@@ -486,7 +486,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#delete_event_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -500,7 +500,7 @@ module YextClient
     # @param language_code Locale code
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def delete_language_profile(account_id, location_id, language_code, v, opts = {})
       data, _status_code, _headers = delete_language_profile_with_http_info(account_id, location_id, language_code, v, opts)
       return data
@@ -513,7 +513,7 @@ module YextClient
     # @param language_code Locale code
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def delete_language_profile_with_http_info(account_id, location_id, language_code, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.delete_language_profile ..."
@@ -556,7 +556,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#delete_language_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -569,7 +569,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def delete_menu_list(account_id, list_id, v, opts = {})
       data, _status_code, _headers = delete_menu_list_with_http_info(account_id, list_id, v, opts)
       return data
@@ -581,7 +581,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def delete_menu_list_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.delete_menu_list ..."
@@ -622,7 +622,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#delete_menu_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -635,7 +635,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponseDefault]
+    # @return [ErrorResponse]
     def delete_product_list(account_id, list_id, v, opts = {})
       data, _status_code, _headers = delete_product_list_with_http_info(account_id, list_id, v, opts)
       return data
@@ -647,7 +647,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponseDefault, Fixnum, Hash)>] InlineResponseDefault data, response status code and response headers
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def delete_product_list_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.delete_product_list ..."
@@ -688,7 +688,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponseDefault')
+        :return_type => 'ErrorResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#delete_product_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -701,7 +701,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse201]
+    # @return [BioListResponse]
     def get_bio(account_id, list_id, v, opts = {})
       data, _status_code, _headers = get_bio_with_http_info(account_id, list_id, v, opts)
       return data
@@ -713,7 +713,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse201, Fixnum, Hash)>] InlineResponse201 data, response status code and response headers
+    # @return [Array<(BioListResponse, Fixnum, Hash)>] BioListResponse data, response status code and response headers
     def get_bio_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_bio ..."
@@ -754,7 +754,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse201')
+        :return_type => 'BioListResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_bio\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -768,7 +768,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
-    # @return [InlineResponse2004]
+    # @return [BioListsResponse]
     def get_bios(account_id, v, opts = {})
       data, _status_code, _headers = get_bios_with_http_info(account_id, v, opts)
       return data
@@ -781,7 +781,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
-    # @return [Array<(InlineResponse2004, Fixnum, Hash)>] InlineResponse2004 data, response status code and response headers
+    # @return [Array<(BioListsResponse, Fixnum, Hash)>] BioListsResponse data, response status code and response headers
     def get_bios_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_bios ..."
@@ -826,7 +826,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2004')
+        :return_type => 'BioListsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_bios\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -839,7 +839,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :language Only categories that apply to this language will be returned.  **Example:** en  (default to en)
     # @option opts [String] :country Only categories that apply in this country will be returned.  **Example:** US  (default to US)
-    # @return [InlineResponse20030]
+    # @return [BusinessCategoriesResponse]
     def get_business_categories(v, opts = {})
       data, _status_code, _headers = get_business_categories_with_http_info(v, opts)
       return data
@@ -851,7 +851,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :language Only categories that apply to this language will be returned.  **Example:** en 
     # @option opts [String] :country Only categories that apply in this country will be returned.  **Example:** US 
-    # @return [Array<(InlineResponse20030, Fixnum, Hash)>] InlineResponse20030 data, response status code and response headers
+    # @return [Array<(BusinessCategoriesResponse, Fixnum, Hash)>] BusinessCategoriesResponse data, response status code and response headers
     def get_business_categories_with_http_info(v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_business_categories ..."
@@ -890,7 +890,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20030')
+        :return_type => 'BusinessCategoriesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_business_categories\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -904,7 +904,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
     # @option opts [Integer] :limit Number of results to return (default to 100)
-    # @return [InlineResponse2005]
+    # @return [CustomFieldsResponse]
     def get_custom_fields(v, account_id, opts = {})
       data, _status_code, _headers = get_custom_fields_with_http_info(v, account_id, opts)
       return data
@@ -917,7 +917,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
     # @option opts [Integer] :limit Number of results to return
-    # @return [Array<(InlineResponse2005, Fixnum, Hash)>] InlineResponse2005 data, response status code and response headers
+    # @return [Array<(CustomFieldsResponse, Fixnum, Hash)>] CustomFieldsResponse data, response status code and response headers
     def get_custom_fields_with_http_info(v, account_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_custom_fields ..."
@@ -962,7 +962,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2005')
+        :return_type => 'CustomFieldsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_custom_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -975,7 +975,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2012]
+    # @return [EventListResponse]
     def get_event(account_id, list_id, v, opts = {})
       data, _status_code, _headers = get_event_with_http_info(account_id, list_id, v, opts)
       return data
@@ -987,7 +987,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2012, Fixnum, Hash)>] InlineResponse2012 data, response status code and response headers
+    # @return [Array<(EventListResponse, Fixnum, Hash)>] EventListResponse data, response status code and response headers
     def get_event_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_event ..."
@@ -1028,7 +1028,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2012')
+        :return_type => 'EventListResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_event\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1042,7 +1042,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
-    # @return [InlineResponse20010]
+    # @return [EventListsResponse]
     def get_events(account_id, v, opts = {})
       data, _status_code, _headers = get_events_with_http_info(account_id, v, opts)
       return data
@@ -1055,7 +1055,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
-    # @return [Array<(InlineResponse20010, Fixnum, Hash)>] InlineResponse20010 data, response status code and response headers
+    # @return [Array<(EventListsResponse, Fixnum, Hash)>] EventListsResponse data, response status code and response headers
     def get_events_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_events ..."
@@ -1100,7 +1100,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20010')
+        :return_type => 'EventListsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_events\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1111,7 +1111,7 @@ module YextClient
     # Use the Google Attributes API to retrieve a complete list of Google's location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locationsvia the googleKeywords field in the Locations API.
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20031]
+    # @return [GoogleFieldsResponse]
     def get_google_keywords(v, opts = {})
       data, _status_code, _headers = get_google_keywords_with_http_info(v, opts)
       return data
@@ -1121,7 +1121,7 @@ module YextClient
     # Use the Google Attributes API to retrieve a complete list of Google&#39;s location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locationsvia the googleKeywords field in the Locations API.
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20031, Fixnum, Hash)>] InlineResponse20031 data, response status code and response headers
+    # @return [Array<(GoogleFieldsResponse, Fixnum, Hash)>] GoogleFieldsResponse data, response status code and response headers
     def get_google_keywords_with_http_info(v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_google_keywords ..."
@@ -1158,7 +1158,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20031')
+        :return_type => 'GoogleFieldsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_google_keywords\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1172,7 +1172,7 @@ module YextClient
     # @param language_code Locale code
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20012]
+    # @return [LocationResponse]
     def get_language_profile(account_id, location_id, language_code, v, opts = {})
       data, _status_code, _headers = get_language_profile_with_http_info(account_id, location_id, language_code, v, opts)
       return data
@@ -1185,7 +1185,7 @@ module YextClient
     # @param language_code Locale code
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20012, Fixnum, Hash)>] InlineResponse20012 data, response status code and response headers
+    # @return [Array<(LocationResponse, Fixnum, Hash)>] LocationResponse data, response status code and response headers
     def get_language_profile_with_http_info(account_id, location_id, language_code, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_language_profile ..."
@@ -1228,7 +1228,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20012')
+        :return_type => 'LocationResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_language_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1241,7 +1241,7 @@ module YextClient
     # @param location_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20013]
+    # @return [LanguageProfilesResponse]
     def get_language_profiles(account_id, location_id, v, opts = {})
       data, _status_code, _headers = get_language_profiles_with_http_info(account_id, location_id, v, opts)
       return data
@@ -1253,7 +1253,7 @@ module YextClient
     # @param location_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20013, Fixnum, Hash)>] InlineResponse20013 data, response status code and response headers
+    # @return [Array<(LanguageProfilesResponse, Fixnum, Hash)>] LanguageProfilesResponse data, response status code and response headers
     def get_language_profiles_with_http_info(account_id, location_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_language_profiles ..."
@@ -1294,7 +1294,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20013')
+        :return_type => 'LanguageProfilesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_language_profiles\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1307,7 +1307,7 @@ module YextClient
     # @param location_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20012]
+    # @return [LocationResponse]
     def get_location(account_id, location_id, v, opts = {})
       data, _status_code, _headers = get_location_with_http_info(account_id, location_id, v, opts)
       return data
@@ -1319,7 +1319,7 @@ module YextClient
     # @param location_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20012, Fixnum, Hash)>] InlineResponse20012 data, response status code and response headers
+    # @return [Array<(LocationResponse, Fixnum, Hash)>] LocationResponse data, response status code and response headers
     def get_location_with_http_info(account_id, location_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_location ..."
@@ -1360,7 +1360,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20012')
+        :return_type => 'LocationResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1374,7 +1374,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
     # @option opts [Integer] :limit Number of results to return (default to 100)
-    # @return [InlineResponse2006]
+    # @return [FoldersResponse]
     def get_location_folders(account_id, v, opts = {})
       data, _status_code, _headers = get_location_folders_with_http_info(account_id, v, opts)
       return data
@@ -1387,7 +1387,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
     # @option opts [Integer] :limit Number of results to return
-    # @return [Array<(InlineResponse2006, Fixnum, Hash)>] InlineResponse2006 data, response status code and response headers
+    # @return [Array<(FoldersResponse, Fixnum, Hash)>] FoldersResponse data, response status code and response headers
     def get_location_folders_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_location_folders ..."
@@ -1432,7 +1432,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2006')
+        :return_type => 'FoldersResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_location_folders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1446,7 +1446,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
-    # @return [InlineResponse2009]
+    # @return [LocationsResponse]
     def get_locations(account_id, v, opts = {})
       data, _status_code, _headers = get_locations_with_http_info(account_id, v, opts)
       return data
@@ -1459,7 +1459,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
-    # @return [Array<(InlineResponse2009, Fixnum, Hash)>] InlineResponse2009 data, response status code and response headers
+    # @return [Array<(LocationsResponse, Fixnum, Hash)>] LocationsResponse data, response status code and response headers
     def get_locations_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_locations ..."
@@ -1504,7 +1504,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2009')
+        :return_type => 'LocationsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_locations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1517,7 +1517,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2013]
+    # @return [MenuListResponse]
     def get_menu(account_id, list_id, v, opts = {})
       data, _status_code, _headers = get_menu_with_http_info(account_id, list_id, v, opts)
       return data
@@ -1529,7 +1529,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2013, Fixnum, Hash)>] InlineResponse2013 data, response status code and response headers
+    # @return [Array<(MenuListResponse, Fixnum, Hash)>] MenuListResponse data, response status code and response headers
     def get_menu_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_menu ..."
@@ -1570,7 +1570,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2013')
+        :return_type => 'MenuListResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_menu\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1584,7 +1584,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
-    # @return [InlineResponse20014]
+    # @return [MenuListsResponse]
     def get_menus(account_id, v, opts = {})
       data, _status_code, _headers = get_menus_with_http_info(account_id, v, opts)
       return data
@@ -1597,7 +1597,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
-    # @return [Array<(InlineResponse20014, Fixnum, Hash)>] InlineResponse20014 data, response status code and response headers
+    # @return [Array<(MenuListsResponse, Fixnum, Hash)>] MenuListsResponse data, response status code and response headers
     def get_menus_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_menus ..."
@@ -1642,7 +1642,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20014')
+        :return_type => 'MenuListsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_menus\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1655,7 +1655,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20011]
+    # @return [ProductListResponse]
     def get_product(account_id, list_id, v, opts = {})
       data, _status_code, _headers = get_product_with_http_info(account_id, list_id, v, opts)
       return data
@@ -1667,7 +1667,7 @@ module YextClient
     # @param list_id ID of this List
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
+    # @return [Array<(ProductListResponse, Fixnum, Hash)>] ProductListResponse data, response status code and response headers
     def get_product_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_product ..."
@@ -1708,7 +1708,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20011')
+        :return_type => 'ProductListResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1722,7 +1722,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
-    # @return [InlineResponse20025]
+    # @return [ProductListsResponse]
     def get_products(account_id, v, opts = {})
       data, _status_code, _headers = get_products_with_http_info(account_id, v, opts)
       return data
@@ -1735,7 +1735,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
-    # @return [Array<(InlineResponse20025, Fixnum, Hash)>] InlineResponse20025 data, response status code and response headers
+    # @return [Array<(ProductListsResponse, Fixnum, Hash)>] ProductListsResponse data, response status code and response headers
     def get_products_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.get_products ..."
@@ -1780,7 +1780,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20025')
+        :return_type => 'ProductListsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#get_products\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1794,7 +1794,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse201]
+    # @return [BioListResponse]
     def update_bio(account_id, list_id, v, body, opts = {})
       data, _status_code, _headers = update_bio_with_http_info(account_id, list_id, v, body, opts)
       return data
@@ -1807,7 +1807,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse201, Fixnum, Hash)>] InlineResponse201 data, response status code and response headers
+    # @return [Array<(BioListResponse, Fixnum, Hash)>] BioListResponse data, response status code and response headers
     def update_bio_with_http_info(account_id, list_id, v, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.update_bio ..."
@@ -1850,7 +1850,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse201')
+        :return_type => 'BioListResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#update_bio\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1864,7 +1864,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2012]
+    # @return [EventListResponse]
     def update_event(account_id, list_id, v, body, opts = {})
       data, _status_code, _headers = update_event_with_http_info(account_id, list_id, v, body, opts)
       return data
@@ -1877,7 +1877,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2012, Fixnum, Hash)>] InlineResponse2012 data, response status code and response headers
+    # @return [Array<(EventListResponse, Fixnum, Hash)>] EventListResponse data, response status code and response headers
     def update_event_with_http_info(account_id, list_id, v, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.update_event ..."
@@ -1920,7 +1920,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2012')
+        :return_type => 'EventListResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#update_event\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -1934,7 +1934,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param location_request 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2011]
+    # @return [IdResponse]
     def update_location(account_id, location_id, v, location_request, opts = {})
       data, _status_code, _headers = update_location_with_http_info(account_id, location_id, v, location_request, opts)
       return data
@@ -1947,7 +1947,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param location_request 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2011, Fixnum, Hash)>] InlineResponse2011 data, response status code and response headers
+    # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def update_location_with_http_info(account_id, location_id, v, location_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.update_location ..."
@@ -1990,7 +1990,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2011')
+        :return_type => 'IdResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#update_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -2004,7 +2004,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2013]
+    # @return [MenuListResponse]
     def update_menu(account_id, list_id, v, body, opts = {})
       data, _status_code, _headers = update_menu_with_http_info(account_id, list_id, v, body, opts)
       return data
@@ -2017,7 +2017,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2013, Fixnum, Hash)>] InlineResponse2013 data, response status code and response headers
+    # @return [Array<(MenuListResponse, Fixnum, Hash)>] MenuListResponse data, response status code and response headers
     def update_menu_with_http_info(account_id, list_id, v, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.update_menu ..."
@@ -2060,7 +2060,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2013')
+        :return_type => 'MenuListResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#update_menu\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -2074,7 +2074,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20011]
+    # @return [ProductListResponse]
     def update_product(account_id, list_id, v, body, opts = {})
       data, _status_code, _headers = update_product_with_http_info(account_id, list_id, v, body, opts)
       return data
@@ -2087,7 +2087,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param body 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20011, Fixnum, Hash)>] InlineResponse20011 data, response status code and response headers
+    # @return [Array<(ProductListResponse, Fixnum, Hash)>] ProductListResponse data, response status code and response headers
     def update_product_with_http_info(account_id, list_id, v, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.update_product ..."
@@ -2130,7 +2130,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20011')
+        :return_type => 'ProductListResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#update_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -2146,7 +2146,7 @@ module YextClient
     # @param body 
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :primary When present and set to true, the specified profile will become the location’s primary Language Profile
-    # @return [InlineResponse20012]
+    # @return [LocationResponse]
     def upsert_language_profile(account_id, location_id, language_code, v, body, opts = {})
       data, _status_code, _headers = upsert_language_profile_with_http_info(account_id, location_id, language_code, v, body, opts)
       return data
@@ -2161,7 +2161,7 @@ module YextClient
     # @param body 
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :primary When present and set to true, the specified profile will become the location’s primary Language Profile
-    # @return [Array<(InlineResponse20012, Fixnum, Hash)>] InlineResponse20012 data, response status code and response headers
+    # @return [Array<(LocationResponse, Fixnum, Hash)>] LocationResponse data, response status code and response headers
     def upsert_language_profile_with_http_info(account_id, location_id, language_code, v, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: LocationManagerApi.upsert_language_profile ..."
@@ -2207,7 +2207,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20012')
+        :return_type => 'LocationResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: LocationManagerApi#upsert_language_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

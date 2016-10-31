@@ -37,7 +37,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param user_request 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2016]
+    # @return [IdResponse]
     def create_user(account_id, v, user_request, opts = {})
       data, _status_code, _headers = create_user_with_http_info(account_id, v, user_request, opts)
       return data
@@ -49,7 +49,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param user_request 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2016, Fixnum, Hash)>] InlineResponse2016 data, response status code and response headers
+    # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_user_with_http_info(account_id, v, user_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.create_user ..."
@@ -90,7 +90,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2016')
+        :return_type => 'IdResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#create_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -104,7 +104,7 @@ module YextClient
     # @param user_id 
     # @param user_request 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2016]
+    # @return [UserResponse]
     def delete_user(account_id, v, user_id, user_request, opts = {})
       data, _status_code, _headers = delete_user_with_http_info(account_id, v, user_id, user_request, opts)
       return data
@@ -117,7 +117,7 @@ module YextClient
     # @param user_id 
     # @param user_request 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2016, Fixnum, Hash)>] InlineResponse2016 data, response status code and response headers
+    # @return [Array<(UserResponse, Fixnum, Hash)>] UserResponse data, response status code and response headers
     def delete_user_with_http_info(account_id, v, user_id, user_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.delete_user ..."
@@ -160,7 +160,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2016')
+        :return_type => 'UserResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#delete_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -175,7 +175,7 @@ module YextClient
     # @param location_ids Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account. 
     # @param mode When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress. 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20015]
+    # @return [OptimizationTaskLinksResponse]
     def get_link_optimization_task(account_id, v, task_ids, location_ids, mode, opts = {})
       data, _status_code, _headers = get_link_optimization_task_with_http_info(account_id, v, task_ids, location_ids, mode, opts)
       return data
@@ -189,7 +189,7 @@ module YextClient
     # @param location_ids Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account. 
     # @param mode When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress. 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20015, Fixnum, Hash)>] InlineResponse20015 data, response status code and response headers
+    # @return [Array<(OptimizationTaskLinksResponse, Fixnum, Hash)>] OptimizationTaskLinksResponse data, response status code and response headers
     def get_link_optimization_task_with_http_info(account_id, v, task_ids, location_ids, mode, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.get_link_optimization_task ..."
@@ -241,7 +241,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20015')
+        :return_type => 'OptimizationTaskLinksResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#get_link_optimization_task\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -255,7 +255,7 @@ module YextClient
     # @param task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  Defaults to all available Optimization Tasks in the account. 
     # @param location_ids Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account. 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20016]
+    # @return [OptimizationTasksResponse]
     def get_optimization_tasks(account_id, v, task_ids, location_ids, opts = {})
       data, _status_code, _headers = get_optimization_tasks_with_http_info(account_id, v, task_ids, location_ids, opts)
       return data
@@ -268,7 +268,7 @@ module YextClient
     # @param task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  Defaults to all available Optimization Tasks in the account. 
     # @param location_ids Comma-separated list of Location IDs, corresponding to Locations to be evaluated when returning the number of locations eligible &amp; completed for each Optimization Task.  Defaults to all Locations in the account. 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20016, Fixnum, Hash)>] InlineResponse20016 data, response status code and response headers
+    # @return [Array<(OptimizationTasksResponse, Fixnum, Hash)>] OptimizationTasksResponse data, response status code and response headers
     def get_optimization_tasks_with_http_info(account_id, v, task_ids, location_ids, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.get_optimization_tasks ..."
@@ -313,7 +313,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20016')
+        :return_type => 'OptimizationTasksResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#get_optimization_tasks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -325,7 +325,7 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse20028]
+    # @return [RolesResponse]
     def get_roles(account_id, v, opts = {})
       data, _status_code, _headers = get_roles_with_http_info(account_id, v, opts)
       return data
@@ -336,7 +336,7 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse20028, Fixnum, Hash)>] InlineResponse20028 data, response status code and response headers
+    # @return [Array<(RolesResponse, Fixnum, Hash)>] RolesResponse data, response status code and response headers
     def get_roles_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.get_roles ..."
@@ -375,7 +375,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20028')
+        :return_type => 'RolesResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#get_roles\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -388,7 +388,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param user_id 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2016]
+    # @return [UserResponse]
     def get_user(account_id, v, user_id, opts = {})
       data, _status_code, _headers = get_user_with_http_info(account_id, v, user_id, opts)
       return data
@@ -400,7 +400,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format
     # @param user_id 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2016, Fixnum, Hash)>] InlineResponse2016 data, response status code and response headers
+    # @return [Array<(UserResponse, Fixnum, Hash)>] UserResponse data, response status code and response headers
     def get_user_with_http_info(account_id, v, user_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.get_user ..."
@@ -441,7 +441,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2016')
+        :return_type => 'UserResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#get_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -455,7 +455,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results (default to 0)
-    # @return [InlineResponse20029]
+    # @return [UsersResponse]
     def get_users(account_id, v, opts = {})
       data, _status_code, _headers = get_users_with_http_info(account_id, v, opts)
       return data
@@ -468,7 +468,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results
-    # @return [Array<(InlineResponse20029, Fixnum, Hash)>] InlineResponse20029 data, response status code and response headers
+    # @return [Array<(UsersResponse, Fixnum, Hash)>] UsersResponse data, response status code and response headers
     def get_users_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.get_users ..."
@@ -513,7 +513,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse20029')
+        :return_type => 'UsersResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#get_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -527,7 +527,7 @@ module YextClient
     # @param user_id 
     # @param user_request 
     # @param [Hash] opts the optional parameters
-    # @return [InlineResponse2016]
+    # @return [UserResponse]
     def update_user(account_id, v, user_id, user_request, opts = {})
       data, _status_code, _headers = update_user_with_http_info(account_id, v, user_id, user_request, opts)
       return data
@@ -540,7 +540,7 @@ module YextClient
     # @param user_id 
     # @param user_request 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(InlineResponse2016, Fixnum, Hash)>] InlineResponse2016 data, response status code and response headers
+    # @return [Array<(UserResponse, Fixnum, Hash)>] UserResponse data, response status code and response headers
     def update_user_with_http_info(account_id, v, user_id, user_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: UserApi.update_user ..."
@@ -583,7 +583,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'InlineResponse2016')
+        :return_type => 'UserResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: UserApi#update_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

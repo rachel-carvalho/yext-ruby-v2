@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **create_comment**
-> InlineResponse2014 create_comment(account_id, post_id, parent_id, opts)
+> IdResponse create_comment(account_id, post_id, parent_id, opts)
 
 Comments: create
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2014**](InlineResponse2014.md)
+[**IdResponse**](IdResponse.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 
 # **create_posts**
-> InlineResponse2014 create_posts(account_id, location_ids, publisher_ids, message, opts)
+> IdResponse create_posts(account_id, location_ids, publisher_ids, message, opts)
 
 Posts: create
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2014**](InlineResponse2014.md)
+[**IdResponse**](IdResponse.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_comment**
-> InlineResponseDefault delete_comment(account_id, post_id, comment_id)
+> ErrorResponse delete_comment(account_id, post_id, comment_id)
 
 Comments: delete
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_post**
-> InlineResponseDefault delete_post(account_id, post_id, )
+> ErrorResponse delete_post(account_id, post_id, )
 
 Posts: delete
 
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 
 # **get_comments**
-> InlineResponse20018 get_comments(account_id, post_id, , opts)
+> SocialCommentsResponse get_comments(account_id, post_id, , opts)
 
 Comments: list
 
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**SocialCommentsResponse**](SocialCommentsResponse.md)
 
 ### Authorization
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 
 # **get_linked_account**
-> InlineResponse2008 get_linked_account(account_id, linked_account_id)
+> LinkedAccountResponse get_linked_account(account_id, linked_account_id)
 
 Linked Accounts: get
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**LinkedAccountResponse**](LinkedAccountResponse.md)
 
 ### Authorization
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 
 # **get_linked_accounts**
-> InlineResponse2007 get_linked_accounts(account_id, , opts)
+> LinkedAccountsResponse get_linked_accounts(account_id, , opts)
 
 Linked Accounts: list
 
@@ -445,7 +445,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**LinkedAccountsResponse**](LinkedAccountsResponse.md)
 
 ### Authorization
 
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 
 
 # **get_posts**
-> InlineResponse20017 get_posts(account_id, , opts)
+> SocialPostsResponse get_posts(account_id, , opts)
 
 Posts: List
 
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**SocialPostsResponse**](SocialPostsResponse.md)
 
 ### Authorization
 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
 
 
 # **update_comment**
-> InlineResponseDefault update_comment(account_id, post_id, comment_idcomment)
+> ErrorResponse update_comment(account_id, post_id, comment_idcomment)
 
 Comments: update
 
@@ -580,7 +580,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 
@@ -594,7 +594,7 @@ Name | Type | Description  | Notes
 
 
 # **update_linked_account**
-> InlineResponseDefault update_linked_account(account_id, linked_account_id, opts)
+> ErrorResponse update_linked_account(account_id, linked_account_id, opts)
 
 Linked Accounts: update
 
@@ -643,7 +643,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 

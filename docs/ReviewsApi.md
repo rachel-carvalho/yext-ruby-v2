@@ -5,12 +5,13 @@ All URIs are relative to *https://api.yext.com/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_comment**](ReviewsApi.md#create_comment) | **POST** /accounts/{accountId}/reviews/{reviewId}/comments | Comments: Create
+[**create_review_invites**](ReviewsApi.md#create_review_invites) | **POST** /accounts/{accountId}/reviewinvites | Review Invitations: create
 [**get_review**](ReviewsApi.md#get_review) | **GET** /accounts/{accountId}/reviews/{reviewId} | Reviews: Get
 [**list_reviews**](ReviewsApi.md#list_reviews) | **GET** /accounts/{accountId}/reviews | Reviews: List
 
 
 # **create_comment**
-> InlineResponse2015 create_comment(account_id, review_id, v, opts)
+> ErrorResponse create_comment(account_id, review_id, v, opts)
 
 Comments: Create
 
@@ -64,7 +65,64 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2015**](InlineResponse2015.md)
+[**ErrorResponse**](ErrorResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **create_review_invites**
+> Array&lt;CreateReviewInvitationResponse&gt; create_review_invites(account_id, reviews)
+
+Review Invitations: create
+
+Sends review invitations to one or more consumers.
+
+### Example
+```ruby
+# load the gem
+require 'yext-client'
+# setup authorization
+YextClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['api_key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['api_key'] = 'Bearer'
+end
+
+api_instance = YextClient::ReviewsApi.new
+
+account_id = "account_id_example" # String | 
+
+reviews = [YextClient::ReviewInvitation.new] # Array<ReviewInvitation> | 
+
+
+begin
+  #Review Invitations: create
+  result = api_instance.create_review_invites(account_id, reviews)
+  p result
+rescue YextClient::ApiError => e
+  puts "Exception when calling ReviewsApi->create_review_invites: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **String**|  | 
+ **reviews** | [**Array&lt;ReviewInvitation&gt;**](ReviewInvitation.md)|  | 
+
+### Return type
+
+[**Array&lt;CreateReviewInvitationResponse&gt;**](CreateReviewInvitationResponse.md)
 
 ### Authorization
 
@@ -78,7 +136,7 @@ Name | Type | Description  | Notes
 
 
 # **get_review**
-> InlineResponse20027 get_review(account_id, review_id, v)
+> ReviewResponse get_review(account_id, review_id, v)
 
 Reviews: Get
 
@@ -124,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](InlineResponse20027.md)
+[**ReviewResponse**](ReviewResponse.md)
 
 ### Authorization
 
@@ -138,7 +196,7 @@ Name | Type | Description  | Notes
 
 
 # **list_reviews**
-> InlineResponse20026 list_reviews(account_id, v, opts)
+> ReviewsResponse list_reviews(account_id, v, opts)
 
 Reviews: List
 
@@ -219,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](InlineResponse20026.md)
+[**ReviewsResponse**](ReviewsResponse.md)
 
 ### Authorization
 

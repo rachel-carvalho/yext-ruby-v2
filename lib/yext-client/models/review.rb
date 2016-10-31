@@ -35,6 +35,12 @@ module YextClient
     # The URL of the review, or the URL of the listing where the review can be found if there is no specific URL for the review.
     attr_accessor :url
 
+    # The date of the review as reported by the publisher.  If edits impact the review date on the publisher, then this date may change.  This date always comes from the publisher and we respect whatever they have.
+    attr_accessor :publisher_date
+
+    # This is the date Yext last ingested an update for the review.  This is a date from Yext, and it always means the last time this review changed in Yext.
+    attr_accessor :last_yext_update_date
+
     # An ordered array of Comments on the review.  **NOTE:** The order is a flattened tree with depth ties broken by publisher date. 
     attr_accessor :comments
 
@@ -63,6 +69,8 @@ module YextClient
         :'rating' => :'rating',
         :'title' => :'title',
         :'url' => :'url',
+        :'publisher_date' => :'publisherDate',
+        :'last_yext_update_date' => :'lastYextUpdateDate',
         :'comments' => :'comments',
         :'content' => :'content',
         :'author_name' => :'authorName',
@@ -79,6 +87,8 @@ module YextClient
         :'rating' => :'Float',
         :'title' => :'String',
         :'url' => :'String',
+        :'publisher_date' => :'String',
+        :'last_yext_update_date' => :'String',
         :'comments' => :'Array<ReviewComment>',
         :'content' => :'String',
         :'author_name' => :'String',
@@ -107,6 +117,14 @@ module YextClient
 
       if attributes.has_key?(:'url')
         self.url = attributes[:'url']
+      end
+
+      if attributes.has_key?(:'publisherDate')
+        self.publisher_date = attributes[:'publisherDate']
+      end
+
+      if attributes.has_key?(:'lastYextUpdateDate')
+        self.last_yext_update_date = attributes[:'lastYextUpdateDate']
       end
 
       if attributes.has_key?(:'comments')
@@ -162,6 +180,8 @@ module YextClient
           rating == o.rating &&
           title == o.title &&
           url == o.url &&
+          publisher_date == o.publisher_date &&
+          last_yext_update_date == o.last_yext_update_date &&
           comments == o.comments &&
           content == o.content &&
           author_name == o.author_name &&
@@ -180,7 +200,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [rating, title, url, comments, content, author_name, author_email, location_id, publisher_id, id].hash
+      [rating, title, url, publisher_date, last_yext_update_date, comments, content, author_name, author_email, location_id, publisher_id, id].hash
     end
 
     # Builds the object from hash

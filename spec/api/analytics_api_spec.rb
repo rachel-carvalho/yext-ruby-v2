@@ -49,7 +49,7 @@ describe 'AnalyticsApi' do
   # @param account_id 
   # @param [Hash] opts the optional parameters
   # @option opts [ActivityLogRequest] :body 
-  # @return [InlineResponse200]
+  # @return [ActivitiesResponse]
   describe 'activity_log test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -64,7 +64,7 @@ describe 'AnalyticsApi' do
   # @option opts [BOOLEAN] :async Defaults to false.  When true, the report’s ID will be returned immediately and the report results can be fetched later.  When false, the report results will be returned immediately, but an error may occur if the data requested is too large
   # @option opts [String] :callback Optional.  When async&#x3D;true and callback is specified, the provided URL will be called when the report is ready.  The URL must of of the form:       POST https://[your domain]/[your path]  It must accept the following parameters:      id:     (int)     - The ID of the report that is ready      status: (string)  - one of [DONE, FAILED]      url:    (string)  - When status&#x3D;DONE, contains the URL to download the report data as a text file. 
   # @option opts [CreateReportRequestBody] :body JSON object containing any filters to be applied to the report
-  # @return [InlineResponse2002]
+  # @return [CreateReportsResponse]
   describe 'create_reports test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -76,7 +76,7 @@ describe 'AnalyticsApi' do
   # The dates through which reporting data is available.
   # @param account_id 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2001]
+  # @return [MaximumDatesResponse]
   describe 'get_max_dates test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -89,7 +89,7 @@ describe 'AnalyticsApi' do
   # @param account_id 
   # @param report_id 
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse2003]
+  # @return [ReportStatusResponse]
   describe 'report_status test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **create_user**
-> InlineResponse2016 create_user(account_id, vuser_request)
+> IdResponse create_user(account_id, vuser_request)
 
 Users: Create
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2016**](InlineResponse2016.md)
+[**IdResponse**](IdResponse.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_user**
-> InlineResponse2016 delete_user(account_id, vuser_id, user_request)
+> UserResponse delete_user(account_id, vuser_id, user_request)
 
 Users: Delete
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2016**](InlineResponse2016.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 
 # **get_link_optimization_task**
-> InlineResponse20015 get_link_optimization_task(account_id, vtask_ids, location_idsmode)
+> OptimizationTaskLinksResponse get_link_optimization_task(account_id, vtask_ids, location_idsmode)
 
 Optimization Tasks: Get Link
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**OptimizationTaskLinksResponse**](OptimizationTaskLinksResponse.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 
 # **get_optimization_tasks**
-> InlineResponse20016 get_optimization_tasks(account_id, vtask_ids, location_ids)
+> OptimizationTasksResponse get_optimization_tasks(account_id, vtask_ids, location_ids)
 
 Optimization Tasks: List
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**OptimizationTasksResponse**](OptimizationTasksResponse.md)
 
 ### Authorization
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 
 # **get_roles**
-> InlineResponse20028 get_roles(account_id, v)
+> RolesResponse get_roles(account_id, v)
 
 Roles: Get
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](InlineResponse20028.md)
+[**RolesResponse**](RolesResponse.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 
 # **get_user**
-> InlineResponse2016 get_user(account_id, vuser_id, )
+> UserResponse get_user(account_id, vuser_id, )
 
 Users: Get
 
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2016**](InlineResponse2016.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 
 # **get_users**
-> InlineResponse20029 get_users(account_id, v, opts)
+> UsersResponse get_users(account_id, v, opts)
 
 Users: List
 
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20029**](InlineResponse20029.md)
+[**UsersResponse**](UsersResponse.md)
 
 ### Authorization
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 
 # **update_user**
-> InlineResponse2016 update_user(account_id, vuser_id, user_request)
+> UserResponse update_user(account_id, vuser_id, user_request)
 
 Users: Update
 
@@ -496,7 +496,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2016**](InlineResponse2016.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 

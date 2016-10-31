@@ -53,8 +53,21 @@ describe 'ReviewsApi' do
   # @option opts [String] :content Content of the new comment.
   # @option opts [String] :visibility 
   # @option opts [Integer] :parent_id If this Comment is in response to another comment, use this field to specify the ID of the parent Comment.
-  # @return [InlineResponse2015]
+  # @return [ErrorResponse]
   describe 'create_comment test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for create_review_invites
+  # Review Invitations: create
+  # Sends review invitations to one or more consumers.
+  # @param account_id 
+  # @param reviews 
+  # @param [Hash] opts the optional parameters
+  # @return [Array<CreateReviewInvitationResponse>]
+  describe 'create_review_invites test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -67,7 +80,7 @@ describe 'ReviewsApi' do
   # @param review_id ID of this Review
   # @param v A date in &#x60;YYYYMMDD&#x60; format
   # @param [Hash] opts the optional parameters
-  # @return [InlineResponse20027]
+  # @return [ReviewResponse]
   describe 'get_review test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -98,7 +111,7 @@ describe 'ReviewsApi' do
   # @option opts [Integer] :min_non_owner_comments When specified, only reviews that have at least the provided number of non-owner comments will be returned.
   # @option opts [String] :reviewer_name When specified, only reviews whose authorName contains the provided string will be returned.
   # @option opts [String] :reviewer_email When specified, only reviews whose authorEmail matches the provided email address will be returned.
-  # @return [InlineResponse20026]
+  # @return [ReviewsResponse]
   describe 'list_reviews test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

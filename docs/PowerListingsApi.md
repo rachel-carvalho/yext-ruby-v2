@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **create_duplicate**
-> InlineResponse20020 create_duplicate(account_id, vurl, opts)
+> IdResponse create_duplicate(account_id, vurl, opts)
 
 Duplicates: Create
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](InlineResponse20020.md)
+[**IdResponse**](IdResponse.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_duplicate**
-> InlineResponseDefault delete_duplicate(account_id, vduplicate_id)
+> ErrorResponse delete_duplicate(account_id, vduplicate_id)
 
 Duplicates: Delete
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 
 # **get_publisher_suggestion**
-> InlineResponse20024 get_publisher_suggestion(account_id, vsuggestion_id, )
+> PublisherSuggestionResponse get_publisher_suggestion(account_id, vsuggestion_id, )
 
 Publisher Suggestions: Get
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](InlineResponse20024.md)
+[**PublisherSuggestionResponse**](PublisherSuggestionResponse.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 
 # **list_duplicates**
-> InlineResponse20019 list_duplicates(account_id, v, opts)
+> DuplicatesResponse list_duplicates(account_id, v, opts)
 
 Duplicates: List
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20019**](InlineResponse20019.md)
+[**DuplicatesResponse**](DuplicatesResponse.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 
 # **list_listings**
-> InlineResponse20021 list_listings(account_id, v, opts)
+> ListingsResponse list_listings(account_id, v, opts)
 
 Listings: List
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](InlineResponse20021.md)
+[**ListingsResponse**](ListingsResponse.md)
 
 ### Authorization
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 
 # **list_publisher_suggestions**
-> InlineResponse20023 list_publisher_suggestions(account_id, v, opts)
+> PublisherSuggestionsResponse list_publisher_suggestions(account_id, v, opts)
 
 Publisher Suggestions: List
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](InlineResponse20023.md)
+[**PublisherSuggestionsResponse**](PublisherSuggestionsResponse.md)
 
 ### Authorization
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 
 # **list_publishers**
-> InlineResponse20022 list_publishers(account_id, v, opts)
+> PublishersResponse list_publishers(account_id, v, opts)
 
 Publishers: List
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](InlineResponse20022.md)
+[**PublishersResponse**](PublishersResponse.md)
 
 ### Authorization
 
@@ -470,7 +470,7 @@ Name | Type | Description  | Notes
 
 
 # **opt_in_listings**
-> InlineResponseDefault opt_in_listings(account_id, v, opts)
+> ErrorResponse opt_in_listings(account_id, v, opts)
 
 Listings: Opt In
 
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 
 # **opt_out_listings**
-> InlineResponseDefault opt_out_listings(account_id, v, opts)
+> ErrorResponse opt_out_listings(account_id, v, opts)
 
 Listings: Opt Out
 
@@ -582,7 +582,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 
@@ -596,7 +596,7 @@ Name | Type | Description  | Notes
 
 
 # **suppress_duplicate**
-> InlineResponseDefault suppress_duplicate(account_id, vduplicate_id)
+> ErrorResponse suppress_duplicate(account_id, vduplicate_id)
 
 Duplicates: Suppress
 
@@ -642,7 +642,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 
@@ -656,7 +656,7 @@ Name | Type | Description  | Notes
 
 
 # **update_publisher_suggestion**
-> InlineResponseDefault update_publisher_suggestion(account_id, vsuggestion_id, status)
+> ErrorResponse update_publisher_suggestion(account_id, vsuggestion_id, status)
 
 Publisher Suggestions: Update
 
@@ -705,7 +705,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponseDefault**](InlineResponseDefault.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 
