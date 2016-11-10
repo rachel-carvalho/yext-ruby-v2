@@ -4,46 +4,46 @@ All URIs are relative to *https://api.yext.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_bio**](LocationManagerApi.md#create_bio) | **POST** /accounts/{accountId}/bios | Bios: Create
-[**create_event**](LocationManagerApi.md#create_event) | **POST** /accounts/{accountId}/locations/events | Events: Create
+[**create_bio**](LocationManagerApi.md#create_bio) | **POST** /accounts/{accountId}/bios | Bios: Create (December 2016)
+[**create_event**](LocationManagerApi.md#create_event) | **POST** /accounts/{accountId}/locations/events | Events: Create (December 2016)
 [**create_location**](LocationManagerApi.md#create_location) | **POST** /accounts/{accountId}/locations | Locations: Create
-[**create_menu**](LocationManagerApi.md#create_menu) | **POST** /accounts/{accountId}/menus | Menus: Create
-[**create_product**](LocationManagerApi.md#create_product) | **POST** /accounts/{accountId}/products | Products: Create
-[**delete_bio_list**](LocationManagerApi.md#delete_bio_list) | **DELETE** /accounts/{accountId}/bios/{listId} | Bios: Delete
-[**delete_event_list**](LocationManagerApi.md#delete_event_list) | **DELETE** /accounts/{accountId}/locations/events/{listId} | Events: Delete
-[**delete_language_profile**](LocationManagerApi.md#delete_language_profile) | **DELETE** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Delete
-[**delete_menu_list**](LocationManagerApi.md#delete_menu_list) | **DELETE** /accounts/{accountId}/menus/{listId} | Menus: Delete
-[**delete_product_list**](LocationManagerApi.md#delete_product_list) | **DELETE** /accounts/{accountId}/locations/products/{listId} | Products: Delete
-[**get_bio**](LocationManagerApi.md#get_bio) | **GET** /accounts/{accountId}/bios/{listId} | Bios: Get
-[**get_bios**](LocationManagerApi.md#get_bios) | **GET** /accounts/{accountId}/bios | Bios: List
+[**create_menu**](LocationManagerApi.md#create_menu) | **POST** /accounts/{accountId}/menus | Menus: Create (December 2016)
+[**create_product**](LocationManagerApi.md#create_product) | **POST** /accounts/{accountId}/products | Products: Create (December 2016)
+[**delete_bio_list**](LocationManagerApi.md#delete_bio_list) | **DELETE** /accounts/{accountId}/bios/{listId} | Bios: Delete (December 2016)
+[**delete_event_list**](LocationManagerApi.md#delete_event_list) | **DELETE** /accounts/{accountId}/locations/events/{listId} | Events: Delete (December 2016)
+[**delete_language_profile**](LocationManagerApi.md#delete_language_profile) | **DELETE** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Delete (December 2016)
+[**delete_menu_list**](LocationManagerApi.md#delete_menu_list) | **DELETE** /accounts/{accountId}/menus/{listId} | Menus: Delete (December 2016)
+[**delete_product_list**](LocationManagerApi.md#delete_product_list) | **DELETE** /accounts/{accountId}/locations/products/{listId} | Products: Delete (December 2016)
+[**get_bio**](LocationManagerApi.md#get_bio) | **GET** /accounts/{accountId}/bios/{listId} | Bios: Get (December 2016)
+[**get_bios**](LocationManagerApi.md#get_bios) | **GET** /accounts/{accountId}/bios | Bios: List (December 2016)
 [**get_business_categories**](LocationManagerApi.md#get_business_categories) | **GET** /categories | Categories: List
 [**get_custom_fields**](LocationManagerApi.md#get_custom_fields) | **GET** /accounts/{accountId}/customfields | Custom Fields: List
-[**get_event**](LocationManagerApi.md#get_event) | **GET** /accounts/{accountId}/locations/events/{listId} | Events: Get
-[**get_events**](LocationManagerApi.md#get_events) | **GET** /accounts/{accountId}/locations/events | Events: List
+[**get_event**](LocationManagerApi.md#get_event) | **GET** /accounts/{accountId}/locations/events/{listId} | Events: Get (December 2016)
+[**get_events**](LocationManagerApi.md#get_events) | **GET** /accounts/{accountId}/locations/events | Events: List (December 2016)
 [**get_google_keywords**](LocationManagerApi.md#get_google_keywords) | **GET** /googlefields | Google Fields: List
-[**get_language_profile**](LocationManagerApi.md#get_language_profile) | **GET** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Get
-[**get_language_profiles**](LocationManagerApi.md#get_language_profiles) | **GET** /accounts/{accountId}/locations/{locationId}/profiles | Language Profiles: List
+[**get_language_profile**](LocationManagerApi.md#get_language_profile) | **GET** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Get (December 2016)
+[**get_language_profiles**](LocationManagerApi.md#get_language_profiles) | **GET** /accounts/{accountId}/locations/{locationId}/profiles | Language Profiles: List (December 2016)
 [**get_location**](LocationManagerApi.md#get_location) | **GET** /accounts/{accountId}/locations/{locationId} | Locations: Get
 [**get_location_folders**](LocationManagerApi.md#get_location_folders) | **GET** /accounts/{accountId}/folders | Folders: List
 [**get_locations**](LocationManagerApi.md#get_locations) | **GET** /accounts/{accountId}/locations | Locations: List
-[**get_menu**](LocationManagerApi.md#get_menu) | **GET** /accounts/{accountId}/menus/{listId} | Menus: Get
-[**get_menus**](LocationManagerApi.md#get_menus) | **GET** /accounts/{accountId}/menus | Menus: List
-[**get_product**](LocationManagerApi.md#get_product) | **GET** /accounts/{accountId}/locations/products/{listId} | Products: Get
-[**get_products**](LocationManagerApi.md#get_products) | **GET** /accounts/{accountId}/products | Products: List
-[**update_bio**](LocationManagerApi.md#update_bio) | **PUT** /accounts/{accountId}/bios/{listId} | Bios: Update
-[**update_event**](LocationManagerApi.md#update_event) | **PUT** /accounts/{accountId}/locations/events/{listId} | Events: Update
+[**get_menu**](LocationManagerApi.md#get_menu) | **GET** /accounts/{accountId}/menus/{listId} | Menus: Get (December 2016)
+[**get_menus**](LocationManagerApi.md#get_menus) | **GET** /accounts/{accountId}/menus | Menus: List (December 2016)
+[**get_product**](LocationManagerApi.md#get_product) | **GET** /accounts/{accountId}/locations/products/{listId} | Products: Get (December 2016)
+[**get_products**](LocationManagerApi.md#get_products) | **GET** /accounts/{accountId}/products | Products: List (December 2016)
+[**update_bio**](LocationManagerApi.md#update_bio) | **PUT** /accounts/{accountId}/bios/{listId} | Bios: Update (December 2016)
+[**update_event**](LocationManagerApi.md#update_event) | **PUT** /accounts/{accountId}/locations/events/{listId} | Events: Update (December 2016)
 [**update_location**](LocationManagerApi.md#update_location) | **PUT** /accounts/{accountId}/locations/{locationId} | Locations: Update
-[**update_menu**](LocationManagerApi.md#update_menu) | **PUT** /accounts/{accountId}/menus/{listId} | Menus: Update
-[**update_product**](LocationManagerApi.md#update_product) | **PUT** /accounts/{accountId}/locations/products/{listId} | Products: Update
-[**upsert_language_profile**](LocationManagerApi.md#upsert_language_profile) | **PUT** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Upsert
+[**update_menu**](LocationManagerApi.md#update_menu) | **PUT** /accounts/{accountId}/menus/{listId} | Menus: Update (December 2016)
+[**update_product**](LocationManagerApi.md#update_product) | **PUT** /accounts/{accountId}/locations/products/{listId} | Products: Update (December 2016)
+[**upsert_language_profile**](LocationManagerApi.md#upsert_language_profile) | **PUT** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Upsert (December 2016)
 
 
 # **create_bio**
 > IdResponse create_bio(account_id, vbody)
 
-Bios: Create
+Bios: Create (December 2016)
 
-Create new Bio ECL
+Create new Bio List.
 
 ### Example
 ```ruby
@@ -61,13 +61,13 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 body = YextClient::Bio.new # Bio | 
 
 
 begin
-  #Bios: Create
+  #Bios: Create (December 2016)
   result = api_instance.create_bio(account_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -80,7 +80,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **body** | [**Bio**](Bio.md)|  | 
 
 ### Return type
@@ -101,9 +101,9 @@ Name | Type | Description  | Notes
 # **create_event**
 > IdResponse create_event(account_id, vbody)
 
-Events: Create
+Events: Create (December 2016)
 
-Create a new Events ECL
+Create a new Event List.
 
 ### Example
 ```ruby
@@ -121,13 +121,13 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 body = YextClient::Event.new # Event | 
 
 
 begin
-  #Events: Create
+  #Events: Create (December 2016)
   result = api_instance.create_event(account_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -140,7 +140,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **body** | [**Event**](Event.md)|  | 
 
 ### Return type
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 Locations: Create
 
-Create a new Location
+Create a new Location.
 
 ### Example
 ```ruby
@@ -181,7 +181,7 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 location_request = YextClient::Location.new # Location | 
 
@@ -200,7 +200,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **location_request** | [**Location**](Location.md)|  | 
 
 ### Return type
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 # **create_menu**
 > IdResponse create_menu(account_id, vbody)
 
-Menus: Create
+Menus: Create (December 2016)
 
 ### Example
 ```ruby
@@ -239,13 +239,13 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 body = YextClient::Menu.new # Menu | 
 
 
 begin
-  #Menus: Create
+  #Menus: Create (December 2016)
   result = api_instance.create_menu(account_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -258,7 +258,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **body** | [**Menu**](Menu.md)|  | 
 
 ### Return type
@@ -279,9 +279,9 @@ Name | Type | Description  | Notes
 # **create_product**
 > IdResponse create_product(account_id, vbody)
 
-Products: Create
+Products: Create (December 2016)
 
-Create a new Product ECL
+Create a new Product List.
 
 ### Example
 ```ruby
@@ -299,13 +299,13 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 body = YextClient::Product.new # Product | 
 
 
 begin
-  #Products: Create
+  #Products: Create (December 2016)
   result = api_instance.create_product(account_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -318,7 +318,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **body** | [**Product**](Product.md)|  | 
 
 ### Return type
@@ -339,9 +339,9 @@ Name | Type | Description  | Notes
 # **delete_bio_list**
 > ErrorResponse delete_bio_list(account_id, list_id, v)
 
-Bios: Delete
+Bios: Delete (December 2016)
 
-Delete an existing Bios ECL
+Delete an existing Bios List.
 
 ### Example
 ```ruby
@@ -359,13 +359,13 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-list_id = "list_id_example" # String | ID of this List
+list_id = "list_id_example" # String | ID of this List.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Bios: Delete
+  #Bios: Delete (December 2016)
   result = api_instance.delete_bio_list(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -378,8 +378,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **list_id** | **String**| ID of this List. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -399,9 +399,9 @@ Name | Type | Description  | Notes
 # **delete_event_list**
 > ErrorResponse delete_event_list(account_id, list_id, v)
 
-Events: Delete
+Events: Delete (December 2016)
 
-Delete an existing Events ECL
+Delete an existing Event List.
 
 ### Example
 ```ruby
@@ -419,13 +419,13 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-list_id = "list_id_example" # String | ID of this List
+list_id = "list_id_example" # String | ID of this List.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Events: Delete
+  #Events: Delete (December 2016)
   result = api_instance.delete_event_list(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -438,8 +438,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **list_id** | **String**| ID of this List. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -459,9 +459,9 @@ Name | Type | Description  | Notes
 # **delete_language_profile**
 > ErrorResponse delete_language_profile(account_id, location_id, language_code, v)
 
-Language Profiles: Delete
+Language Profiles: Delete (December 2016)
 
-Remove a Language Profile from a location
+Remove a Language Profile from a location.
 
 ### Example
 ```ruby
@@ -481,13 +481,13 @@ account_id = "account_id_example" # String |
 
 location_id = "location_id_example" # String | 
 
-language_code = "language_code_example" # String | Locale code
+language_code = "language_code_example" # String | Locale code.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Language Profiles: Delete
+  #Language Profiles: Delete (December 2016)
   result = api_instance.delete_language_profile(account_id, location_id, language_code, v)
   p result
 rescue YextClient::ApiError => e
@@ -501,8 +501,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **location_id** | **String**|  | 
- **language_code** | **String**| Locale code | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **language_code** | **String**| Locale code. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -522,9 +522,9 @@ Name | Type | Description  | Notes
 # **delete_menu_list**
 > ErrorResponse delete_menu_list(account_id, list_id, v)
 
-Menus: Delete
+Menus: Delete (December 2016)
 
-Delete an existing Menu
+Delete an existing Menu.
 
 ### Example
 ```ruby
@@ -542,13 +542,13 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-list_id = "list_id_example" # String | ID of this List
+list_id = "list_id_example" # String | ID of this List.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Menus: Delete
+  #Menus: Delete (December 2016)
   result = api_instance.delete_menu_list(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -561,8 +561,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **list_id** | **String**| ID of this List. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -582,9 +582,9 @@ Name | Type | Description  | Notes
 # **delete_product_list**
 > ErrorResponse delete_product_list(account_id, list_id, v)
 
-Products: Delete
+Products: Delete (December 2016)
 
-Delete an existing Products ECL
+Delete an existing Products List.
 
 ### Example
 ```ruby
@@ -602,13 +602,13 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-list_id = "list_id_example" # String | ID of this List
+list_id = "list_id_example" # String | ID of this List.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Products: Delete
+  #Products: Delete (December 2016)
   result = api_instance.delete_product_list(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -621,8 +621,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **list_id** | **String**| ID of this List. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -642,9 +642,9 @@ Name | Type | Description  | Notes
 # **get_bio**
 > BioListResponse get_bio(account_id, list_id, v)
 
-Bios: Get
+Bios: Get (December 2016)
 
-Retrieve a specific Bios ECL
+Retrieve a specific Bios List.
 
 ### Example
 ```ruby
@@ -662,13 +662,13 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-list_id = "list_id_example" # String | ID of this List
+list_id = "list_id_example" # String | ID of this List.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Bios: Get
+  #Bios: Get (December 2016)
   result = api_instance.get_bio(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -681,8 +681,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **list_id** | **String**| ID of this List. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -702,9 +702,9 @@ Name | Type | Description  | Notes
 # **get_bios**
 > BioListsResponse get_bios(account_id, v, opts)
 
-Bios: List
+Bios: List (December 2016)
 
-Retrieve all Bio ECls for an account
+Retrieve all Bio Lists for an account.
 
 ### Example
 ```ruby
@@ -722,15 +722,15 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
-  limit: 10, # Integer | Number of results to return
-  offset: 0 # Integer | Number of results to skip. Used to page through results
+  limit: 10, # Integer | Number of results to return.
+  offset: 0 # Integer | Number of results to skip. Used to page through results.
 }
 
 begin
-  #Bios: List
+  #Bios: List (December 2016)
   result = api_instance.get_bios(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
@@ -743,9 +743,9 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
- **limit** | **Integer**| Number of results to return | [optional] [default to 10]
- **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
+ **limit** | **Integer**| Number of results to return. | [optional] [default to 10]
+ **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
 
 ### Return type
 
@@ -783,7 +783,7 @@ end
 
 api_instance = YextClient::LocationManagerApi.new
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
   language: "en", # String | Only categories that apply to this language will be returned.  **Example:** en 
@@ -803,7 +803,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **language** | **String**| Only categories that apply to this language will be returned.  **Example:** en  | [optional] [default to en]
  **country** | **String**| Only categories that apply in this country will be returned.  **Example:** US  | [optional] [default to US]
 
@@ -843,13 +843,13 @@ end
 
 api_instance = YextClient::LocationManagerApi.new
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 account_id = "account_id_example" # String | 
 
 opts = { 
-  offset: 0 # Integer | Number of results to skip. Used to page through results
-  limit: 100 # Integer | Number of results to return
+  offset: 0 # Integer | Number of results to skip. Used to page through results.
+  limit: 100 # Integer | Number of results to return.
 }
 
 begin
@@ -865,10 +865,10 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **account_id** | **String**|  | 
- **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
- **limit** | **Integer**| Number of results to return | [optional] [default to 100]
+ **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
+ **limit** | **Integer**| Number of results to return. | [optional] [default to 100]
 
 ### Return type
 
@@ -888,9 +888,9 @@ Name | Type | Description  | Notes
 # **get_event**
 > EventListResponse get_event(account_id, list_id, v)
 
-Events: Get
+Events: Get (December 2016)
 
-Retrieve a specific Events ECL
+Retrieve a specific Event List.
 
 ### Example
 ```ruby
@@ -908,13 +908,13 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-list_id = "list_id_example" # String | ID of this List
+list_id = "list_id_example" # String | ID of this List.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Events: Get
+  #Events: Get (December 2016)
   result = api_instance.get_event(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -927,8 +927,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **list_id** | **String**| ID of this List. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -948,9 +948,9 @@ Name | Type | Description  | Notes
 # **get_events**
 > EventListsResponse get_events(account_id, v, opts)
 
-Events: List
+Events: List (December 2016)
 
-Retrieve all Events content lists for an account
+Retrieve all Event Lists for an account.
 
 ### Example
 ```ruby
@@ -968,15 +968,15 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
-  limit: 10, # Integer | Number of results to return
-  offset: 0 # Integer | Number of results to skip. Used to page through results
+  limit: 10, # Integer | Number of results to return.
+  offset: 0 # Integer | Number of results to skip. Used to page through results.
 }
 
 begin
-  #Events: List
+  #Events: List (December 2016)
   result = api_instance.get_events(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
@@ -989,9 +989,9 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
- **limit** | **Integer**| Number of results to return | [optional] [default to 10]
- **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
+ **limit** | **Integer**| Number of results to return. | [optional] [default to 10]
+ **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
 
 ### Return type
 
@@ -1029,7 +1029,7 @@ end
 
 api_instance = YextClient::LocationManagerApi.new
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
@@ -1045,7 +1045,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -1065,9 +1065,9 @@ Name | Type | Description  | Notes
 # **get_language_profile**
 > LocationResponse get_language_profile(account_id, location_id, language_code, v)
 
-Language Profiles: Get
+Language Profiles: Get (December 2016)
 
-Gets the the requested Language Profile for a given Location
+Gets the the requested Language Profile for a given Location.
 
 ### Example
 ```ruby
@@ -1087,13 +1087,13 @@ account_id = "account_id_example" # String |
 
 location_id = "location_id_example" # String | 
 
-language_code = "language_code_example" # String | Locale code
+language_code = "language_code_example" # String | Locale code.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Language Profiles: Get
+  #Language Profiles: Get (December 2016)
   result = api_instance.get_language_profile(account_id, location_id, language_code, v)
   p result
 rescue YextClient::ApiError => e
@@ -1107,8 +1107,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **location_id** | **String**|  | 
- **language_code** | **String**| Locale code | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **language_code** | **String**| Locale code. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -1128,7 +1128,7 @@ Name | Type | Description  | Notes
 # **get_language_profiles**
 > LanguageProfilesResponse get_language_profiles(account_id, location_id, v)
 
-Language Profiles: List
+Language Profiles: List (December 2016)
 
 Get Language Profiles for a Location.
 
@@ -1150,11 +1150,11 @@ account_id = "account_id_example" # String |
 
 location_id = "location_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Language Profiles: List
+  #Language Profiles: List (December 2016)
   result = api_instance.get_language_profiles(account_id, location_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -1168,7 +1168,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **location_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -1210,7 +1210,7 @@ account_id = "account_id_example" # String |
 
 location_id = "location_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
@@ -1228,7 +1228,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **location_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -1268,11 +1268,11 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
-  offset: 0 # Integer | Number of results to skip. Used to page through results
-  limit: 100 # Integer | Number of results to return
+  offset: 0 # Integer | Number of results to skip. Used to page through results.
+  limit: 100 # Integer | Number of results to return.
 }
 
 begin
@@ -1289,9 +1289,9 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
- **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
- **limit** | **Integer**| Number of results to return | [optional] [default to 100]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
+ **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
+ **limit** | **Integer**| Number of results to return. | [optional] [default to 100]
 
 ### Return type
 
@@ -1331,11 +1331,11 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
-  limit: 10, # Integer | Number of results to return
-  offset: 0 # Integer | Number of results to skip. Used to page through results
+  limit: 10, # Integer | Number of results to return.
+  offset: 0 # Integer | Number of results to skip. Used to page through results.
 }
 
 begin
@@ -1352,9 +1352,9 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
- **limit** | **Integer**| Number of results to return | [optional] [default to 10]
- **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
+ **limit** | **Integer**| Number of results to return. | [optional] [default to 10]
+ **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
 
 ### Return type
 
@@ -1374,9 +1374,9 @@ Name | Type | Description  | Notes
 # **get_menu**
 > MenuListResponse get_menu(account_id, list_id, v)
 
-Menus: Get
+Menus: Get (December 2016)
 
-Retrieve a specific Menu
+Retrieve a specific Menu.
 
 ### Example
 ```ruby
@@ -1394,13 +1394,13 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-list_id = "list_id_example" # String | ID of this List
+list_id = "list_id_example" # String | ID of this List.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Menus: Get
+  #Menus: Get (December 2016)
   result = api_instance.get_menu(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -1413,8 +1413,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **list_id** | **String**| ID of this List. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -1434,9 +1434,9 @@ Name | Type | Description  | Notes
 # **get_menus**
 > MenuListsResponse get_menus(account_id, v, opts)
 
-Menus: List
+Menus: List (December 2016)
 
-Retrieve all Menu ECLs for an account
+Retrieve all Menus for an account.
 
 ### Example
 ```ruby
@@ -1454,15 +1454,15 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
-  limit: 10, # Integer | Number of results to return
-  offset: 0 # Integer | Number of results to skip. Used to page through results
+  limit: 10, # Integer | Number of results to return.
+  offset: 0 # Integer | Number of results to skip. Used to page through results.
 }
 
 begin
-  #Menus: List
+  #Menus: List (December 2016)
   result = api_instance.get_menus(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
@@ -1475,9 +1475,9 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
- **limit** | **Integer**| Number of results to return | [optional] [default to 10]
- **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
+ **limit** | **Integer**| Number of results to return. | [optional] [default to 10]
+ **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
 
 ### Return type
 
@@ -1497,9 +1497,9 @@ Name | Type | Description  | Notes
 # **get_product**
 > ProductListResponse get_product(account_id, list_id, v)
 
-Products: Get
+Products: Get (December 2016)
 
-Retrieve a specific Products ECL
+Retrieve a specific Product List.
 
 ### Example
 ```ruby
@@ -1517,13 +1517,13 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-list_id = "list_id_example" # String | ID of this List
+list_id = "list_id_example" # String | ID of this List.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Products: Get
+  #Products: Get (December 2016)
   result = api_instance.get_product(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -1536,8 +1536,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **list_id** | **String**| ID of this List. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -1557,9 +1557,9 @@ Name | Type | Description  | Notes
 # **get_products**
 > ProductListsResponse get_products(account_id, v, opts)
 
-Products: List
+Products: List (December 2016)
 
-Retrieve all Products content lists for an account
+Retrieve all Product Lists for an account.
 
 ### Example
 ```ruby
@@ -1577,15 +1577,15 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
-  limit: 10, # Integer | Number of results to return
-  offset: 0 # Integer | Number of results to skip. Used to page through results
+  limit: 10, # Integer | Number of results to return.
+  offset: 0 # Integer | Number of results to skip. Used to page through results.
 }
 
 begin
-  #Products: List
+  #Products: List (December 2016)
   result = api_instance.get_products(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
@@ -1598,9 +1598,9 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
- **limit** | **Integer**| Number of results to return | [optional] [default to 10]
- **offset** | **Integer**| Number of results to skip. Used to page through results | [optional] [default to 0]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
+ **limit** | **Integer**| Number of results to return. | [optional] [default to 10]
+ **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
 
 ### Return type
 
@@ -1620,9 +1620,9 @@ Name | Type | Description  | Notes
 # **update_bio**
 > BioListResponse update_bio(account_id, list_id, vbody)
 
-Bios: Update
+Bios: Update (December 2016)
 
-Update an existing Bios ECL
+Update an existing Bios List.
 
 ### Example
 ```ruby
@@ -1640,15 +1640,15 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-list_id = "list_id_example" # String | ID of this List
+list_id = "list_id_example" # String | ID of this List.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 body = YextClient::Bio.new # Bio | 
 
 
 begin
-  #Bios: Update
+  #Bios: Update (December 2016)
   result = api_instance.update_bio(account_id, list_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -1661,8 +1661,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **list_id** | **String**| ID of this List. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **body** | [**Bio**](Bio.md)|  | 
 
 ### Return type
@@ -1683,9 +1683,9 @@ Name | Type | Description  | Notes
 # **update_event**
 > EventListResponse update_event(account_id, list_id, vbody)
 
-Events: Update
+Events: Update (December 2016)
 
-Update an existing Events ECL
+Update an existing Event List.
 
 ### Example
 ```ruby
@@ -1703,15 +1703,15 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-list_id = "list_id_example" # String | ID of this List
+list_id = "list_id_example" # String | ID of this List.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 body = YextClient::Event.new # Event | 
 
 
 begin
-  #Events: Update
+  #Events: Update (December 2016)
   result = api_instance.update_event(account_id, list_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -1724,8 +1724,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **list_id** | **String**| ID of this List. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **body** | [**Event**](Event.md)|  | 
 
 ### Return type
@@ -1768,7 +1768,7 @@ account_id = "account_id_example" # String |
 
 location_id = "location_id_example" # String | 
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 location_request = YextClient::Location.new # Location | 
 
@@ -1788,7 +1788,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **location_id** | **String**|  | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **location_request** | [**Location**](Location.md)|  | 
 
 ### Return type
@@ -1809,9 +1809,9 @@ Name | Type | Description  | Notes
 # **update_menu**
 > MenuListResponse update_menu(account_id, list_id, vbody)
 
-Menus: Update
+Menus: Update (December 2016)
 
-Update an existing Menu
+Update an existing Menu.
 
 ### Example
 ```ruby
@@ -1829,15 +1829,15 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-list_id = "list_id_example" # String | ID of this List
+list_id = "list_id_example" # String | ID of this List.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 body = YextClient::Menu.new # Menu | 
 
 
 begin
-  #Menus: Update
+  #Menus: Update (December 2016)
   result = api_instance.update_menu(account_id, list_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -1850,8 +1850,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **list_id** | **String**| ID of this List. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **body** | [**Menu**](Menu.md)|  | 
 
 ### Return type
@@ -1872,9 +1872,9 @@ Name | Type | Description  | Notes
 # **update_product**
 > ProductListResponse update_product(account_id, list_id, vbody)
 
-Products: Update
+Products: Update (December 2016)
 
-Update an existing Product ECL
+Update an existing Product List.
 
 ### Example
 ```ruby
@@ -1892,15 +1892,15 @@ api_instance = YextClient::LocationManagerApi.new
 
 account_id = "account_id_example" # String | 
 
-list_id = "list_id_example" # String | ID of this List
+list_id = "list_id_example" # String | ID of this List.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 body = YextClient::Product.new # Product | 
 
 
 begin
-  #Products: Update
+  #Products: Update (December 2016)
   result = api_instance.update_product(account_id, list_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -1913,8 +1913,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
- **list_id** | **String**| ID of this List | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **list_id** | **String**| ID of this List. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **body** | [**Product**](Product.md)|  | 
 
 ### Return type
@@ -1933,9 +1933,9 @@ Name | Type | Description  | Notes
 
 
 # **upsert_language_profile**
-> LocationResponse upsert_language_profile(account_id, location_id, language_code, vbody, opts)
+> ErrorResponse upsert_language_profile(account_id, location_id, language_code, vbody, opts)
 
-Language Profiles: Upsert
+Language Profiles: Upsert (December 2016)
 
 Creates and / or sets the fields for a Language Profile  **NOTE:** You can change a Language Profile’s language by supplying a different (but unused) language code. 
 
@@ -1957,18 +1957,18 @@ account_id = "account_id_example" # String |
 
 location_id = "location_id_example" # String | 
 
-language_code = "language_code_example" # String | Locale code
+language_code = "language_code_example" # String | Locale code.
 
-v = "20161012" # String | A date in `YYYYMMDD` format
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 body = YextClient::Location.new # Location | 
 
 opts = { 
-  primary: true # BOOLEAN | When present and set to true, the specified profile will become the location’s primary Language Profile
+  primary: true # BOOLEAN | When present and set to true, the specified profile will become the location’s primary Language Profile.
 }
 
 begin
-  #Language Profiles: Upsert
+  #Language Profiles: Upsert (December 2016)
   result = api_instance.upsert_language_profile(account_id, location_id, language_code, vbody, opts)
   p result
 rescue YextClient::ApiError => e
@@ -1982,14 +1982,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **location_id** | **String**|  | 
- **language_code** | **String**| Locale code | 
- **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format | [default to 20161012]
+ **language_code** | **String**| Locale code. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **body** | [**Location**](Location.md)|  | 
- **primary** | **BOOLEAN**| When present and set to true, the specified profile will become the location’s primary Language Profile | [optional] 
+ **primary** | **BOOLEAN**| When present and set to true, the specified profile will become the location’s primary Language Profile. | [optional] 
 
 ### Return type
 
-[**LocationResponse**](LocationResponse.md)
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 

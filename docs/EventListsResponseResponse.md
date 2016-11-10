@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **Integer** | Total number of Event ECLs that meet filter criteria (ignores limit / offset) | [optional] 
+**count** | **Integer** | Total number of Event Lists that meet filter criteria (ignores limit / offset). | [optional] 
 **events** | [**Array&lt;Event&gt;**](Event.md) |  | [optional] 
 
 
