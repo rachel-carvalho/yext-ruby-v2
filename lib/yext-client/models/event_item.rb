@@ -35,12 +35,12 @@ module YextClient
     # Item name.
     attr_accessor :name
 
-    # End time in ISO 8601 format (yyyy-mm-ddT:hh:mm) (e.g., 2012-01-09T:5:00).
+    # End time in ISO 8601 format (yyyy-mm-ddThh:mm) (e.g., 2012-01-09T5:00).
     attr_accessor :ends
 
     attr_accessor :url
 
-    # Start time in ISO 8601 format (yyyy-mm-ddT:hh:mm) (e.g., 2012-01-09T:4:00).
+    # Start time in ISO 8601 format (yyyy-mm-ddThh:mm) (e.g., 2012-01-09T4:00).
     attr_accessor :starts
 
     attr_accessor :photos

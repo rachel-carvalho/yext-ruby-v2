@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | List name. | [optional] 
+**language** | **String** | List language in ISO 639-1 format. An ISO 3166-1 alpha-2 country code can optionally be appended to the language.  **Examples:** en, en_GB, fr_CA  | [optional] 
 **title** | **String** | List title that appears on listings. | [optional] 
 **publish** | **BOOLEAN** | Indicates whether the List should be shown on your listings. | [optional] 
 **account_id** | **String** | ID of account that owns this List. | [optional] 

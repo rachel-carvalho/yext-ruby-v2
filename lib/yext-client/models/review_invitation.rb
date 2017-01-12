@@ -26,11 +26,11 @@ require 'date'
 module YextClient
 
   class ReviewInvitation
-    # The consumer’s email address
-    attr_accessor :email_address
-
     # The consumer’s last name
     attr_accessor :last_name
+
+    # The email address or phone number of the consumer.  Phone numbers should be formatted in one of the following ways: * E.164 standard international format, with a leading \"+\" * National format, according to the country of the corresponding location 
+    attr_accessor :contact
 
     # ID of the location that will be reviewed
     attr_accessor :location_id
@@ -45,8 +45,8 @@ module YextClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'email_address' => :'emailAddress',
         :'last_name' => :'lastName',
+        :'contact' => :'contact',
         :'location_id' => :'locationId',
         :'first_name' => :'firstName',
         :'template_id' => :'templateId'
@@ -56,8 +56,8 @@ module YextClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'email_address' => :'String',
         :'last_name' => :'String',
+        :'contact' => :'String',
         :'location_id' => :'String',
         :'first_name' => :'String',
         :'template_id' => :'String'
@@ -72,12 +72,12 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'emailAddress')
-        self.email_address = attributes[:'emailAddress']
-      end
-
       if attributes.has_key?(:'lastName')
         self.last_name = attributes[:'lastName']
+      end
+
+      if attributes.has_key?(:'contact')
+        self.contact = attributes[:'contact']
       end
 
       if attributes.has_key?(:'locationId')
@@ -112,8 +112,8 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          email_address == o.email_address &&
           last_name == o.last_name &&
+          contact == o.contact &&
           location_id == o.location_id &&
           first_name == o.first_name &&
           template_id == o.template_id
@@ -128,7 +128,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [email_address, last_name, location_id, first_name, template_id].hash
+      [last_name, contact, location_id, first_name, template_id].hash
     end
 
     # Builds the object from hash

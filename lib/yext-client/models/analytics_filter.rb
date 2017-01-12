@@ -44,8 +44,7 @@ module YextClient
 
     attr_accessor :foursquare_checkin_gender
 
-    # Activity types to include in an Activity list.
-    attr_accessor :activity_types
+    attr_accessor :foursquare_checkin_age
 
     attr_accessor :instagram_content_type
 
@@ -59,11 +58,6 @@ module YextClient
 
     attr_accessor :max_search_frequency
 
-    # List of actors whose activities should be included in an Activity list.
-    attr_accessor :actors
-
-    attr_accessor :foursquare_checkin_age
-
     attr_accessor :foursquare_checkin_type
 
     attr_accessor :search_term
@@ -73,27 +67,6 @@ module YextClient
 
     attr_accessor :foursquare_checkin_time_of_day
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -105,14 +78,12 @@ module YextClient
         :'countries' => :'countries',
         :'min_search_frequency' => :'minSearchFrequency',
         :'foursquare_checkin_gender' => :'foursquareCheckinGender',
-        :'activity_types' => :'activityTypes',
+        :'foursquare_checkin_age' => :'foursquareCheckinAge',
         :'instagram_content_type' => :'instagramContentType',
         :'location_labels' => :'locationLabels',
         :'sites' => :'sites',
         :'platforms' => :'platforms',
         :'max_search_frequency' => :'maxSearchFrequency',
-        :'actors' => :'actors',
-        :'foursquare_checkin_age' => :'foursquareCheckinAge',
         :'foursquare_checkin_type' => :'foursquareCheckinType',
         :'search_term' => :'searchTerm',
         :'folder_id' => :'folderId',
@@ -130,14 +101,12 @@ module YextClient
         :'countries' => :'Array<String>',
         :'min_search_frequency' => :'Float',
         :'foursquare_checkin_gender' => :'String',
-        :'activity_types' => :'Array<String>',
+        :'foursquare_checkin_age' => :'String',
         :'instagram_content_type' => :'String',
         :'location_labels' => :'Array<String>',
         :'sites' => :'Array<String>',
         :'platforms' => :'Array<String>',
         :'max_search_frequency' => :'Float',
-        :'actors' => :'Array<String>',
-        :'foursquare_checkin_age' => :'String',
         :'foursquare_checkin_type' => :'String',
         :'search_term' => :'String',
         :'folder_id' => :'Integer',
@@ -185,10 +154,8 @@ module YextClient
         self.foursquare_checkin_gender = attributes[:'foursquareCheckinGender']
       end
 
-      if attributes.has_key?(:'activityTypes')
-        if (value = attributes[:'activityTypes']).is_a?(Array)
-          self.activity_types = value
-        end
+      if attributes.has_key?(:'foursquareCheckinAge')
+        self.foursquare_checkin_age = attributes[:'foursquareCheckinAge']
       end
 
       if attributes.has_key?(:'instagramContentType')
@@ -215,16 +182,6 @@ module YextClient
 
       if attributes.has_key?(:'maxSearchFrequency')
         self.max_search_frequency = attributes[:'maxSearchFrequency']
-      end
-
-      if attributes.has_key?(:'actors')
-        if (value = attributes[:'actors']).is_a?(Array)
-          self.actors = value
-        end
-      end
-
-      if attributes.has_key?(:'foursquareCheckinAge')
-        self.foursquare_checkin_age = attributes[:'foursquareCheckinAge']
       end
 
       if attributes.has_key?(:'foursquareCheckinType')
@@ -270,14 +227,12 @@ module YextClient
           countries == o.countries &&
           min_search_frequency == o.min_search_frequency &&
           foursquare_checkin_gender == o.foursquare_checkin_gender &&
-          activity_types == o.activity_types &&
+          foursquare_checkin_age == o.foursquare_checkin_age &&
           instagram_content_type == o.instagram_content_type &&
           location_labels == o.location_labels &&
           sites == o.sites &&
           platforms == o.platforms &&
           max_search_frequency == o.max_search_frequency &&
-          actors == o.actors &&
-          foursquare_checkin_age == o.foursquare_checkin_age &&
           foursquare_checkin_type == o.foursquare_checkin_type &&
           search_term == o.search_term &&
           folder_id == o.folder_id &&
@@ -293,7 +248,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [start_date, location_ids, end_date, search_type, countries, min_search_frequency, foursquare_checkin_gender, activity_types, instagram_content_type, location_labels, sites, platforms, max_search_frequency, actors, foursquare_checkin_age, foursquare_checkin_type, search_term, folder_id, foursquare_checkin_time_of_day].hash
+      [start_date, location_ids, end_date, search_type, countries, min_search_frequency, foursquare_checkin_gender, foursquare_checkin_age, instagram_content_type, location_labels, sites, platforms, max_search_frequency, foursquare_checkin_type, search_term, folder_id, foursquare_checkin_time_of_day].hash
     end
 
     # Builds the object from hash

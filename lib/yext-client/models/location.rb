@@ -26,7 +26,7 @@ require 'date'
 module YextClient
 
   class Location
-    # Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.
+    # Must be a valid phone number, based on the country specified in `countryCode`. Phone numbers for US locations must contain 10 digits.
     attr_accessor :fax_phone
 
     # A portrait of the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
@@ -35,7 +35,7 @@ module YextClient
     # Up to 100 keywords may be provided  All strings must be non-empty when trimmed of whitespace. 
     attr_accessor :keywords
 
-    # Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.
+    # Must be a valid phone number, based on the country specified in `countryCode`. Phone numbers for US locations must contain 10 digits.
     attr_accessor :toll_free_phone
 
     # IDs of Menu lists associated with this location.
@@ -47,13 +47,16 @@ module YextClient
     # Additional information about business hours that does not fit in **hours** (e.g., Closed during the winter)
     attr_accessor :additional_hours_text
 
-    # Up to 100 languages spoken at this location.  All strings must be non-empty when trimmed of whitespace. 
-    attr_accessor :languages
+    # Valid URL to which the Featured Message is linked
+    attr_accessor :featured_message_url
 
-    # A valid URL used for reservations at this location
+    # A valid URL used for reservations at this location.
     attr_accessor :reservation_url
 
-    # The IDs of the location labels that have been added to this location.  **NOTE:** You can only add labels that have already been created via our web interface. Currently, it is not possible to create new labels via the API. 
+    # Longitude to use for pickup spot for the location, as provided by you  Between -180.0 and 180.0, inclusive 
+    attr_accessor :pickup_lng
+
+    # The IDs of the location labels that have been added to this location. Location labels help you identify locations that share a certain characteristic; they do not appear on your location's listings.  **NOTE:** You can only add labels that have already been created via our web interface. Currently, it is not possible to create new labels via the API. 
     attr_accessor :label_ids
 
     # The photo Google will consider first when deciding which photo display with the location's business information on Google Maps or Search  One of: * UNSPECIFIED (default) * COVER - the photo in **googleCoverPhoto** * PROFILE - the photo in **googleProfilePhoto**  **NOTE:** If the value of a location's **googlePreferredPhoto** is UNSPECIFIED, **googlePreferredPhoto** will be omitted from the location's data in responses. 
@@ -65,14 +68,13 @@ module YextClient
     # The Featured Message. Default: Call today!  Cannot include: * inappropriate language * HTML markup * a URL or domain name * a phone number * control characters ([\\x00-\\x1F\\x7F]) * insufficient spacing  If you submit a Featured Message that contains profanity or more than 50 characters, it will be ignored. The success response will contain a warning message explaining why your Featured Message wasn't stored in the system. 
     attr_accessor :featured_message
 
-    # Longitude where the map pin should be displayed, as calculated by Yext  Between -180.0 and 180.0, inclusive 
+    # Latitude where the map pin should be displayed, as calculated by Yext  Between -90.0 and 90.0, inclusive 
     attr_accessor :yext_display_lat
 
-    # Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.
+    # Must be a valid phone number, based on the country specified in `countryCode`. Phone numbers for US locations must contain 10 digits.
     attr_accessor :mobile_phone
 
-    # Valid URL to which the Featured Message is linked
-    attr_accessor :featured_message_url
+    attr_accessor :service_area
 
     # The timestamp of the most recent change to this location record.  Will be ignored when the client is saving location data to Yext.  **NOTE:** The timestamp may change even if observable fields stay the same. 
     attr_accessor :timestamp
@@ -83,6 +85,9 @@ module YextClient
     # The cover photo for your business's Facebook profile  Displayed as a 851 x 315 pixel image  You must have a cover photo in order for your listing to appear on Facebook.  **NOTE:** Your cover photo must be at least 400 pixels wide. 
     attr_accessor :facebook_cover_photo
 
+    # Latitude to use for walking directions to the location, as calculated by Yext  Between -90.0 and 90.0, inclusive 
+    attr_accessor :yext_walkable_lat
+
     # IDs of Bio lists associated with this location.
     attr_accessor :bio_list_ids
 
@@ -92,17 +97,26 @@ module YextClient
     # Up to five emails addresses for reaching this location  Must be valid email addresses 
     attr_accessor :emails
 
+    # Longitude to use for walking directions to the location, as provided by you  Between -180.0 and 180.0, inclusive 
+    attr_accessor :walkable_lng
+
     # The gender of the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :gender
 
-    # The URL of the location's website. This URL will be shown on your listings unless you specify a value for **displayWebsiteUrl**.  Must be a valid URL and is required whenever **displayWebsiteUrl** is specified 
+    # The URL of the location's website. This URL will be shown on your listings unless you specify a value for `displayWebsiteUrl`.  Must be a valid URL and is required whenever `displayWebsiteUrl` is specified. 
     attr_accessor :website_url
 
     # Up to 100 specialties (e.g., for food and dining: Chicago style)  All strings must be non-empty when trimmed of whitespace. 
     attr_accessor :specialties
 
-    # Label to be used for this location’s Bio lists.
+    # Label to be used for this location’s Bio lists. This label will appear on your location's listings.
     attr_accessor :bio_lists_label
+
+    # Longitude where the map pin should be displayed, as provided by you  Between -180.0 and 180.0, inclusive 
+    attr_accessor :display_lng
+
+    # Longitude to use for pickup spot for the location, as calculated by Yext  Between -180.0 and 180.0, inclusive 
+    attr_accessor :yext_pickup_lng
 
     # IDs of Product lists associated with this location.
     attr_accessor :product_list_ids
@@ -113,21 +127,30 @@ module YextClient
     # A list of the types of education and training completed by the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :education_list
 
+    # Latitude to use for pickup spot for the location, as provided by you  Between -90.0 and 90.0, inclusive 
+    attr_accessor :pickup_lat
+
     attr_accessor :logo
 
-    # Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.
+    # Must be a valid phone number, based on the country specified in `countryCode`. Phone numbers for US locations must contain 10 digits.
     attr_accessor :alternate_phone
 
     # Must refer to an **account.id** that already exists.
     attr_accessor :account_id
 
+    # The URL of the location's menu.
+    attr_accessor :menu_url
+
     # Indicates whether the healthcare provider is accepting new patients  Default is true  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL or HEALTHCARE_FACILITY. 
     attr_accessor :accepting_new_patients
 
-    # The URL that is shown on your listings in place of **websiteUrl**. You can use **displayWebsiteUrl** to display a short, memorable web address that redirects consumers to the URL given in **websiteUrl**.  Must be a valid URL and be specified along with **websiteUrl** 
+    # The URL that is shown on your listings in place of `websiteUrl`. You can use `displayWebsiteUrl` to display a short, memorable web address that redirects consumers to the URL given in `websiteUrl`.  Must be a valid URL and be specified along with `websiteUrl`. 
     attr_accessor :display_website_url
 
-    # The two-character state code, or DC for the District of Columbia
+    # Longitude to use for driving directions to the location, as calculated by Yext  Between -180.0 and 180.0, inclusive 
+    attr_accessor :yext_routable_lng
+
+    #   For US locations, the two-character code of the location’s state, or DC for the District of Columbia For non-US locations, the name of the location’s province / region / state 
     attr_accessor :state
 
     # If true, do not show street address on listings. Defaults to false.
@@ -135,8 +158,14 @@ module YextClient
 
     attr_accessor :closed
 
+    # The URL that is shown on your listings in place of `menuUrl`. You can use `displayMenuUrl` to display a short, memorable web address that redirects consumers to the URL given in `menuUrl`.  Must be a valid URL and be specified along with `menuUrl`. 
+    attr_accessor :display_menu_url
+
     # The name of the office where the healthcare professional works, if different from **locationName**  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :office_name
+
+    # Latitude to use for drop off spot for the location, as calculated by Yext  Between -90.0 and 90.0, inclusive 
+    attr_accessor :yext_dropoff_lat
 
     # Hours should be submitted as a comma-separated list of days, where each day's hours are specified as follows:  d:oh:om:ch:cm * d = day of the week –   * 1 – Sunday   * 2 – Monday   * 3 – Tuesday   * 4 – Wednesday   * 5 – Thursday   * 6 – Friday   * 7 – Saturday * oh:om = opening time in 24-hour format * ch:cm = closing time in 24-hour format  Times with single-digit hours (e.g., 9 AM) can be submitted with or without a leading zero (9:00 or 09:00).  **Example:** open 9 AM to 5 PM Monday and Tuesday, open 10 AM to 4 PM on Saturday – 2:9:00:17:00,3:9:00:17:00,7:10:00:16:00  SPECIAL CASES: * To indicate that a location is open 24 hours on a specific day, set 00:00 as both the opening and closing time for that day.   * **Example:** open all day on Saturdays – 7:00:00:00:00 * To indicate that a location is closed on a specific day, omit that day from the list or set it as closed (\"closed\" is not case sensitive).   * **Example:** closed on Sundays – 1:closed   * **NOTE:** If a location is closed seven days a week, set at least one day to closed. Otherwise, **hours** is an empty string, and we assume you are not submitting hours information for that location. * To indicate that a location has split hours on a specific day, submit a set of hours for each block of time the location is open.   * **Example:** open from 9:00 AM to 12:00 PM and again from 1:00 PM to 5:00 PM on Mondays – 2:9:00:12:00,2:13:00:17:00  **NOTE:** To set hours for specific days of the year rather than days of the week, use **holidayHours**. 
     attr_accessor :hours
@@ -156,6 +185,9 @@ module YextClient
     # A list of the certifications held by the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :certifications
 
+    # Language code of the language in which this location's information is provided. This language is considered the Location's primary language in our system.  While this field is required, we are temporarily using the Customer's **businessLanguage** as the default value of **language**.  If you would like to provide your Location data in more than one language, you can create a Language Profile for each of these additional (alternate) languages. 
+    attr_accessor :language
+
     # The last name of the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :last_name
 
@@ -165,40 +197,52 @@ module YextClient
     # Up to 100 products sold at this location  All strings must be non-empty when trimmed of whitespace. 
     attr_accessor :products
 
-    # The text of the embedded Uber link  Default is Ride there with Uber.  **NOTE:** This field is only available if **uberLinkType** is TEXT. 
+    # The text of the embedded Uber link  Default is \"Ride there with Uber\".  **NOTE:** This field is only available if **uberLinkType** is TEXT. 
     attr_accessor :uber_link_text
 
     # The Google My Business attributes for this location. 
     attr_accessor :google_attributes
 
-    # The payment methods accepted at this location  Valid elements depend on the location's country. For US locations, valid elements are: * AMERICANEXPRESS * CASH * CHECK * DINERSCLUB * DISCOVER * FINANCING * INVOICE * MASTERCARD * TRAVELERSCHECK * VISA 
+    # The payment methods accepted at this location  Valid elements depend on the location's country. For US locations, valid elements are: * AMERICANEXPRESS * CASH * CHECK * DINERSCLUB * DISCOVER * FINANCING * INVOICE * MASTERCARD * TRAVELERSCHECK * VISA * ANDROIDPAY * APPLEPAY * SAMSUNGPAY 
     attr_accessor :payment_options
 
-    # Up to 100 services offered at this location  All strings must be non-empty when trimmed of whitespace. 
-    attr_accessor :services
+    # Longitude to use for drop off spot for the location, as provided by you  Between -180.0 and 180.0, inclusive 
+    attr_accessor :dropoff_lng
 
     # The Yext-powered code that can be copied and pasted into the markup of emails or web pages where the embedded Uber link should appear
     attr_accessor :uber_embed_code
 
-    # Provides additional information to help consumers get to the location. This string appears along with the location's address (e.g. In Menlo Mall, 3rd Floor).  It may also be used in conjunction with a hidden address (i.e., when **suppressAddress** is true) to give consumers information about where the location is found (e.g., Servicing the New York area).  Cannot be a P.O. Box 
+    # The URL that is shown on your listings in place of `reservationUrl`. You can use `displayReservationUrl` to display a short, memorable web address that redirects consumers to the URL given in `reservationUrl`.  Must be a valid URL and be specified along with `reservationUrl`. 
+    attr_accessor :display_reservation_url
+
+    # Longitude where the map pin should be displayed, as calculated by Yext  Between -180.0 and 180.0, inclusive 
+    attr_accessor :yext_display_lng
+
+    # Provides additional information to help consumers get to the location. This string appears along with the location's address (e.g., In Menlo Mall, 3rd Floor).  It may also be used in conjunction with a hidden address (i.e., when **suppressAddress** is true) to give consumers information about where the location is found (e.g., Servicing the New York area).  Cannot be a P.O. Box 
     attr_accessor :display_address
 
     # Yext Category IDs. A Location must have at least one and at most 10 Categories.  IDs must be valid and selectable (i.e., cannot be parent categories).  **NOTE:** The list of category IDs that you send us must be comprehensive. For example, if you send us a list of IDs that does not include IDs that you sent in your last update, Yext considers the missing categories to be deleted, and we remove them from your listings. 
     attr_accessor :category_ids
 
-    #  Services lists.
+    #  Services lists. This label will appear on your location's listings.
     attr_accessor :product_lists_label
 
     attr_accessor :city
 
-    # Label to be used for this location’s Menu lists.
+    # Label to be used for this location’s Menu lists. This label will appear on your location's listings.
     attr_accessor :menus_label
 
-    # The five- or nine-digit ZIP code (the hyphen is optional)
+    # The location's postal code. For US locations, this field contains the five- or nine-digit ZIP code (the hyphen is optional). Validations are only done on `zip` if `countryCode` is US.
     attr_accessor :zip
 
-    # Must be a valid, non-toll-free 10-digit phone number.  Required if: * **isPhoneTracked** is true and the non-tracked number is a toll-free number, **OR** * **isPhoneTracked** is false and **phone** is a toll-free number 
+    # Must be a valid, non-toll-free phone number.  Required if: * **isPhoneTracked** is true and the non-tracked number is a toll-free number, **OR** * **isPhoneTracked** is false and **phone** is a toll-free number 
     attr_accessor :local_phone
+
+    # The URL used to place orders that will be fulfilled at the location.
+    attr_accessor :order_url
+
+    # Latitude to use for drop off spot for the location, as provided by you  Between -90.0 and 90.0, inclusive 
+    attr_accessor :dropoff_lat
 
     # A list of the conditions treated by the healthcare provider  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL or HEALTHCARE_FACILITY. 
     attr_accessor :conditions_treated
@@ -206,13 +250,16 @@ module YextClient
     # A set of key-value pairs indicating the location's custom fields and their values. The keys are the Yext Custom Field IDs of the custom fields, and the values are the fields' contents. If the fields' contents are options, those options must be represented by their Yext IDs. 
     attr_accessor :custom_fields
 
+    # Latitude to use for walking directions to the location, as provided by you  Between -90.0 and 90.0, inclusive 
+    attr_accessor :walkable_lat
+
     # A list of insurance policies accepted by the healthcare provider  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :insurance_accepted
 
     # Indicates whether the embedded Uber link for this location appears as text or a button  When consumers click on this link on a mobile device, the Uber app (if installed) will open with your location set as the trip destination. If the Uber app is not installed, the consumer will be prompted to download it. 
     attr_accessor :uber_link_type
 
-    # Must be a valid 10-digit phone number.
+    # Must be a valid phone number.
     attr_accessor :phone
 
     # The folder that this location is in. If the location is in the customer-level (root) folder, its folderId will be 0. Must be a valid, existing Yext Folder ID or 0
@@ -224,7 +271,7 @@ module YextClient
     # Valid Instagram username for the location (e.g., NewCityFiat (without the leading \"@\"))
     attr_accessor :instagram_handle
 
-    # Label to be used for this location’s Event lists.
+    # Label to be used for this location’s Event lists. This label will appear on your location's listings.
     attr_accessor :event_lists_label
 
     # Holiday hours for this location.  **NOTE:** hours must be set in order for holidayHours to appear on your listings) 
@@ -232,6 +279,9 @@ module YextClient
 
     # The first name of the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :first_name
+
+    # Up to 100 languages spoken at this location.  All strings must be non-empty when trimmed of whitespace. 
+    attr_accessor :languages
 
     attr_accessor :location_type
 
@@ -241,11 +291,20 @@ module YextClient
     # The year that this location was opened, not the number of years it was open  Minimum of 1000, maximum of current year + 10. 
     attr_accessor :year_established
 
-    # Up to 100 specialties (e.g., for food and dining: Chicago style)  All strings must be non-empty when trimmed of whitespace. 
+    # Longitude to use for walking directions to the location, as calculated by Yext  Between -180.0 and 180.0, inclusive 
+    attr_accessor :yext_walkable_lng
+
+    # Up to 100 association memberships relevant to the location (e.g., New York Doctors Association)  All strings must be non-empty when trimmed of whitespace. 
     attr_accessor :associations
 
-    # The country code (two-character ISO 3166-1) of the location's country . US is the only valid value.
+    # Longitude to use for driving directions to the location, as provided by you  Between -180.0 and 180.0, inclusive 
+    attr_accessor :routable_lng
+
+    # The country code (two-character ISO 3166-1) of the location's country. If omitted, US is used.
     attr_accessor :country_code
+
+    # Latitude to use for pickup spot for the location, as calculated by Yext  Between -90.0 and 90.0, inclusive 
+    attr_accessor :yext_pickup_lat
 
     # The URL you would like to submit to Google My Business in place of the one given in **websiteUrl** (if applicable).  For example, if you want to analyze the traffic driven by your Google listings separately from other traffic, enter the alternate URL that you will use for tracking in this field. 
     attr_accessor :google_website_override
@@ -256,15 +315,16 @@ module YextClient
     # IDs of Event lists associated with this location.
     attr_accessor :event_list_ids
 
-    # Longitude where the map pin should be displayed, as provided by you  Between -180.0 and 180.0, inclusive 
+    # Latitude where the map pin should be displayed, as provided by you  Between -90.0 and 90.0, inclusive 
     attr_accessor :display_lat
 
-    attr_accessor :service_area
+    # Longitude to use for drop off spot for the location, as calculated by Yext  Between -180.0 and 180.0, inclusive 
+    attr_accessor :yext_dropoff_lng
 
     # Set to true if the number listed in **phone** is a tracked phone number.  **NOTE:** When updating **isPhoneTracked**, you must provide a value for **phone** in the same request. 
     attr_accessor :is_phone_tracked
 
-    # Must be a valid 10-digit phone number. Phone numbers for US locations must contain 10 digits.
+    # Must be a valid phone number, based on the country specified in `countryCode`. Phone numbers for US locations must contain 10 digits.
     attr_accessor :tty_phone
 
     # The National Provider Identifier (NPI) of the healthcare provider  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL or HEALTHCARE_FACILITY. 
@@ -281,14 +341,23 @@ module YextClient
     # The URL that the consumer will be redirected to when tapping on the call-to-action in the Uber app during a trip to your location.  **NOTE:** If a value for **uberTripBrandingUrl** is provided, a value must also be provided for **uberTripBrandingText**. 
     attr_accessor :uber_trip_branding_url
 
-    # Longitude to use for driving directions to the location, as provided by you  Between -180.0 and 180.0, inclusive 
+    # Latitude to use for driving directions to the location, as provided by you  Between -90.0 and 90.0, inclusive 
     attr_accessor :routable_lat
 
-    # Longitude to use for driving directions to the location, as calculated by Yext  Between -180.0 and 180.0, inclusive 
+    # Latitude to use for driving directions to the location, as calculated by Yext  Between -90.0 and 90.0, inclusive 
     attr_accessor :yext_routable_lat
 
     # Up to 50 Photos.  **NOTE:** The list of photos that you send us must be comprehensive. For example, if you send us a list of photos that does not include photos that you sent in your last update, Yext considers the missing photos to be deleted, and we remove them from your listings. 
     attr_accessor :photos
+
+    # The URL that is shown on your listings in place of `orderUrl`. You can use `displayOrderUrl` to display a short, memorable web address that redirects consumers to the URL given in `orderUrl`.  Must be a valid URL and be specified along with `orderUrl`. 
+    attr_accessor :display_order_url
+
+    # Up to 100 services offered at this location  All strings must be non-empty when trimmed of whitespace. 
+    attr_accessor :services
+
+    # The name of the location's sublocality.
+    attr_accessor :sublocality
 
     # The text of the call-to-action that will appear in the Uber app during a trip to your location (e.g., Check out our menu!)  **NOTE:** If a value for **uberTripBrandingText** is provided, a value must also be provided for **uberTripBrandingUrl**. 
     attr_accessor :uber_trip_branding_text
@@ -325,51 +394,64 @@ module YextClient
         :'menu_ids' => :'menuIds',
         :'middle_name' => :'middleName',
         :'additional_hours_text' => :'additionalHoursText',
-        :'languages' => :'languages',
+        :'featured_message_url' => :'featuredMessageUrl',
         :'reservation_url' => :'reservationUrl',
+        :'pickup_lng' => :'pickupLng',
         :'label_ids' => :'labelIds',
         :'google_preferred_photo' => :'googlePreferredPhoto',
         :'video_urls' => :'videoUrls',
         :'featured_message' => :'featuredMessage',
         :'yext_display_lat' => :'yextDisplayLat',
         :'mobile_phone' => :'mobilePhone',
-        :'featured_message_url' => :'featuredMessageUrl',
+        :'service_area' => :'serviceArea',
         :'timestamp' => :'timestamp',
         :'address2' => :'address2',
         :'facebook_cover_photo' => :'facebookCoverPhoto',
+        :'yext_walkable_lat' => :'yextWalkableLat',
         :'bio_list_ids' => :'bioListIds',
         :'facebook_page_url' => :'facebookPageUrl',
         :'emails' => :'emails',
+        :'walkable_lng' => :'walkableLng',
         :'gender' => :'gender',
         :'website_url' => :'websiteUrl',
         :'specialties' => :'specialties',
         :'bio_lists_label' => :'bioListsLabel',
+        :'display_lng' => :'displayLng',
+        :'yext_pickup_lng' => :'yextPickupLng',
         :'product_list_ids' => :'productListIds',
         :'google_cover_photo' => :'googleCoverPhoto',
         :'education_list' => :'educationList',
+        :'pickup_lat' => :'pickupLat',
         :'logo' => :'logo',
         :'alternate_phone' => :'alternatePhone',
         :'account_id' => :'accountId',
+        :'menu_url' => :'menuUrl',
         :'accepting_new_patients' => :'acceptingNewPatients',
         :'display_website_url' => :'displayWebsiteUrl',
+        :'yext_routable_lng' => :'yextRoutableLng',
         :'state' => :'state',
         :'suppress_address' => :'suppressAddress',
         :'closed' => :'closed',
+        :'display_menu_url' => :'displayMenuUrl',
         :'office_name' => :'officeName',
+        :'yext_dropoff_lat' => :'yextDropoffLat',
         :'hours' => :'hours',
         :'address' => :'address',
         :'uber_link' => :'uberLink',
         :'uber_client_id' => :'uberClientId',
         :'facebook_profile_picture' => :'facebookProfilePicture',
         :'certifications' => :'certifications',
+        :'language' => :'language',
         :'last_name' => :'lastName',
         :'location_name' => :'locationName',
         :'products' => :'products',
         :'uber_link_text' => :'uberLinkText',
         :'google_attributes' => :'googleAttributes',
         :'payment_options' => :'paymentOptions',
-        :'services' => :'services',
+        :'dropoff_lng' => :'dropoffLng',
         :'uber_embed_code' => :'uberEmbedCode',
+        :'display_reservation_url' => :'displayReservationUrl',
+        :'yext_display_lng' => :'yextDisplayLng',
         :'display_address' => :'displayAddress',
         :'category_ids' => :'categoryIds',
         :'product_lists_label' => :'productListsLabel',
@@ -377,8 +459,11 @@ module YextClient
         :'menus_label' => :'menusLabel',
         :'zip' => :'zip',
         :'local_phone' => :'localPhone',
+        :'order_url' => :'orderUrl',
+        :'dropoff_lat' => :'dropoffLat',
         :'conditions_treated' => :'conditionsTreated',
         :'custom_fields' => :'customFields',
+        :'walkable_lat' => :'walkableLat',
         :'insurance_accepted' => :'insuranceAccepted',
         :'uber_link_type' => :'uberLinkType',
         :'phone' => :'phone',
@@ -388,16 +473,20 @@ module YextClient
         :'event_lists_label' => :'eventListsLabel',
         :'holiday_hours' => :'holidayHours',
         :'first_name' => :'firstName',
+        :'languages' => :'languages',
         :'location_type' => :'locationType',
         :'admitting_hospitals' => :'admittingHospitals',
         :'year_established' => :'yearEstablished',
+        :'yext_walkable_lng' => :'yextWalkableLng',
         :'associations' => :'associations',
+        :'routable_lng' => :'routableLng',
         :'country_code' => :'countryCode',
+        :'yext_pickup_lat' => :'yextPickupLat',
         :'google_website_override' => :'googleWebsiteOverride',
         :'id' => :'id',
         :'event_list_ids' => :'eventListIds',
         :'display_lat' => :'displayLat',
-        :'service_area' => :'serviceArea',
+        :'yext_dropoff_lng' => :'yextDropoffLng',
         :'is_phone_tracked' => :'isPhoneTracked',
         :'tty_phone' => :'ttyPhone',
         :'npi' => :'npi',
@@ -408,6 +497,9 @@ module YextClient
         :'routable_lat' => :'routableLat',
         :'yext_routable_lat' => :'yextRoutableLat',
         :'photos' => :'photos',
+        :'display_order_url' => :'displayOrderUrl',
+        :'services' => :'services',
+        :'sublocality' => :'sublocality',
         :'uber_trip_branding_text' => :'uberTripBrandingText'
       }
     end
@@ -422,51 +514,64 @@ module YextClient
         :'menu_ids' => :'Array<String>',
         :'middle_name' => :'String',
         :'additional_hours_text' => :'String',
-        :'languages' => :'Array<String>',
+        :'featured_message_url' => :'String',
         :'reservation_url' => :'String',
+        :'pickup_lng' => :'Float',
         :'label_ids' => :'Array<String>',
         :'google_preferred_photo' => :'String',
         :'video_urls' => :'Array<String>',
         :'featured_message' => :'String',
         :'yext_display_lat' => :'Float',
         :'mobile_phone' => :'String',
-        :'featured_message_url' => :'String',
+        :'service_area' => :'LocationServiceArea',
         :'timestamp' => :'Integer',
         :'address2' => :'String',
         :'facebook_cover_photo' => :'Object',
+        :'yext_walkable_lat' => :'Float',
         :'bio_list_ids' => :'Array<String>',
         :'facebook_page_url' => :'String',
         :'emails' => :'Array<String>',
+        :'walkable_lng' => :'Float',
         :'gender' => :'String',
         :'website_url' => :'String',
         :'specialties' => :'Array<String>',
         :'bio_lists_label' => :'String',
+        :'display_lng' => :'Float',
+        :'yext_pickup_lng' => :'Float',
         :'product_list_ids' => :'Array<String>',
         :'google_cover_photo' => :'Object',
         :'education_list' => :'Array<LocationEducationList>',
+        :'pickup_lat' => :'Float',
         :'logo' => :'LocationPhoto',
         :'alternate_phone' => :'String',
         :'account_id' => :'String',
+        :'menu_url' => :'String',
         :'accepting_new_patients' => :'BOOLEAN',
         :'display_website_url' => :'String',
+        :'yext_routable_lng' => :'Float',
         :'state' => :'String',
         :'suppress_address' => :'BOOLEAN',
         :'closed' => :'LocationClosed',
+        :'display_menu_url' => :'String',
         :'office_name' => :'String',
+        :'yext_dropoff_lat' => :'Float',
         :'hours' => :'String',
         :'address' => :'String',
         :'uber_link' => :'String',
         :'uber_client_id' => :'String',
         :'facebook_profile_picture' => :'Object',
         :'certifications' => :'Array<String>',
+        :'language' => :'String',
         :'last_name' => :'String',
         :'location_name' => :'String',
         :'products' => :'Array<String>',
         :'uber_link_text' => :'String',
         :'google_attributes' => :'Array<LocationGoogleAttributes>',
         :'payment_options' => :'Array<String>',
-        :'services' => :'Array<String>',
+        :'dropoff_lng' => :'Float',
         :'uber_embed_code' => :'String',
+        :'display_reservation_url' => :'String',
+        :'yext_display_lng' => :'Float',
         :'display_address' => :'String',
         :'category_ids' => :'Array<String>',
         :'product_lists_label' => :'String',
@@ -474,8 +579,11 @@ module YextClient
         :'menus_label' => :'String',
         :'zip' => :'String',
         :'local_phone' => :'String',
+        :'order_url' => :'String',
+        :'dropoff_lat' => :'Float',
         :'conditions_treated' => :'Array<String>',
         :'custom_fields' => :'Hash<String, Object>',
+        :'walkable_lat' => :'Float',
         :'insurance_accepted' => :'Array<String>',
         :'uber_link_type' => :'String',
         :'phone' => :'String',
@@ -485,16 +593,20 @@ module YextClient
         :'event_lists_label' => :'String',
         :'holiday_hours' => :'Array<LocationHolidayHours>',
         :'first_name' => :'String',
+        :'languages' => :'Array<String>',
         :'location_type' => :'LocationType',
         :'admitting_hospitals' => :'Array<String>',
         :'year_established' => :'String',
+        :'yext_walkable_lng' => :'Float',
         :'associations' => :'Array<String>',
+        :'routable_lng' => :'Float',
         :'country_code' => :'String',
+        :'yext_pickup_lat' => :'Float',
         :'google_website_override' => :'String',
         :'id' => :'String',
         :'event_list_ids' => :'Array<String>',
         :'display_lat' => :'Float',
-        :'service_area' => :'LocationServiceArea',
+        :'yext_dropoff_lng' => :'Float',
         :'is_phone_tracked' => :'BOOLEAN',
         :'tty_phone' => :'String',
         :'npi' => :'String',
@@ -505,6 +617,9 @@ module YextClient
         :'routable_lat' => :'Float',
         :'yext_routable_lat' => :'Float',
         :'photos' => :'Array<LocationPhoto>',
+        :'display_order_url' => :'String',
+        :'services' => :'Array<String>',
+        :'sublocality' => :'String',
         :'uber_trip_branding_text' => :'String'
       }
     end
@@ -549,14 +664,16 @@ module YextClient
         self.additional_hours_text = attributes[:'additionalHoursText']
       end
 
-      if attributes.has_key?(:'languages')
-        if (value = attributes[:'languages']).is_a?(Array)
-          self.languages = value
-        end
+      if attributes.has_key?(:'featuredMessageUrl')
+        self.featured_message_url = attributes[:'featuredMessageUrl']
       end
 
       if attributes.has_key?(:'reservationUrl')
         self.reservation_url = attributes[:'reservationUrl']
+      end
+
+      if attributes.has_key?(:'pickupLng')
+        self.pickup_lng = attributes[:'pickupLng']
       end
 
       if attributes.has_key?(:'labelIds')
@@ -587,8 +704,8 @@ module YextClient
         self.mobile_phone = attributes[:'mobilePhone']
       end
 
-      if attributes.has_key?(:'featuredMessageUrl')
-        self.featured_message_url = attributes[:'featuredMessageUrl']
+      if attributes.has_key?(:'serviceArea')
+        self.service_area = attributes[:'serviceArea']
       end
 
       if attributes.has_key?(:'timestamp')
@@ -601,6 +718,10 @@ module YextClient
 
       if attributes.has_key?(:'facebookCoverPhoto')
         self.facebook_cover_photo = attributes[:'facebookCoverPhoto']
+      end
+
+      if attributes.has_key?(:'yextWalkableLat')
+        self.yext_walkable_lat = attributes[:'yextWalkableLat']
       end
 
       if attributes.has_key?(:'bioListIds')
@@ -617,6 +738,10 @@ module YextClient
         if (value = attributes[:'emails']).is_a?(Array)
           self.emails = value
         end
+      end
+
+      if attributes.has_key?(:'walkableLng')
+        self.walkable_lng = attributes[:'walkableLng']
       end
 
       if attributes.has_key?(:'gender')
@@ -637,6 +762,14 @@ module YextClient
         self.bio_lists_label = attributes[:'bioListsLabel']
       end
 
+      if attributes.has_key?(:'displayLng')
+        self.display_lng = attributes[:'displayLng']
+      end
+
+      if attributes.has_key?(:'yextPickupLng')
+        self.yext_pickup_lng = attributes[:'yextPickupLng']
+      end
+
       if attributes.has_key?(:'productListIds')
         if (value = attributes[:'productListIds']).is_a?(Array)
           self.product_list_ids = value
@@ -653,6 +786,10 @@ module YextClient
         end
       end
 
+      if attributes.has_key?(:'pickupLat')
+        self.pickup_lat = attributes[:'pickupLat']
+      end
+
       if attributes.has_key?(:'logo')
         self.logo = attributes[:'logo']
       end
@@ -665,12 +802,20 @@ module YextClient
         self.account_id = attributes[:'accountId']
       end
 
+      if attributes.has_key?(:'menuUrl')
+        self.menu_url = attributes[:'menuUrl']
+      end
+
       if attributes.has_key?(:'acceptingNewPatients')
         self.accepting_new_patients = attributes[:'acceptingNewPatients']
       end
 
       if attributes.has_key?(:'displayWebsiteUrl')
         self.display_website_url = attributes[:'displayWebsiteUrl']
+      end
+
+      if attributes.has_key?(:'yextRoutableLng')
+        self.yext_routable_lng = attributes[:'yextRoutableLng']
       end
 
       if attributes.has_key?(:'state')
@@ -685,8 +830,16 @@ module YextClient
         self.closed = attributes[:'closed']
       end
 
+      if attributes.has_key?(:'displayMenuUrl')
+        self.display_menu_url = attributes[:'displayMenuUrl']
+      end
+
       if attributes.has_key?(:'officeName')
         self.office_name = attributes[:'officeName']
+      end
+
+      if attributes.has_key?(:'yextDropoffLat')
+        self.yext_dropoff_lat = attributes[:'yextDropoffLat']
       end
 
       if attributes.has_key?(:'hours')
@@ -713,6 +866,10 @@ module YextClient
         if (value = attributes[:'certifications']).is_a?(Array)
           self.certifications = value
         end
+      end
+
+      if attributes.has_key?(:'language')
+        self.language = attributes[:'language']
       end
 
       if attributes.has_key?(:'lastName')
@@ -745,14 +902,20 @@ module YextClient
         end
       end
 
-      if attributes.has_key?(:'services')
-        if (value = attributes[:'services']).is_a?(Array)
-          self.services = value
-        end
+      if attributes.has_key?(:'dropoffLng')
+        self.dropoff_lng = attributes[:'dropoffLng']
       end
 
       if attributes.has_key?(:'uberEmbedCode')
         self.uber_embed_code = attributes[:'uberEmbedCode']
+      end
+
+      if attributes.has_key?(:'displayReservationUrl')
+        self.display_reservation_url = attributes[:'displayReservationUrl']
+      end
+
+      if attributes.has_key?(:'yextDisplayLng')
+        self.yext_display_lng = attributes[:'yextDisplayLng']
       end
 
       if attributes.has_key?(:'displayAddress')
@@ -785,6 +948,14 @@ module YextClient
         self.local_phone = attributes[:'localPhone']
       end
 
+      if attributes.has_key?(:'orderUrl')
+        self.order_url = attributes[:'orderUrl']
+      end
+
+      if attributes.has_key?(:'dropoffLat')
+        self.dropoff_lat = attributes[:'dropoffLat']
+      end
+
       if attributes.has_key?(:'conditionsTreated')
         if (value = attributes[:'conditionsTreated']).is_a?(Array)
           self.conditions_treated = value
@@ -795,6 +966,10 @@ module YextClient
         if (value = attributes[:'customFields']).is_a?(Array)
           self.custom_fields = value
         end
+      end
+
+      if attributes.has_key?(:'walkableLat')
+        self.walkable_lat = attributes[:'walkableLat']
       end
 
       if attributes.has_key?(:'insuranceAccepted')
@@ -837,6 +1012,12 @@ module YextClient
         self.first_name = attributes[:'firstName']
       end
 
+      if attributes.has_key?(:'languages')
+        if (value = attributes[:'languages']).is_a?(Array)
+          self.languages = value
+        end
+      end
+
       if attributes.has_key?(:'locationType')
         self.location_type = attributes[:'locationType']
       end
@@ -851,14 +1032,26 @@ module YextClient
         self.year_established = attributes[:'yearEstablished']
       end
 
+      if attributes.has_key?(:'yextWalkableLng')
+        self.yext_walkable_lng = attributes[:'yextWalkableLng']
+      end
+
       if attributes.has_key?(:'associations')
         if (value = attributes[:'associations']).is_a?(Array)
           self.associations = value
         end
       end
 
+      if attributes.has_key?(:'routableLng')
+        self.routable_lng = attributes[:'routableLng']
+      end
+
       if attributes.has_key?(:'countryCode')
         self.country_code = attributes[:'countryCode']
+      end
+
+      if attributes.has_key?(:'yextPickupLat')
+        self.yext_pickup_lat = attributes[:'yextPickupLat']
       end
 
       if attributes.has_key?(:'googleWebsiteOverride')
@@ -879,8 +1072,8 @@ module YextClient
         self.display_lat = attributes[:'displayLat']
       end
 
-      if attributes.has_key?(:'serviceArea')
-        self.service_area = attributes[:'serviceArea']
+      if attributes.has_key?(:'yextDropoffLng')
+        self.yext_dropoff_lng = attributes[:'yextDropoffLng']
       end
 
       if attributes.has_key?(:'isPhoneTracked')
@@ -927,6 +1120,20 @@ module YextClient
         end
       end
 
+      if attributes.has_key?(:'displayOrderUrl')
+        self.display_order_url = attributes[:'displayOrderUrl']
+      end
+
+      if attributes.has_key?(:'services')
+        if (value = attributes[:'services']).is_a?(Array)
+          self.services = value
+        end
+      end
+
+      if attributes.has_key?(:'sublocality')
+        self.sublocality = attributes[:'sublocality']
+      end
+
       if attributes.has_key?(:'uberTripBrandingText')
         self.uber_trip_branding_text = attributes[:'uberTripBrandingText']
       end
@@ -941,16 +1148,16 @@ module YextClient
         invalid_properties.push("invalid value for 'additional_hours_text', the character length must be smaller than or equal to 255.")
       end
 
+      if !@featured_message_url.nil? && @featured_message_url.to_s.length > 255
+        invalid_properties.push("invalid value for 'featured_message_url', the character length must be smaller than or equal to 255.")
+      end
+
       if !@reservation_url.nil? && @reservation_url.to_s.length > 255
         invalid_properties.push("invalid value for 'reservation_url', the character length must be smaller than or equal to 255.")
       end
 
       if !@featured_message.nil? && @featured_message.to_s.length > 50
         invalid_properties.push("invalid value for 'featured_message', the character length must be smaller than or equal to 50.")
-      end
-
-      if !@featured_message_url.nil? && @featured_message_url.to_s.length > 255
-        invalid_properties.push("invalid value for 'featured_message_url', the character length must be smaller than or equal to 255.")
       end
 
       if !@address2.nil? && @address2.to_s.length > 255
@@ -969,12 +1176,20 @@ module YextClient
         invalid_properties.push("invalid value for 'account_id', the character length must be smaller than or equal to 50.")
       end
 
+      if !@menu_url.nil? && @menu_url.to_s.length > 255
+        invalid_properties.push("invalid value for 'menu_url', the character length must be smaller than or equal to 255.")
+      end
+
       if !@display_website_url.nil? && @display_website_url.to_s.length > 255
         invalid_properties.push("invalid value for 'display_website_url', the character length must be smaller than or equal to 255.")
       end
 
       if !@state.nil? && @state.to_s.length > 80
         invalid_properties.push("invalid value for 'state', the character length must be smaller than or equal to 80.")
+      end
+
+      if !@display_menu_url.nil? && @display_menu_url.to_s.length > 255
+        invalid_properties.push("invalid value for 'display_menu_url', the character length must be smaller than or equal to 255.")
       end
 
       if !@hours.nil? && @hours.to_s.length > 255
@@ -985,12 +1200,20 @@ module YextClient
         invalid_properties.push("invalid value for 'address', the character length must be smaller than or equal to 255.")
       end
 
+      if !@language.nil? && @language.to_s.length > 10
+        invalid_properties.push("invalid value for 'language', the character length must be smaller than or equal to 10.")
+      end
+
       if !@location_name.nil? && @location_name.to_s.length > 100
         invalid_properties.push("invalid value for 'location_name', the character length must be smaller than or equal to 100.")
       end
 
       if !@uber_link_text.nil? && @uber_link_text.to_s.length > 100
         invalid_properties.push("invalid value for 'uber_link_text', the character length must be smaller than or equal to 100.")
+      end
+
+      if !@display_reservation_url.nil? && @display_reservation_url.to_s.length > 255
+        invalid_properties.push("invalid value for 'display_reservation_url', the character length must be smaller than or equal to 255.")
       end
 
       if !@display_address.nil? && @display_address.to_s.length > 255
@@ -1003,6 +1226,10 @@ module YextClient
 
       if !@zip.nil? && @zip.to_s.length > 10
         invalid_properties.push("invalid value for 'zip', the character length must be smaller than or equal to 10.")
+      end
+
+      if !@order_url.nil? && @order_url.to_s.length > 255
+        invalid_properties.push("invalid value for 'order_url', the character length must be smaller than or equal to 255.")
       end
 
       if !@year_established.nil? && @year_established.to_s.length > 4
@@ -1029,6 +1256,14 @@ module YextClient
         invalid_properties.push("invalid value for 'twitter_handle', the character length must be smaller than or equal to 15.")
       end
 
+      if !@display_order_url.nil? && @display_order_url.to_s.length > 255
+        invalid_properties.push("invalid value for 'display_order_url', the character length must be smaller than or equal to 255.")
+      end
+
+      if !@sublocality.nil? && @sublocality.to_s.length > 255
+        invalid_properties.push("invalid value for 'sublocality', the character length must be smaller than or equal to 255.")
+      end
+
       if !@uber_trip_branding_text.nil? && @uber_trip_branding_text.to_s.length > 28
         invalid_properties.push("invalid value for 'uber_trip_branding_text', the character length must be smaller than or equal to 28.")
       end
@@ -1040,24 +1275,29 @@ module YextClient
     # @return true if the model is valid
     def valid?
       return false if !@additional_hours_text.nil? && @additional_hours_text.to_s.length > 255
+      return false if !@featured_message_url.nil? && @featured_message_url.to_s.length > 255
       return false if !@reservation_url.nil? && @reservation_url.to_s.length > 255
       return false if !@featured_message.nil? && @featured_message.to_s.length > 50
-      return false if !@featured_message_url.nil? && @featured_message_url.to_s.length > 255
       return false if !@address2.nil? && @address2.to_s.length > 255
       return false if !@facebook_page_url.nil? && @facebook_page_url.to_s.length > 255
       gender_validator = EnumAttributeValidator.new('String', ["FEMALE", "F", "MALE", "M", "UNSPECIFIED"])
       return false unless gender_validator.valid?(@gender)
       return false if !@website_url.nil? && @website_url.to_s.length > 255
       return false if !@account_id.nil? && @account_id.to_s.length > 50
+      return false if !@menu_url.nil? && @menu_url.to_s.length > 255
       return false if !@display_website_url.nil? && @display_website_url.to_s.length > 255
       return false if !@state.nil? && @state.to_s.length > 80
+      return false if !@display_menu_url.nil? && @display_menu_url.to_s.length > 255
       return false if !@hours.nil? && @hours.to_s.length > 255
       return false if !@address.nil? && @address.to_s.length > 255
+      return false if !@language.nil? && @language.to_s.length > 10
       return false if !@location_name.nil? && @location_name.to_s.length > 100
       return false if !@uber_link_text.nil? && @uber_link_text.to_s.length > 100
+      return false if !@display_reservation_url.nil? && @display_reservation_url.to_s.length > 255
       return false if !@display_address.nil? && @display_address.to_s.length > 255
       return false if !@city.nil? && @city.to_s.length > 80
       return false if !@zip.nil? && @zip.to_s.length > 10
+      return false if !@order_url.nil? && @order_url.to_s.length > 255
       uber_link_type_validator = EnumAttributeValidator.new('String', ["TEXT", "BUTTON"])
       return false unless uber_link_type_validator.valid?(@uber_link_type)
       return false if !@year_established.nil? && @year_established.to_s.length > 4
@@ -1066,6 +1306,8 @@ module YextClient
       return false if !@id.nil? && @id.to_s.length > 50
       return false if !@description.nil? && @description.to_s.length > 5000
       return false if !@twitter_handle.nil? && @twitter_handle.to_s.length > 15
+      return false if !@display_order_url.nil? && @display_order_url.to_s.length > 255
+      return false if !@sublocality.nil? && @sublocality.to_s.length > 255
       return false if !@uber_trip_branding_text.nil? && @uber_trip_branding_text.to_s.length > 28
       return true
     end
@@ -1079,6 +1321,17 @@ module YextClient
       end
 
       @additional_hours_text = additional_hours_text
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] featured_message_url Value to be assigned
+    def featured_message_url=(featured_message_url)
+
+      if !featured_message_url.nil? && featured_message_url.to_s.length > 255
+        fail ArgumentError, "invalid value for 'featured_message_url', the character length must be smaller than or equal to 255."
+      end
+
+      @featured_message_url = featured_message_url
     end
 
     # Custom attribute writer method with validation
@@ -1101,17 +1354,6 @@ module YextClient
       end
 
       @featured_message = featured_message
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] featured_message_url Value to be assigned
-    def featured_message_url=(featured_message_url)
-
-      if !featured_message_url.nil? && featured_message_url.to_s.length > 255
-        fail ArgumentError, "invalid value for 'featured_message_url', the character length must be smaller than or equal to 255."
-      end
-
-      @featured_message_url = featured_message_url
     end
 
     # Custom attribute writer method with validation
@@ -1169,6 +1411,17 @@ module YextClient
     end
 
     # Custom attribute writer method with validation
+    # @param [Object] menu_url Value to be assigned
+    def menu_url=(menu_url)
+
+      if !menu_url.nil? && menu_url.to_s.length > 255
+        fail ArgumentError, "invalid value for 'menu_url', the character length must be smaller than or equal to 255."
+      end
+
+      @menu_url = menu_url
+    end
+
+    # Custom attribute writer method with validation
     # @param [Object] display_website_url Value to be assigned
     def display_website_url=(display_website_url)
 
@@ -1188,6 +1441,17 @@ module YextClient
       end
 
       @state = state
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] display_menu_url Value to be assigned
+    def display_menu_url=(display_menu_url)
+
+      if !display_menu_url.nil? && display_menu_url.to_s.length > 255
+        fail ArgumentError, "invalid value for 'display_menu_url', the character length must be smaller than or equal to 255."
+      end
+
+      @display_menu_url = display_menu_url
     end
 
     # Custom attribute writer method with validation
@@ -1213,6 +1477,17 @@ module YextClient
     end
 
     # Custom attribute writer method with validation
+    # @param [Object] language Value to be assigned
+    def language=(language)
+
+      if !language.nil? && language.to_s.length > 10
+        fail ArgumentError, "invalid value for 'language', the character length must be smaller than or equal to 10."
+      end
+
+      @language = language
+    end
+
+    # Custom attribute writer method with validation
     # @param [Object] location_name Value to be assigned
     def location_name=(location_name)
 
@@ -1232,6 +1507,17 @@ module YextClient
       end
 
       @uber_link_text = uber_link_text
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] display_reservation_url Value to be assigned
+    def display_reservation_url=(display_reservation_url)
+
+      if !display_reservation_url.nil? && display_reservation_url.to_s.length > 255
+        fail ArgumentError, "invalid value for 'display_reservation_url', the character length must be smaller than or equal to 255."
+      end
+
+      @display_reservation_url = display_reservation_url
     end
 
     # Custom attribute writer method with validation
@@ -1265,6 +1551,17 @@ module YextClient
       end
 
       @zip = zip
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] order_url Value to be assigned
+    def order_url=(order_url)
+
+      if !order_url.nil? && order_url.to_s.length > 255
+        fail ArgumentError, "invalid value for 'order_url', the character length must be smaller than or equal to 255."
+      end
+
+      @order_url = order_url
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -1344,6 +1641,28 @@ module YextClient
     end
 
     # Custom attribute writer method with validation
+    # @param [Object] display_order_url Value to be assigned
+    def display_order_url=(display_order_url)
+
+      if !display_order_url.nil? && display_order_url.to_s.length > 255
+        fail ArgumentError, "invalid value for 'display_order_url', the character length must be smaller than or equal to 255."
+      end
+
+      @display_order_url = display_order_url
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] sublocality Value to be assigned
+    def sublocality=(sublocality)
+
+      if !sublocality.nil? && sublocality.to_s.length > 255
+        fail ArgumentError, "invalid value for 'sublocality', the character length must be smaller than or equal to 255."
+      end
+
+      @sublocality = sublocality
+    end
+
+    # Custom attribute writer method with validation
     # @param [Object] uber_trip_branding_text Value to be assigned
     def uber_trip_branding_text=(uber_trip_branding_text)
 
@@ -1366,51 +1685,64 @@ module YextClient
           menu_ids == o.menu_ids &&
           middle_name == o.middle_name &&
           additional_hours_text == o.additional_hours_text &&
-          languages == o.languages &&
+          featured_message_url == o.featured_message_url &&
           reservation_url == o.reservation_url &&
+          pickup_lng == o.pickup_lng &&
           label_ids == o.label_ids &&
           google_preferred_photo == o.google_preferred_photo &&
           video_urls == o.video_urls &&
           featured_message == o.featured_message &&
           yext_display_lat == o.yext_display_lat &&
           mobile_phone == o.mobile_phone &&
-          featured_message_url == o.featured_message_url &&
+          service_area == o.service_area &&
           timestamp == o.timestamp &&
           address2 == o.address2 &&
           facebook_cover_photo == o.facebook_cover_photo &&
+          yext_walkable_lat == o.yext_walkable_lat &&
           bio_list_ids == o.bio_list_ids &&
           facebook_page_url == o.facebook_page_url &&
           emails == o.emails &&
+          walkable_lng == o.walkable_lng &&
           gender == o.gender &&
           website_url == o.website_url &&
           specialties == o.specialties &&
           bio_lists_label == o.bio_lists_label &&
+          display_lng == o.display_lng &&
+          yext_pickup_lng == o.yext_pickup_lng &&
           product_list_ids == o.product_list_ids &&
           google_cover_photo == o.google_cover_photo &&
           education_list == o.education_list &&
+          pickup_lat == o.pickup_lat &&
           logo == o.logo &&
           alternate_phone == o.alternate_phone &&
           account_id == o.account_id &&
+          menu_url == o.menu_url &&
           accepting_new_patients == o.accepting_new_patients &&
           display_website_url == o.display_website_url &&
+          yext_routable_lng == o.yext_routable_lng &&
           state == o.state &&
           suppress_address == o.suppress_address &&
           closed == o.closed &&
+          display_menu_url == o.display_menu_url &&
           office_name == o.office_name &&
+          yext_dropoff_lat == o.yext_dropoff_lat &&
           hours == o.hours &&
           address == o.address &&
           uber_link == o.uber_link &&
           uber_client_id == o.uber_client_id &&
           facebook_profile_picture == o.facebook_profile_picture &&
           certifications == o.certifications &&
+          language == o.language &&
           last_name == o.last_name &&
           location_name == o.location_name &&
           products == o.products &&
           uber_link_text == o.uber_link_text &&
           google_attributes == o.google_attributes &&
           payment_options == o.payment_options &&
-          services == o.services &&
+          dropoff_lng == o.dropoff_lng &&
           uber_embed_code == o.uber_embed_code &&
+          display_reservation_url == o.display_reservation_url &&
+          yext_display_lng == o.yext_display_lng &&
           display_address == o.display_address &&
           category_ids == o.category_ids &&
           product_lists_label == o.product_lists_label &&
@@ -1418,8 +1750,11 @@ module YextClient
           menus_label == o.menus_label &&
           zip == o.zip &&
           local_phone == o.local_phone &&
+          order_url == o.order_url &&
+          dropoff_lat == o.dropoff_lat &&
           conditions_treated == o.conditions_treated &&
           custom_fields == o.custom_fields &&
+          walkable_lat == o.walkable_lat &&
           insurance_accepted == o.insurance_accepted &&
           uber_link_type == o.uber_link_type &&
           phone == o.phone &&
@@ -1429,16 +1764,20 @@ module YextClient
           event_lists_label == o.event_lists_label &&
           holiday_hours == o.holiday_hours &&
           first_name == o.first_name &&
+          languages == o.languages &&
           location_type == o.location_type &&
           admitting_hospitals == o.admitting_hospitals &&
           year_established == o.year_established &&
+          yext_walkable_lng == o.yext_walkable_lng &&
           associations == o.associations &&
+          routable_lng == o.routable_lng &&
           country_code == o.country_code &&
+          yext_pickup_lat == o.yext_pickup_lat &&
           google_website_override == o.google_website_override &&
           id == o.id &&
           event_list_ids == o.event_list_ids &&
           display_lat == o.display_lat &&
-          service_area == o.service_area &&
+          yext_dropoff_lng == o.yext_dropoff_lng &&
           is_phone_tracked == o.is_phone_tracked &&
           tty_phone == o.tty_phone &&
           npi == o.npi &&
@@ -1449,6 +1788,9 @@ module YextClient
           routable_lat == o.routable_lat &&
           yext_routable_lat == o.yext_routable_lat &&
           photos == o.photos &&
+          display_order_url == o.display_order_url &&
+          services == o.services &&
+          sublocality == o.sublocality &&
           uber_trip_branding_text == o.uber_trip_branding_text
     end
 
@@ -1461,7 +1803,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [fax_phone, headshot, keywords, toll_free_phone, menu_ids, middle_name, additional_hours_text, languages, reservation_url, label_ids, google_preferred_photo, video_urls, featured_message, yext_display_lat, mobile_phone, featured_message_url, timestamp, address2, facebook_cover_photo, bio_list_ids, facebook_page_url, emails, gender, website_url, specialties, bio_lists_label, product_list_ids, google_cover_photo, education_list, logo, alternate_phone, account_id, accepting_new_patients, display_website_url, state, suppress_address, closed, office_name, hours, address, uber_link, uber_client_id, facebook_profile_picture, certifications, last_name, location_name, products, uber_link_text, google_attributes, payment_options, services, uber_embed_code, display_address, category_ids, product_lists_label, city, menus_label, zip, local_phone, conditions_treated, custom_fields, insurance_accepted, uber_link_type, phone, folder_id, google_profile_photo, instagram_handle, event_lists_label, holiday_hours, first_name, location_type, admitting_hospitals, year_established, associations, country_code, google_website_override, id, event_list_ids, display_lat, service_area, is_phone_tracked, tty_phone, npi, description, twitter_handle, brands, uber_trip_branding_url, routable_lat, yext_routable_lat, photos, uber_trip_branding_text].hash
+      [fax_phone, headshot, keywords, toll_free_phone, menu_ids, middle_name, additional_hours_text, featured_message_url, reservation_url, pickup_lng, label_ids, google_preferred_photo, video_urls, featured_message, yext_display_lat, mobile_phone, service_area, timestamp, address2, facebook_cover_photo, yext_walkable_lat, bio_list_ids, facebook_page_url, emails, walkable_lng, gender, website_url, specialties, bio_lists_label, display_lng, yext_pickup_lng, product_list_ids, google_cover_photo, education_list, pickup_lat, logo, alternate_phone, account_id, menu_url, accepting_new_patients, display_website_url, yext_routable_lng, state, suppress_address, closed, display_menu_url, office_name, yext_dropoff_lat, hours, address, uber_link, uber_client_id, facebook_profile_picture, certifications, language, last_name, location_name, products, uber_link_text, google_attributes, payment_options, dropoff_lng, uber_embed_code, display_reservation_url, yext_display_lng, display_address, category_ids, product_lists_label, city, menus_label, zip, local_phone, order_url, dropoff_lat, conditions_treated, custom_fields, walkable_lat, insurance_accepted, uber_link_type, phone, folder_id, google_profile_photo, instagram_handle, event_lists_label, holiday_hours, first_name, languages, location_type, admitting_hospitals, year_established, yext_walkable_lng, associations, routable_lng, country_code, yext_pickup_lat, google_website_override, id, event_list_ids, display_lat, yext_dropoff_lng, is_phone_tracked, tty_phone, npi, description, twitter_handle, brands, uber_trip_branding_url, routable_lat, yext_routable_lat, photos, display_order_url, services, sublocality, uber_trip_branding_text].hash
     end
 
     # Builds the object from hash

@@ -109,6 +109,99 @@ module YextClient
       return data, status_code, headers
     end
 
+    # Reviews: Create
+    # Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`authorEmail`** * **`rating`** * **`content`**   ## Optional fields * **`status`** 
+    # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param location_id The ID of the location associated with the review.
+    # @param author_name The name of the person who wrote the review.
+    # @param author_email The email address of the person who wrote the review.
+    # @param rating The rating of the review from 1 to 5.
+    # @param content The content of the review.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :status  (default to QUARANTINED)
+    # @return [IdResponse]
+    def create_review(account_id, v, location_id, author_name, author_email, rating, content, opts = {})
+      data, _status_code, _headers = create_review_with_http_info(account_id, v, location_id, author_name, author_email, rating, content, opts)
+      return data
+    end
+
+    # Reviews: Create
+    # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;authorEmail&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;**   ## Optional fields * **&#x60;status&#x60;** 
+    # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param location_id The ID of the location associated with the review.
+    # @param author_name The name of the person who wrote the review.
+    # @param author_email The email address of the person who wrote the review.
+    # @param rating The rating of the review from 1 to 5.
+    # @param content The content of the review.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :status 
+    # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
+    def create_review_with_http_info(account_id, v, location_id, author_name, author_email, rating, content, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ReviewsApi.create_review ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ReviewsApi.create_review" if account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.create_review" if v.nil?
+      # verify the required parameter 'location_id' is set
+      fail ArgumentError, "Missing the required parameter 'location_id' when calling ReviewsApi.create_review" if location_id.nil?
+      # verify the required parameter 'author_name' is set
+      fail ArgumentError, "Missing the required parameter 'author_name' when calling ReviewsApi.create_review" if author_name.nil?
+      # verify the required parameter 'author_email' is set
+      fail ArgumentError, "Missing the required parameter 'author_email' when calling ReviewsApi.create_review" if author_email.nil?
+      # verify the required parameter 'rating' is set
+      fail ArgumentError, "Missing the required parameter 'rating' when calling ReviewsApi.create_review" if rating.nil?
+      # verify the required parameter 'content' is set
+      fail ArgumentError, "Missing the required parameter 'content' when calling ReviewsApi.create_review" if content.nil?
+      if opts[:'status'] && !['QUARANTINED', 'LIVE'].include?(opts[:'status'])
+        fail ArgumentError, 'invalid value for "status", must be one of QUARANTINED, LIVE'
+      end
+      # resource path
+      local_var_path = "/accounts/{accountId}/reviews".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'v'] = v
+      query_params[:'locationId'] = location_id
+      query_params[:'authorName'] = author_name
+      query_params[:'authorEmail'] = author_email
+      query_params[:'rating'] = rating
+      query_params[:'content'] = content
+      query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      local_header_accept = ['application/json']
+      local_header_accept_result = @api_client.select_header_accept(local_header_accept) and header_params['Accept'] = local_header_accept_result
+
+      # HTTP header 'Content-Type'
+      local_header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(local_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'IdResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ReviewsApi#create_review\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Review Invitations: Create
     # Sends review invitations to one or more consumers.
     # @param account_id 
@@ -355,6 +448,90 @@ module YextClient
         :return_type => 'ReviewsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReviewsApi#list_reviews\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Reviews: Update
+    # Updates an External First Party Review. <br><br> **NOTE:** Despite using the `PUT` method, Reviews: Update only updates supplied fields. Omitted fields are not modified. 
+    # @param account_id 
+    # @param review_id ID of this Review.
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :author_name The name of the person who wrote the review.
+    # @option opts [String] :author_email The email address of the person who wrote the review.
+    # @option opts [Integer] :rating The rating of the review from 1 to 5.
+    # @option opts [String] :content The content of the review.
+    # @option opts [String] :status 
+    # @return [IdResponse]
+    def update_review(account_id, review_id, v, opts = {})
+      data, _status_code, _headers = update_review_with_http_info(account_id, review_id, v, opts)
+      return data
+    end
+
+    # Reviews: Update
+    # Updates an External First Party Review. &lt;br&gt;&lt;br&gt; **NOTE:** Despite using the &#x60;PUT&#x60; method, Reviews: Update only updates supplied fields. Omitted fields are not modified. 
+    # @param account_id 
+    # @param review_id ID of this Review.
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :author_name The name of the person who wrote the review.
+    # @option opts [String] :author_email The email address of the person who wrote the review.
+    # @option opts [Integer] :rating The rating of the review from 1 to 5.
+    # @option opts [String] :content The content of the review.
+    # @option opts [String] :status 
+    # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
+    def update_review_with_http_info(account_id, review_id, v, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ReviewsApi.update_review ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ReviewsApi.update_review" if account_id.nil?
+      # verify the required parameter 'review_id' is set
+      fail ArgumentError, "Missing the required parameter 'review_id' when calling ReviewsApi.update_review" if review_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.update_review" if v.nil?
+      if opts[:'status'] && !['QUARANTINED', 'LIVE'].include?(opts[:'status'])
+        fail ArgumentError, 'invalid value for "status", must be one of QUARANTINED, LIVE'
+      end
+      # resource path
+      local_var_path = "/accounts/{accountId}/reviews/{reviewId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'reviewId' + '}', review_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'v'] = v
+      query_params[:'authorName'] = opts[:'author_name'] if !opts[:'author_name'].nil?
+      query_params[:'authorEmail'] = opts[:'author_email'] if !opts[:'author_email'].nil?
+      query_params[:'rating'] = opts[:'rating'] if !opts[:'rating'].nil?
+      query_params[:'content'] = opts[:'content'] if !opts[:'content'].nil?
+      query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      local_header_accept = ['application/json']
+      local_header_accept_result = @api_client.select_header_accept(local_header_accept) and header_params['Accept'] = local_header_accept_result
+
+      # HTTP header 'Content-Type'
+      local_header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(local_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'IdResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ReviewsApi#update_review\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

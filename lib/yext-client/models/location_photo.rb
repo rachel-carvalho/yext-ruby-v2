@@ -29,6 +29,9 @@ module YextClient
     # Valid URL to image. Accepted formats: .jpg, .png.  If the image could not be downloaded, or if its URL is invalid, the image will be ignored. The success response will contain a warning message explaining why the image was not stored in the system. 
     attr_accessor :url
 
+    # The alternate text to be used for accessibility purposes.
+    attr_accessor :alternate_text
+
     # Image description.
     attr_accessor :description
 
@@ -37,6 +40,7 @@ module YextClient
     def self.attribute_map
       {
         :'url' => :'url',
+        :'alternate_text' => :'alternateText',
         :'description' => :'description'
       }
     end
@@ -45,6 +49,7 @@ module YextClient
     def self.swagger_types
       {
         :'url' => :'String',
+        :'alternate_text' => :'String',
         :'description' => :'String'
       }
     end
@@ -59,6 +64,10 @@ module YextClient
 
       if attributes.has_key?(:'url')
         self.url = attributes[:'url']
+      end
+
+      if attributes.has_key?(:'alternateText')
+        self.alternate_text = attributes[:'alternateText']
       end
 
       if attributes.has_key?(:'description')
@@ -86,6 +95,7 @@ module YextClient
       return true if self.equal?(o)
       self.class == o.class &&
           url == o.url &&
+          alternate_text == o.alternate_text &&
           description == o.description
     end
 
@@ -98,7 +108,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [url, description].hash
+      [url, alternate_text, description].hash
     end
 
     # Builds the object from hash

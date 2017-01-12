@@ -25,31 +25,22 @@ require 'date'
 
 module YextClient
 
-  class ReviewsResponseResponse
-    # Total number of Reviews that meet filter criteria (ignores limit/offset)
-    attr_accessor :count
-
-    attr_accessor :reviews
-
-    # Average rating of Reviews that matched the query parameters.
-    attr_accessor :average_rating
+  class UpdatePasswordRequest
+    # User's new password
+    attr_accessor :new_password
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count',
-        :'reviews' => :'reviews',
-        :'average_rating' => :'averageRating'
+        :'new_password' => :'newPassword'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'count' => :'Integer',
-        :'reviews' => :'Array<Review>',
-        :'average_rating' => :'Float'
+        :'new_password' => :'String'
       }
     end
 
@@ -61,18 +52,8 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'count')
-        self.count = attributes[:'count']
-      end
-
-      if attributes.has_key?(:'reviews')
-        if (value = attributes[:'reviews']).is_a?(Array)
-          self.reviews = value
-        end
-      end
-
-      if attributes.has_key?(:'averageRating')
-        self.average_rating = attributes[:'averageRating']
+      if attributes.has_key?(:'newPassword')
+        self.new_password = attributes[:'newPassword']
       end
 
     end
@@ -81,12 +62,17 @@ module YextClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @new_password.nil?
+        invalid_properties.push("invalid value for 'new_password', new_password cannot be nil.")
+      end
+
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @new_password.nil?
       return true
     end
 
@@ -95,9 +81,7 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count &&
-          reviews == o.reviews &&
-          average_rating == o.average_rating
+          new_password == o.new_password
     end
 
     # @see the `==` method
@@ -109,7 +93,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, reviews, average_rating].hash
+      [new_password].hash
     end
 
     # Builds the object from hash

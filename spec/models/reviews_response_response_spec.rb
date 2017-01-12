@@ -49,7 +49,7 @@ describe 'ReviewsResponseResponse' do
     end
   end
 
-  describe 'test attribute "listings"' do
+  describe 'test attribute "reviews"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

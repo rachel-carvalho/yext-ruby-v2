@@ -24,7 +24,7 @@ limitations under the License.
 require "uri"
 
 module YextClient
-  class UserJanuaryApi
+  class UserApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
@@ -35,11 +35,11 @@ module YextClient
     # Create a new User
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
-    # @param user_request 
+    # @param create_user_request 
     # @param [Hash] opts the optional parameters
     # @return [IdResponse]
-    def create_user(account_id, v, user_request, opts = {})
-      data, _status_code, _headers = create_user_with_http_info(account_id, v, user_request, opts)
+    def create_user(account_id, v, create_user_request, opts = {})
+      data, _status_code, _headers = create_user_with_http_info(account_id, v, create_user_request, opts)
       return data
     end
 
@@ -47,19 +47,19 @@ module YextClient
     # Create a new User
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
-    # @param user_request 
+    # @param create_user_request 
     # @param [Hash] opts the optional parameters
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
-    def create_user_with_http_info(account_id, v, user_request, opts = {})
+    def create_user_with_http_info(account_id, v, create_user_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: UserJanuaryApi.create_user ..."
+        @api_client.config.logger.debug "Calling API: UserApi.create_user ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserJanuaryApi.create_user" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.create_user" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling UserJanuaryApi.create_user" if v.nil?
-      # verify the required parameter 'user_request' is set
-      fail ArgumentError, "Missing the required parameter 'user_request' when calling UserJanuaryApi.create_user" if user_request.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.create_user" if v.nil?
+      # verify the required parameter 'create_user_request' is set
+      fail ArgumentError, "Missing the required parameter 'create_user_request' when calling UserApi.create_user" if create_user_request.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/users".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -82,7 +82,7 @@ module YextClient
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(user_request)
+      post_body = @api_client.object_to_http_body(create_user_request)
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
@@ -92,7 +92,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'IdResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: UserJanuaryApi#create_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: UserApi#create_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -102,11 +102,10 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param user_id 
-    # @param user_request 
     # @param [Hash] opts the optional parameters
     # @return [ErrorResponse]
-    def delete_user(account_id, v, user_id, user_request, opts = {})
-      data, _status_code, _headers = delete_user_with_http_info(account_id, v, user_id, user_request, opts)
+    def delete_user(account_id, v, user_id, opts = {})
+      data, _status_code, _headers = delete_user_with_http_info(account_id, v, user_id, opts)
       return data
     end
 
@@ -115,21 +114,18 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param user_id 
-    # @param user_request 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
-    def delete_user_with_http_info(account_id, v, user_id, user_request, opts = {})
+    def delete_user_with_http_info(account_id, v, user_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: UserJanuaryApi.delete_user ..."
+        @api_client.config.logger.debug "Calling API: UserApi.delete_user ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserJanuaryApi.delete_user" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.delete_user" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling UserJanuaryApi.delete_user" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.delete_user" if v.nil?
       # verify the required parameter 'user_id' is set
-      fail ArgumentError, "Missing the required parameter 'user_id' when calling UserJanuaryApi.delete_user" if user_id.nil?
-      # verify the required parameter 'user_request' is set
-      fail ArgumentError, "Missing the required parameter 'user_request' when calling UserJanuaryApi.delete_user" if user_request.nil?
+      fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.delete_user" if user_id.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/users/{userId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
 
@@ -152,7 +148,7 @@ module YextClient
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(user_request)
+      post_body = nil
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
         :header_params => header_params,
@@ -162,51 +158,44 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ErrorResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: UserJanuaryApi#delete_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: UserApi#delete_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
     # Optimization Tasks: Get Link
-    # Retrieve a link to perform any pending Optimization Tasks given a set of Optimization Tasks and Locations.
+    # Retrieve a link to perform any pending Optimization Tasks given a set of Optimization Tasks and a location
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
-    # @param task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
-    # @param location_ids Comma-separated list of Location IDs to be used as a filter.  If no IDs are provided, defaults to all Locations in the account. 
-    # @param mode When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress. 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
+    # @option opts [String] :location_id Location ID to be used as a filter.  If no ID is provided, defaults to all Locations in the account. 
+    # @option opts [String] :mode When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress.  (default to PENDING_ONLY)
     # @return [OptimizationTaskLinksResponse]
-    def get_link_optimization_task(account_id, v, task_ids, location_ids, mode, opts = {})
-      data, _status_code, _headers = get_link_optimization_task_with_http_info(account_id, v, task_ids, location_ids, mode, opts)
+    def get_link_optimization_task(account_id, v, opts = {})
+      data, _status_code, _headers = get_link_optimization_task_with_http_info(account_id, v, opts)
       return data
     end
 
     # Optimization Tasks: Get Link
-    # Retrieve a link to perform any pending Optimization Tasks given a set of Optimization Tasks and Locations.
+    # Retrieve a link to perform any pending Optimization Tasks given a set of Optimization Tasks and a location
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
-    # @param task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
-    # @param location_ids Comma-separated list of Location IDs to be used as a filter.  If no IDs are provided, defaults to all Locations in the account. 
-    # @param mode When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress. 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
+    # @option opts [String] :location_id Location ID to be used as a filter.  If no ID is provided, defaults to all Locations in the account. 
+    # @option opts [String] :mode When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress. 
     # @return [Array<(OptimizationTaskLinksResponse, Fixnum, Hash)>] OptimizationTaskLinksResponse data, response status code and response headers
-    def get_link_optimization_task_with_http_info(account_id, v, task_ids, location_ids, mode, opts = {})
+    def get_link_optimization_task_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: UserJanuaryApi.get_link_optimization_task ..."
+        @api_client.config.logger.debug "Calling API: UserApi.get_link_optimization_task ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserJanuaryApi.get_link_optimization_task" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_link_optimization_task" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling UserJanuaryApi.get_link_optimization_task" if v.nil?
-      # verify the required parameter 'task_ids' is set
-      fail ArgumentError, "Missing the required parameter 'task_ids' when calling UserJanuaryApi.get_link_optimization_task" if task_ids.nil?
-      # verify the required parameter 'location_ids' is set
-      fail ArgumentError, "Missing the required parameter 'location_ids' when calling UserJanuaryApi.get_link_optimization_task" if location_ids.nil?
-      # verify the required parameter 'mode' is set
-      fail ArgumentError, "Missing the required parameter 'mode' when calling UserJanuaryApi.get_link_optimization_task" if mode.nil?
-      # verify enum value
-      unless ['PENDING_ONLY', 'ALL_TASKS', 'RESET'].include?(mode)
-        fail ArgumentError, "invalid value for 'mode', must be one of PENDING_ONLY, ALL_TASKS, RESET"
+      fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_link_optimization_task" if v.nil?
+      if opts[:'mode'] && !['PENDING_ONLY', 'ALL_TASKS', 'RESET'].include?(opts[:'mode'])
+        fail ArgumentError, 'invalid value for "mode", must be one of PENDING_ONLY, ALL_TASKS, RESET'
       end
       # resource path
       local_var_path = "/accounts/{accountId}/optimizationlink".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
@@ -214,9 +203,9 @@ module YextClient
       # query parameters
       query_params = {}
       query_params[:'v'] = v
-      query_params[:'taskIds'] = task_ids
-      query_params[:'locationIds'] = location_ids
-      query_params[:'mode'] = mode
+      query_params[:'taskIds'] = opts[:'task_ids'] if !opts[:'task_ids'].nil?
+      query_params[:'locationId'] = opts[:'location_id'] if !opts[:'location_id'].nil?
+      query_params[:'mode'] = opts[:'mode'] if !opts[:'mode'].nil?
 
       # header parameters
       header_params = {}
@@ -243,7 +232,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'OptimizationTaskLinksResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: UserJanuaryApi#get_link_optimization_task\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: UserApi#get_link_optimization_task\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -252,12 +241,12 @@ module YextClient
     # List Optimization Tasks for the account, optionally filtered by task and location.
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
-    # @param task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
-    # @param location_ids Comma-separated list of Location IDs to be used as a filter.  If no IDs are provided, defaults to all Locations in the account. 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
+    # @option opts [String] :location_ids Comma-separated list of Location IDs to be used as a filter.  If no IDs are provided, defaults to all Locations in the account. 
     # @return [OptimizationTasksResponse]
-    def get_optimization_tasks(account_id, v, task_ids, location_ids, opts = {})
-      data, _status_code, _headers = get_optimization_tasks_with_http_info(account_id, v, task_ids, location_ids, opts)
+    def get_optimization_tasks(account_id, v, opts = {})
+      data, _status_code, _headers = get_optimization_tasks_with_http_info(account_id, v, opts)
       return data
     end
 
@@ -265,30 +254,26 @@ module YextClient
     # List Optimization Tasks for the account, optionally filtered by task and location.
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
-    # @param task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
-    # @param location_ids Comma-separated list of Location IDs to be used as a filter.  If no IDs are provided, defaults to all Locations in the account. 
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
+    # @option opts [String] :location_ids Comma-separated list of Location IDs to be used as a filter.  If no IDs are provided, defaults to all Locations in the account. 
     # @return [Array<(OptimizationTasksResponse, Fixnum, Hash)>] OptimizationTasksResponse data, response status code and response headers
-    def get_optimization_tasks_with_http_info(account_id, v, task_ids, location_ids, opts = {})
+    def get_optimization_tasks_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: UserJanuaryApi.get_optimization_tasks ..."
+        @api_client.config.logger.debug "Calling API: UserApi.get_optimization_tasks ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserJanuaryApi.get_optimization_tasks" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_optimization_tasks" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling UserJanuaryApi.get_optimization_tasks" if v.nil?
-      # verify the required parameter 'task_ids' is set
-      fail ArgumentError, "Missing the required parameter 'task_ids' when calling UserJanuaryApi.get_optimization_tasks" if task_ids.nil?
-      # verify the required parameter 'location_ids' is set
-      fail ArgumentError, "Missing the required parameter 'location_ids' when calling UserJanuaryApi.get_optimization_tasks" if location_ids.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_optimization_tasks" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/optimizationtasks".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
       # query parameters
       query_params = {}
       query_params[:'v'] = v
-      query_params[:'taskIds'] = task_ids
-      query_params[:'locationIds'] = location_ids
+      query_params[:'taskIds'] = opts[:'task_ids'] if !opts[:'task_ids'].nil?
+      query_params[:'locationIds'] = opts[:'location_ids'] if !opts[:'location_ids'].nil?
 
       # header parameters
       header_params = {}
@@ -315,7 +300,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'OptimizationTasksResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: UserJanuaryApi#get_optimization_tasks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: UserApi#get_optimization_tasks\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -339,12 +324,12 @@ module YextClient
     # @return [Array<(RolesResponse, Fixnum, Hash)>] RolesResponse data, response status code and response headers
     def get_roles_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: UserJanuaryApi.get_roles ..."
+        @api_client.config.logger.debug "Calling API: UserApi.get_roles ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserJanuaryApi.get_roles" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_roles" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling UserJanuaryApi.get_roles" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_roles" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/roles".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -377,7 +362,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'RolesResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: UserJanuaryApi#get_roles\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: UserApi#get_roles\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -403,14 +388,14 @@ module YextClient
     # @return [Array<(UserResponse, Fixnum, Hash)>] UserResponse data, response status code and response headers
     def get_user_with_http_info(account_id, v, user_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: UserJanuaryApi.get_user ..."
+        @api_client.config.logger.debug "Calling API: UserApi.get_user ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserJanuaryApi.get_user" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_user" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling UserJanuaryApi.get_user" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_user" if v.nil?
       # verify the required parameter 'user_id' is set
-      fail ArgumentError, "Missing the required parameter 'user_id' when calling UserJanuaryApi.get_user" if user_id.nil?
+      fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.get_user" if user_id.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/users/{userId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
 
@@ -443,7 +428,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'UserResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: UserJanuaryApi#get_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: UserApi#get_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -471,14 +456,14 @@ module YextClient
     # @return [Array<(UsersResponse, Fixnum, Hash)>] UsersResponse data, response status code and response headers
     def get_users_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: UserJanuaryApi.get_users ..."
+        @api_client.config.logger.debug "Calling API: UserApi.get_users ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserJanuaryApi.get_users" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.get_users" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling UserJanuaryApi.get_users" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.get_users" if v.nil?
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
-        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling UserJanuaryApi.get_users, must be smaller than or equal to 50.0.'
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling UserApi.get_users, must be smaller than or equal to 50.0.'
       end
 
       # resource path
@@ -515,7 +500,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'UsersResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: UserJanuaryApi#get_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: UserApi#get_users\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -525,11 +510,11 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param user_id 
-    # @param user_request 
+    # @param update_user_request 
     # @param [Hash] opts the optional parameters
     # @return [IdResponse]
-    def update_user(account_id, v, user_id, user_request, opts = {})
-      data, _status_code, _headers = update_user_with_http_info(account_id, v, user_id, user_request, opts)
+    def update_user(account_id, v, user_id, update_user_request, opts = {})
+      data, _status_code, _headers = update_user_with_http_info(account_id, v, user_id, update_user_request, opts)
       return data
     end
 
@@ -538,21 +523,21 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param user_id 
-    # @param user_request 
+    # @param update_user_request 
     # @param [Hash] opts the optional parameters
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
-    def update_user_with_http_info(account_id, v, user_id, user_request, opts = {})
+    def update_user_with_http_info(account_id, v, user_id, update_user_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: UserJanuaryApi.update_user ..."
+        @api_client.config.logger.debug "Calling API: UserApi.update_user ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserJanuaryApi.update_user" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.update_user" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling UserJanuaryApi.update_user" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.update_user" if v.nil?
       # verify the required parameter 'user_id' is set
-      fail ArgumentError, "Missing the required parameter 'user_id' when calling UserJanuaryApi.update_user" if user_id.nil?
-      # verify the required parameter 'user_request' is set
-      fail ArgumentError, "Missing the required parameter 'user_request' when calling UserJanuaryApi.update_user" if user_request.nil?
+      fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.update_user" if user_id.nil?
+      # verify the required parameter 'update_user_request' is set
+      fail ArgumentError, "Missing the required parameter 'update_user_request' when calling UserApi.update_user" if update_user_request.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/users/{userId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
 
@@ -575,7 +560,7 @@ module YextClient
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(user_request)
+      post_body = @api_client.object_to_http_body(update_user_request)
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,
@@ -585,7 +570,75 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'IdResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: UserJanuaryApi#update_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: UserApi#update_user\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Users: Update Password
+    # Updates a User's password.
+    # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param user_id 
+    # @param [Hash] opts the optional parameters
+    # @option opts [UpdatePasswordRequest] :update_password_request 
+    # @return [ErrorResponse]
+    def update_user_password(account_id, v, user_id, opts = {})
+      data, _status_code, _headers = update_user_password_with_http_info(account_id, v, user_id, opts)
+      return data
+    end
+
+    # Users: Update Password
+    # Updates a User&#39;s password.
+    # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param user_id 
+    # @param [Hash] opts the optional parameters
+    # @option opts [UpdatePasswordRequest] :update_password_request 
+    # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
+    def update_user_password_with_http_info(account_id, v, user_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: UserApi.update_user_password ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling UserApi.update_user_password" if account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling UserApi.update_user_password" if v.nil?
+      # verify the required parameter 'user_id' is set
+      fail ArgumentError, "Missing the required parameter 'user_id' when calling UserApi.update_user_password" if user_id.nil?
+      # resource path
+      local_var_path = "/accounts/{accountId}/users/{userId}/password".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'userId' + '}', user_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'v'] = v
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      local_header_accept = ['application/json']
+      local_header_accept_result = @api_client.select_header_accept(local_header_accept) and header_params['Accept'] = local_header_accept_result
+
+      # HTTP header 'Content-Type'
+      local_header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(local_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'update_password_request'])
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'ErrorResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: UserApi#update_user_password\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

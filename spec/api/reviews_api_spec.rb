@@ -60,6 +60,25 @@ describe 'ReviewsApi' do
     end
   end
 
+  # unit tests for create_review
+  # Reviews: Create
+  # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;authorEmail&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;**   ## Optional fields * **&#x60;status&#x60;** 
+  # @param account_id 
+  # @param v A date in &#x60;YYYYMMDD&#x60; format.
+  # @param location_id The ID of the location associated with the review.
+  # @param author_name The name of the person who wrote the review.
+  # @param author_email The email address of the person who wrote the review.
+  # @param rating The rating of the review from 1 to 5.
+  # @param content The content of the review.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :status 
+  # @return [IdResponse]
+  describe 'create_review test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for create_review_invites
   # Review Invitations: Create
   # Sends review invitations to one or more consumers.
@@ -113,6 +132,25 @@ describe 'ReviewsApi' do
   # @option opts [String] :reviewer_email When specified, only reviews whose authorEmail matches the provided email address will be returned.
   # @return [ReviewsResponse]
   describe 'list_reviews test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for update_review
+  # Reviews: Update
+  # Updates an External First Party Review. &lt;br&gt;&lt;br&gt; **NOTE:** Despite using the &#x60;PUT&#x60; method, Reviews: Update only updates supplied fields. Omitted fields are not modified. 
+  # @param account_id 
+  # @param review_id ID of this Review.
+  # @param v A date in &#x60;YYYYMMDD&#x60; format.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :author_name The name of the person who wrote the review.
+  # @option opts [String] :author_email The email address of the person who wrote the review.
+  # @option opts [Integer] :rating The rating of the review from 1 to 5.
+  # @option opts [String] :content The content of the review.
+  # @option opts [String] :status 
+  # @return [IdResponse]
+  describe 'update_review test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

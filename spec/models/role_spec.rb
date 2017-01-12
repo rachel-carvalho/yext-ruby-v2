@@ -43,13 +43,13 @@ describe 'Role' do
       expect(@instance).to be_instance_of(YextClient::Role)
     end
   end
-  describe 'test attribute "role_id"' do
+  describe 'test attribute "id"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "role_name"' do
+  describe 'test attribute "name"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

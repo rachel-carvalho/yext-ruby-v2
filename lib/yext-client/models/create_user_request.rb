@@ -25,31 +25,61 @@ require 'date'
 
 module YextClient
 
-  class ReviewsResponseResponse
-    # Total number of Reviews that meet filter criteria (ignores limit/offset)
-    attr_accessor :count
+  class CreateUserRequest
+    # User's username.
+    attr_accessor :username
 
-    attr_accessor :reviews
+    # User's first name.
+    attr_accessor :first_name
 
-    # Average rating of Reviews that matched the query parameters.
-    attr_accessor :average_rating
+    # User's last name.
+    attr_accessor :last_name
+
+    attr_accessor :acl
+
+    # Indicates whether SSO has been enabled for this user.  Defaults to false. 
+    attr_accessor :sso
+
+    # User's phone number.
+    attr_accessor :phone_number
+
+    # User's email address.
+    attr_accessor :email_address
+
+    # ID of this User.  Ignored when sent in update requests. 
+    attr_accessor :id
+
+    # User's password.
+    attr_accessor :password
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'count' => :'count',
-        :'reviews' => :'reviews',
-        :'average_rating' => :'averageRating'
+        :'username' => :'username',
+        :'first_name' => :'firstName',
+        :'last_name' => :'lastName',
+        :'acl' => :'acl',
+        :'sso' => :'sso',
+        :'phone_number' => :'phoneNumber',
+        :'email_address' => :'emailAddress',
+        :'id' => :'id',
+        :'password' => :'password'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'count' => :'Integer',
-        :'reviews' => :'Array<Review>',
-        :'average_rating' => :'Float'
+        :'username' => :'String',
+        :'first_name' => :'String',
+        :'last_name' => :'String',
+        :'acl' => :'Array<UserAcl>',
+        :'sso' => :'BOOLEAN',
+        :'phone_number' => :'String',
+        :'email_address' => :'String',
+        :'id' => :'String',
+        :'password' => :'String'
       }
     end
 
@@ -61,18 +91,42 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'count')
-        self.count = attributes[:'count']
+      if attributes.has_key?(:'username')
+        self.username = attributes[:'username']
       end
 
-      if attributes.has_key?(:'reviews')
-        if (value = attributes[:'reviews']).is_a?(Array)
-          self.reviews = value
+      if attributes.has_key?(:'firstName')
+        self.first_name = attributes[:'firstName']
+      end
+
+      if attributes.has_key?(:'lastName')
+        self.last_name = attributes[:'lastName']
+      end
+
+      if attributes.has_key?(:'acl')
+        if (value = attributes[:'acl']).is_a?(Array)
+          self.acl = value
         end
       end
 
-      if attributes.has_key?(:'averageRating')
-        self.average_rating = attributes[:'averageRating']
+      if attributes.has_key?(:'sso')
+        self.sso = attributes[:'sso']
+      end
+
+      if attributes.has_key?(:'phoneNumber')
+        self.phone_number = attributes[:'phoneNumber']
+      end
+
+      if attributes.has_key?(:'emailAddress')
+        self.email_address = attributes[:'emailAddress']
+      end
+
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'password')
+        self.password = attributes[:'password']
       end
 
     end
@@ -95,9 +149,15 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          count == o.count &&
-          reviews == o.reviews &&
-          average_rating == o.average_rating
+          username == o.username &&
+          first_name == o.first_name &&
+          last_name == o.last_name &&
+          acl == o.acl &&
+          sso == o.sso &&
+          phone_number == o.phone_number &&
+          email_address == o.email_address &&
+          id == o.id &&
+          password == o.password
     end
 
     # @see the `==` method
@@ -109,7 +169,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, reviews, average_rating].hash
+      [username, first_name, last_name, acl, sso, phone_number, email_address, id, password].hash
     end
 
     # Builds the object from hash

@@ -32,10 +32,13 @@ module YextClient
     # The ID of the account, folder, or location that this role gives the user access to.
     attr_accessor :on
 
+    # The ID of the account that contains the folder or location that this role applies to.  If ``onType`` is ``ACCOUNT``, the value of ``accountId`` is the same as the value of ``on``. 
+    attr_accessor :account_id
+
     # The type of object that this role gives the user access to.
     attr_accessor :on_type
 
-    # The Role's Name.
+    # The Role's Name. 
     attr_accessor :role_name
 
     class EnumAttributeValidator
@@ -65,6 +68,7 @@ module YextClient
       {
         :'role_id' => :'roleId',
         :'on' => :'on',
+        :'account_id' => :'accountId',
         :'on_type' => :'onType',
         :'role_name' => :'roleName'
       }
@@ -75,6 +79,7 @@ module YextClient
       {
         :'role_id' => :'String',
         :'on' => :'String',
+        :'account_id' => :'String',
         :'on_type' => :'String',
         :'role_name' => :'String'
       }
@@ -94,6 +99,10 @@ module YextClient
 
       if attributes.has_key?(:'on')
         self.on = attributes[:'on']
+      end
+
+      if attributes.has_key?(:'accountId')
+        self.account_id = attributes[:'accountId']
       end
 
       if attributes.has_key?(:'onType')
@@ -116,7 +125,7 @@ module YextClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      on_type_validator = EnumAttributeValidator.new('String', ["CUSTOMER", "FOLDER", "LOCATION"])
+      on_type_validator = EnumAttributeValidator.new('String', ["ACCOUNT", "FOLDER", "LOCATION"])
       return false unless on_type_validator.valid?(@on_type)
       return true
     end
@@ -124,7 +133,7 @@ module YextClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] on_type Object to be assigned
     def on_type=(on_type)
-      validator = EnumAttributeValidator.new('String', ["CUSTOMER", "FOLDER", "LOCATION"])
+      validator = EnumAttributeValidator.new('String', ["ACCOUNT", "FOLDER", "LOCATION"])
       unless validator.valid?(on_type)
         fail ArgumentError, "invalid value for 'on_type', must be one of #{validator.allowable_values}."
       end
@@ -138,6 +147,7 @@ module YextClient
       self.class == o.class &&
           role_id == o.role_id &&
           on == o.on &&
+          account_id == o.account_id &&
           on_type == o.on_type &&
           role_name == o.role_name
     end
@@ -151,7 +161,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [role_id, on, on_type, role_name].hash
+      [role_id, on, account_id, on_type, role_name].hash
     end
 
     # Builds the object from hash

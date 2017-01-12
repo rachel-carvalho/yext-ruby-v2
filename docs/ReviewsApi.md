@@ -5,9 +5,11 @@ All URIs are relative to *https://api.yext.com/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_comment**](ReviewsApi.md#create_comment) | **POST** /accounts/{accountId}/reviews/{reviewId}/comments | Comments: Create
+[**create_review**](ReviewsApi.md#create_review) | **POST** /accounts/{accountId}/reviews | Reviews: Create
 [**create_review_invites**](ReviewsApi.md#create_review_invites) | **POST** /accounts/{accountId}/reviewinvites | Review Invitations: Create
 [**get_review**](ReviewsApi.md#get_review) | **GET** /accounts/{accountId}/reviews/{reviewId} | Reviews: Get
 [**list_reviews**](ReviewsApi.md#list_reviews) | **GET** /accounts/{accountId}/reviews | Reviews: List
+[**update_review**](ReviewsApi.md#update_review) | **PUT** /accounts/{accountId}/reviews/{reviewId} | Reviews: Update
 
 
 # **create_comment**
@@ -66,6 +68,82 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ErrorResponse**](ErrorResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **create_review**
+> IdResponse create_review(account_id, vlocation_id, author_name, author_email, rating, content, opts)
+
+Reviews: Create
+
+Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`authorEmail`** * **`rating`** * **`content`**   ## Optional fields * **`status`** 
+
+### Example
+```ruby
+# load the gem
+require 'yext-client'
+# setup authorization
+YextClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['api_key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['api_key'] = 'Bearer'
+end
+
+api_instance = YextClient::ReviewsApi.new
+
+account_id = "account_id_example" # String | 
+
+v = "20161012" # String | A date in `YYYYMMDD` format.
+
+location_id = 56 # Integer | The ID of the location associated with the review.
+
+author_name = "author_name_example" # String | The name of the person who wrote the review.
+
+author_email = "author_email_example" # String | The email address of the person who wrote the review.
+
+rating = 56 # Integer | The rating of the review from 1 to 5.
+
+content = "content_example" # String | The content of the review.
+
+opts = { 
+  status: "QUARANTINED" # String | 
+}
+
+begin
+  #Reviews: Create
+  result = api_instance.create_review(account_id, vlocation_id, author_name, author_email, rating, content, opts)
+  p result
+rescue YextClient::ApiError => e
+  puts "Exception when calling ReviewsApi->create_review: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
+ **location_id** | **Integer**| The ID of the location associated with the review. | 
+ **author_name** | **String**| The name of the person who wrote the review. | 
+ **author_email** | **String**| The email address of the person who wrote the review. | 
+ **rating** | **Integer**| The rating of the review from 1 to 5. | 
+ **content** | **String**| The content of the review. | 
+ **status** | **String**|  | [optional] [default to QUARANTINED]
+
+### Return type
+
+[**IdResponse**](IdResponse.md)
 
 ### Authorization
 
@@ -278,6 +356,78 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ReviewsResponse**](ReviewsResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **update_review**
+> IdResponse update_review(account_id, review_id, v, opts)
+
+Reviews: Update
+
+Updates an External First Party Review. <br><br> **NOTE:** Despite using the `PUT` method, Reviews: Update only updates supplied fields. Omitted fields are not modified. 
+
+### Example
+```ruby
+# load the gem
+require 'yext-client'
+# setup authorization
+YextClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['api_key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['api_key'] = 'Bearer'
+end
+
+api_instance = YextClient::ReviewsApi.new
+
+account_id = "account_id_example" # String | 
+
+review_id = 56 # Integer | ID of this Review.
+
+v = "20161012" # String | A date in `YYYYMMDD` format.
+
+opts = { 
+  author_name: "author_name_example", # String | The name of the person who wrote the review.
+  author_email: "author_email_example", # String | The email address of the person who wrote the review.
+  rating: 56, # Integer | The rating of the review from 1 to 5.
+  content: "content_example", # String | The content of the review.
+  status: "status_example" # String | 
+}
+
+begin
+  #Reviews: Update
+  result = api_instance.update_review(account_id, review_id, v, opts)
+  p result
+rescue YextClient::ApiError => e
+  puts "Exception when calling ReviewsApi->update_review: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **String**|  | 
+ **review_id** | **Integer**| ID of this Review. | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
+ **author_name** | **String**| The name of the person who wrote the review. | [optional] 
+ **author_email** | **String**| The email address of the person who wrote the review. | [optional] 
+ **rating** | **Integer**| The rating of the review from 1 to 5. | [optional] 
+ **content** | **String**| The content of the review. | [optional] 
+ **status** | **String**|  | [optional] 
+
+### Return type
+
+[**IdResponse**](IdResponse.md)
 
 ### Authorization
 

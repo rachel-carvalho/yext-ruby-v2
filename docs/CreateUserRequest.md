@@ -1,4 +1,4 @@
-# YextClient::User
+# YextClient::CreateUserRequest
 
 ## Properties
 Name | Type | Description | Notes
@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **phone_number** | **String** | User&#39;s phone number. | [optional] 
 **email_address** | **String** | User&#39;s email address. | [optional] 
 **id** | **String** | ID of this User.  Ignored when sent in update requests.  | [optional] 
+**password** | **String** | User&#39;s password. | [optional] 
 
 

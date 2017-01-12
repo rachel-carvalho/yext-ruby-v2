@@ -1,21 +1,22 @@
-# YextClient::UserJanuaryApi
+# YextClient::UserApi
 
 All URIs are relative to *https://api.yext.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_user**](UserJanuaryApi.md#create_user) | **POST** /accounts/{accountId}/users | Users: Create
-[**delete_user**](UserJanuaryApi.md#delete_user) | **DELETE** /accounts/{accountId}/users/{userId} | Users: Delete
-[**get_link_optimization_task**](UserJanuaryApi.md#get_link_optimization_task) | **GET** /accounts/{accountId}/optimizationlink | Optimization Tasks: Get Link
-[**get_optimization_tasks**](UserJanuaryApi.md#get_optimization_tasks) | **GET** /accounts/{accountId}/optimizationtasks | Optimization Tasks: List
-[**get_roles**](UserJanuaryApi.md#get_roles) | **GET** /accounts/{accountId}/roles | Roles: Get
-[**get_user**](UserJanuaryApi.md#get_user) | **GET** /accounts/{accountId}/users/{userId} | Users: Get
-[**get_users**](UserJanuaryApi.md#get_users) | **GET** /accounts/{accountId}/users | Users: List
-[**update_user**](UserJanuaryApi.md#update_user) | **PUT** /accounts/{accountId}/users/{userId} | Users: Update
+[**create_user**](UserApi.md#create_user) | **POST** /accounts/{accountId}/users | Users: Create
+[**delete_user**](UserApi.md#delete_user) | **DELETE** /accounts/{accountId}/users/{userId} | Users: Delete
+[**get_link_optimization_task**](UserApi.md#get_link_optimization_task) | **GET** /accounts/{accountId}/optimizationlink | Optimization Tasks: Get Link
+[**get_optimization_tasks**](UserApi.md#get_optimization_tasks) | **GET** /accounts/{accountId}/optimizationtasks | Optimization Tasks: List
+[**get_roles**](UserApi.md#get_roles) | **GET** /accounts/{accountId}/roles | Roles: Get
+[**get_user**](UserApi.md#get_user) | **GET** /accounts/{accountId}/users/{userId} | Users: Get
+[**get_users**](UserApi.md#get_users) | **GET** /accounts/{accountId}/users | Users: List
+[**update_user**](UserApi.md#update_user) | **PUT** /accounts/{accountId}/users/{userId} | Users: Update
+[**update_user_password**](UserApi.md#update_user_password) | **PUT** /accounts/{accountId}/users/{userId}/password | Users: Update Password
 
 
 # **create_user**
-> IdResponse create_user(account_id, vuser_request)
+> IdResponse create_user(account_id, vcreate_user_request)
 
 Users: Create
 
@@ -33,21 +34,21 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::UserJanuaryApi.new
+api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
 v = "20161012" # String | A date in `YYYYMMDD` format.
 
-user_request = YextClient::User.new # User | 
+create_user_request = YextClient::CreateUserRequest.new # CreateUserRequest | 
 
 
 begin
   #Users: Create
-  result = api_instance.create_user(account_id, vuser_request)
+  result = api_instance.create_user(account_id, vcreate_user_request)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling UserJanuaryApi->create_user: #{e}"
+  puts "Exception when calling UserApi->create_user: #{e}"
 end
 ```
 
@@ -57,7 +58,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
- **user_request** | [**User**](User.md)|  | 
+ **create_user_request** | [**CreateUserRequest**](CreateUserRequest.md)|  | 
 
 ### Return type
 
@@ -75,7 +76,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_user**
-> ErrorResponse delete_user(account_id, vuser_id, user_request)
+> ErrorResponse delete_user(account_id, vuser_id)
 
 Users: Delete
 
@@ -93,7 +94,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::UserJanuaryApi.new
+api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -101,15 +102,13 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 user_id = "user_id_example" # String | 
 
-user_request = YextClient::User.new # User | 
-
 
 begin
   #Users: Delete
-  result = api_instance.delete_user(account_id, vuser_id, user_request)
+  result = api_instance.delete_user(account_id, vuser_id)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling UserJanuaryApi->delete_user: #{e}"
+  puts "Exception when calling UserApi->delete_user: #{e}"
 end
 ```
 
@@ -120,7 +119,6 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **user_id** | **String**|  | 
- **user_request** | [**User**](User.md)|  | 
 
 ### Return type
 
@@ -138,11 +136,11 @@ Name | Type | Description  | Notes
 
 
 # **get_link_optimization_task**
-> OptimizationTaskLinksResponse get_link_optimization_task(account_id, vtask_ids, location_idsmode)
+> OptimizationTaskLinksResponse get_link_optimization_task(account_id, v, opts)
 
 Optimization Tasks: Get Link
 
-Retrieve a link to perform any pending Optimization Tasks given a set of Optimization Tasks and Locations.
+Retrieve a link to perform any pending Optimization Tasks given a set of Optimization Tasks and a location
 
 ### Example
 ```ruby
@@ -156,25 +154,24 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::UserJanuaryApi.new
+api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
 v = "20161012" # String | A date in `YYYYMMDD` format.
 
-task_ids = "task_ids_example" # String | Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
-
-location_ids = "location_ids_example" # String | Comma-separated list of Location IDs to be used as a filter.  If no IDs are provided, defaults to all Locations in the account. 
-
-mode = "PENDING_ONLY" # String | When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress. 
-
+opts = { 
+  task_ids: "task_ids_example", # String | Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
+  location_id: "location_id_example", # String | Location ID to be used as a filter.  If no ID is provided, defaults to all Locations in the account. 
+  mode: "PENDING_ONLY" # String | When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress. 
+}
 
 begin
   #Optimization Tasks: Get Link
-  result = api_instance.get_link_optimization_task(account_id, vtask_ids, location_idsmode)
+  result = api_instance.get_link_optimization_task(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling UserJanuaryApi->get_link_optimization_task: #{e}"
+  puts "Exception when calling UserApi->get_link_optimization_task: #{e}"
 end
 ```
 
@@ -184,9 +181,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
- **task_ids** | **String**| Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account.  | 
- **location_ids** | **String**| Comma-separated list of Location IDs to be used as a filter.  If no IDs are provided, defaults to all Locations in the account.  | 
- **mode** | **String**| When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress.  | [default to PENDING_ONLY]
+ **task_ids** | **String**| Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account.  | [optional] 
+ **location_id** | **String**| Location ID to be used as a filter.  If no ID is provided, defaults to all Locations in the account.  | [optional] 
+ **mode** | **String**| When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress.  | [optional] [default to PENDING_ONLY]
 
 ### Return type
 
@@ -204,7 +201,7 @@ Name | Type | Description  | Notes
 
 
 # **get_optimization_tasks**
-> OptimizationTasksResponse get_optimization_tasks(account_id, vtask_ids, location_ids)
+> OptimizationTasksResponse get_optimization_tasks(account_id, v, opts)
 
 Optimization Tasks: List
 
@@ -222,23 +219,23 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::UserJanuaryApi.new
+api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
 v = "20161012" # String | A date in `YYYYMMDD` format.
 
-task_ids = "task_ids_example" # String | Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
-
-location_ids = "location_ids_example" # String | Comma-separated list of Location IDs to be used as a filter.  If no IDs are provided, defaults to all Locations in the account. 
-
+opts = { 
+  task_ids: "task_ids_example", # String | Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
+  location_ids: "location_ids_example" # String | Comma-separated list of Location IDs to be used as a filter.  If no IDs are provided, defaults to all Locations in the account. 
+}
 
 begin
   #Optimization Tasks: List
-  result = api_instance.get_optimization_tasks(account_id, vtask_ids, location_ids)
+  result = api_instance.get_optimization_tasks(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling UserJanuaryApi->get_optimization_tasks: #{e}"
+  puts "Exception when calling UserApi->get_optimization_tasks: #{e}"
 end
 ```
 
@@ -248,8 +245,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
- **task_ids** | **String**| Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account.  | 
- **location_ids** | **String**| Comma-separated list of Location IDs to be used as a filter.  If no IDs are provided, defaults to all Locations in the account.  | 
+ **task_ids** | **String**| Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account.  | [optional] 
+ **location_ids** | **String**| Comma-separated list of Location IDs to be used as a filter.  If no IDs are provided, defaults to all Locations in the account.  | [optional] 
 
 ### Return type
 
@@ -285,7 +282,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::UserJanuaryApi.new
+api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -297,7 +294,7 @@ begin
   result = api_instance.get_roles(account_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling UserJanuaryApi->get_roles: #{e}"
+  puts "Exception when calling UserApi->get_roles: #{e}"
 end
 ```
 
@@ -324,7 +321,7 @@ Name | Type | Description  | Notes
 
 
 # **get_user**
-> UserResponse get_user(account_id, vuser_id, )
+> UserResponse get_user(account_id, vuser_id)
 
 Users: Get
 
@@ -342,7 +339,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::UserJanuaryApi.new
+api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -353,10 +350,10 @@ user_id = "user_id_example" # String |
 
 begin
   #Users: Get
-  result = api_instance.get_user(account_id, vuser_id, )
+  result = api_instance.get_user(account_id, vuser_id)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling UserJanuaryApi->get_user: #{e}"
+  puts "Exception when calling UserApi->get_user: #{e}"
 end
 ```
 
@@ -402,7 +399,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::UserJanuaryApi.new
+api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -418,7 +415,7 @@ begin
   result = api_instance.get_users(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling UserJanuaryApi->get_users: #{e}"
+  puts "Exception when calling UserApi->get_users: #{e}"
 end
 ```
 
@@ -447,7 +444,7 @@ Name | Type | Description  | Notes
 
 
 # **update_user**
-> IdResponse update_user(account_id, vuser_id, user_request)
+> IdResponse update_user(account_id, vuser_idupdate_user_request)
 
 Users: Update
 
@@ -465,7 +462,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::UserJanuaryApi.new
+api_instance = YextClient::UserApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -473,15 +470,15 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 user_id = "user_id_example" # String | 
 
-user_request = YextClient::User.new # User | 
+update_user_request = YextClient::User.new # User | 
 
 
 begin
   #Users: Update
-  result = api_instance.update_user(account_id, vuser_id, user_request)
+  result = api_instance.update_user(account_id, vuser_idupdate_user_request)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling UserJanuaryApi->update_user: #{e}"
+  puts "Exception when calling UserApi->update_user: #{e}"
 end
 ```
 
@@ -492,11 +489,75 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **user_id** | **String**|  | 
- **user_request** | [**User**](User.md)|  | 
+ **update_user_request** | [**User**](User.md)|  | 
 
 ### Return type
 
 [**IdResponse**](IdResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **update_user_password**
+> ErrorResponse update_user_password(account_id, vuser_id, opts)
+
+Users: Update Password
+
+Updates a User's password.
+
+### Example
+```ruby
+# load the gem
+require 'yext-client'
+# setup authorization
+YextClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['api_key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['api_key'] = 'Bearer'
+end
+
+api_instance = YextClient::UserApi.new
+
+account_id = "account_id_example" # String | 
+
+v = "20161012" # String | A date in `YYYYMMDD` format.
+
+user_id = "user_id_example" # String | 
+
+opts = { 
+  update_password_request: YextClient::UpdatePasswordRequest.new # UpdatePasswordRequest | 
+}
+
+begin
+  #Users: Update Password
+  result = api_instance.update_user_password(account_id, vuser_id, opts)
+  p result
+rescue YextClient::ApiError => e
+  puts "Exception when calling UserApi->update_user_password: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
+ **user_id** | **String**|  | 
+ **update_password_request** | [**UpdatePasswordRequest**](UpdatePasswordRequest.md)|  | [optional] 
+
+### Return type
+
+[**ErrorResponse**](ErrorResponse.md)
 
 ### Authorization
 

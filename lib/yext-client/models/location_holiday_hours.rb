@@ -32,7 +32,7 @@ module YextClient
     # The date on which the holiday hours will be in effect
     attr_accessor :date
 
-    # Indicates whether the holiday hours are the same as the regular business hours for the given day of the week. If set to true, we will update the holiday hours if the regular business hours change for the given day of the week.
+    # Indicates whether the holiday hours are the same as the regular business hours for the given date. If set to true, we will update the holiday hours if the regular business hours change for the date's day of the week.
     attr_accessor :is_regular_hours
 
 

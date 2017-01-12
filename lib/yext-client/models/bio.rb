@@ -29,6 +29,9 @@ module YextClient
     # List name.
     attr_accessor :name
 
+    # List language in ISO 639-1 format. An ISO 3166-1 alpha-2 country code can optionally be appended to the language.  **Examples:** en, en_GB, fr_CA 
+    attr_accessor :language
+
     # List title that appears on listings.
     attr_accessor :title
 
@@ -52,6 +55,7 @@ module YextClient
     def self.attribute_map
       {
         :'name' => :'name',
+        :'language' => :'language',
         :'title' => :'title',
         :'publish' => :'publish',
         :'account_id' => :'accountId',
@@ -65,6 +69,7 @@ module YextClient
     def self.swagger_types
       {
         :'name' => :'String',
+        :'language' => :'String',
         :'title' => :'String',
         :'publish' => :'BOOLEAN',
         :'account_id' => :'String',
@@ -84,6 +89,10 @@ module YextClient
 
       if attributes.has_key?(:'name')
         self.name = attributes[:'name']
+      end
+
+      if attributes.has_key?(:'language')
+        self.language = attributes[:'language']
       end
 
       if attributes.has_key?(:'title')
@@ -133,6 +142,7 @@ module YextClient
       return true if self.equal?(o)
       self.class == o.class &&
           name == o.name &&
+          language == o.language &&
           title == o.title &&
           publish == o.publish &&
           account_id == o.account_id &&
@@ -150,7 +160,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [name, title, publish, account_id, id, size, sections].hash
+      [name, language, title, publish, account_id, id, size, sections].hash
     end
 
     # Builds the object from hash

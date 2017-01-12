@@ -26,7 +26,7 @@ require 'date'
 module YextClient
 
   class OptimizationTaskLinksResponseResponse
-    # The URL where all requested task(s) for the requested location(s) can be completed.  Will be null if none of the requested tasks on the requested locations are pending and mode is PENDING_ONLY.  **Redirecting after the task:** You can automatically redirect users to a specific URL after they've completed the task. To do so, append a **continueUrl** parameter, whose value is the URL users should be redirected to, to the returned URL.
+    # The URL where all requested task(s) for the requested location(s) can be completed.  Will be null if none of the requested tasks on the requested locations are pending and mode is PENDING_ONLY.  **Redirecting after the task:** You can automatically redirect users to a specific URL after they've completed the task. To do so, append a `returnUrl` parameter, whose value is the URL users should be redirected to, to the returned URL.
     attr_accessor :link
 
 

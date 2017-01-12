@@ -32,7 +32,7 @@ module YextClient
     # Specified only if `name` is `RANGE`. In that case, this Calories represents a calorie count range from `calorie` to `rangeTo`. Must be greater than `calorie` and less than or equal to 1000000.
     attr_accessor :range_to
 
-    attr_accessor :name
+    attr_accessor :type
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -61,7 +61,7 @@ module YextClient
       {
         :'calorie' => :'calorie',
         :'range_to' => :'rangeTo',
-        :'name' => :'name'
+        :'type' => :'type'
       }
     end
 
@@ -70,7 +70,7 @@ module YextClient
       {
         :'calorie' => :'Integer',
         :'range_to' => :'Integer',
-        :'name' => :'String'
+        :'type' => :'String'
       }
     end
 
@@ -90,8 +90,8 @@ module YextClient
         self.range_to = attributes[:'rangeTo']
       end
 
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
+      if attributes.has_key?(:'type')
+        self.type = attributes[:'type']
       end
 
     end
@@ -106,19 +106,19 @@ module YextClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      name_validator = EnumAttributeValidator.new('String', ["FIXED", "RANGE"])
-      return false unless name_validator.valid?(@name)
+      type_validator = EnumAttributeValidator.new('String', ["FIXED", "RANGE"])
+      return false unless type_validator.valid?(@type)
       return true
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] name Object to be assigned
-    def name=(name)
+    # @param [Object] type Object to be assigned
+    def type=(type)
       validator = EnumAttributeValidator.new('String', ["FIXED", "RANGE"])
-      unless validator.valid?(name)
-        fail ArgumentError, "invalid value for 'name', must be one of #{validator.allowable_values}."
+      unless validator.valid?(type)
+        fail ArgumentError, "invalid value for 'type', must be one of #{validator.allowable_values}."
       end
-      @name = name
+      @type = type
     end
 
     # Checks equality by comparing each attribute.
@@ -128,7 +128,7 @@ module YextClient
       self.class == o.class &&
           calorie == o.calorie &&
           range_to == o.range_to &&
-          name == o.name
+          type == o.type
     end
 
     # @see the `==` method
@@ -140,7 +140,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [calorie, range_to, name].hash
+      [calorie, range_to, type].hash
     end
 
     # Builds the object from hash

@@ -43,13 +43,13 @@ describe 'ReviewInvitation' do
       expect(@instance).to be_instance_of(YextClient::ReviewInvitation)
     end
   end
-  describe 'test attribute "email_address"' do
+  describe 'test attribute "last_name"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
   end
 
-  describe 'test attribute "last_name"' do
+  describe 'test attribute "contact"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

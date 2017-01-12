@@ -26,26 +26,26 @@ require 'date'
 module YextClient
 
   class Role
-    # The Yext Role ID.
-    attr_accessor :role_id
+    # The Yext Role ID
+    attr_accessor :id
 
-    # The Role's Name.
-    attr_accessor :role_name
+    # The Role's Name
+    attr_accessor :name
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'role_id' => :'roleId',
-        :'role_name' => :'roleName'
+        :'id' => :'id',
+        :'name' => :'name'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'role_id' => :'String',
-        :'role_name' => :'String'
+        :'id' => :'String',
+        :'name' => :'String'
       }
     end
 
@@ -57,12 +57,12 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'roleId')
-        self.role_id = attributes[:'roleId']
+      if attributes.has_key?(:'id')
+        self.id = attributes[:'id']
       end
 
-      if attributes.has_key?(:'roleName')
-        self.role_name = attributes[:'roleName']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
     end
@@ -85,8 +85,8 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          role_id == o.role_id &&
-          role_name == o.role_name
+          id == o.id &&
+          name == o.name
     end
 
     # @see the `==` method
@@ -98,7 +98,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [role_id, role_name].hash
+      [id, name].hash
     end
 
     # Builds the object from hash

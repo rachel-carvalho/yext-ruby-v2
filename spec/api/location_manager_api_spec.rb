@@ -44,7 +44,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for create_bio
-  # Bios: Create (December 2016)
+  # Bios: Create
   # Create new Bio List.
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -58,7 +58,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for create_event
-  # Events: Create (December 2016)
+  # Events: Create
   # Create a new Event List.
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -73,7 +73,7 @@ describe 'LocationManagerApi' do
 
   # unit tests for create_location
   # Locations: Create
-  # Create a new Location.
+  # Create a new Location.    ## Required fields * **&#x60;id&#x60;** * **&#x60;locationName&#x60;** * **&#x60;address&#x60;** * **&#x60;city&#x60;** * **&#x60;state&#x60;** * **&#x60;zip&#x60;** * **&#x60;countryCode&#x60;** * **&#x60;phone&#x60;** * **&#x60;categoryIds&#x60;** * **&#x60;featuredMessage&#x60;**   ## Optional fields that trigger warnings Submitting invalid values for certain optional fields will not trigger an error response. Instead, the success response will contain warning messages explaining why the invalid optional values were not stored in the system. The fields that generate warning messages are: &lt;br&gt;&lt;br&gt; * **&#x60;paymentOptions&#x60;** * **&#x60;logo&#x60;** * **&#x60;photos&#x60;** * **&#x60;twitterHandle&#x60;** * **&#x60;facebookPageUrl&#x60;** * **&#x60;languages&#x60;**  
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param location_request 
@@ -86,7 +86,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for create_menu
-  # Menus: Create (December 2016)
+  # Menus: Create
   # 
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -100,7 +100,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for create_product
-  # Products: Create (December 2016)
+  # Products: Create
   # Create a new Product List.
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -114,7 +114,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for delete_bio_list
-  # Bios: Delete (December 2016)
+  # Bios: Delete
   # Delete an existing Bios List.
   # @param account_id 
   # @param list_id ID of this List.
@@ -128,7 +128,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for delete_event_list
-  # Events: Delete (December 2016)
+  # Events: Delete
   # Delete an existing Event List.
   # @param account_id 
   # @param list_id ID of this List.
@@ -142,7 +142,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for delete_language_profile
-  # Language Profiles: Delete (December 2016)
+  # Language Profiles: Delete
   # Remove a Language Profile from a location.
   # @param account_id 
   # @param location_id 
@@ -157,7 +157,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for delete_menu_list
-  # Menus: Delete (December 2016)
+  # Menus: Delete
   # Delete an existing Menu.
   # @param account_id 
   # @param list_id ID of this List.
@@ -171,7 +171,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for delete_product_list
-  # Products: Delete (December 2016)
+  # Products: Delete
   # Delete an existing Products List.
   # @param account_id 
   # @param list_id ID of this List.
@@ -185,7 +185,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for get_bio
-  # Bios: Get (December 2016)
+  # Bios: Get
   # Retrieve a specific Bios List.
   # @param account_id 
   # @param list_id ID of this List.
@@ -199,7 +199,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for get_bios
-  # Bios: List (December 2016)
+  # Bios: List
   # Retrieve all Bio Lists for an account.
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -243,7 +243,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for get_event
-  # Events: Get (December 2016)
+  # Events: Get
   # Retrieve a specific Event List.
   # @param account_id 
   # @param list_id ID of this List.
@@ -257,7 +257,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for get_events
-  # Events: List (December 2016)
+  # Events: List
   # Retrieve all Event Lists for an account.
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -273,7 +273,7 @@ describe 'LocationManagerApi' do
 
   # unit tests for get_google_keywords
   # Google Fields: List
-  # Use the Google Attributes API to retrieve a complete list of Google&#39;s location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locationsvia the googleKeywords field in the Locations API.
+  # Use the Google Attributes API to retrieve a complete list of Google&#39;s location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locations via the googleKeywords field in the Locations API.
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @return [GoogleFieldsResponse]
@@ -284,7 +284,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for get_language_profile
-  # Language Profiles: Get (December 2016)
+  # Language Profiles: Get
   # Gets the the requested Language Profile for a given Location.
   # @param account_id 
   # @param location_id 
@@ -299,7 +299,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for get_language_profiles
-  # Language Profiles: List (December 2016)
+  # Language Profiles: List
   # Get Language Profiles for a Location.
   # @param account_id 
   # @param location_id 
@@ -357,7 +357,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for get_menu
-  # Menus: Get (December 2016)
+  # Menus: Get
   # Retrieve a specific Menu.
   # @param account_id 
   # @param list_id ID of this List.
@@ -371,7 +371,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for get_menus
-  # Menus: List (December 2016)
+  # Menus: List
   # Retrieve all Menus for an account.
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -386,7 +386,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for get_product
-  # Products: Get (December 2016)
+  # Products: Get
   # Retrieve a specific Product List.
   # @param account_id 
   # @param list_id ID of this List.
@@ -400,7 +400,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for get_products
-  # Products: List (December 2016)
+  # Products: List
   # Retrieve all Product Lists for an account.
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -415,7 +415,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for update_bio
-  # Bios: Update (December 2016)
+  # Bios: Update
   # Update an existing Bios List.
   # @param account_id 
   # @param list_id ID of this List.
@@ -430,7 +430,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for update_event
-  # Events: Update (December 2016)
+  # Events: Update
   # Update an existing Event List.
   # @param account_id 
   # @param list_id ID of this List.
@@ -460,7 +460,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for update_menu
-  # Menus: Update (December 2016)
+  # Menus: Update
   # Update an existing Menu.
   # @param account_id 
   # @param list_id ID of this List.
@@ -475,7 +475,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for update_product
-  # Products: Update (December 2016)
+  # Products: Update
   # Update an existing Product List.
   # @param account_id 
   # @param list_id ID of this List.
@@ -490,7 +490,7 @@ describe 'LocationManagerApi' do
   end
 
   # unit tests for upsert_language_profile
-  # Language Profiles: Upsert (December 2016)
+  # Language Profiles: Upsert
   # Creates and / or sets the fields for a Language Profile  **NOTE:** You can change a Language Profile’s language by supplying a different (but unused) language code. 
   # @param account_id 
   # @param location_id 

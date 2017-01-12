@@ -32,6 +32,9 @@ module YextClient
     # Dimension in pixels.
     attr_accessor :width
 
+    # The alternate text to be used for accessibility purposes.
+    attr_accessor :alternate_text
+
     # Dimension in pixels.
     attr_accessor :height
 
@@ -41,6 +44,7 @@ module YextClient
       {
         :'url' => :'url',
         :'width' => :'width',
+        :'alternate_text' => :'alternateText',
         :'height' => :'height'
       }
     end
@@ -50,6 +54,7 @@ module YextClient
       {
         :'url' => :'String',
         :'width' => :'Integer',
+        :'alternate_text' => :'String',
         :'height' => :'Integer'
       }
     end
@@ -68,6 +73,10 @@ module YextClient
 
       if attributes.has_key?(:'width')
         self.width = attributes[:'width']
+      end
+
+      if attributes.has_key?(:'alternateText')
+        self.alternate_text = attributes[:'alternateText']
       end
 
       if attributes.has_key?(:'height')
@@ -96,6 +105,7 @@ module YextClient
       self.class == o.class &&
           url == o.url &&
           width == o.width &&
+          alternate_text == o.alternate_text &&
           height == o.height
     end
 
@@ -108,7 +118,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [url, width, height].hash
+      [url, width, alternate_text, height].hash
     end
 
     # Builds the object from hash

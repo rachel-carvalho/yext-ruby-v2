@@ -29,7 +29,7 @@ module YextClient
     # Message explaining the problem.
     attr_accessor :message
 
-    # Code that uniquely identifies the error or warning.
+    # Code that uniquely identifies the error or warning.  **For a list of error codes and their meanings, see the \"Error Messages\" page in the Support section of this site.** 
     attr_accessor :code
 
     attr_accessor :type

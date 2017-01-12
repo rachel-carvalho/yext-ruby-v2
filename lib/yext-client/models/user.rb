@@ -26,13 +26,13 @@ require 'date'
 module YextClient
 
   class User
-    # User’s username.
+    # User's username.
     attr_accessor :username
 
-    # User’s first name.
+    # User's first name.
     attr_accessor :first_name
 
-    # User’s last name.
+    # User's last name.
     attr_accessor :last_name
 
     attr_accessor :acl
@@ -40,14 +40,11 @@ module YextClient
     # Indicates whether SSO has been enabled for this user.  Defaults to false. 
     attr_accessor :sso
 
-    # User’s phone number.
+    # User's phone number.
     attr_accessor :phone_number
 
-    # User’s email address.
+    # User's email address.
     attr_accessor :email_address
-
-    # User’s password.  Only used when creating a new user (never returned in an API response).
-    attr_accessor :password
 
     # ID of this User.  Ignored when sent in update requests. 
     attr_accessor :id
@@ -63,7 +60,6 @@ module YextClient
         :'sso' => :'sso',
         :'phone_number' => :'phoneNumber',
         :'email_address' => :'emailAddress',
-        :'password' => :'password',
         :'id' => :'id'
       }
     end
@@ -78,7 +74,6 @@ module YextClient
         :'sso' => :'BOOLEAN',
         :'phone_number' => :'String',
         :'email_address' => :'String',
-        :'password' => :'String',
         :'id' => :'String'
       }
     end
@@ -121,10 +116,6 @@ module YextClient
         self.email_address = attributes[:'emailAddress']
       end
 
-      if attributes.has_key?(:'password')
-        self.password = attributes[:'password']
-      end
-
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
       end
@@ -156,7 +147,6 @@ module YextClient
           sso == o.sso &&
           phone_number == o.phone_number &&
           email_address == o.email_address &&
-          password == o.password &&
           id == o.id
     end
 
@@ -169,7 +159,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [username, first_name, last_name, acl, sso, phone_number, email_address, password, id].hash
+      [username, first_name, last_name, acl, sso, phone_number, email_address, id].hash
     end
 
     # Builds the object from hash

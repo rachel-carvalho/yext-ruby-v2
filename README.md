@@ -87,41 +87,41 @@ All URIs are relative to *https://api.yext.com/v2*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *YextClient::AnalyticsApi* | [**activity_log**](docs/AnalyticsApi.md#activity_log) | **POST** /accounts/{accountId}/analytics/activity | Activity Log
-*YextClient::AnalyticsApi* | [**create_reports**](docs/AnalyticsApi.md#create_reports) | **GET** /accounts/{accountId}/analytics/reports | Create Reports
+*YextClient::AnalyticsApi* | [**create_reports**](docs/AnalyticsApi.md#create_reports) | **POST** /accounts/{accountId}/analytics/reports | Create Reports
 *YextClient::AnalyticsApi* | [**get_max_dates**](docs/AnalyticsApi.md#get_max_dates) | **GET** /accounts/{accountId}/analytics/maxdates | Max Dates
 *YextClient::AnalyticsApi* | [**report_status**](docs/AnalyticsApi.md#report_status) | **GET** /accounts/{accountId}/analytics/standardreports/{reportId} | Report Status
-*YextClient::LocationManagerApi* | [**create_bio**](docs/LocationManagerApi.md#create_bio) | **POST** /accounts/{accountId}/bios | Bios: Create (December 2016)
-*YextClient::LocationManagerApi* | [**create_event**](docs/LocationManagerApi.md#create_event) | **POST** /accounts/{accountId}/locations/events | Events: Create (December 2016)
+*YextClient::LocationManagerApi* | [**create_bio**](docs/LocationManagerApi.md#create_bio) | **POST** /accounts/{accountId}/bios | Bios: Create
+*YextClient::LocationManagerApi* | [**create_event**](docs/LocationManagerApi.md#create_event) | **POST** /accounts/{accountId}/locations/events | Events: Create
 *YextClient::LocationManagerApi* | [**create_location**](docs/LocationManagerApi.md#create_location) | **POST** /accounts/{accountId}/locations | Locations: Create
-*YextClient::LocationManagerApi* | [**create_menu**](docs/LocationManagerApi.md#create_menu) | **POST** /accounts/{accountId}/menus | Menus: Create (December 2016)
-*YextClient::LocationManagerApi* | [**create_product**](docs/LocationManagerApi.md#create_product) | **POST** /accounts/{accountId}/products | Products: Create (December 2016)
-*YextClient::LocationManagerApi* | [**delete_bio_list**](docs/LocationManagerApi.md#delete_bio_list) | **DELETE** /accounts/{accountId}/bios/{listId} | Bios: Delete (December 2016)
-*YextClient::LocationManagerApi* | [**delete_event_list**](docs/LocationManagerApi.md#delete_event_list) | **DELETE** /accounts/{accountId}/locations/events/{listId} | Events: Delete (December 2016)
-*YextClient::LocationManagerApi* | [**delete_language_profile**](docs/LocationManagerApi.md#delete_language_profile) | **DELETE** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Delete (December 2016)
-*YextClient::LocationManagerApi* | [**delete_menu_list**](docs/LocationManagerApi.md#delete_menu_list) | **DELETE** /accounts/{accountId}/menus/{listId} | Menus: Delete (December 2016)
-*YextClient::LocationManagerApi* | [**delete_product_list**](docs/LocationManagerApi.md#delete_product_list) | **DELETE** /accounts/{accountId}/locations/products/{listId} | Products: Delete (December 2016)
-*YextClient::LocationManagerApi* | [**get_bio**](docs/LocationManagerApi.md#get_bio) | **GET** /accounts/{accountId}/bios/{listId} | Bios: Get (December 2016)
-*YextClient::LocationManagerApi* | [**get_bios**](docs/LocationManagerApi.md#get_bios) | **GET** /accounts/{accountId}/bios | Bios: List (December 2016)
+*YextClient::LocationManagerApi* | [**create_menu**](docs/LocationManagerApi.md#create_menu) | **POST** /accounts/{accountId}/menus | Menus: Create
+*YextClient::LocationManagerApi* | [**create_product**](docs/LocationManagerApi.md#create_product) | **POST** /accounts/{accountId}/products | Products: Create
+*YextClient::LocationManagerApi* | [**delete_bio_list**](docs/LocationManagerApi.md#delete_bio_list) | **DELETE** /accounts/{accountId}/bios/{listId} | Bios: Delete
+*YextClient::LocationManagerApi* | [**delete_event_list**](docs/LocationManagerApi.md#delete_event_list) | **DELETE** /accounts/{accountId}/locations/events/{listId} | Events: Delete
+*YextClient::LocationManagerApi* | [**delete_language_profile**](docs/LocationManagerApi.md#delete_language_profile) | **DELETE** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Delete
+*YextClient::LocationManagerApi* | [**delete_menu_list**](docs/LocationManagerApi.md#delete_menu_list) | **DELETE** /accounts/{accountId}/menus/{listId} | Menus: Delete
+*YextClient::LocationManagerApi* | [**delete_product_list**](docs/LocationManagerApi.md#delete_product_list) | **DELETE** /accounts/{accountId}/locations/products/{listId} | Products: Delete
+*YextClient::LocationManagerApi* | [**get_bio**](docs/LocationManagerApi.md#get_bio) | **GET** /accounts/{accountId}/bios/{listId} | Bios: Get
+*YextClient::LocationManagerApi* | [**get_bios**](docs/LocationManagerApi.md#get_bios) | **GET** /accounts/{accountId}/bios | Bios: List
 *YextClient::LocationManagerApi* | [**get_business_categories**](docs/LocationManagerApi.md#get_business_categories) | **GET** /categories | Categories: List
 *YextClient::LocationManagerApi* | [**get_custom_fields**](docs/LocationManagerApi.md#get_custom_fields) | **GET** /accounts/{accountId}/customfields | Custom Fields: List
-*YextClient::LocationManagerApi* | [**get_event**](docs/LocationManagerApi.md#get_event) | **GET** /accounts/{accountId}/locations/events/{listId} | Events: Get (December 2016)
-*YextClient::LocationManagerApi* | [**get_events**](docs/LocationManagerApi.md#get_events) | **GET** /accounts/{accountId}/locations/events | Events: List (December 2016)
+*YextClient::LocationManagerApi* | [**get_event**](docs/LocationManagerApi.md#get_event) | **GET** /accounts/{accountId}/locations/events/{listId} | Events: Get
+*YextClient::LocationManagerApi* | [**get_events**](docs/LocationManagerApi.md#get_events) | **GET** /accounts/{accountId}/locations/events | Events: List
 *YextClient::LocationManagerApi* | [**get_google_keywords**](docs/LocationManagerApi.md#get_google_keywords) | **GET** /googlefields | Google Fields: List
-*YextClient::LocationManagerApi* | [**get_language_profile**](docs/LocationManagerApi.md#get_language_profile) | **GET** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Get (December 2016)
-*YextClient::LocationManagerApi* | [**get_language_profiles**](docs/LocationManagerApi.md#get_language_profiles) | **GET** /accounts/{accountId}/locations/{locationId}/profiles | Language Profiles: List (December 2016)
+*YextClient::LocationManagerApi* | [**get_language_profile**](docs/LocationManagerApi.md#get_language_profile) | **GET** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Get
+*YextClient::LocationManagerApi* | [**get_language_profiles**](docs/LocationManagerApi.md#get_language_profiles) | **GET** /accounts/{accountId}/locations/{locationId}/profiles | Language Profiles: List
 *YextClient::LocationManagerApi* | [**get_location**](docs/LocationManagerApi.md#get_location) | **GET** /accounts/{accountId}/locations/{locationId} | Locations: Get
 *YextClient::LocationManagerApi* | [**get_location_folders**](docs/LocationManagerApi.md#get_location_folders) | **GET** /accounts/{accountId}/folders | Folders: List
 *YextClient::LocationManagerApi* | [**get_locations**](docs/LocationManagerApi.md#get_locations) | **GET** /accounts/{accountId}/locations | Locations: List
-*YextClient::LocationManagerApi* | [**get_menu**](docs/LocationManagerApi.md#get_menu) | **GET** /accounts/{accountId}/menus/{listId} | Menus: Get (December 2016)
-*YextClient::LocationManagerApi* | [**get_menus**](docs/LocationManagerApi.md#get_menus) | **GET** /accounts/{accountId}/menus | Menus: List (December 2016)
-*YextClient::LocationManagerApi* | [**get_product**](docs/LocationManagerApi.md#get_product) | **GET** /accounts/{accountId}/locations/products/{listId} | Products: Get (December 2016)
-*YextClient::LocationManagerApi* | [**get_products**](docs/LocationManagerApi.md#get_products) | **GET** /accounts/{accountId}/products | Products: List (December 2016)
-*YextClient::LocationManagerApi* | [**update_bio**](docs/LocationManagerApi.md#update_bio) | **PUT** /accounts/{accountId}/bios/{listId} | Bios: Update (December 2016)
-*YextClient::LocationManagerApi* | [**update_event**](docs/LocationManagerApi.md#update_event) | **PUT** /accounts/{accountId}/locations/events/{listId} | Events: Update (December 2016)
+*YextClient::LocationManagerApi* | [**get_menu**](docs/LocationManagerApi.md#get_menu) | **GET** /accounts/{accountId}/menus/{listId} | Menus: Get
+*YextClient::LocationManagerApi* | [**get_menus**](docs/LocationManagerApi.md#get_menus) | **GET** /accounts/{accountId}/menus | Menus: List
+*YextClient::LocationManagerApi* | [**get_product**](docs/LocationManagerApi.md#get_product) | **GET** /accounts/{accountId}/locations/products/{listId} | Products: Get
+*YextClient::LocationManagerApi* | [**get_products**](docs/LocationManagerApi.md#get_products) | **GET** /accounts/{accountId}/products | Products: List
+*YextClient::LocationManagerApi* | [**update_bio**](docs/LocationManagerApi.md#update_bio) | **PUT** /accounts/{accountId}/bios/{listId} | Bios: Update
+*YextClient::LocationManagerApi* | [**update_event**](docs/LocationManagerApi.md#update_event) | **PUT** /accounts/{accountId}/locations/events/{listId} | Events: Update
 *YextClient::LocationManagerApi* | [**update_location**](docs/LocationManagerApi.md#update_location) | **PUT** /accounts/{accountId}/locations/{locationId} | Locations: Update
-*YextClient::LocationManagerApi* | [**update_menu**](docs/LocationManagerApi.md#update_menu) | **PUT** /accounts/{accountId}/menus/{listId} | Menus: Update (December 2016)
-*YextClient::LocationManagerApi* | [**update_product**](docs/LocationManagerApi.md#update_product) | **PUT** /accounts/{accountId}/locations/products/{listId} | Products: Update (December 2016)
-*YextClient::LocationManagerApi* | [**upsert_language_profile**](docs/LocationManagerApi.md#upsert_language_profile) | **PUT** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Upsert (December 2016)
+*YextClient::LocationManagerApi* | [**update_menu**](docs/LocationManagerApi.md#update_menu) | **PUT** /accounts/{accountId}/menus/{listId} | Menus: Update
+*YextClient::LocationManagerApi* | [**update_product**](docs/LocationManagerApi.md#update_product) | **PUT** /accounts/{accountId}/locations/products/{listId} | Products: Update
+*YextClient::LocationManagerApi* | [**upsert_language_profile**](docs/LocationManagerApi.md#upsert_language_profile) | **PUT** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Upsert
 *YextClient::PowerListingsApi* | [**create_duplicate**](docs/PowerListingsApi.md#create_duplicate) | **POST** /accounts/{accountId}/powerlistings/duplicates | Duplicates: Create (January 2017)
 *YextClient::PowerListingsApi* | [**delete_duplicate**](docs/PowerListingsApi.md#delete_duplicate) | **DELETE** /accounts/{accountId}/powerlistings/duplicates/{duplicateId} | Duplicates: Delete (January 2017)
 *YextClient::PowerListingsApi* | [**get_publisher_suggestion**](docs/PowerListingsApi.md#get_publisher_suggestion) | **GET** /accounts/{accountId}/powerlistings/publishersuggestions/{suggestionId} | Publisher Suggestions: Get
@@ -134,9 +134,11 @@ Class | Method | HTTP request | Description
 *YextClient::PowerListingsApi* | [**suppress_duplicate**](docs/PowerListingsApi.md#suppress_duplicate) | **PUT** /accounts/{accountId}/powerlistings/duplicates/{duplicateId} | Duplicates: Suppress (January 2017)
 *YextClient::PowerListingsApi* | [**update_publisher_suggestion**](docs/PowerListingsApi.md#update_publisher_suggestion) | **PUT** /accounts/{accountId}/powerlistings/publishersuggestions/{suggestionId} | Publisher Suggestions: Update
 *YextClient::ReviewsApi* | [**create_comment**](docs/ReviewsApi.md#create_comment) | **POST** /accounts/{accountId}/reviews/{reviewId}/comments | Comments: Create
+*YextClient::ReviewsApi* | [**create_review**](docs/ReviewsApi.md#create_review) | **POST** /accounts/{accountId}/reviews | Reviews: Create
 *YextClient::ReviewsApi* | [**create_review_invites**](docs/ReviewsApi.md#create_review_invites) | **POST** /accounts/{accountId}/reviewinvites | Review Invitations: Create
 *YextClient::ReviewsApi* | [**get_review**](docs/ReviewsApi.md#get_review) | **GET** /accounts/{accountId}/reviews/{reviewId} | Reviews: Get
 *YextClient::ReviewsApi* | [**list_reviews**](docs/ReviewsApi.md#list_reviews) | **GET** /accounts/{accountId}/reviews | Reviews: List
+*YextClient::ReviewsApi* | [**update_review**](docs/ReviewsApi.md#update_review) | **PUT** /accounts/{accountId}/reviews/{reviewId} | Reviews: Update
 *YextClient::SocialJanuaryApi* | [**create_comment**](docs/SocialJanuaryApi.md#create_comment) | **POST** /accounts/{accountId}/posts/{postId}/comments | Comments: Create
 *YextClient::SocialJanuaryApi* | [**create_posts**](docs/SocialJanuaryApi.md#create_posts) | **POST** /accounts/{accountId}/posts | Posts: Create
 *YextClient::SocialJanuaryApi* | [**delete_comment**](docs/SocialJanuaryApi.md#delete_comment) | **DELETE** /accounts/{accountId}/posts/{postId}/comments/{commentId} | Comments: delete
@@ -147,14 +149,15 @@ Class | Method | HTTP request | Description
 *YextClient::SocialJanuaryApi* | [**get_posts**](docs/SocialJanuaryApi.md#get_posts) | **GET** /accounts/{accountId}/posts | Posts: List
 *YextClient::SocialJanuaryApi* | [**update_comment**](docs/SocialJanuaryApi.md#update_comment) | **PUT** /accounts/{accountId}/posts/{postId}/comments/{commentId} | Comments: Update
 *YextClient::SocialJanuaryApi* | [**update_linked_account**](docs/SocialJanuaryApi.md#update_linked_account) | **PUT** /accounts/{accountId}/linkedaccounts/{linkedAccountId} | Linked Accounts: Update
-*YextClient::UserJanuaryApi* | [**create_user**](docs/UserJanuaryApi.md#create_user) | **POST** /accounts/{accountId}/users | Users: Create
-*YextClient::UserJanuaryApi* | [**delete_user**](docs/UserJanuaryApi.md#delete_user) | **DELETE** /accounts/{accountId}/users/{userId} | Users: Delete
-*YextClient::UserJanuaryApi* | [**get_link_optimization_task**](docs/UserJanuaryApi.md#get_link_optimization_task) | **GET** /accounts/{accountId}/optimizationlink | Optimization Tasks: Get Link
-*YextClient::UserJanuaryApi* | [**get_optimization_tasks**](docs/UserJanuaryApi.md#get_optimization_tasks) | **GET** /accounts/{accountId}/optimizationtasks | Optimization Tasks: List
-*YextClient::UserJanuaryApi* | [**get_roles**](docs/UserJanuaryApi.md#get_roles) | **GET** /accounts/{accountId}/roles | Roles: Get
-*YextClient::UserJanuaryApi* | [**get_user**](docs/UserJanuaryApi.md#get_user) | **GET** /accounts/{accountId}/users/{userId} | Users: Get
-*YextClient::UserJanuaryApi* | [**get_users**](docs/UserJanuaryApi.md#get_users) | **GET** /accounts/{accountId}/users | Users: List
-*YextClient::UserJanuaryApi* | [**update_user**](docs/UserJanuaryApi.md#update_user) | **PUT** /accounts/{accountId}/users/{userId} | Users: Update
+*YextClient::UserApi* | [**create_user**](docs/UserApi.md#create_user) | **POST** /accounts/{accountId}/users | Users: Create
+*YextClient::UserApi* | [**delete_user**](docs/UserApi.md#delete_user) | **DELETE** /accounts/{accountId}/users/{userId} | Users: Delete
+*YextClient::UserApi* | [**get_link_optimization_task**](docs/UserApi.md#get_link_optimization_task) | **GET** /accounts/{accountId}/optimizationlink | Optimization Tasks: Get Link
+*YextClient::UserApi* | [**get_optimization_tasks**](docs/UserApi.md#get_optimization_tasks) | **GET** /accounts/{accountId}/optimizationtasks | Optimization Tasks: List
+*YextClient::UserApi* | [**get_roles**](docs/UserApi.md#get_roles) | **GET** /accounts/{accountId}/roles | Roles: Get
+*YextClient::UserApi* | [**get_user**](docs/UserApi.md#get_user) | **GET** /accounts/{accountId}/users/{userId} | Users: Get
+*YextClient::UserApi* | [**get_users**](docs/UserApi.md#get_users) | **GET** /accounts/{accountId}/users | Users: List
+*YextClient::UserApi* | [**update_user**](docs/UserApi.md#update_user) | **PUT** /accounts/{accountId}/users/{userId} | Users: Update
+*YextClient::UserApi* | [**update_user_password**](docs/UserApi.md#update_user_password) | **PUT** /accounts/{accountId}/users/{userId}/password | Users: Update Password
 
 
 ## Documentation for Models
@@ -186,6 +189,7 @@ Class | Method | HTTP request | Description
  - [YextClient::CreateReportsResponse](docs/CreateReportsResponse.md)
  - [YextClient::CreateReportsResponseResponse](docs/CreateReportsResponseResponse.md)
  - [YextClient::CreateReviewInvitationResponse](docs/CreateReviewInvitationResponse.md)
+ - [YextClient::CreateUserRequest](docs/CreateUserRequest.md)
  - [YextClient::CustomField](docs/CustomField.md)
  - [YextClient::CustomFieldsResponse](docs/CustomFieldsResponse.md)
  - [YextClient::CustomFieldsResponseResponse](docs/CustomFieldsResponseResponse.md)
@@ -278,6 +282,7 @@ Class | Method | HTTP request | Description
  - [YextClient::SocialCommentsResponseResponse](docs/SocialCommentsResponseResponse.md)
  - [YextClient::SocialPostsResponse](docs/SocialPostsResponse.md)
  - [YextClient::SocialPostsResponseResponse](docs/SocialPostsResponseResponse.md)
+ - [YextClient::UpdatePasswordRequest](docs/UpdatePasswordRequest.md)
  - [YextClient::Url](docs/Url.md)
  - [YextClient::User](docs/User.md)
  - [YextClient::UserAcl](docs/UserAcl.md)

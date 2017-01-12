@@ -4,44 +4,44 @@ All URIs are relative to *https://api.yext.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_bio**](LocationManagerApi.md#create_bio) | **POST** /accounts/{accountId}/bios | Bios: Create (December 2016)
-[**create_event**](LocationManagerApi.md#create_event) | **POST** /accounts/{accountId}/locations/events | Events: Create (December 2016)
+[**create_bio**](LocationManagerApi.md#create_bio) | **POST** /accounts/{accountId}/bios | Bios: Create
+[**create_event**](LocationManagerApi.md#create_event) | **POST** /accounts/{accountId}/locations/events | Events: Create
 [**create_location**](LocationManagerApi.md#create_location) | **POST** /accounts/{accountId}/locations | Locations: Create
-[**create_menu**](LocationManagerApi.md#create_menu) | **POST** /accounts/{accountId}/menus | Menus: Create (December 2016)
-[**create_product**](LocationManagerApi.md#create_product) | **POST** /accounts/{accountId}/products | Products: Create (December 2016)
-[**delete_bio_list**](LocationManagerApi.md#delete_bio_list) | **DELETE** /accounts/{accountId}/bios/{listId} | Bios: Delete (December 2016)
-[**delete_event_list**](LocationManagerApi.md#delete_event_list) | **DELETE** /accounts/{accountId}/locations/events/{listId} | Events: Delete (December 2016)
-[**delete_language_profile**](LocationManagerApi.md#delete_language_profile) | **DELETE** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Delete (December 2016)
-[**delete_menu_list**](LocationManagerApi.md#delete_menu_list) | **DELETE** /accounts/{accountId}/menus/{listId} | Menus: Delete (December 2016)
-[**delete_product_list**](LocationManagerApi.md#delete_product_list) | **DELETE** /accounts/{accountId}/locations/products/{listId} | Products: Delete (December 2016)
-[**get_bio**](LocationManagerApi.md#get_bio) | **GET** /accounts/{accountId}/bios/{listId} | Bios: Get (December 2016)
-[**get_bios**](LocationManagerApi.md#get_bios) | **GET** /accounts/{accountId}/bios | Bios: List (December 2016)
+[**create_menu**](LocationManagerApi.md#create_menu) | **POST** /accounts/{accountId}/menus | Menus: Create
+[**create_product**](LocationManagerApi.md#create_product) | **POST** /accounts/{accountId}/products | Products: Create
+[**delete_bio_list**](LocationManagerApi.md#delete_bio_list) | **DELETE** /accounts/{accountId}/bios/{listId} | Bios: Delete
+[**delete_event_list**](LocationManagerApi.md#delete_event_list) | **DELETE** /accounts/{accountId}/locations/events/{listId} | Events: Delete
+[**delete_language_profile**](LocationManagerApi.md#delete_language_profile) | **DELETE** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Delete
+[**delete_menu_list**](LocationManagerApi.md#delete_menu_list) | **DELETE** /accounts/{accountId}/menus/{listId} | Menus: Delete
+[**delete_product_list**](LocationManagerApi.md#delete_product_list) | **DELETE** /accounts/{accountId}/locations/products/{listId} | Products: Delete
+[**get_bio**](LocationManagerApi.md#get_bio) | **GET** /accounts/{accountId}/bios/{listId} | Bios: Get
+[**get_bios**](LocationManagerApi.md#get_bios) | **GET** /accounts/{accountId}/bios | Bios: List
 [**get_business_categories**](LocationManagerApi.md#get_business_categories) | **GET** /categories | Categories: List
 [**get_custom_fields**](LocationManagerApi.md#get_custom_fields) | **GET** /accounts/{accountId}/customfields | Custom Fields: List
-[**get_event**](LocationManagerApi.md#get_event) | **GET** /accounts/{accountId}/locations/events/{listId} | Events: Get (December 2016)
-[**get_events**](LocationManagerApi.md#get_events) | **GET** /accounts/{accountId}/locations/events | Events: List (December 2016)
+[**get_event**](LocationManagerApi.md#get_event) | **GET** /accounts/{accountId}/locations/events/{listId} | Events: Get
+[**get_events**](LocationManagerApi.md#get_events) | **GET** /accounts/{accountId}/locations/events | Events: List
 [**get_google_keywords**](LocationManagerApi.md#get_google_keywords) | **GET** /googlefields | Google Fields: List
-[**get_language_profile**](LocationManagerApi.md#get_language_profile) | **GET** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Get (December 2016)
-[**get_language_profiles**](LocationManagerApi.md#get_language_profiles) | **GET** /accounts/{accountId}/locations/{locationId}/profiles | Language Profiles: List (December 2016)
+[**get_language_profile**](LocationManagerApi.md#get_language_profile) | **GET** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Get
+[**get_language_profiles**](LocationManagerApi.md#get_language_profiles) | **GET** /accounts/{accountId}/locations/{locationId}/profiles | Language Profiles: List
 [**get_location**](LocationManagerApi.md#get_location) | **GET** /accounts/{accountId}/locations/{locationId} | Locations: Get
 [**get_location_folders**](LocationManagerApi.md#get_location_folders) | **GET** /accounts/{accountId}/folders | Folders: List
 [**get_locations**](LocationManagerApi.md#get_locations) | **GET** /accounts/{accountId}/locations | Locations: List
-[**get_menu**](LocationManagerApi.md#get_menu) | **GET** /accounts/{accountId}/menus/{listId} | Menus: Get (December 2016)
-[**get_menus**](LocationManagerApi.md#get_menus) | **GET** /accounts/{accountId}/menus | Menus: List (December 2016)
-[**get_product**](LocationManagerApi.md#get_product) | **GET** /accounts/{accountId}/locations/products/{listId} | Products: Get (December 2016)
-[**get_products**](LocationManagerApi.md#get_products) | **GET** /accounts/{accountId}/products | Products: List (December 2016)
-[**update_bio**](LocationManagerApi.md#update_bio) | **PUT** /accounts/{accountId}/bios/{listId} | Bios: Update (December 2016)
-[**update_event**](LocationManagerApi.md#update_event) | **PUT** /accounts/{accountId}/locations/events/{listId} | Events: Update (December 2016)
+[**get_menu**](LocationManagerApi.md#get_menu) | **GET** /accounts/{accountId}/menus/{listId} | Menus: Get
+[**get_menus**](LocationManagerApi.md#get_menus) | **GET** /accounts/{accountId}/menus | Menus: List
+[**get_product**](LocationManagerApi.md#get_product) | **GET** /accounts/{accountId}/locations/products/{listId} | Products: Get
+[**get_products**](LocationManagerApi.md#get_products) | **GET** /accounts/{accountId}/products | Products: List
+[**update_bio**](LocationManagerApi.md#update_bio) | **PUT** /accounts/{accountId}/bios/{listId} | Bios: Update
+[**update_event**](LocationManagerApi.md#update_event) | **PUT** /accounts/{accountId}/locations/events/{listId} | Events: Update
 [**update_location**](LocationManagerApi.md#update_location) | **PUT** /accounts/{accountId}/locations/{locationId} | Locations: Update
-[**update_menu**](LocationManagerApi.md#update_menu) | **PUT** /accounts/{accountId}/menus/{listId} | Menus: Update (December 2016)
-[**update_product**](LocationManagerApi.md#update_product) | **PUT** /accounts/{accountId}/locations/products/{listId} | Products: Update (December 2016)
-[**upsert_language_profile**](LocationManagerApi.md#upsert_language_profile) | **PUT** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Upsert (December 2016)
+[**update_menu**](LocationManagerApi.md#update_menu) | **PUT** /accounts/{accountId}/menus/{listId} | Menus: Update
+[**update_product**](LocationManagerApi.md#update_product) | **PUT** /accounts/{accountId}/locations/products/{listId} | Products: Update
+[**upsert_language_profile**](LocationManagerApi.md#upsert_language_profile) | **PUT** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Upsert
 
 
 # **create_bio**
 > IdResponse create_bio(account_id, vbody)
 
-Bios: Create (December 2016)
+Bios: Create
 
 Create new Bio List.
 
@@ -67,7 +67,7 @@ body = YextClient::Bio.new # Bio |
 
 
 begin
-  #Bios: Create (December 2016)
+  #Bios: Create
   result = api_instance.create_bio(account_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 # **create_event**
 > IdResponse create_event(account_id, vbody)
 
-Events: Create (December 2016)
+Events: Create
 
 Create a new Event List.
 
@@ -127,7 +127,7 @@ body = YextClient::Event.new # Event |
 
 
 begin
-  #Events: Create (December 2016)
+  #Events: Create
   result = api_instance.create_event(account_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 Locations: Create
 
-Create a new Location.
+Create a new Location.    ## Required fields * **`id`** * **`locationName`** * **`address`** * **`city`** * **`state`** * **`zip`** * **`countryCode`** * **`phone`** * **`categoryIds`** * **`featuredMessage`**   ## Optional fields that trigger warnings Submitting invalid values for certain optional fields will not trigger an error response. Instead, the success response will contain warning messages explaining why the invalid optional values were not stored in the system. The fields that generate warning messages are: <br><br> * **`paymentOptions`** * **`logo`** * **`photos`** * **`twitterHandle`** * **`facebookPageUrl`** * **`languages`**  
 
 ### Example
 ```ruby
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 # **create_menu**
 > IdResponse create_menu(account_id, vbody)
 
-Menus: Create (December 2016)
+Menus: Create
 
 ### Example
 ```ruby
@@ -245,7 +245,7 @@ body = YextClient::Menu.new # Menu |
 
 
 begin
-  #Menus: Create (December 2016)
+  #Menus: Create
   result = api_instance.create_menu(account_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 # **create_product**
 > IdResponse create_product(account_id, vbody)
 
-Products: Create (December 2016)
+Products: Create
 
 Create a new Product List.
 
@@ -305,7 +305,7 @@ body = YextClient::Product.new # Product |
 
 
 begin
-  #Products: Create (December 2016)
+  #Products: Create
   result = api_instance.create_product(account_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 # **delete_bio_list**
 > ErrorResponse delete_bio_list(account_id, list_id, v)
 
-Bios: Delete (December 2016)
+Bios: Delete
 
 Delete an existing Bios List.
 
@@ -365,7 +365,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Bios: Delete (December 2016)
+  #Bios: Delete
   result = api_instance.delete_bio_list(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 # **delete_event_list**
 > ErrorResponse delete_event_list(account_id, list_id, v)
 
-Events: Delete (December 2016)
+Events: Delete
 
 Delete an existing Event List.
 
@@ -425,7 +425,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Events: Delete (December 2016)
+  #Events: Delete
   result = api_instance.delete_event_list(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 # **delete_language_profile**
 > ErrorResponse delete_language_profile(account_id, location_id, language_code, v)
 
-Language Profiles: Delete (December 2016)
+Language Profiles: Delete
 
 Remove a Language Profile from a location.
 
@@ -487,7 +487,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Language Profiles: Delete (December 2016)
+  #Language Profiles: Delete
   result = api_instance.delete_language_profile(account_id, location_id, language_code, v)
   p result
 rescue YextClient::ApiError => e
@@ -522,7 +522,7 @@ Name | Type | Description  | Notes
 # **delete_menu_list**
 > ErrorResponse delete_menu_list(account_id, list_id, v)
 
-Menus: Delete (December 2016)
+Menus: Delete
 
 Delete an existing Menu.
 
@@ -548,7 +548,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Menus: Delete (December 2016)
+  #Menus: Delete
   result = api_instance.delete_menu_list(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -582,7 +582,7 @@ Name | Type | Description  | Notes
 # **delete_product_list**
 > ErrorResponse delete_product_list(account_id, list_id, v)
 
-Products: Delete (December 2016)
+Products: Delete
 
 Delete an existing Products List.
 
@@ -608,7 +608,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Products: Delete (December 2016)
+  #Products: Delete
   result = api_instance.delete_product_list(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -642,7 +642,7 @@ Name | Type | Description  | Notes
 # **get_bio**
 > BioListResponse get_bio(account_id, list_id, v)
 
-Bios: Get (December 2016)
+Bios: Get
 
 Retrieve a specific Bios List.
 
@@ -668,7 +668,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Bios: Get (December 2016)
+  #Bios: Get
   result = api_instance.get_bio(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 # **get_bios**
 > BioListsResponse get_bios(account_id, v, opts)
 
-Bios: List (December 2016)
+Bios: List
 
 Retrieve all Bio Lists for an account.
 
@@ -730,7 +730,7 @@ opts = {
 }
 
 begin
-  #Bios: List (December 2016)
+  #Bios: List
   result = api_instance.get_bios(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
@@ -888,7 +888,7 @@ Name | Type | Description  | Notes
 # **get_event**
 > EventListResponse get_event(account_id, list_id, v)
 
-Events: Get (December 2016)
+Events: Get
 
 Retrieve a specific Event List.
 
@@ -914,7 +914,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Events: Get (December 2016)
+  #Events: Get
   result = api_instance.get_event(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -948,7 +948,7 @@ Name | Type | Description  | Notes
 # **get_events**
 > EventListsResponse get_events(account_id, v, opts)
 
-Events: List (December 2016)
+Events: List
 
 Retrieve all Event Lists for an account.
 
@@ -976,7 +976,7 @@ opts = {
 }
 
 begin
-  #Events: List (December 2016)
+  #Events: List
   result = api_instance.get_events(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
@@ -1013,7 +1013,7 @@ Name | Type | Description  | Notes
 
 Google Fields: List
 
-Use the Google Attributes API to retrieve a complete list of Google's location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locationsvia the googleKeywords field in the Locations API.
+Use the Google Attributes API to retrieve a complete list of Google's location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locations via the googleKeywords field in the Locations API.
 
 ### Example
 ```ruby
@@ -1065,7 +1065,7 @@ Name | Type | Description  | Notes
 # **get_language_profile**
 > LocationResponse get_language_profile(account_id, location_id, language_code, v)
 
-Language Profiles: Get (December 2016)
+Language Profiles: Get
 
 Gets the the requested Language Profile for a given Location.
 
@@ -1093,7 +1093,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Language Profiles: Get (December 2016)
+  #Language Profiles: Get
   result = api_instance.get_language_profile(account_id, location_id, language_code, v)
   p result
 rescue YextClient::ApiError => e
@@ -1128,7 +1128,7 @@ Name | Type | Description  | Notes
 # **get_language_profiles**
 > LanguageProfilesResponse get_language_profiles(account_id, location_id, v)
 
-Language Profiles: List (December 2016)
+Language Profiles: List
 
 Get Language Profiles for a Location.
 
@@ -1154,7 +1154,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Language Profiles: List (December 2016)
+  #Language Profiles: List
   result = api_instance.get_language_profiles(account_id, location_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -1374,7 +1374,7 @@ Name | Type | Description  | Notes
 # **get_menu**
 > MenuListResponse get_menu(account_id, list_id, v)
 
-Menus: Get (December 2016)
+Menus: Get
 
 Retrieve a specific Menu.
 
@@ -1400,7 +1400,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Menus: Get (December 2016)
+  #Menus: Get
   result = api_instance.get_menu(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -1434,7 +1434,7 @@ Name | Type | Description  | Notes
 # **get_menus**
 > MenuListsResponse get_menus(account_id, v, opts)
 
-Menus: List (December 2016)
+Menus: List
 
 Retrieve all Menus for an account.
 
@@ -1462,7 +1462,7 @@ opts = {
 }
 
 begin
-  #Menus: List (December 2016)
+  #Menus: List
   result = api_instance.get_menus(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
@@ -1497,7 +1497,7 @@ Name | Type | Description  | Notes
 # **get_product**
 > ProductListResponse get_product(account_id, list_id, v)
 
-Products: Get (December 2016)
+Products: Get
 
 Retrieve a specific Product List.
 
@@ -1523,7 +1523,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Products: Get (December 2016)
+  #Products: Get
   result = api_instance.get_product(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -1557,7 +1557,7 @@ Name | Type | Description  | Notes
 # **get_products**
 > ProductListsResponse get_products(account_id, v, opts)
 
-Products: List (December 2016)
+Products: List
 
 Retrieve all Product Lists for an account.
 
@@ -1585,7 +1585,7 @@ opts = {
 }
 
 begin
-  #Products: List (December 2016)
+  #Products: List
   result = api_instance.get_products(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
@@ -1620,7 +1620,7 @@ Name | Type | Description  | Notes
 # **update_bio**
 > BioListResponse update_bio(account_id, list_id, vbody)
 
-Bios: Update (December 2016)
+Bios: Update
 
 Update an existing Bios List.
 
@@ -1648,7 +1648,7 @@ body = YextClient::Bio.new # Bio |
 
 
 begin
-  #Bios: Update (December 2016)
+  #Bios: Update
   result = api_instance.update_bio(account_id, list_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -1683,7 +1683,7 @@ Name | Type | Description  | Notes
 # **update_event**
 > EventListResponse update_event(account_id, list_id, vbody)
 
-Events: Update (December 2016)
+Events: Update
 
 Update an existing Event List.
 
@@ -1711,7 +1711,7 @@ body = YextClient::Event.new # Event |
 
 
 begin
-  #Events: Update (December 2016)
+  #Events: Update
   result = api_instance.update_event(account_id, list_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -1809,7 +1809,7 @@ Name | Type | Description  | Notes
 # **update_menu**
 > MenuListResponse update_menu(account_id, list_id, vbody)
 
-Menus: Update (December 2016)
+Menus: Update
 
 Update an existing Menu.
 
@@ -1837,7 +1837,7 @@ body = YextClient::Menu.new # Menu |
 
 
 begin
-  #Menus: Update (December 2016)
+  #Menus: Update
   result = api_instance.update_menu(account_id, list_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -1872,7 +1872,7 @@ Name | Type | Description  | Notes
 # **update_product**
 > ProductListResponse update_product(account_id, list_id, vbody)
 
-Products: Update (December 2016)
+Products: Update
 
 Update an existing Product List.
 
@@ -1900,7 +1900,7 @@ body = YextClient::Product.new # Product |
 
 
 begin
-  #Products: Update (December 2016)
+  #Products: Update
   result = api_instance.update_product(account_id, list_id, vbody)
   p result
 rescue YextClient::ApiError => e
@@ -1935,7 +1935,7 @@ Name | Type | Description  | Notes
 # **upsert_language_profile**
 > ErrorResponse upsert_language_profile(account_id, location_id, language_code, vbody, opts)
 
-Language Profiles: Upsert (December 2016)
+Language Profiles: Upsert
 
 Creates and / or sets the fields for a Language Profile  **NOTE:** You can change a Language Profile’s language by supplying a different (but unused) language code. 
 
@@ -1968,7 +1968,7 @@ opts = {
 }
 
 begin
-  #Language Profiles: Upsert (December 2016)
+  #Language Profiles: Upsert
   result = api_instance.upsert_language_profile(account_id, location_id, language_code, vbody, opts)
   p result
 rescue YextClient::ApiError => e
