@@ -91,7 +91,7 @@ describe 'AnalyticsFilter' do
     end
   end
 
-  describe 'test attribute "instagram_content_type"' do
+  describe 'test attribute "hours"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -103,9 +103,29 @@ describe 'AnalyticsFilter' do
     end
   end
 
-  describe 'test attribute "sites"' do
+  describe 'test attribute "instagram_content_type"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "google_action_type"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["ACTION_DRIVING_DIRECTIONS", "ACTION_PHONE", "ACTION_WEBSITE"])
+       #validator.allowable_values.each do |value|
+       #  expect { @instance.google_action_type = value }.not_to raise_error
+       #end
+    end
+  end
+
+  describe 'test attribute "google_query_type"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["QUERIES_DIRECT", "QUERIES_INDIRECT"])
+       #validator.allowable_values.each do |value|
+       #  expect { @instance.google_query_type = value }.not_to raise_error
+       #end
     end
   end
 

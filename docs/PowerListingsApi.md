@@ -302,6 +302,7 @@ opts = {
   offset: 0 # Integer | Number of results to skip. Used to page through results.
   location_ids: ["location_ids_example"], # Array<String> | Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
   publisher_ids: ["publisher_ids_example"], # Array<String> | List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
+  language: "en" # String | One of the language codes that we support: - cs - Czech - da - Danish - nl - Dutch - en - English - en_GB - English (UK) - fi - Finnish - fr - French (France) - de - German (Germany) - hu - Hungarian - it - Italian - ja - Japanese - no - Norwegian - pt - Portuguese (Portugal) - sk - Slovak - es - Spanish (Spain) - sv - Swedish - tr - Turkish - zh_Hans - Chinese (Simplified) - zh_Hant - Chinese (Traditional) 
 }
 
 begin
@@ -323,6 +324,7 @@ Name | Type | Description  | Notes
  **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789  | [optional] 
  **publisher_ids** | [**Array&lt;String&gt;**](String.md)| List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP  | [optional] 
+ **language** | **String**| One of the language codes that we support: - cs - Czech - da - Danish - nl - Dutch - en - English - en_GB - English (UK) - fi - Finnish - fr - French (France) - de - German (Germany) - hu - Hungarian - it - Italian - ja - Japanese - no - Norwegian - pt - Portuguese (Portugal) - sk - Slovak - es - Spanish (Spain) - sv - Swedish - tr - Turkish - zh_Hans - Chinese (Simplified) - zh_Hant - Chinese (Traditional)  | [optional] [default to en]
 
 ### Return type
 

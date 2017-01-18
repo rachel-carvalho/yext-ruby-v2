@@ -46,7 +46,7 @@ describe 'CreateReportRequestBody' do
   describe 'test attribute "metrics"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["PROFILE_VIEWS", "SEARCHES", "POWERLISTINGS_LIVE", "FEATURED_MESSAGE_CLICKS", "YELP_PAGE_VIEWS", "BING_SEARCHES", "FACEBOOK_LIKES", "FACEBOOK_TALKING_ABOUT", "FACEBOOK_WERE_HERE", "FOURSQUARE_DAILY_CHECKINS", "INSTAGRAM_POSTS"])
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["PROFILE_VIEWS", "SEARCHES", "POWERLISTINGS_LIVE", "FEATURED_MESSAGE_CLICKS", "YELP_PAGE_VIEWS", "BING_SEARCHES", "FACEBOOK_LIKES", "FACEBOOK_TALKING_ABOUT", "FACEBOOK_WERE_HERE", "FOURSQUARE_DAILY_CHECKINS", "INSTAGRAM_POSTS", "GOOGLE_SEARCHES", "GOOGLE_SEARCH_VIEWS", "GOOGLE_MAP_VIEWS", "GOOGLE_CUSTOMER_ACTIONS", "GOOGLE_PHONE_CALLS"])
        #validator.allowable_values.each do |value|
        #  expect { @instance.metrics = value }.not_to raise_error
        #end
@@ -56,7 +56,7 @@ describe 'CreateReportRequestBody' do
   describe 'test attribute "dimensions"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["ACCOUNT_IDS", "LOCATION_IDS", "FOLDER_IDS", "LOCATION_NAMES", "FOLDER_NAMES", "DAYS", "WEEKS", "MONTHS", "MONTHS_RETAIL", "PLATFORM", "FOURSQUARE_GENDER", "FOURSQUARE_AGE", "FOURSQUARE_TIME", "SEARCH_QUERY"])
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["ACCOUNT_IDS", "LOCATION_IDS", "FOLDER_IDS", "LOCATION_NAMES", "FOLDER_NAMES", "DAYS", "WEEKS", "MONTHS", "MONTHS_RETAIL", "PLATFORM", "FOURSQUARE_GENDER", "FOURSQUARE_AGE", "FOURSQUARE_TIME", "SEARCH_QUERY", "GOOGLE_ACTION_TYPE", "GOOGLE_QUERY_TYPE", "GMB_HOURS"])
        #validator.allowable_values.each do |value|
        #  expect { @instance.dimensions = value }.not_to raise_error
        #end

@@ -329,6 +329,7 @@ module YextClient
     # @option opts [Integer] :offset Number of results to skip. Used to page through results. (default to 0)
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
+    # @option opts [String] :language One of the language codes that we support: - cs - Czech - da - Danish - nl - Dutch - en - English - en_GB - English (UK) - fi - Finnish - fr - French (France) - de - German (Germany) - hu - Hungarian - it - Italian - ja - Japanese - no - Norwegian - pt - Portuguese (Portugal) - sk - Slovak - es - Spanish (Spain) - sv - Swedish - tr - Turkish - zh_Hans - Chinese (Simplified) - zh_Hant - Chinese (Traditional)  (default to en)
     # @return [ListingsResponse]
     def list_listings(account_id, v, opts = {})
       data, _status_code, _headers = list_listings_with_http_info(account_id, v, opts)
@@ -344,6 +345,7 @@ module YextClient
     # @option opts [Integer] :offset Number of results to skip. Used to page through results.
     # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
+    # @option opts [String] :language One of the language codes that we support: - cs - Czech - da - Danish - nl - Dutch - en - English - en_GB - English (UK) - fi - Finnish - fr - French (France) - de - German (Germany) - hu - Hungarian - it - Italian - ja - Japanese - no - Norwegian - pt - Portuguese (Portugal) - sk - Slovak - es - Spanish (Spain) - sv - Swedish - tr - Turkish - zh_Hans - Chinese (Simplified) - zh_Hant - Chinese (Traditional) 
     # @return [Array<(ListingsResponse, Fixnum, Hash)>] ListingsResponse data, response status code and response headers
     def list_listings_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
@@ -367,6 +369,7 @@ module YextClient
       query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
       query_params[:'locationIds'] = @api_client.build_collection_param(opts[:'location_ids'], :multi) if !opts[:'location_ids'].nil?
       query_params[:'publisherIds'] = @api_client.build_collection_param(opts[:'publisher_ids'], :multi) if !opts[:'publisher_ids'].nil?
+      query_params[:'language'] = opts[:'language'] if !opts[:'language'].nil?
 
       # header parameters
       header_params = {}

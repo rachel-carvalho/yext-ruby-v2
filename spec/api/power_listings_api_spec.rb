@@ -115,6 +115,7 @@ describe 'PowerListingsApi' do
   # @option opts [Integer] :offset Number of results to skip. Used to page through results.
   # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
+  # @option opts [String] :language One of the language codes that we support: - cs - Czech - da - Danish - nl - Dutch - en - English - en_GB - English (UK) - fi - Finnish - fr - French (France) - de - German (Germany) - hu - Hungarian - it - Italian - ja - Japanese - no - Norwegian - pt - Portuguese (Portugal) - sk - Slovak - es - Spanish (Spain) - sv - Swedish - tr - Turkish - zh_Hans - Chinese (Simplified) - zh_Hant - Chinese (Traditional) 
   # @return [ListingsResponse]
   describe 'list_listings test' do
     it "should work" do
