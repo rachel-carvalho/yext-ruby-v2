@@ -31,13 +31,13 @@ module YextClient
       @api_client = api_client
     end
 
-    # Duplicates: Create (January 2017)
+    # Duplicates: Create
     # Creates a new Duplicate with status SUPPRESSION_REQUESTED
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param url URL of the Duplicate listing
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @return [IdResponse]
     def create_duplicate(account_id, v, url, opts = {})
@@ -45,13 +45,13 @@ module YextClient
       return data
     end
 
-    # Duplicates: Create (January 2017)
+    # Duplicates: Create
     # Creates a new Duplicate with status SUPPRESSION_REQUESTED
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param url URL of the Duplicate listing
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_duplicate_with_http_info(account_id, v, url, opts = {})
@@ -104,7 +104,7 @@ module YextClient
       return data, status_code, headers
     end
 
-    # Duplicates: Delete (January 2017)
+    # Duplicates: Delete
     # Indicates that a Duplicate should be ignored
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -116,7 +116,7 @@ module YextClient
       return data
     end
 
-    # Duplicates: Delete (January 2017)
+    # Duplicates: Delete
     # Indicates that a Duplicate should be ignored
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -236,14 +236,14 @@ module YextClient
       return data, status_code, headers
     end
 
-    # Duplicates: List (January 2017)
+    # Duplicates: List
     # Retrieve Duplicates for an account
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results. (default to 0)
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Duplicates with the provided statuses will be returned  **Example:** POSSIBLE_DUPLICATE,SUPPRESSION_REQUESTED 
     # @return [DuplicatesResponse]
@@ -252,14 +252,14 @@ module YextClient
       return data
     end
 
-    # Duplicates: List (January 2017)
+    # Duplicates: List
     # Retrieve Duplicates for an account
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results.
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Duplicates with the provided statuses will be returned  **Example:** POSSIBLE_DUPLICATE,SUPPRESSION_REQUESTED 
     # @return [Array<(DuplicatesResponse, Fixnum, Hash)>] DuplicatesResponse data, response status code and response headers
@@ -327,7 +327,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 100)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results. (default to 0)
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @option opts [String] :language One of the language codes that we support: - cs - Czech - da - Danish - nl - Dutch - en - English - en_GB - English (UK) - fi - Finnish - fr - French (France) - de - German (Germany) - hu - Hungarian - it - Italian - ja - Japanese - no - Norwegian - pt - Portuguese (Portugal) - sk - Slovak - es - Spanish (Spain) - sv - Swedish - tr - Turkish - zh_Hans - Chinese (Simplified) - zh_Hant - Chinese (Traditional)  (default to en)
     # @return [ListingsResponse]
@@ -343,7 +343,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results.
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @option opts [String] :language One of the language codes that we support: - cs - Czech - da - Danish - nl - Dutch - en - English - en_GB - English (UK) - fi - Finnish - fr - French (France) - de - German (Germany) - hu - Hungarian - it - Italian - ja - Japanese - no - Norwegian - pt - Portuguese (Portugal) - sk - Slovak - es - Spanish (Spain) - sv - Swedish - tr - Turkish - zh_Hans - Chinese (Simplified) - zh_Hant - Chinese (Traditional) 
     # @return [Array<(ListingsResponse, Fixnum, Hash)>] ListingsResponse data, response status code and response headers
@@ -408,7 +408,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results. (default to 0)
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Publisher Suggestions with the provided statuses will be returned  **Example:** WAITING_ON_CUSTOMER,EXPIRED 
     # @return [PublisherSuggestionsResponse]
@@ -424,7 +424,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return
     # @option opts [Integer] :offset Number of results to skip. Used to page through results.
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @option opts [Array<String>] :statuses When specified, only Publisher Suggestions with the provided statuses will be returned  **Example:** WAITING_ON_CUSTOMER,EXPIRED 
     # @return [Array<(PublisherSuggestionsResponse, Fixnum, Hash)>] PublisherSuggestionsResponse data, response status code and response headers
@@ -486,11 +486,10 @@ module YextClient
     end
 
     # Publishers: List
-    # Retrieve list of Publishers
+    # Retrieve a list of publishers included in an account's subscription 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :subset **ALL** - return all publishers  **RELEVANT_ONLY** - only return publishers relevant to the account based on supported countries and location types  (default to RELEVANT_ONLY)
     # @return [PublishersResponse]
     def list_publishers(account_id, v, opts = {})
       data, _status_code, _headers = list_publishers_with_http_info(account_id, v, opts)
@@ -498,11 +497,10 @@ module YextClient
     end
 
     # Publishers: List
-    # Retrieve list of Publishers
+    # Retrieve a list of publishers included in an account&#39;s subscription 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :subset **ALL** - return all publishers  **RELEVANT_ONLY** - only return publishers relevant to the account based on supported countries and location types 
     # @return [Array<(PublishersResponse, Fixnum, Hash)>] PublishersResponse data, response status code and response headers
     def list_publishers_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
@@ -512,16 +510,12 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling PowerListingsApi.list_publishers" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling PowerListingsApi.list_publishers" if v.nil?
-      if opts[:'subset'] && !['ALL', 'RELEVANT_ONLY'].include?(opts[:'subset'])
-        fail ArgumentError, 'invalid value for "subset", must be one of ALL, RELEVANT_ONLY'
-      end
       # resource path
       local_var_path = "/accounts/{accountId}/powerlistings/publishers".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
       # query parameters
       query_params = {}
       query_params[:'v'] = v
-      query_params[:'subset'] = opts[:'subset'] if !opts[:'subset'].nil?
 
       # header parameters
       header_params = {}
@@ -558,7 +552,7 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @return [ErrorResponse]
     def opt_in_listings(account_id, v, opts = {})
@@ -571,7 +565,7 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def opt_in_listings_with_http_info(account_id, v, opts = {})
@@ -626,7 +620,7 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @return [ErrorResponse]
     def opt_out_listings(account_id, v, opts = {})
@@ -639,7 +633,7 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
-    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+    # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def opt_out_listings_with_http_info(account_id, v, opts = {})
@@ -689,7 +683,7 @@ module YextClient
       return data, status_code, headers
     end
 
-    # Duplicates: Suppress (January 2017)
+    # Duplicates: Suppress
     # Request suppression of a Duplicate
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -701,7 +695,7 @@ module YextClient
       return data
     end
 
-    # Duplicates: Suppress (January 2017)
+    # Duplicates: Suppress
     # Request suppression of a Duplicate
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.

@@ -32,7 +32,7 @@ module YextClient
     # Duplicate listing name
     attr_accessor :name
 
-    # URL of Duplicate listing
+    # URL of the duplicate listing
     attr_accessor :url
 
     # Duplicate listing longitude
@@ -41,7 +41,7 @@ module YextClient
     # Duplicate listing phone
     attr_accessor :phone
 
-    # ID of the location the suggestion is for
+    # ID of the location the duplicate listing is for
     attr_accessor :location_id
 
     # Duplicate listing address
@@ -50,10 +50,10 @@ module YextClient
     # Duplicate listing latitude
     attr_accessor :latitude
 
-    # ID of the publisher who submitted the suggestion
+    # ID of the publisher site where the duplicate listing appears
     attr_accessor :publisher_id
 
-    # ID of this Publisher Suggestion
+    # ID of this duplicate listing
     attr_accessor :id
 
     # List of reasons why suppression is unavailable for this Duplicate (will be empty unless status is UNAVAILABLE)
@@ -181,7 +181,7 @@ module YextClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      status_validator = EnumAttributeValidator.new('String', ["POSSIBLE_DUPLICATE", "SUPPRESSION_REQUESTED", "SUPRESSED", "UNAVAILABLE"])
+      status_validator = EnumAttributeValidator.new('String', ["POSSIBLE_DUPLICATE", "SUPPRESSION_REQUESTED", "SUPRESSED", "UNAVAILABLE", "DELETED"])
       return false unless status_validator.valid?(@status)
       return true
     end
@@ -189,7 +189,7 @@ module YextClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('String', ["POSSIBLE_DUPLICATE", "SUPPRESSION_REQUESTED", "SUPRESSED", "UNAVAILABLE"])
+      validator = EnumAttributeValidator.new('String', ["POSSIBLE_DUPLICATE", "SUPPRESSION_REQUESTED", "SUPRESSED", "UNAVAILABLE", "DELETED"])
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for 'status', must be one of #{validator.allowable_values}."
       end

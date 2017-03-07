@@ -49,7 +49,7 @@ describe 'MenuListsResponseResponse' do
     end
   end
 
-  describe 'test attribute "bios"' do
+  describe 'test attribute "menus"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

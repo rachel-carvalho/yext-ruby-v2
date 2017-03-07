@@ -38,8 +38,8 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :content Content of the new comment.
-    # @option opts [String] :visibility  (default to PRIVATE)
-    # @option opts [Integer] :parent_id If this Comment is in response to another comment, use this field to specify the ID of the parent Comment.
+    # @option opts [String] :visibility  (default to PUBLIC)
+    # @option opts [Integer] :parent_id If this Comment is in response to another Comment, use this field to specify the ID of the parent Comment.
     # @return [ErrorResponse]
     def create_comment(account_id, review_id, v, opts = {})
       data, _status_code, _headers = create_comment_with_http_info(account_id, review_id, v, opts)
@@ -54,7 +54,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :content Content of the new comment.
     # @option opts [String] :visibility 
-    # @option opts [Integer] :parent_id If this Comment is in response to another comment, use this field to specify the ID of the parent Comment.
+    # @option opts [Integer] :parent_id If this Comment is in response to another Comment, use this field to specify the ID of the parent Comment.
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def create_comment_with_http_info(account_id, review_id, v, opts = {})
       if @api_client.config.debugging
@@ -205,26 +205,30 @@ module YextClient
     # Review Invitations: Create
     # Sends review invitations to one or more consumers.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param reviews 
     # @param [Hash] opts the optional parameters
     # @return [Array<CreateReviewInvitationResponse>]
-    def create_review_invites(account_id, reviews, opts = {})
-      data, _status_code, _headers = create_review_invites_with_http_info(account_id, reviews, opts)
+    def create_review_invites(account_id, v, reviews, opts = {})
+      data, _status_code, _headers = create_review_invites_with_http_info(account_id, v, reviews, opts)
       return data
     end
 
     # Review Invitations: Create
     # Sends review invitations to one or more consumers.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param reviews 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<CreateReviewInvitationResponse>, Fixnum, Hash)>] Array<CreateReviewInvitationResponse> data, response status code and response headers
-    def create_review_invites_with_http_info(account_id, reviews, opts = {})
+    def create_review_invites_with_http_info(account_id, v, reviews, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.create_review_invites ..."
       end
       # verify the required parameter 'account_id' is set
       fail ArgumentError, "Missing the required parameter 'account_id' when calling ReviewsApi.create_review_invites" if account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.create_review_invites" if v.nil?
       # verify the required parameter 'reviews' is set
       fail ArgumentError, "Missing the required parameter 'reviews' when calling ReviewsApi.create_review_invites" if reviews.nil?
       # resource path
@@ -232,6 +236,7 @@ module YextClient
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
 
       # header parameters
       header_params = {}
@@ -329,6 +334,68 @@ module YextClient
       return data, status_code, headers
     end
 
+    # Review Generation Settings: Get
+    # Returns all current generation settings for a specified account.
+    # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param [Hash] opts the optional parameters
+    # @return [GetReviewGenerationSettingsResponse]
+    def get_review_generation_settings(account_id, v, opts = {})
+      data, _status_code, _headers = get_review_generation_settings_with_http_info(account_id, v, opts)
+      return data
+    end
+
+    # Review Generation Settings: Get
+    # Returns all current generation settings for a specified account.
+    # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetReviewGenerationSettingsResponse, Fixnum, Hash)>] GetReviewGenerationSettingsResponse data, response status code and response headers
+    def get_review_generation_settings_with_http_info(account_id, v, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ReviewsApi.get_review_generation_settings ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ReviewsApi.get_review_generation_settings" if account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.get_review_generation_settings" if v.nil?
+      # resource path
+      local_var_path = "/accounts/{accountId}/reviews/settings/generation".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'v'] = v
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      local_header_accept = ['application/json']
+      local_header_accept_result = @api_client.select_header_accept(local_header_accept) and header_params['Accept'] = local_header_accept_result
+
+      # HTTP header 'Content-Type'
+      local_header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(local_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'GetReviewGenerationSettingsResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ReviewsApi#get_review_generation_settings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Reviews: List
     # Retrieve all Reviews matching the given criteria.  **NOTE:** Yelp Reviews are **not** included. 
     # @param account_id 
@@ -344,10 +411,10 @@ module YextClient
     # @option opts [String] :review_content When specified, only reviews that include the provided content will be returned.
     # @option opts [Float] :min_rating When specified, only reviews with the provided minimum rating or higher will be returned.
     # @option opts [Float] :max_rating 
-    # @option opts [Date] :min_publisher_date When specified, only reviews with a publisher date on or after the given date will be returned.
-    # @option opts [Date] :max_publisher_date When specified, only reviews with a publisher date on or before the given date will be returned.
-    # @option opts [Date] :min_last_yext_update_date When specified, only reviews with a last Yext update date on or after the given date will be returned.
-    # @option opts [Date] :max_last_yext_update_date When specified, only reviews with a last Yext update date on or before the given date will be returned.
+    # @option opts [Date] :min_publisher_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or after the given date will be returned.
+    # @option opts [Date] :max_publisher_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or before the given date will be returned.
+    # @option opts [Date] :min_last_yext_update_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a last Yext update date on or after the given date will be returned.
+    # @option opts [Date] :max_last_yext_update_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a last Yext update date on or before the given date will be returned.
     # @option opts [String] :awaiting_response When specified, only reviews that are awaiting an owner reply on the given objects will be returned.  For example, when &#x60;awaitingResponse&#x3D;COMMENT&#x60;, reviews will only be returned if they have at least one comment that has not been responded to by the owner. 
     # @option opts [Integer] :min_non_owner_comments When specified, only reviews that have at least the provided number of non-owner comments will be returned.
     # @option opts [String] :reviewer_name When specified, only reviews whose authorName contains the provided string will be returned.
@@ -373,10 +440,10 @@ module YextClient
     # @option opts [String] :review_content When specified, only reviews that include the provided content will be returned.
     # @option opts [Float] :min_rating When specified, only reviews with the provided minimum rating or higher will be returned.
     # @option opts [Float] :max_rating 
-    # @option opts [Date] :min_publisher_date When specified, only reviews with a publisher date on or after the given date will be returned.
-    # @option opts [Date] :max_publisher_date When specified, only reviews with a publisher date on or before the given date will be returned.
-    # @option opts [Date] :min_last_yext_update_date When specified, only reviews with a last Yext update date on or after the given date will be returned.
-    # @option opts [Date] :max_last_yext_update_date When specified, only reviews with a last Yext update date on or before the given date will be returned.
+    # @option opts [Date] :min_publisher_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or after the given date will be returned.
+    # @option opts [Date] :max_publisher_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or before the given date will be returned.
+    # @option opts [Date] :min_last_yext_update_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a last Yext update date on or after the given date will be returned.
+    # @option opts [Date] :max_last_yext_update_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a last Yext update date on or before the given date will be returned.
     # @option opts [String] :awaiting_response When specified, only reviews that are awaiting an owner reply on the given objects will be returned.  For example, when &#x60;awaitingResponse&#x3D;COMMENT&#x60;, reviews will only be returned if they have at least one comment that has not been responded to by the owner. 
     # @option opts [Integer] :min_non_owner_comments When specified, only reviews that have at least the provided number of non-owner comments will be returned.
     # @option opts [String] :reviewer_name When specified, only reviews whose authorName contains the provided string will be returned.
@@ -532,6 +599,72 @@ module YextClient
         :return_type => 'IdResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReviewsApi#update_review\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Review Generation Settings: Update
+    # Updates any generation settings specified in a specified account. Call may include any/all settings available to the account. Settings not included will remain unchanged. 
+    # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param review_generation_settings_request 
+    # @param [Hash] opts the optional parameters
+    # @return [GetReviewGenerationSettingsResponse]
+    def update_review_generation_settings(account_id, v, review_generation_settings_request, opts = {})
+      data, _status_code, _headers = update_review_generation_settings_with_http_info(account_id, v, review_generation_settings_request, opts)
+      return data
+    end
+
+    # Review Generation Settings: Update
+    # Updates any generation settings specified in a specified account. Call may include any/all settings available to the account. Settings not included will remain unchanged. 
+    # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param review_generation_settings_request 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(GetReviewGenerationSettingsResponse, Fixnum, Hash)>] GetReviewGenerationSettingsResponse data, response status code and response headers
+    def update_review_generation_settings_with_http_info(account_id, v, review_generation_settings_request, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: ReviewsApi.update_review_generation_settings ..."
+      end
+      # verify the required parameter 'account_id' is set
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling ReviewsApi.update_review_generation_settings" if account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.update_review_generation_settings" if v.nil?
+      # verify the required parameter 'review_generation_settings_request' is set
+      fail ArgumentError, "Missing the required parameter 'review_generation_settings_request' when calling ReviewsApi.update_review_generation_settings" if review_generation_settings_request.nil?
+      # resource path
+      local_var_path = "/accounts/{accountId}/reviews/settings/generation".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'v'] = v
+
+      # header parameters
+      header_params = {}
+
+      # HTTP header 'Accept' (if needed)
+      local_header_accept = ['application/json']
+      local_header_accept_result = @api_client.select_header_accept(local_header_accept) and header_params['Accept'] = local_header_accept_result
+
+      # HTTP header 'Content-Type'
+      local_header_content_type = ['application/json']
+      header_params['Content-Type'] = @api_client.select_header_content_type(local_header_content_type)
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(review_generation_settings_request)
+      auth_names = ['api_key']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'GetReviewGenerationSettingsResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: ReviewsApi#update_review_generation_settings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

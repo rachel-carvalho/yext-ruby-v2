@@ -118,7 +118,7 @@ module YextClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      type_validator = EnumAttributeValidator.new('String', ["BOOLEAN", "DAILY_TIMES", "DATE", "GALLERY", "HOURS", "MULTILINE_TEXT", "MULTI_OPTION", "NUMBER", "PHOTO", "SINGLE_OPTION", "TEXT", "TEXT_LIST", "URL", "VIDEO"])
+      type_validator = EnumAttributeValidator.new('String', ["BOOLEAN", "DAILY_TIMES", "DATE", "GALLERY", "HOURS", "MULTILINE_TEXT", "MULTI_OPTION", "NUMBER", "PHOTO", "SINGLE_OPTION", "TEXT", "TEXT_LIST", "URL", "VIDEO", "VIDEO_GALLERY"])
       return false unless type_validator.valid?(@type)
       return true
     end
@@ -126,7 +126,7 @@ module YextClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
-      validator = EnumAttributeValidator.new('String', ["BOOLEAN", "DAILY_TIMES", "DATE", "GALLERY", "HOURS", "MULTILINE_TEXT", "MULTI_OPTION", "NUMBER", "PHOTO", "SINGLE_OPTION", "TEXT", "TEXT_LIST", "URL", "VIDEO"])
+      validator = EnumAttributeValidator.new('String', ["BOOLEAN", "DAILY_TIMES", "DATE", "GALLERY", "HOURS", "MULTILINE_TEXT", "MULTI_OPTION", "NUMBER", "PHOTO", "SINGLE_OPTION", "TEXT", "TEXT_LIST", "URL", "VIDEO", "VIDEO_GALLERY"])
       unless validator.valid?(type)
         fail ArgumentError, "invalid value for 'type', must be one of #{validator.allowable_values}."
       end

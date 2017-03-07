@@ -38,8 +38,11 @@ module YextClient
     # Must be a valid phone number, based on the country specified in `countryCode`. Phone numbers for US locations must contain 10 digits.
     attr_accessor :toll_free_phone
 
-    # IDs of Menu lists associated with this location.
+    # IDs of Menus associated with this location.
     attr_accessor :menu_ids
+
+    # The search engines that we will use to track your performance 
+    attr_accessor :tracking_sites
 
     # The middle name of the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :middle_name
@@ -53,8 +56,8 @@ module YextClient
     # A valid URL used for reservations at this location.
     attr_accessor :reservation_url
 
-    # Longitude to use for pickup spot for the location, as provided by you  Between -180.0 and 180.0, inclusive 
-    attr_accessor :pickup_lng
+    # A list of the degrees earned by the healthcare professional  **NOTE:**  This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL.  Valid values:  * `ANP` (Adult Nurse Practitioner) * `APN` (Advanced Practice Nurse) * `APRN` (Advanced Practice Registered Nurse) * `ARNP` (Advanced Registered Nurse Practitioner) * `CNM` (Certified Nurse Midwife) * `CNP` (Certified Nurse Practitioner) * `CNS` (Clinical Nurse Specialist)   * `CPNP` (Certified Pediatric Nurse Practitioner) * `CRNA` (Certified Registered Nurse Anesthetist) * `CRNP` (Certified Registered Nurse Practitioner) * `DC` (Doctor of Chiropractic)   * `DDS` (Doctor of Dental Surgery) * `DMD` (Doctor of Dental Medicine) * `DO` (Doctor of Osteopathy) * `DPM` (Doctor of Podiatric Medicine) * `DVM` (Doctor of Veterinary Medicine)   * `FNP` (Family Nurse Practitioner)     * `GNP` (Geriatric Nurse Practitioner) * `LAC` (Licensed Acupuncturist) * `LPN` (Licensed Practical Nurse) * `MD` (Medical Doctor) * `ND` (Naturopathic Doctor) * `NP` (Nurse Practitioner) * `OD` (Doctor of Optometry) * `PA` (Physician Assistant)     * `PAC` (Physician Assistant Certified) * `PHARMD` (Doctor of Pharmacy) * `PHD` (Doctor of Philosophy) * `PNP` (Pediatric Nurse Practitioner)   * `VMD` (Veterinary Medical Doctor) * `WHNP` (Womens Health Nurse Practitioner) 
+    attr_accessor :degrees
 
     # The IDs of the location labels that have been added to this location. Location labels help you identify locations that share a certain characteristic; they do not appear on your location's listings.  **NOTE:** You can only add labels that have already been created via our web interface. Currently, it is not possible to create new labels via the API. 
     attr_accessor :label_ids
@@ -185,7 +188,7 @@ module YextClient
     # A list of the certifications held by the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
     attr_accessor :certifications
 
-    # Language code of the language in which this location's information is provided. This language is considered the Location's primary language in our system.  While this field is required, we are temporarily using the Customer's **businessLanguage** as the default value of **language**.  If you would like to provide your Location data in more than one language, you can create a Language Profile for each of these additional (alternate) languages. 
+    # Language code of the language in which this location's information is provided. This language is considered the Location's primary language in our system.   If you would like to provide your Location data in more than one language, you can create a Language Profile for each of these additional (alternate) languages. 
     attr_accessor :language
 
     # The last name of the healthcare professional  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL. 
@@ -194,10 +197,13 @@ module YextClient
     # Cannot include: * inappropriate language * HTML markup or entities * a URL or domain name * a phone number * control characters ([\\x00-\\x1F\\x7F])  Should be in appropriate letter case (e.g., not in all capital letters) 
     attr_accessor :location_name
 
+    # The ways in which your keywords will be arranged in the search queries we use to track your performance 
+    attr_accessor :query_templates
+
     # Up to 100 products sold at this location  All strings must be non-empty when trimmed of whitespace. 
     attr_accessor :products
 
-    # The text of the embedded Uber link  Default is \"Ride there with Uber\".  **NOTE:** This field is only available if **uberLinkType** is TEXT. 
+    # The text of the embedded Uber link  Default is \"Ride there with Uber\".  **NOTE:** This field is only available if **uberLinkType** is LINK. 
     attr_accessor :uber_link_text
 
     # The Google My Business attributes for this location. 
@@ -206,8 +212,14 @@ module YextClient
     # The payment methods accepted at this location  Valid elements depend on the location's country. For US locations, valid elements are: * AMERICANEXPRESS * CASH * CHECK * DINERSCLUB * DISCOVER * FINANCING * INVOICE * MASTERCARD * TRAVELERSCHECK * VISA * ANDROIDPAY * APPLEPAY * SAMSUNGPAY 
     attr_accessor :payment_options
 
+    # Additional keywords you would like us to use when tracking your search performance 
+    attr_accessor :custom_keywords
+
     # Longitude to use for drop off spot for the location, as provided by you  Between -180.0 and 180.0, inclusive 
     attr_accessor :dropoff_lng
+
+    #  Indicates whether Intelligent Search Tracker is enabled.  The Intelligent Search Tracker allows you to understand your performance in local search. 
+    attr_accessor :intelligent_search_tracking_enabled
 
     # The Yext-powered code that can be copied and pasted into the markup of emails or web pages where the embedded Uber link should appear
     attr_accessor :uber_embed_code
@@ -229,7 +241,7 @@ module YextClient
 
     attr_accessor :city
 
-    # Label to be used for this location’s Menu lists. This label will appear on your location's listings.
+    # Label to be used for this location’s Menus. This label will appear on your location's listings.
     attr_accessor :menus_label
 
     # The location's postal code. For US locations, this field contains the five- or nine-digit ZIP code (the hyphen is optional). Validations are only done on `zip` if `countryCode` is US.
@@ -246,6 +258,9 @@ module YextClient
 
     # A list of the conditions treated by the healthcare provider  **NOTE:** This field is only available to locations whose **locationType** is HEALTHCARE_PROFESSIONAL or HEALTHCARE_FACILITY. 
     attr_accessor :conditions_treated
+
+    # Longitude to use for pickup spot for the location, as provided by you  Between -180.0 and 180.0, inclusive 
+    attr_accessor :pickup_lng
 
     # A set of key-value pairs indicating the location's custom fields and their values. The keys are the Yext Custom Field IDs of the custom fields, and the values are the fields' contents. If the fields' contents are options, those options must be represented by their Yext IDs. 
     attr_accessor :custom_fields
@@ -306,17 +321,29 @@ module YextClient
     # Latitude to use for pickup spot for the location, as calculated by Yext  Between -90.0 and 90.0, inclusive 
     attr_accessor :yext_pickup_lat
 
+    # Keywords that we will use to track your search performance. These keywords are based on the location information you've stored in our system. 
+    attr_accessor :location_keywords
+
     # The URL you would like to submit to Google My Business in place of the one given in **websiteUrl** (if applicable).  For example, if you want to analyze the traffic driven by your Google listings separately from other traffic, enter the alternate URL that you will use for tracking in this field. 
     attr_accessor :google_website_override
 
     # Primary key. Unique alphanumeric (Latin-1) ID assigned by the Customer.
     attr_accessor :id
 
+    # Other websites for your business that we should look for when tracking your search performance 
+    attr_accessor :alternate_websites
+
+    # How often we send search queries to track your search performance. 
+    attr_accessor :intelligent_search_tracking_frequency
+
     # IDs of Event lists associated with this location.
     attr_accessor :event_list_ids
 
     # Latitude where the map pin should be displayed, as provided by you  Between -90.0 and 90.0, inclusive 
     attr_accessor :display_lat
+
+    # The names and websites of the competitors whose search performance you would like to compare to your own 
+    attr_accessor :competitors
 
     # Longitude to use for drop off spot for the location, as calculated by Yext  Between -180.0 and 180.0, inclusive 
     attr_accessor :yext_dropoff_lng
@@ -346,6 +373,9 @@ module YextClient
 
     # Latitude to use for driving directions to the location, as calculated by Yext  Between -90.0 and 90.0, inclusive 
     attr_accessor :yext_routable_lat
+
+    # Other names for your business that you would like us to use when tracking your search performance 
+    attr_accessor :alternate_names
 
     # Up to 50 Photos.  **NOTE:** The list of photos that you send us must be comprehensive. For example, if you send us a list of photos that does not include photos that you sent in your last update, Yext considers the missing photos to be deleted, and we remove them from your listings. 
     attr_accessor :photos
@@ -392,11 +422,12 @@ module YextClient
         :'keywords' => :'keywords',
         :'toll_free_phone' => :'tollFreePhone',
         :'menu_ids' => :'menuIds',
+        :'tracking_sites' => :'trackingSites',
         :'middle_name' => :'middleName',
         :'additional_hours_text' => :'additionalHoursText',
         :'featured_message_url' => :'featuredMessageUrl',
         :'reservation_url' => :'reservationUrl',
-        :'pickup_lng' => :'pickupLng',
+        :'degrees' => :'degrees',
         :'label_ids' => :'labelIds',
         :'google_preferred_photo' => :'googlePreferredPhoto',
         :'video_urls' => :'videoUrls',
@@ -444,11 +475,14 @@ module YextClient
         :'language' => :'language',
         :'last_name' => :'lastName',
         :'location_name' => :'locationName',
+        :'query_templates' => :'queryTemplates',
         :'products' => :'products',
         :'uber_link_text' => :'uberLinkText',
         :'google_attributes' => :'googleAttributes',
         :'payment_options' => :'paymentOptions',
+        :'custom_keywords' => :'customKeywords',
         :'dropoff_lng' => :'dropoffLng',
+        :'intelligent_search_tracking_enabled' => :'intelligentSearchTrackingEnabled',
         :'uber_embed_code' => :'uberEmbedCode',
         :'display_reservation_url' => :'displayReservationUrl',
         :'yext_display_lng' => :'yextDisplayLng',
@@ -462,6 +496,7 @@ module YextClient
         :'order_url' => :'orderUrl',
         :'dropoff_lat' => :'dropoffLat',
         :'conditions_treated' => :'conditionsTreated',
+        :'pickup_lng' => :'pickupLng',
         :'custom_fields' => :'customFields',
         :'walkable_lat' => :'walkableLat',
         :'insurance_accepted' => :'insuranceAccepted',
@@ -482,10 +517,14 @@ module YextClient
         :'routable_lng' => :'routableLng',
         :'country_code' => :'countryCode',
         :'yext_pickup_lat' => :'yextPickupLat',
+        :'location_keywords' => :'locationKeywords',
         :'google_website_override' => :'googleWebsiteOverride',
         :'id' => :'id',
+        :'alternate_websites' => :'alternateWebsites',
+        :'intelligent_search_tracking_frequency' => :'intelligentSearchTrackingFrequency',
         :'event_list_ids' => :'eventListIds',
         :'display_lat' => :'displayLat',
+        :'competitors' => :'competitors',
         :'yext_dropoff_lng' => :'yextDropoffLng',
         :'is_phone_tracked' => :'isPhoneTracked',
         :'tty_phone' => :'ttyPhone',
@@ -496,6 +535,7 @@ module YextClient
         :'uber_trip_branding_url' => :'uberTripBrandingUrl',
         :'routable_lat' => :'routableLat',
         :'yext_routable_lat' => :'yextRoutableLat',
+        :'alternate_names' => :'alternateNames',
         :'photos' => :'photos',
         :'display_order_url' => :'displayOrderUrl',
         :'services' => :'services',
@@ -512,11 +552,12 @@ module YextClient
         :'keywords' => :'Array<String>',
         :'toll_free_phone' => :'String',
         :'menu_ids' => :'Array<String>',
+        :'tracking_sites' => :'Array<String>',
         :'middle_name' => :'String',
         :'additional_hours_text' => :'String',
         :'featured_message_url' => :'String',
         :'reservation_url' => :'String',
-        :'pickup_lng' => :'Float',
+        :'degrees' => :'Array<String>',
         :'label_ids' => :'Array<String>',
         :'google_preferred_photo' => :'String',
         :'video_urls' => :'Array<String>',
@@ -564,11 +605,14 @@ module YextClient
         :'language' => :'String',
         :'last_name' => :'String',
         :'location_name' => :'String',
+        :'query_templates' => :'Array<String>',
         :'products' => :'Array<String>',
         :'uber_link_text' => :'String',
         :'google_attributes' => :'Array<LocationGoogleAttributes>',
         :'payment_options' => :'Array<String>',
+        :'custom_keywords' => :'Array<String>',
         :'dropoff_lng' => :'Float',
+        :'intelligent_search_tracking_enabled' => :'BOOLEAN',
         :'uber_embed_code' => :'String',
         :'display_reservation_url' => :'String',
         :'yext_display_lng' => :'Float',
@@ -582,6 +626,7 @@ module YextClient
         :'order_url' => :'String',
         :'dropoff_lat' => :'Float',
         :'conditions_treated' => :'Array<String>',
+        :'pickup_lng' => :'Float',
         :'custom_fields' => :'Hash<String, Object>',
         :'walkable_lat' => :'Float',
         :'insurance_accepted' => :'Array<String>',
@@ -602,10 +647,14 @@ module YextClient
         :'routable_lng' => :'Float',
         :'country_code' => :'String',
         :'yext_pickup_lat' => :'Float',
+        :'location_keywords' => :'Array<String>',
         :'google_website_override' => :'String',
         :'id' => :'String',
+        :'alternate_websites' => :'Array<String>',
+        :'intelligent_search_tracking_frequency' => :'String',
         :'event_list_ids' => :'Array<String>',
         :'display_lat' => :'Float',
+        :'competitors' => :'Array<LocationCompetitors>',
         :'yext_dropoff_lng' => :'Float',
         :'is_phone_tracked' => :'BOOLEAN',
         :'tty_phone' => :'String',
@@ -616,6 +665,7 @@ module YextClient
         :'uber_trip_branding_url' => :'String',
         :'routable_lat' => :'Float',
         :'yext_routable_lat' => :'Float',
+        :'alternate_names' => :'Array<String>',
         :'photos' => :'Array<LocationPhoto>',
         :'display_order_url' => :'String',
         :'services' => :'Array<String>',
@@ -656,6 +706,12 @@ module YextClient
         end
       end
 
+      if attributes.has_key?(:'trackingSites')
+        if (value = attributes[:'trackingSites']).is_a?(Array)
+          self.tracking_sites = value
+        end
+      end
+
       if attributes.has_key?(:'middleName')
         self.middle_name = attributes[:'middleName']
       end
@@ -672,8 +728,10 @@ module YextClient
         self.reservation_url = attributes[:'reservationUrl']
       end
 
-      if attributes.has_key?(:'pickupLng')
-        self.pickup_lng = attributes[:'pickupLng']
+      if attributes.has_key?(:'degrees')
+        if (value = attributes[:'degrees']).is_a?(Array)
+          self.degrees = value
+        end
       end
 
       if attributes.has_key?(:'labelIds')
@@ -880,6 +938,12 @@ module YextClient
         self.location_name = attributes[:'locationName']
       end
 
+      if attributes.has_key?(:'queryTemplates')
+        if (value = attributes[:'queryTemplates']).is_a?(Array)
+          self.query_templates = value
+        end
+      end
+
       if attributes.has_key?(:'products')
         if (value = attributes[:'products']).is_a?(Array)
           self.products = value
@@ -902,8 +966,18 @@ module YextClient
         end
       end
 
+      if attributes.has_key?(:'customKeywords')
+        if (value = attributes[:'customKeywords']).is_a?(Array)
+          self.custom_keywords = value
+        end
+      end
+
       if attributes.has_key?(:'dropoffLng')
         self.dropoff_lng = attributes[:'dropoffLng']
+      end
+
+      if attributes.has_key?(:'intelligentSearchTrackingEnabled')
+        self.intelligent_search_tracking_enabled = attributes[:'intelligentSearchTrackingEnabled']
       end
 
       if attributes.has_key?(:'uberEmbedCode')
@@ -960,6 +1034,10 @@ module YextClient
         if (value = attributes[:'conditionsTreated']).is_a?(Array)
           self.conditions_treated = value
         end
+      end
+
+      if attributes.has_key?(:'pickupLng')
+        self.pickup_lng = attributes[:'pickupLng']
       end
 
       if attributes.has_key?(:'customFields')
@@ -1054,12 +1132,28 @@ module YextClient
         self.yext_pickup_lat = attributes[:'yextPickupLat']
       end
 
+      if attributes.has_key?(:'locationKeywords')
+        if (value = attributes[:'locationKeywords']).is_a?(Array)
+          self.location_keywords = value
+        end
+      end
+
       if attributes.has_key?(:'googleWebsiteOverride')
         self.google_website_override = attributes[:'googleWebsiteOverride']
       end
 
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
+      end
+
+      if attributes.has_key?(:'alternateWebsites')
+        if (value = attributes[:'alternateWebsites']).is_a?(Array)
+          self.alternate_websites = value
+        end
+      end
+
+      if attributes.has_key?(:'intelligentSearchTrackingFrequency')
+        self.intelligent_search_tracking_frequency = attributes[:'intelligentSearchTrackingFrequency']
       end
 
       if attributes.has_key?(:'eventListIds')
@@ -1070,6 +1164,12 @@ module YextClient
 
       if attributes.has_key?(:'displayLat')
         self.display_lat = attributes[:'displayLat']
+      end
+
+      if attributes.has_key?(:'competitors')
+        if (value = attributes[:'competitors']).is_a?(Array)
+          self.competitors = value
+        end
       end
 
       if attributes.has_key?(:'yextDropoffLng')
@@ -1112,6 +1212,12 @@ module YextClient
 
       if attributes.has_key?(:'yextRoutableLat')
         self.yext_routable_lat = attributes[:'yextRoutableLat']
+      end
+
+      if attributes.has_key?(:'alternateNames')
+        if (value = attributes[:'alternateNames']).is_a?(Array)
+          self.alternate_names = value
+        end
       end
 
       if attributes.has_key?(:'photos')
@@ -1298,12 +1404,14 @@ module YextClient
       return false if !@city.nil? && @city.to_s.length > 80
       return false if !@zip.nil? && @zip.to_s.length > 10
       return false if !@order_url.nil? && @order_url.to_s.length > 255
-      uber_link_type_validator = EnumAttributeValidator.new('String', ["TEXT", "BUTTON"])
+      uber_link_type_validator = EnumAttributeValidator.new('String', ["LINK", "BUTTON"])
       return false unless uber_link_type_validator.valid?(@uber_link_type)
       return false if !@year_established.nil? && @year_established.to_s.length > 4
       return false if !@country_code.nil? && @country_code.to_s.length > 2
       return false if !@google_website_override.nil? && @google_website_override.to_s.length > 255
       return false if !@id.nil? && @id.to_s.length > 50
+      intelligent_search_tracking_frequency_validator = EnumAttributeValidator.new('String', ["WEEKLY", "MONTHLY", "QUARTERLY"])
+      return false unless intelligent_search_tracking_frequency_validator.valid?(@intelligent_search_tracking_frequency)
       return false if !@description.nil? && @description.to_s.length > 5000
       return false if !@twitter_handle.nil? && @twitter_handle.to_s.length > 15
       return false if !@display_order_url.nil? && @display_order_url.to_s.length > 255
@@ -1567,7 +1675,7 @@ module YextClient
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] uber_link_type Object to be assigned
     def uber_link_type=(uber_link_type)
-      validator = EnumAttributeValidator.new('String', ["TEXT", "BUTTON"])
+      validator = EnumAttributeValidator.new('String', ["LINK", "BUTTON"])
       unless validator.valid?(uber_link_type)
         fail ArgumentError, "invalid value for 'uber_link_type', must be one of #{validator.allowable_values}."
       end
@@ -1616,6 +1724,16 @@ module YextClient
       end
 
       @id = id
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] intelligent_search_tracking_frequency Object to be assigned
+    def intelligent_search_tracking_frequency=(intelligent_search_tracking_frequency)
+      validator = EnumAttributeValidator.new('String', ["WEEKLY", "MONTHLY", "QUARTERLY"])
+      unless validator.valid?(intelligent_search_tracking_frequency)
+        fail ArgumentError, "invalid value for 'intelligent_search_tracking_frequency', must be one of #{validator.allowable_values}."
+      end
+      @intelligent_search_tracking_frequency = intelligent_search_tracking_frequency
     end
 
     # Custom attribute writer method with validation
@@ -1683,11 +1801,12 @@ module YextClient
           keywords == o.keywords &&
           toll_free_phone == o.toll_free_phone &&
           menu_ids == o.menu_ids &&
+          tracking_sites == o.tracking_sites &&
           middle_name == o.middle_name &&
           additional_hours_text == o.additional_hours_text &&
           featured_message_url == o.featured_message_url &&
           reservation_url == o.reservation_url &&
-          pickup_lng == o.pickup_lng &&
+          degrees == o.degrees &&
           label_ids == o.label_ids &&
           google_preferred_photo == o.google_preferred_photo &&
           video_urls == o.video_urls &&
@@ -1735,11 +1854,14 @@ module YextClient
           language == o.language &&
           last_name == o.last_name &&
           location_name == o.location_name &&
+          query_templates == o.query_templates &&
           products == o.products &&
           uber_link_text == o.uber_link_text &&
           google_attributes == o.google_attributes &&
           payment_options == o.payment_options &&
+          custom_keywords == o.custom_keywords &&
           dropoff_lng == o.dropoff_lng &&
+          intelligent_search_tracking_enabled == o.intelligent_search_tracking_enabled &&
           uber_embed_code == o.uber_embed_code &&
           display_reservation_url == o.display_reservation_url &&
           yext_display_lng == o.yext_display_lng &&
@@ -1753,6 +1875,7 @@ module YextClient
           order_url == o.order_url &&
           dropoff_lat == o.dropoff_lat &&
           conditions_treated == o.conditions_treated &&
+          pickup_lng == o.pickup_lng &&
           custom_fields == o.custom_fields &&
           walkable_lat == o.walkable_lat &&
           insurance_accepted == o.insurance_accepted &&
@@ -1773,10 +1896,14 @@ module YextClient
           routable_lng == o.routable_lng &&
           country_code == o.country_code &&
           yext_pickup_lat == o.yext_pickup_lat &&
+          location_keywords == o.location_keywords &&
           google_website_override == o.google_website_override &&
           id == o.id &&
+          alternate_websites == o.alternate_websites &&
+          intelligent_search_tracking_frequency == o.intelligent_search_tracking_frequency &&
           event_list_ids == o.event_list_ids &&
           display_lat == o.display_lat &&
+          competitors == o.competitors &&
           yext_dropoff_lng == o.yext_dropoff_lng &&
           is_phone_tracked == o.is_phone_tracked &&
           tty_phone == o.tty_phone &&
@@ -1787,6 +1914,7 @@ module YextClient
           uber_trip_branding_url == o.uber_trip_branding_url &&
           routable_lat == o.routable_lat &&
           yext_routable_lat == o.yext_routable_lat &&
+          alternate_names == o.alternate_names &&
           photos == o.photos &&
           display_order_url == o.display_order_url &&
           services == o.services &&
@@ -1803,7 +1931,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [fax_phone, headshot, keywords, toll_free_phone, menu_ids, middle_name, additional_hours_text, featured_message_url, reservation_url, pickup_lng, label_ids, google_preferred_photo, video_urls, featured_message, yext_display_lat, mobile_phone, service_area, timestamp, address2, facebook_cover_photo, yext_walkable_lat, bio_list_ids, facebook_page_url, emails, walkable_lng, gender, website_url, specialties, bio_lists_label, display_lng, yext_pickup_lng, product_list_ids, google_cover_photo, education_list, pickup_lat, logo, alternate_phone, account_id, menu_url, accepting_new_patients, display_website_url, yext_routable_lng, state, suppress_address, closed, display_menu_url, office_name, yext_dropoff_lat, hours, address, uber_link, uber_client_id, facebook_profile_picture, certifications, language, last_name, location_name, products, uber_link_text, google_attributes, payment_options, dropoff_lng, uber_embed_code, display_reservation_url, yext_display_lng, display_address, category_ids, product_lists_label, city, menus_label, zip, local_phone, order_url, dropoff_lat, conditions_treated, custom_fields, walkable_lat, insurance_accepted, uber_link_type, phone, folder_id, google_profile_photo, instagram_handle, event_lists_label, holiday_hours, first_name, languages, location_type, admitting_hospitals, year_established, yext_walkable_lng, associations, routable_lng, country_code, yext_pickup_lat, google_website_override, id, event_list_ids, display_lat, yext_dropoff_lng, is_phone_tracked, tty_phone, npi, description, twitter_handle, brands, uber_trip_branding_url, routable_lat, yext_routable_lat, photos, display_order_url, services, sublocality, uber_trip_branding_text].hash
+      [fax_phone, headshot, keywords, toll_free_phone, menu_ids, tracking_sites, middle_name, additional_hours_text, featured_message_url, reservation_url, degrees, label_ids, google_preferred_photo, video_urls, featured_message, yext_display_lat, mobile_phone, service_area, timestamp, address2, facebook_cover_photo, yext_walkable_lat, bio_list_ids, facebook_page_url, emails, walkable_lng, gender, website_url, specialties, bio_lists_label, display_lng, yext_pickup_lng, product_list_ids, google_cover_photo, education_list, pickup_lat, logo, alternate_phone, account_id, menu_url, accepting_new_patients, display_website_url, yext_routable_lng, state, suppress_address, closed, display_menu_url, office_name, yext_dropoff_lat, hours, address, uber_link, uber_client_id, facebook_profile_picture, certifications, language, last_name, location_name, query_templates, products, uber_link_text, google_attributes, payment_options, custom_keywords, dropoff_lng, intelligent_search_tracking_enabled, uber_embed_code, display_reservation_url, yext_display_lng, display_address, category_ids, product_lists_label, city, menus_label, zip, local_phone, order_url, dropoff_lat, conditions_treated, pickup_lng, custom_fields, walkable_lat, insurance_accepted, uber_link_type, phone, folder_id, google_profile_photo, instagram_handle, event_lists_label, holiday_hours, first_name, languages, location_type, admitting_hospitals, year_established, yext_walkable_lng, associations, routable_lng, country_code, yext_pickup_lat, location_keywords, google_website_override, id, alternate_websites, intelligent_search_tracking_frequency, event_list_ids, display_lat, competitors, yext_dropoff_lng, is_phone_tracked, tty_phone, npi, description, twitter_handle, brands, uber_trip_branding_url, routable_lat, yext_routable_lat, alternate_names, photos, display_order_url, services, sublocality, uber_trip_branding_text].hash
     end
 
     # Builds the object from hash

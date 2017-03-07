@@ -26,6 +26,9 @@ require 'date'
 module YextClient
 
   class Review
+    # The current status of the review; only returned for First Party and External First Party reviews.
+    attr_accessor :status
+
     # Normalized rating out of 5. This value is omitted if the review does not include a rating. 
     attr_accessor :rating
 
@@ -62,10 +65,32 @@ module YextClient
     # ID of this review
     attr_accessor :id
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'status' => :'status',
         :'rating' => :'rating',
         :'title' => :'title',
         :'url' => :'url',
@@ -84,6 +109,7 @@ module YextClient
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'status' => :'String',
         :'rating' => :'Float',
         :'title' => :'String',
         :'url' => :'String',
@@ -106,6 +132,10 @@ module YextClient
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'status')
+        self.status = attributes[:'status']
+      end
 
       if attributes.has_key?(:'rating')
         self.rating = attributes[:'rating']
@@ -169,7 +199,19 @@ module YextClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      status_validator = EnumAttributeValidator.new('String', ["LIVE", "QUARANTINED", "REMOVED"])
+      return false unless status_validator.valid?(@status)
       return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] status Object to be assigned
+    def status=(status)
+      validator = EnumAttributeValidator.new('String', ["LIVE", "QUARANTINED", "REMOVED"])
+      unless validator.valid?(status)
+        fail ArgumentError, "invalid value for 'status', must be one of #{validator.allowable_values}."
+      end
+      @status = status
     end
 
     # Checks equality by comparing each attribute.
@@ -177,6 +219,7 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          status == o.status &&
           rating == o.rating &&
           title == o.title &&
           url == o.url &&
@@ -200,7 +243,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [rating, title, url, publisher_date, last_yext_update_date, comments, content, author_name, author_email, location_id, publisher_id, id].hash
+      [status, rating, title, url, publisher_date, last_yext_update_date, comments, content, author_name, author_email, location_id, publisher_id, id].hash
     end
 
     # Builds the object from hash

@@ -34,31 +34,36 @@ module YextClient
     # Activity Log
     # Fetches account activity information.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityLogRequest] :body 
     # @return [ActivitiesResponse]
-    def activity_log(account_id, opts = {})
-      data, _status_code, _headers = activity_log_with_http_info(account_id, opts)
+    def activity_log(account_id, v, opts = {})
+      data, _status_code, _headers = activity_log_with_http_info(account_id, v, opts)
       return data
     end
 
     # Activity Log
     # Fetches account activity information.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [ActivityLogRequest] :body 
     # @return [Array<(ActivitiesResponse, Fixnum, Hash)>] ActivitiesResponse data, response status code and response headers
-    def activity_log_with_http_info(account_id, opts = {})
+    def activity_log_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: AnalyticsApi.activity_log ..."
       end
       # verify the required parameter 'account_id' is set
       fail ArgumentError, "Missing the required parameter 'account_id' when calling AnalyticsApi.activity_log" if account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling AnalyticsApi.activity_log" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/analytics/activity".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
 
       # header parameters
       header_params = {}
@@ -93,35 +98,40 @@ module YextClient
     # Create Reports
     # Begins the process of producing a report.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :async Defaults to false.  When true, the report’s ID will be returned immediately and the report results can be fetched later.  When false, the report results will be returned immediately, but an error may occur if the data requested is too large
     # @option opts [String] :callback Optional.  When async&#x3D;true and callback is specified, the provided URL will be called when the report is ready.  The URL must of of the form:       POST https://[your domain]/[your path]  It must accept the following parameters:      id:     (int)     - The ID of the report that is ready      status: (string)  - one of [DONE, FAILED]      url:    (string)  - When status&#x3D;DONE, contains the URL to download the report data as a text file. 
     # @option opts [CreateReportRequestBody] :body JSON object containing any filters to be applied to the report
     # @return [CreateReportsResponse]
-    def create_reports(account_id, opts = {})
-      data, _status_code, _headers = create_reports_with_http_info(account_id, opts)
+    def create_reports(account_id, v, opts = {})
+      data, _status_code, _headers = create_reports_with_http_info(account_id, v, opts)
       return data
     end
 
     # Create Reports
     # Begins the process of producing a report.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :async Defaults to false.  When true, the report’s ID will be returned immediately and the report results can be fetched later.  When false, the report results will be returned immediately, but an error may occur if the data requested is too large
     # @option opts [String] :callback Optional.  When async&#x3D;true and callback is specified, the provided URL will be called when the report is ready.  The URL must of of the form:       POST https://[your domain]/[your path]  It must accept the following parameters:      id:     (int)     - The ID of the report that is ready      status: (string)  - one of [DONE, FAILED]      url:    (string)  - When status&#x3D;DONE, contains the URL to download the report data as a text file. 
     # @option opts [CreateReportRequestBody] :body JSON object containing any filters to be applied to the report
     # @return [Array<(CreateReportsResponse, Fixnum, Hash)>] CreateReportsResponse data, response status code and response headers
-    def create_reports_with_http_info(account_id, opts = {})
+    def create_reports_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: AnalyticsApi.create_reports ..."
       end
       # verify the required parameter 'account_id' is set
       fail ArgumentError, "Missing the required parameter 'account_id' when calling AnalyticsApi.create_reports" if account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling AnalyticsApi.create_reports" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/analytics/reports".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
       query_params[:'async'] = opts[:'async'] if !opts[:'async'].nil?
       query_params[:'callback'] = opts[:'callback'] if !opts[:'callback'].nil?
 
@@ -158,29 +168,34 @@ module YextClient
     # Max Dates
     # The dates through which reporting data is available.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @return [MaximumDatesResponse]
-    def get_max_dates(account_id, opts = {})
-      data, _status_code, _headers = get_max_dates_with_http_info(account_id, opts)
+    def get_max_dates(account_id, v, opts = {})
+      data, _status_code, _headers = get_max_dates_with_http_info(account_id, v, opts)
       return data
     end
 
     # Max Dates
     # The dates through which reporting data is available.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @return [Array<(MaximumDatesResponse, Fixnum, Hash)>] MaximumDatesResponse data, response status code and response headers
-    def get_max_dates_with_http_info(account_id, opts = {})
+    def get_max_dates_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: AnalyticsApi.get_max_dates ..."
       end
       # verify the required parameter 'account_id' is set
       fail ArgumentError, "Missing the required parameter 'account_id' when calling AnalyticsApi.get_max_dates" if account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling AnalyticsApi.get_max_dates" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/analytics/maxdates".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
 
       # header parameters
       header_params = {}
@@ -215,26 +230,30 @@ module YextClient
     # Report Status
     # Checks the status of a Report created with async=true.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param report_id 
     # @param [Hash] opts the optional parameters
     # @return [ReportStatusResponse]
-    def report_status(account_id, report_id, opts = {})
-      data, _status_code, _headers = report_status_with_http_info(account_id, report_id, opts)
+    def report_status(account_id, v, report_id, opts = {})
+      data, _status_code, _headers = report_status_with_http_info(account_id, v, report_id, opts)
       return data
     end
 
     # Report Status
     # Checks the status of a Report created with async&#x3D;true.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param report_id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ReportStatusResponse, Fixnum, Hash)>] ReportStatusResponse data, response status code and response headers
-    def report_status_with_http_info(account_id, report_id, opts = {})
+    def report_status_with_http_info(account_id, v, report_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: AnalyticsApi.report_status ..."
       end
       # verify the required parameter 'account_id' is set
       fail ArgumentError, "Missing the required parameter 'account_id' when calling AnalyticsApi.report_status" if account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling AnalyticsApi.report_status" if v.nil?
       # verify the required parameter 'report_id' is set
       fail ArgumentError, "Missing the required parameter 'report_id' when calling AnalyticsApi.report_status" if report_id.nil?
       # resource path
@@ -242,6 +261,7 @@ module YextClient
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
 
       # header parameters
       header_params = {}

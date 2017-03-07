@@ -1,41 +1,41 @@
-# YextClient::LocationManagerApi
+# YextClient::KnowledgeManagerApi
 
 All URIs are relative to *https://api.yext.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_bio**](LocationManagerApi.md#create_bio) | **POST** /accounts/{accountId}/bios | Bios: Create
-[**create_event**](LocationManagerApi.md#create_event) | **POST** /accounts/{accountId}/locations/events | Events: Create
-[**create_location**](LocationManagerApi.md#create_location) | **POST** /accounts/{accountId}/locations | Locations: Create
-[**create_menu**](LocationManagerApi.md#create_menu) | **POST** /accounts/{accountId}/menus | Menus: Create
-[**create_product**](LocationManagerApi.md#create_product) | **POST** /accounts/{accountId}/products | Products: Create
-[**delete_bio_list**](LocationManagerApi.md#delete_bio_list) | **DELETE** /accounts/{accountId}/bios/{listId} | Bios: Delete
-[**delete_event_list**](LocationManagerApi.md#delete_event_list) | **DELETE** /accounts/{accountId}/locations/events/{listId} | Events: Delete
-[**delete_language_profile**](LocationManagerApi.md#delete_language_profile) | **DELETE** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Delete
-[**delete_menu_list**](LocationManagerApi.md#delete_menu_list) | **DELETE** /accounts/{accountId}/menus/{listId} | Menus: Delete
-[**delete_product_list**](LocationManagerApi.md#delete_product_list) | **DELETE** /accounts/{accountId}/locations/products/{listId} | Products: Delete
-[**get_bio**](LocationManagerApi.md#get_bio) | **GET** /accounts/{accountId}/bios/{listId} | Bios: Get
-[**get_bios**](LocationManagerApi.md#get_bios) | **GET** /accounts/{accountId}/bios | Bios: List
-[**get_business_categories**](LocationManagerApi.md#get_business_categories) | **GET** /categories | Categories: List
-[**get_custom_fields**](LocationManagerApi.md#get_custom_fields) | **GET** /accounts/{accountId}/customfields | Custom Fields: List
-[**get_event**](LocationManagerApi.md#get_event) | **GET** /accounts/{accountId}/locations/events/{listId} | Events: Get
-[**get_events**](LocationManagerApi.md#get_events) | **GET** /accounts/{accountId}/locations/events | Events: List
-[**get_google_keywords**](LocationManagerApi.md#get_google_keywords) | **GET** /googlefields | Google Fields: List
-[**get_language_profile**](LocationManagerApi.md#get_language_profile) | **GET** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Get
-[**get_language_profiles**](LocationManagerApi.md#get_language_profiles) | **GET** /accounts/{accountId}/locations/{locationId}/profiles | Language Profiles: List
-[**get_location**](LocationManagerApi.md#get_location) | **GET** /accounts/{accountId}/locations/{locationId} | Locations: Get
-[**get_location_folders**](LocationManagerApi.md#get_location_folders) | **GET** /accounts/{accountId}/folders | Folders: List
-[**get_locations**](LocationManagerApi.md#get_locations) | **GET** /accounts/{accountId}/locations | Locations: List
-[**get_menu**](LocationManagerApi.md#get_menu) | **GET** /accounts/{accountId}/menus/{listId} | Menus: Get
-[**get_menus**](LocationManagerApi.md#get_menus) | **GET** /accounts/{accountId}/menus | Menus: List
-[**get_product**](LocationManagerApi.md#get_product) | **GET** /accounts/{accountId}/locations/products/{listId} | Products: Get
-[**get_products**](LocationManagerApi.md#get_products) | **GET** /accounts/{accountId}/products | Products: List
-[**update_bio**](LocationManagerApi.md#update_bio) | **PUT** /accounts/{accountId}/bios/{listId} | Bios: Update
-[**update_event**](LocationManagerApi.md#update_event) | **PUT** /accounts/{accountId}/locations/events/{listId} | Events: Update
-[**update_location**](LocationManagerApi.md#update_location) | **PUT** /accounts/{accountId}/locations/{locationId} | Locations: Update
-[**update_menu**](LocationManagerApi.md#update_menu) | **PUT** /accounts/{accountId}/menus/{listId} | Menus: Update
-[**update_product**](LocationManagerApi.md#update_product) | **PUT** /accounts/{accountId}/locations/products/{listId} | Products: Update
-[**upsert_language_profile**](LocationManagerApi.md#upsert_language_profile) | **PUT** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Upsert
+[**create_bio**](KnowledgeManagerApi.md#create_bio) | **POST** /accounts/{accountId}/bios | Bios: Create
+[**create_event**](KnowledgeManagerApi.md#create_event) | **POST** /accounts/{accountId}/events | Events: Create
+[**create_location**](KnowledgeManagerApi.md#create_location) | **POST** /accounts/{accountId}/locations | Locations: Create
+[**create_menu**](KnowledgeManagerApi.md#create_menu) | **POST** /accounts/{accountId}/menus | Menus: Create
+[**create_product**](KnowledgeManagerApi.md#create_product) | **POST** /accounts/{accountId}/products | Products: Create
+[**delete_bio_list**](KnowledgeManagerApi.md#delete_bio_list) | **DELETE** /accounts/{accountId}/bios/{listId} | Bios: Delete
+[**delete_event_list**](KnowledgeManagerApi.md#delete_event_list) | **DELETE** /accounts/{accountId}/events/{listId} | Events: Delete
+[**delete_language_profile**](KnowledgeManagerApi.md#delete_language_profile) | **DELETE** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Delete
+[**delete_menu_list**](KnowledgeManagerApi.md#delete_menu_list) | **DELETE** /accounts/{accountId}/menus/{listId} | Menus: Delete
+[**delete_product_list**](KnowledgeManagerApi.md#delete_product_list) | **DELETE** /accounts/{accountId}/products/{listId} | Products: Delete
+[**get_bio**](KnowledgeManagerApi.md#get_bio) | **GET** /accounts/{accountId}/bios/{listId} | Bios: Get
+[**get_bios**](KnowledgeManagerApi.md#get_bios) | **GET** /accounts/{accountId}/bios | Bios: List
+[**get_business_categories**](KnowledgeManagerApi.md#get_business_categories) | **GET** /categories | Categories: List
+[**get_custom_fields**](KnowledgeManagerApi.md#get_custom_fields) | **GET** /accounts/{accountId}/customfields | Custom Fields: List
+[**get_event**](KnowledgeManagerApi.md#get_event) | **GET** /accounts/{accountId}/events/{listId} | Events: Get
+[**get_events**](KnowledgeManagerApi.md#get_events) | **GET** /accounts/{accountId}/events | Events: List
+[**get_google_keywords**](KnowledgeManagerApi.md#get_google_keywords) | **GET** /googlefields | Google Fields: List
+[**get_language_profile**](KnowledgeManagerApi.md#get_language_profile) | **GET** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Get
+[**get_language_profiles**](KnowledgeManagerApi.md#get_language_profiles) | **GET** /accounts/{accountId}/locations/{locationId}/profiles | Language Profiles: List
+[**get_location**](KnowledgeManagerApi.md#get_location) | **GET** /accounts/{accountId}/locations/{locationId} | Locations: Get
+[**get_location_folders**](KnowledgeManagerApi.md#get_location_folders) | **GET** /accounts/{accountId}/folders | Folders: List
+[**get_locations**](KnowledgeManagerApi.md#get_locations) | **GET** /accounts/{accountId}/locations | Locations: List
+[**get_menu**](KnowledgeManagerApi.md#get_menu) | **GET** /accounts/{accountId}/menus/{listId} | Menus: Get
+[**get_menus**](KnowledgeManagerApi.md#get_menus) | **GET** /accounts/{accountId}/menus | Menus: List
+[**get_product**](KnowledgeManagerApi.md#get_product) | **GET** /accounts/{accountId}/products/{listId} | Products: Get
+[**get_products**](KnowledgeManagerApi.md#get_products) | **GET** /accounts/{accountId}/products | Products: List
+[**update_bio**](KnowledgeManagerApi.md#update_bio) | **PUT** /accounts/{accountId}/bios/{listId} | Bios: Update
+[**update_event**](KnowledgeManagerApi.md#update_event) | **PUT** /accounts/{accountId}/events/{listId} | Events: Update
+[**update_location**](KnowledgeManagerApi.md#update_location) | **PUT** /accounts/{accountId}/locations/{locationId} | Locations: Update
+[**update_menu**](KnowledgeManagerApi.md#update_menu) | **PUT** /accounts/{accountId}/menus/{listId} | Menus: Update
+[**update_product**](KnowledgeManagerApi.md#update_product) | **PUT** /accounts/{accountId}/products/{listId} | Products: Update
+[**upsert_language_profile**](KnowledgeManagerApi.md#upsert_language_profile) | **PUT** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Upsert
 
 
 # **create_bio**
@@ -57,7 +57,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -71,7 +71,7 @@ begin
   result = api_instance.create_bio(account_id, vbody)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->create_bio: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->create_bio: #{e}"
 end
 ```
 
@@ -117,7 +117,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -131,7 +131,7 @@ begin
   result = api_instance.create_event(account_id, vbody)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->create_event: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->create_event: #{e}"
 end
 ```
 
@@ -177,7 +177,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -191,7 +191,7 @@ begin
   result = api_instance.create_location(account_id, vlocation_request)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->create_location: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->create_location: #{e}"
 end
 ```
 
@@ -235,7 +235,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -249,7 +249,7 @@ begin
   result = api_instance.create_menu(account_id, vbody)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->create_menu: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->create_menu: #{e}"
 end
 ```
 
@@ -295,7 +295,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -309,7 +309,7 @@ begin
   result = api_instance.create_product(account_id, vbody)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->create_product: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->create_product: #{e}"
 end
 ```
 
@@ -355,7 +355,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -369,7 +369,7 @@ begin
   result = api_instance.delete_bio_list(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->delete_bio_list: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->delete_bio_list: #{e}"
 end
 ```
 
@@ -415,7 +415,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -429,7 +429,7 @@ begin
   result = api_instance.delete_event_list(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->delete_event_list: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->delete_event_list: #{e}"
 end
 ```
 
@@ -475,7 +475,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -491,7 +491,7 @@ begin
   result = api_instance.delete_language_profile(account_id, location_id, language_code, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->delete_language_profile: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->delete_language_profile: #{e}"
 end
 ```
 
@@ -538,7 +538,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -552,7 +552,7 @@ begin
   result = api_instance.delete_menu_list(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->delete_menu_list: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->delete_menu_list: #{e}"
 end
 ```
 
@@ -598,7 +598,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -612,7 +612,7 @@ begin
   result = api_instance.delete_product_list(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->delete_product_list: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->delete_product_list: #{e}"
 end
 ```
 
@@ -658,7 +658,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -672,7 +672,7 @@ begin
   result = api_instance.get_bio(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_bio: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_bio: #{e}"
 end
 ```
 
@@ -718,7 +718,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -734,7 +734,7 @@ begin
   result = api_instance.get_bios(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_bios: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_bios: #{e}"
 end
 ```
 
@@ -781,7 +781,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 v = "20161012" # String | A date in `YYYYMMDD` format.
 
@@ -795,7 +795,7 @@ begin
   result = api_instance.get_business_categories(v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_business_categories: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_business_categories: #{e}"
 end
 ```
 
@@ -841,7 +841,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 v = "20161012" # String | A date in `YYYYMMDD` format.
 
@@ -857,7 +857,7 @@ begin
   result = api_instance.get_custom_fields(vaccount_id, , opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_custom_fields: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_custom_fields: #{e}"
 end
 ```
 
@@ -904,7 +904,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -918,7 +918,7 @@ begin
   result = api_instance.get_event(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_event: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_event: #{e}"
 end
 ```
 
@@ -964,7 +964,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -980,7 +980,7 @@ begin
   result = api_instance.get_events(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_events: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_events: #{e}"
 end
 ```
 
@@ -1013,7 +1013,7 @@ Name | Type | Description  | Notes
 
 Google Fields: List
 
-Use the Google Attributes API to retrieve a complete list of Google's location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locations via the googleKeywords field in the Locations API.
+Use the Google Fields endpoint to retrieve a complete list of Google's location attributes for each business category. This list includes attributes that may not apply to all Locations in an account. The set of attributes available to a Location depends on its primary business category. You can view and edit the attributes of Locations in the googleAttributes Location field.
 
 ### Example
 ```ruby
@@ -1027,7 +1027,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 v = "20161012" # String | A date in `YYYYMMDD` format.
 
@@ -1037,7 +1037,7 @@ begin
   result = api_instance.get_google_keywords(v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_google_keywords: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_google_keywords: #{e}"
 end
 ```
 
@@ -1081,7 +1081,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1097,7 +1097,7 @@ begin
   result = api_instance.get_language_profile(account_id, location_id, language_code, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_language_profile: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_language_profile: #{e}"
 end
 ```
 
@@ -1144,7 +1144,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1158,7 +1158,7 @@ begin
   result = api_instance.get_language_profiles(account_id, location_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_language_profiles: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_language_profiles: #{e}"
 end
 ```
 
@@ -1204,7 +1204,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1218,7 +1218,7 @@ begin
   result = api_instance.get_location(account_id, location_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_location: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_location: #{e}"
 end
 ```
 
@@ -1264,7 +1264,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1280,7 +1280,7 @@ begin
   result = api_instance.get_location_folders(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_location_folders: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_location_folders: #{e}"
 end
 ```
 
@@ -1327,7 +1327,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1343,7 +1343,7 @@ begin
   result = api_instance.get_locations(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_locations: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_locations: #{e}"
 end
 ```
 
@@ -1390,7 +1390,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1404,7 +1404,7 @@ begin
   result = api_instance.get_menu(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_menu: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_menu: #{e}"
 end
 ```
 
@@ -1450,7 +1450,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1466,7 +1466,7 @@ begin
   result = api_instance.get_menus(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_menus: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_menus: #{e}"
 end
 ```
 
@@ -1513,7 +1513,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1527,7 +1527,7 @@ begin
   result = api_instance.get_product(account_id, list_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_product: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_product: #{e}"
 end
 ```
 
@@ -1573,7 +1573,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1589,7 +1589,7 @@ begin
   result = api_instance.get_products(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->get_products: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->get_products: #{e}"
 end
 ```
 
@@ -1636,7 +1636,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1652,7 +1652,7 @@ begin
   result = api_instance.update_bio(account_id, list_id, vbody)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->update_bio: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->update_bio: #{e}"
 end
 ```
 
@@ -1699,7 +1699,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1715,7 +1715,7 @@ begin
   result = api_instance.update_event(account_id, list_id, vbody)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->update_event: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->update_event: #{e}"
 end
 ```
 
@@ -1762,7 +1762,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1778,7 +1778,7 @@ begin
   result = api_instance.update_location(account_id, location_id, vlocation_request)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->update_location: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->update_location: #{e}"
 end
 ```
 
@@ -1825,7 +1825,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1841,7 +1841,7 @@ begin
   result = api_instance.update_menu(account_id, list_id, vbody)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->update_menu: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->update_menu: #{e}"
 end
 ```
 
@@ -1888,7 +1888,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1904,7 +1904,7 @@ begin
   result = api_instance.update_product(account_id, list_id, vbody)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->update_product: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->update_product: #{e}"
 end
 ```
 
@@ -1951,7 +1951,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::LocationManagerApi.new
+api_instance = YextClient::KnowledgeManagerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -1972,7 +1972,7 @@ begin
   result = api_instance.upsert_language_profile(account_id, location_id, language_code, vbody, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling LocationManagerApi->upsert_language_profile: #{e}"
+  puts "Exception when calling KnowledgeManagerApi->upsert_language_profile: #{e}"
 end
 ```
 

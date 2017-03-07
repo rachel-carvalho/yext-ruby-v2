@@ -47,6 +47,7 @@ describe 'AnalyticsApi' do
   # Activity Log
   # Fetches account activity information.
   # @param account_id 
+  # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @option opts [ActivityLogRequest] :body 
   # @return [ActivitiesResponse]
@@ -60,6 +61,7 @@ describe 'AnalyticsApi' do
   # Create Reports
   # Begins the process of producing a report.
   # @param account_id 
+  # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @option opts [BOOLEAN] :async Defaults to false.  When true, the report’s ID will be returned immediately and the report results can be fetched later.  When false, the report results will be returned immediately, but an error may occur if the data requested is too large
   # @option opts [String] :callback Optional.  When async&#x3D;true and callback is specified, the provided URL will be called when the report is ready.  The URL must of of the form:       POST https://[your domain]/[your path]  It must accept the following parameters:      id:     (int)     - The ID of the report that is ready      status: (string)  - one of [DONE, FAILED]      url:    (string)  - When status&#x3D;DONE, contains the URL to download the report data as a text file. 
@@ -75,6 +77,7 @@ describe 'AnalyticsApi' do
   # Max Dates
   # The dates through which reporting data is available.
   # @param account_id 
+  # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @return [MaximumDatesResponse]
   describe 'get_max_dates test' do
@@ -87,6 +90,7 @@ describe 'AnalyticsApi' do
   # Report Status
   # Checks the status of a Report created with async&#x3D;true.
   # @param account_id 
+  # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param report_id 
   # @param [Hash] opts the optional parameters
   # @return [ReportStatusResponse]

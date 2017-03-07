@@ -8,8 +8,10 @@ Method | HTTP request | Description
 [**create_review**](ReviewsApi.md#create_review) | **POST** /accounts/{accountId}/reviews | Reviews: Create
 [**create_review_invites**](ReviewsApi.md#create_review_invites) | **POST** /accounts/{accountId}/reviewinvites | Review Invitations: Create
 [**get_review**](ReviewsApi.md#get_review) | **GET** /accounts/{accountId}/reviews/{reviewId} | Reviews: Get
+[**get_review_generation_settings**](ReviewsApi.md#get_review_generation_settings) | **GET** /accounts/{accountId}/reviews/settings/generation | Review Generation Settings: Get
 [**list_reviews**](ReviewsApi.md#list_reviews) | **GET** /accounts/{accountId}/reviews | Reviews: List
 [**update_review**](ReviewsApi.md#update_review) | **PUT** /accounts/{accountId}/reviews/{reviewId} | Reviews: Update
+[**update_review_generation_settings**](ReviewsApi.md#update_review_generation_settings) | **POST** /accounts/{accountId}/reviews/settings/generation | Review Generation Settings: Update
 
 
 # **create_comment**
@@ -41,8 +43,8 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
   content: "content_example", # String | Content of the new comment.
-  visibility: "PRIVATE", # String | 
-  parent_id: 56 # Integer | If this Comment is in response to another comment, use this field to specify the ID of the parent Comment.
+  visibility: "PUBLIC", # String | 
+  parent_id: 56 # Integer | If this Comment is in response to another Comment, use this field to specify the ID of the parent Comment.
 }
 
 begin
@@ -62,8 +64,8 @@ Name | Type | Description  | Notes
  **review_id** | **Integer**| ID of this Review. | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **content** | **String**| Content of the new comment. | [optional] 
- **visibility** | **String**|  | [optional] [default to PRIVATE]
- **parent_id** | **Integer**| If this Comment is in response to another comment, use this field to specify the ID of the parent Comment. | [optional] 
+ **visibility** | **String**|  | [optional] [default to PUBLIC]
+ **parent_id** | **Integer**| If this Comment is in response to another Comment, use this field to specify the ID of the parent Comment. | [optional] 
 
 ### Return type
 
@@ -157,7 +159,7 @@ Name | Type | Description  | Notes
 
 
 # **create_review_invites**
-> Array&lt;CreateReviewInvitationResponse&gt; create_review_invites(account_id, reviews)
+> Array&lt;CreateReviewInvitationResponse&gt; create_review_invites(account_id, vreviews)
 
 Review Invitations: Create
 
@@ -179,12 +181,14 @@ api_instance = YextClient::ReviewsApi.new
 
 account_id = "account_id_example" # String | 
 
+v = "20161012" # String | A date in `YYYYMMDD` format.
+
 reviews = [YextClient::ReviewInvitation.new] # Array<ReviewInvitation> | 
 
 
 begin
   #Review Invitations: Create
-  result = api_instance.create_review_invites(account_id, reviews)
+  result = api_instance.create_review_invites(account_id, vreviews)
   p result
 rescue YextClient::ApiError => e
   puts "Exception when calling ReviewsApi->create_review_invites: #{e}"
@@ -196,6 +200,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **reviews** | [**Array&lt;ReviewInvitation&gt;**](ReviewInvitation.md)|  | 
 
 ### Return type
@@ -273,6 +278,63 @@ Name | Type | Description  | Notes
 
 
 
+# **get_review_generation_settings**
+> GetReviewGenerationSettingsResponse get_review_generation_settings(account_id, v)
+
+Review Generation Settings: Get
+
+Returns all current generation settings for a specified account.
+
+### Example
+```ruby
+# load the gem
+require 'yext-client'
+# setup authorization
+YextClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['api_key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['api_key'] = 'Bearer'
+end
+
+api_instance = YextClient::ReviewsApi.new
+
+account_id = "account_id_example" # String | 
+
+v = "20161012" # String | A date in `YYYYMMDD` format.
+
+
+begin
+  #Review Generation Settings: Get
+  result = api_instance.get_review_generation_settings(account_id, v)
+  p result
+rescue YextClient::ApiError => e
+  puts "Exception when calling ReviewsApi->get_review_generation_settings: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
+
+### Return type
+
+[**GetReviewGenerationSettingsResponse**](GetReviewGenerationSettingsResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
 # **list_reviews**
 > ReviewsResponse list_reviews(account_id, v, opts)
 
@@ -309,10 +371,10 @@ opts = {
   review_content: "review_content_example", # String | When specified, only reviews that include the provided content will be returned.
   min_rating: 1.2, # Float | When specified, only reviews with the provided minimum rating or higher will be returned.
   max_rating: 1.2, # Float | 
-  min_publisher_date: Date.parse("2013-10-20"), # Date | When specified, only reviews with a publisher date on or after the given date will be returned.
-  max_publisher_date: Date.parse("2013-10-20"), # Date | When specified, only reviews with a publisher date on or before the given date will be returned.
-  min_last_yext_update_date: Date.parse("2013-10-20"), # Date | When specified, only reviews with a last Yext update date on or after the given date will be returned.
-  max_last_yext_update_date: Date.parse("2013-10-20"), # Date | When specified, only reviews with a last Yext update date on or before the given date will be returned.
+  min_publisher_date: Date.parse("2013-10-20"), # Date | (`YYYY-MM-DD` format) When specified, only reviews with a publisher date on or after the given date will be returned.
+  max_publisher_date: Date.parse("2013-10-20"), # Date | (`YYYY-MM-DD` format) When specified, only reviews with a publisher date on or before the given date will be returned.
+  min_last_yext_update_date: Date.parse("2013-10-20"), # Date | (`YYYY-MM-DD` format) When specified, only reviews with a last Yext update date on or after the given date will be returned.
+  max_last_yext_update_date: Date.parse("2013-10-20"), # Date | (`YYYY-MM-DD` format) When specified, only reviews with a last Yext update date on or before the given date will be returned.
   awaiting_response: "awaiting_response_example", # String | When specified, only reviews that are awaiting an owner reply on the given objects will be returned.  For example, when `awaitingResponse=COMMENT`, reviews will only be returned if they have at least one comment that has not been responded to by the owner. 
   min_non_owner_comments: 56, # Integer | When specified, only reviews that have at least the provided number of non-owner comments will be returned.
   reviewer_name: "reviewer_name_example", # String | When specified, only reviews whose authorName contains the provided string will be returned.
@@ -344,10 +406,10 @@ Name | Type | Description  | Notes
  **review_content** | **String**| When specified, only reviews that include the provided content will be returned. | [optional] 
  **min_rating** | **Float**| When specified, only reviews with the provided minimum rating or higher will be returned. | [optional] 
  **max_rating** | **Float**|  | [optional] 
- **min_publisher_date** | **Date**| When specified, only reviews with a publisher date on or after the given date will be returned. | [optional] 
- **max_publisher_date** | **Date**| When specified, only reviews with a publisher date on or before the given date will be returned. | [optional] 
- **min_last_yext_update_date** | **Date**| When specified, only reviews with a last Yext update date on or after the given date will be returned. | [optional] 
- **max_last_yext_update_date** | **Date**| When specified, only reviews with a last Yext update date on or before the given date will be returned. | [optional] 
+ **min_publisher_date** | **Date**| (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or after the given date will be returned. | [optional] 
+ **max_publisher_date** | **Date**| (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or before the given date will be returned. | [optional] 
+ **min_last_yext_update_date** | **Date**| (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a last Yext update date on or after the given date will be returned. | [optional] 
+ **max_last_yext_update_date** | **Date**| (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a last Yext update date on or before the given date will be returned. | [optional] 
  **awaiting_response** | **String**| When specified, only reviews that are awaiting an owner reply on the given objects will be returned.  For example, when &#x60;awaitingResponse&#x3D;COMMENT&#x60;, reviews will only be returned if they have at least one comment that has not been responded to by the owner.  | [optional] 
  **min_non_owner_comments** | **Integer**| When specified, only reviews that have at least the provided number of non-owner comments will be returned. | [optional] 
  **reviewer_name** | **String**| When specified, only reviews whose authorName contains the provided string will be returned. | [optional] 
@@ -428,6 +490,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**IdResponse**](IdResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **update_review_generation_settings**
+> GetReviewGenerationSettingsResponse update_review_generation_settings(account_id, vreview_generation_settings_request)
+
+Review Generation Settings: Update
+
+Updates any generation settings specified in a specified account. Call may include any/all settings available to the account. Settings not included will remain unchanged. 
+
+### Example
+```ruby
+# load the gem
+require 'yext-client'
+# setup authorization
+YextClient.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['api_key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['api_key'] = 'Bearer'
+end
+
+api_instance = YextClient::ReviewsApi.new
+
+account_id = "account_id_example" # String | 
+
+v = "20161012" # String | A date in `YYYYMMDD` format.
+
+review_generation_settings_request = YextClient::ReviewGenerationSettings.new # ReviewGenerationSettings | 
+
+
+begin
+  #Review Generation Settings: Update
+  result = api_instance.update_review_generation_settings(account_id, vreview_generation_settings_request)
+  p result
+rescue YextClient::ApiError => e
+  puts "Exception when calling ReviewsApi->update_review_generation_settings: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
+ **review_generation_settings_request** | [**ReviewGenerationSettings**](ReviewGenerationSettings.md)|  | 
+
+### Return type
+
+[**GetReviewGenerationSettingsResponse**](GetReviewGenerationSettingsResponse.md)
 
 ### Authorization
 

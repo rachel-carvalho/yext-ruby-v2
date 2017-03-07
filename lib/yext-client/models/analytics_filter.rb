@@ -26,31 +26,14 @@ require 'date'
 module YextClient
 
   class AnalyticsFilter
-    # The inclusive start date for the report data.  Defaults to 90 days before the end date. E.g. ‘2016-08-22’ NOTE: If `WEEKS`, `MONTHS`, or `MONTHS_RETAIL` is in dimensions, startDate must coincide with the beginning and end of a week or month, depending on the dimension chosen.
+    # The inclusive start date for the report data.  Defaults to 90 days before the end date. Must be before the date given in `endDate`. E.g. ‘2016-08-22’ NOTE: If `WEEKS`, `MONTHS`, or `MONTHS_RETAIL` is in dimensions, startDate must coincide with the beginning and end of a week or month, depending on the dimension chosen.
     attr_accessor :start_date
-
-    # Array of locationIds
-    attr_accessor :location_ids
-
-    # The inclusive end date for the report data.  Defaults to the lowest common denominator of the relevant maximum reporting dates. E.g. ‘2016-08-30’ NOTE: If `WEEKS`, `MONTHS`, or `MONTHS_RETAIL` is in dimensions, endDate must coincide with the beginning and end of a week or month, depending on the dimension chosen.
-    attr_accessor :end_date
-
-    attr_accessor :search_type
-
-    # Array of 3166 Alpha-2 country codes.
-    attr_accessor :countries
-
-    attr_accessor :min_search_frequency
-
-    attr_accessor :foursquare_checkin_gender
-
-    attr_accessor :foursquare_checkin_age
-
-    # Specifies the hour(s) of day that should be included in the report. Can only, and must be used with the `GOOGLE_PHONE_CALLS` metric.
-    attr_accessor :hours
 
     # Array of location labels
     attr_accessor :location_labels
+
+    # The exclusive end date for the report data.  Defaults to the lowest common denominator of the relevant maximum reporting dates. Must be after the date given in `startDate`. E.g. ‘2016-08-30’ NOTE: If `WEEKS`, `MONTHS`, or `MONTHS_RETAIL` is in dimensions, endDate must coincide with the beginning and end of a week or month, depending on the dimension chosen.
+    attr_accessor :end_date
 
     attr_accessor :instagram_content_type
 
@@ -63,16 +46,42 @@ module YextClient
     # Array of platform IDs.
     attr_accessor :platforms
 
-    attr_accessor :max_search_frequency
+    attr_accessor :search_term
+
+    # Specifies the partners that should be included in the report. Can only be used with Reviews metrics.
+    attr_accessor :partners
+
+    attr_accessor :search_type
+
+    attr_accessor :foursquare_checkin_age
+
+    # Specifies the words that should be included in the report. Can only be used with Reviews metrics.
+    attr_accessor :frequent_words
+
+    attr_accessor :foursquare_checkin_time_of_day
+
+    # Specifies the ratings to be included in the report. Can only be used with Reviews metrics.
+    attr_accessor :ratings
+
+    attr_accessor :foursquare_checkin_gender
 
     attr_accessor :foursquare_checkin_type
 
-    attr_accessor :search_term
+    # Specifies the hour(s) of day that should be included in the report. Can only, and must be used with the `GOOGLE_PHONE_CALLS` metric.
+    attr_accessor :hours
+
+    attr_accessor :max_search_frequency
 
     # Specifies the folder whose locations and subfolders should be included in the results. Default is 0 (root folder). Cannot be used when `ACCOUNT_ID` is in dimensions.
     attr_accessor :folder_id
 
-    attr_accessor :foursquare_checkin_time_of_day
+    # Array of locationIds
+    attr_accessor :location_ids
+
+    # Array of 3166 Alpha-2 country codes.
+    attr_accessor :countries
+
+    attr_accessor :min_search_frequency
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -100,24 +109,27 @@ module YextClient
     def self.attribute_map
       {
         :'start_date' => :'startDate',
-        :'location_ids' => :'locationIds',
-        :'end_date' => :'endDate',
-        :'search_type' => :'searchType',
-        :'countries' => :'countries',
-        :'min_search_frequency' => :'minSearchFrequency',
-        :'foursquare_checkin_gender' => :'foursquareCheckinGender',
-        :'foursquare_checkin_age' => :'foursquareCheckinAge',
-        :'hours' => :'hours',
         :'location_labels' => :'locationLabels',
+        :'end_date' => :'endDate',
         :'instagram_content_type' => :'instagramContentType',
         :'google_action_type' => :'googleActionType',
         :'google_query_type' => :'googleQueryType',
         :'platforms' => :'platforms',
-        :'max_search_frequency' => :'maxSearchFrequency',
-        :'foursquare_checkin_type' => :'foursquareCheckinType',
         :'search_term' => :'searchTerm',
+        :'partners' => :'partners',
+        :'search_type' => :'searchType',
+        :'foursquare_checkin_age' => :'foursquareCheckinAge',
+        :'frequent_words' => :'frequentWords',
+        :'foursquare_checkin_time_of_day' => :'foursquareCheckinTimeOfDay',
+        :'ratings' => :'ratings',
+        :'foursquare_checkin_gender' => :'foursquareCheckinGender',
+        :'foursquare_checkin_type' => :'foursquareCheckinType',
+        :'hours' => :'hours',
+        :'max_search_frequency' => :'maxSearchFrequency',
         :'folder_id' => :'folderId',
-        :'foursquare_checkin_time_of_day' => :'foursquareCheckinTimeOfDay'
+        :'location_ids' => :'locationIds',
+        :'countries' => :'countries',
+        :'min_search_frequency' => :'minSearchFrequency'
       }
     end
 
@@ -125,24 +137,27 @@ module YextClient
     def self.swagger_types
       {
         :'start_date' => :'Date',
-        :'location_ids' => :'Array<String>',
-        :'end_date' => :'Date',
-        :'search_type' => :'String',
-        :'countries' => :'Array<String>',
-        :'min_search_frequency' => :'Float',
-        :'foursquare_checkin_gender' => :'String',
-        :'foursquare_checkin_age' => :'String',
-        :'hours' => :'Array<Float>',
         :'location_labels' => :'Array<String>',
+        :'end_date' => :'Date',
         :'instagram_content_type' => :'String',
         :'google_action_type' => :'Array<String>',
         :'google_query_type' => :'Array<String>',
         :'platforms' => :'Array<String>',
-        :'max_search_frequency' => :'Float',
-        :'foursquare_checkin_type' => :'String',
         :'search_term' => :'String',
+        :'partners' => :'Array<Float>',
+        :'search_type' => :'String',
+        :'foursquare_checkin_age' => :'String',
+        :'frequent_words' => :'Array<String>',
+        :'foursquare_checkin_time_of_day' => :'String',
+        :'ratings' => :'Array<Integer>',
+        :'foursquare_checkin_gender' => :'String',
+        :'foursquare_checkin_type' => :'String',
+        :'hours' => :'Array<Float>',
+        :'max_search_frequency' => :'Float',
         :'folder_id' => :'Integer',
-        :'foursquare_checkin_time_of_day' => :'String'
+        :'location_ids' => :'Array<String>',
+        :'countries' => :'Array<String>',
+        :'min_search_frequency' => :'Float'
       }
     end
 
@@ -158,48 +173,14 @@ module YextClient
         self.start_date = attributes[:'startDate']
       end
 
-      if attributes.has_key?(:'locationIds')
-        if (value = attributes[:'locationIds']).is_a?(Array)
-          self.location_ids = value
+      if attributes.has_key?(:'locationLabels')
+        if (value = attributes[:'locationLabels']).is_a?(Array)
+          self.location_labels = value
         end
       end
 
       if attributes.has_key?(:'endDate')
         self.end_date = attributes[:'endDate']
-      end
-
-      if attributes.has_key?(:'searchType')
-        self.search_type = attributes[:'searchType']
-      end
-
-      if attributes.has_key?(:'countries')
-        if (value = attributes[:'countries']).is_a?(Array)
-          self.countries = value
-        end
-      end
-
-      if attributes.has_key?(:'minSearchFrequency')
-        self.min_search_frequency = attributes[:'minSearchFrequency']
-      end
-
-      if attributes.has_key?(:'foursquareCheckinGender')
-        self.foursquare_checkin_gender = attributes[:'foursquareCheckinGender']
-      end
-
-      if attributes.has_key?(:'foursquareCheckinAge')
-        self.foursquare_checkin_age = attributes[:'foursquareCheckinAge']
-      end
-
-      if attributes.has_key?(:'hours')
-        if (value = attributes[:'hours']).is_a?(Array)
-          self.hours = value
-        end
-      end
-
-      if attributes.has_key?(:'locationLabels')
-        if (value = attributes[:'locationLabels']).is_a?(Array)
-          self.location_labels = value
-        end
       end
 
       if attributes.has_key?(:'instagramContentType')
@@ -224,24 +205,76 @@ module YextClient
         end
       end
 
-      if attributes.has_key?(:'maxSearchFrequency')
-        self.max_search_frequency = attributes[:'maxSearchFrequency']
+      if attributes.has_key?(:'searchTerm')
+        self.search_term = attributes[:'searchTerm']
+      end
+
+      if attributes.has_key?(:'partners')
+        if (value = attributes[:'partners']).is_a?(Array)
+          self.partners = value
+        end
+      end
+
+      if attributes.has_key?(:'searchType')
+        self.search_type = attributes[:'searchType']
+      end
+
+      if attributes.has_key?(:'foursquareCheckinAge')
+        self.foursquare_checkin_age = attributes[:'foursquareCheckinAge']
+      end
+
+      if attributes.has_key?(:'frequentWords')
+        if (value = attributes[:'frequentWords']).is_a?(Array)
+          self.frequent_words = value
+        end
+      end
+
+      if attributes.has_key?(:'foursquareCheckinTimeOfDay')
+        self.foursquare_checkin_time_of_day = attributes[:'foursquareCheckinTimeOfDay']
+      end
+
+      if attributes.has_key?(:'ratings')
+        if (value = attributes[:'ratings']).is_a?(Array)
+          self.ratings = value
+        end
+      end
+
+      if attributes.has_key?(:'foursquareCheckinGender')
+        self.foursquare_checkin_gender = attributes[:'foursquareCheckinGender']
       end
 
       if attributes.has_key?(:'foursquareCheckinType')
         self.foursquare_checkin_type = attributes[:'foursquareCheckinType']
       end
 
-      if attributes.has_key?(:'searchTerm')
-        self.search_term = attributes[:'searchTerm']
+      if attributes.has_key?(:'hours')
+        if (value = attributes[:'hours']).is_a?(Array)
+          self.hours = value
+        end
+      end
+
+      if attributes.has_key?(:'maxSearchFrequency')
+        self.max_search_frequency = attributes[:'maxSearchFrequency']
       end
 
       if attributes.has_key?(:'folderId')
         self.folder_id = attributes[:'folderId']
       end
 
-      if attributes.has_key?(:'foursquareCheckinTimeOfDay')
-        self.foursquare_checkin_time_of_day = attributes[:'foursquareCheckinTimeOfDay']
+      if attributes.has_key?(:'locationIds')
+        if (value = attributes[:'locationIds']).is_a?(Array)
+          self.location_ids = value
+        end
+      end
+
+      if attributes.has_key?(:'countries')
+        if (value = attributes[:'countries']).is_a?(Array)
+          self.countries = value
+        end
+      end
+
+      if attributes.has_key?(:'minSearchFrequency')
+        self.min_search_frequency = attributes[:'minSearchFrequency']
       end
 
     end
@@ -265,24 +298,27 @@ module YextClient
       return true if self.equal?(o)
       self.class == o.class &&
           start_date == o.start_date &&
-          location_ids == o.location_ids &&
-          end_date == o.end_date &&
-          search_type == o.search_type &&
-          countries == o.countries &&
-          min_search_frequency == o.min_search_frequency &&
-          foursquare_checkin_gender == o.foursquare_checkin_gender &&
-          foursquare_checkin_age == o.foursquare_checkin_age &&
-          hours == o.hours &&
           location_labels == o.location_labels &&
+          end_date == o.end_date &&
           instagram_content_type == o.instagram_content_type &&
           google_action_type == o.google_action_type &&
           google_query_type == o.google_query_type &&
           platforms == o.platforms &&
-          max_search_frequency == o.max_search_frequency &&
-          foursquare_checkin_type == o.foursquare_checkin_type &&
           search_term == o.search_term &&
+          partners == o.partners &&
+          search_type == o.search_type &&
+          foursquare_checkin_age == o.foursquare_checkin_age &&
+          frequent_words == o.frequent_words &&
+          foursquare_checkin_time_of_day == o.foursquare_checkin_time_of_day &&
+          ratings == o.ratings &&
+          foursquare_checkin_gender == o.foursquare_checkin_gender &&
+          foursquare_checkin_type == o.foursquare_checkin_type &&
+          hours == o.hours &&
+          max_search_frequency == o.max_search_frequency &&
           folder_id == o.folder_id &&
-          foursquare_checkin_time_of_day == o.foursquare_checkin_time_of_day
+          location_ids == o.location_ids &&
+          countries == o.countries &&
+          min_search_frequency == o.min_search_frequency
     end
 
     # @see the `==` method
@@ -294,7 +330,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [start_date, location_ids, end_date, search_type, countries, min_search_frequency, foursquare_checkin_gender, foursquare_checkin_age, hours, location_labels, instagram_content_type, google_action_type, google_query_type, platforms, max_search_frequency, foursquare_checkin_type, search_term, folder_id, foursquare_checkin_time_of_day].hash
+      [start_date, location_labels, end_date, instagram_content_type, google_action_type, google_query_type, platforms, search_term, partners, search_type, foursquare_checkin_age, frequent_words, foursquare_checkin_time_of_day, ratings, foursquare_checkin_gender, foursquare_checkin_type, hours, max_search_frequency, folder_id, location_ids, countries, min_search_frequency].hash
     end
 
     # Builds the object from hash

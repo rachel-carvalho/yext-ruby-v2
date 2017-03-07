@@ -24,7 +24,7 @@ limitations under the License.
 require "uri"
 
 module YextClient
-  class SocialJanuaryApi
+  class SocialSpringSummerApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
@@ -35,14 +35,15 @@ module YextClient
     # Create a new Comment in response to another Post / Comment.
     # @param account_id 
     # @param post_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param parent_id The ID of the Comment this Comment is replying to.  **Example** 123 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :message The message included in the Comment, if any.  **Example** “Hello, World!” 
     # @option opts [String] :photo_url The URL of the photo included in the Comment, if any.  **Example** “https://…” 
     # @option opts [String] :link_url The URL of the link included in the Comment, if any.  **Example** “https://…” 
     # @return [IdResponse]
-    def create_comment(account_id, post_id, parent_id, opts = {})
-      data, _status_code, _headers = create_comment_with_http_info(account_id, post_id, parent_id, opts)
+    def create_comment(account_id, post_id, v, parent_id, opts = {})
+      data, _status_code, _headers = create_comment_with_http_info(account_id, post_id, v, parent_id, opts)
       return data
     end
 
@@ -50,27 +51,31 @@ module YextClient
     # Create a new Comment in response to another Post / Comment.
     # @param account_id 
     # @param post_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param parent_id The ID of the Comment this Comment is replying to.  **Example** 123 
     # @param [Hash] opts the optional parameters
     # @option opts [String] :message The message included in the Comment, if any.  **Example** “Hello, World!” 
     # @option opts [String] :photo_url The URL of the photo included in the Comment, if any.  **Example** “https://…” 
     # @option opts [String] :link_url The URL of the link included in the Comment, if any.  **Example** “https://…” 
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
-    def create_comment_with_http_info(account_id, post_id, parent_id, opts = {})
+    def create_comment_with_http_info(account_id, post_id, v, parent_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: SocialJanuaryApi.create_comment ..."
+        @api_client.config.logger.debug "Calling API: SocialSpringSummerApi.create_comment ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialJanuaryApi.create_comment" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialSpringSummerApi.create_comment" if account_id.nil?
       # verify the required parameter 'post_id' is set
-      fail ArgumentError, "Missing the required parameter 'post_id' when calling SocialJanuaryApi.create_comment" if post_id.nil?
+      fail ArgumentError, "Missing the required parameter 'post_id' when calling SocialSpringSummerApi.create_comment" if post_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling SocialSpringSummerApi.create_comment" if v.nil?
       # verify the required parameter 'parent_id' is set
-      fail ArgumentError, "Missing the required parameter 'parent_id' when calling SocialJanuaryApi.create_comment" if parent_id.nil?
+      fail ArgumentError, "Missing the required parameter 'parent_id' when calling SocialSpringSummerApi.create_comment" if parent_id.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/posts/{postId}/comments".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'postId' + '}', post_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
       query_params[:'parentId'] = parent_id
       query_params[:'message'] = opts[:'message'] if !opts[:'message'].nil?
       query_params[:'photoUrl'] = opts[:'photo_url'] if !opts[:'photo_url'].nil?
@@ -101,7 +106,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'IdResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SocialJanuaryApi#create_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SocialSpringSummerApi#create_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -109,6 +114,7 @@ module YextClient
     # Posts: Create
     # Create a new Post.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param location_ids List of Location IDs for this Post
     # @param publisher_ids List of Publisher IDs for this Post
     # @param message The message included in the Post, if any.  **Example** \&quot;Hello, World!\&quot; 
@@ -116,14 +122,15 @@ module YextClient
     # @option opts [String] :photo_url The URL of the photo included in the Post, if any.  **Example** \&quot;https://...\&quot; 
     # @option opts [String] :link_url The URL of the link included in the Post, if any.  **Example** \&quot;https://...\&quot; 
     # @return [IdResponse]
-    def create_posts(account_id, location_ids, publisher_ids, message, opts = {})
-      data, _status_code, _headers = create_posts_with_http_info(account_id, location_ids, publisher_ids, message, opts)
+    def create_posts(account_id, v, location_ids, publisher_ids, message, opts = {})
+      data, _status_code, _headers = create_posts_with_http_info(account_id, v, location_ids, publisher_ids, message, opts)
       return data
     end
 
     # Posts: Create
     # Create a new Post.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param location_ids List of Location IDs for this Post
     # @param publisher_ids List of Publisher IDs for this Post
     # @param message The message included in the Post, if any.  **Example** \&quot;Hello, World!\&quot; 
@@ -131,23 +138,26 @@ module YextClient
     # @option opts [String] :photo_url The URL of the photo included in the Post, if any.  **Example** \&quot;https://...\&quot; 
     # @option opts [String] :link_url The URL of the link included in the Post, if any.  **Example** \&quot;https://...\&quot; 
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
-    def create_posts_with_http_info(account_id, location_ids, publisher_ids, message, opts = {})
+    def create_posts_with_http_info(account_id, v, location_ids, publisher_ids, message, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: SocialJanuaryApi.create_posts ..."
+        @api_client.config.logger.debug "Calling API: SocialSpringSummerApi.create_posts ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialJanuaryApi.create_posts" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialSpringSummerApi.create_posts" if account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling SocialSpringSummerApi.create_posts" if v.nil?
       # verify the required parameter 'location_ids' is set
-      fail ArgumentError, "Missing the required parameter 'location_ids' when calling SocialJanuaryApi.create_posts" if location_ids.nil?
+      fail ArgumentError, "Missing the required parameter 'location_ids' when calling SocialSpringSummerApi.create_posts" if location_ids.nil?
       # verify the required parameter 'publisher_ids' is set
-      fail ArgumentError, "Missing the required parameter 'publisher_ids' when calling SocialJanuaryApi.create_posts" if publisher_ids.nil?
+      fail ArgumentError, "Missing the required parameter 'publisher_ids' when calling SocialSpringSummerApi.create_posts" if publisher_ids.nil?
       # verify the required parameter 'message' is set
-      fail ArgumentError, "Missing the required parameter 'message' when calling SocialJanuaryApi.create_posts" if message.nil?
+      fail ArgumentError, "Missing the required parameter 'message' when calling SocialSpringSummerApi.create_posts" if message.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/posts".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
       query_params[:'locationIds'] = @api_client.build_collection_param(location_ids, :csv)
       query_params[:'publisherIds'] = @api_client.build_collection_param(publisher_ids, :csv)
       query_params[:'message'] = message
@@ -179,7 +189,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'IdResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SocialJanuaryApi#create_posts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SocialSpringSummerApi#create_posts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -189,10 +199,11 @@ module YextClient
     # @param account_id 
     # @param post_id 
     # @param comment_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @return [ErrorResponse]
-    def delete_comment(account_id, post_id, comment_id, opts = {})
-      data, _status_code, _headers = delete_comment_with_http_info(account_id, post_id, comment_id, opts)
+    def delete_comment(account_id, post_id, comment_id, v, opts = {})
+      data, _status_code, _headers = delete_comment_with_http_info(account_id, post_id, comment_id, v, opts)
       return data
     end
 
@@ -201,23 +212,27 @@ module YextClient
     # @param account_id 
     # @param post_id 
     # @param comment_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
-    def delete_comment_with_http_info(account_id, post_id, comment_id, opts = {})
+    def delete_comment_with_http_info(account_id, post_id, comment_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: SocialJanuaryApi.delete_comment ..."
+        @api_client.config.logger.debug "Calling API: SocialSpringSummerApi.delete_comment ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialJanuaryApi.delete_comment" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialSpringSummerApi.delete_comment" if account_id.nil?
       # verify the required parameter 'post_id' is set
-      fail ArgumentError, "Missing the required parameter 'post_id' when calling SocialJanuaryApi.delete_comment" if post_id.nil?
+      fail ArgumentError, "Missing the required parameter 'post_id' when calling SocialSpringSummerApi.delete_comment" if post_id.nil?
       # verify the required parameter 'comment_id' is set
-      fail ArgumentError, "Missing the required parameter 'comment_id' when calling SocialJanuaryApi.delete_comment" if comment_id.nil?
+      fail ArgumentError, "Missing the required parameter 'comment_id' when calling SocialSpringSummerApi.delete_comment" if comment_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling SocialSpringSummerApi.delete_comment" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/posts/{postId}/comments/{commentId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'postId' + '}', post_id.to_s).sub('{' + 'commentId' + '}', comment_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
 
       # header parameters
       header_params = {}
@@ -244,7 +259,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ErrorResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SocialJanuaryApi#delete_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SocialSpringSummerApi#delete_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -253,10 +268,11 @@ module YextClient
     # Deletes an existing Post.
     # @param account_id 
     # @param post_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @return [ErrorResponse]
-    def delete_post(account_id, post_id, opts = {})
-      data, _status_code, _headers = delete_post_with_http_info(account_id, post_id, opts)
+    def delete_post(account_id, post_id, v, opts = {})
+      data, _status_code, _headers = delete_post_with_http_info(account_id, post_id, v, opts)
       return data
     end
 
@@ -264,21 +280,25 @@ module YextClient
     # Deletes an existing Post.
     # @param account_id 
     # @param post_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
-    def delete_post_with_http_info(account_id, post_id, opts = {})
+    def delete_post_with_http_info(account_id, post_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: SocialJanuaryApi.delete_post ..."
+        @api_client.config.logger.debug "Calling API: SocialSpringSummerApi.delete_post ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialJanuaryApi.delete_post" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialSpringSummerApi.delete_post" if account_id.nil?
       # verify the required parameter 'post_id' is set
-      fail ArgumentError, "Missing the required parameter 'post_id' when calling SocialJanuaryApi.delete_post" if post_id.nil?
+      fail ArgumentError, "Missing the required parameter 'post_id' when calling SocialSpringSummerApi.delete_post" if post_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling SocialSpringSummerApi.delete_post" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/posts/{postId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'postId' + '}', post_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
 
       # header parameters
       header_params = {}
@@ -305,7 +325,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ErrorResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SocialJanuaryApi#delete_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SocialSpringSummerApi#delete_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -314,13 +334,14 @@ module YextClient
     # Retrieve list of Comments for a Post.
     # @param account_id 
     # @param post_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return, up to 100. Default 100.  **Example** 20  (default to 100)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results. (default to 0)
     # @option opts [String] :type Determines which type of Comments are returned
     # @return [SocialCommentsResponse]
-    def get_comments(account_id, post_id, opts = {})
-      data, _status_code, _headers = get_comments_with_http_info(account_id, post_id, opts)
+    def get_comments(account_id, post_id, v, opts = {})
+      data, _status_code, _headers = get_comments_with_http_info(account_id, post_id, v, opts)
       return data
     end
 
@@ -328,21 +349,24 @@ module YextClient
     # Retrieve list of Comments for a Post.
     # @param account_id 
     # @param post_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return, up to 100. Default 100.  **Example** 20 
     # @option opts [Integer] :offset Number of results to skip. Used to page through results.
     # @option opts [String] :type Determines which type of Comments are returned
     # @return [Array<(SocialCommentsResponse, Fixnum, Hash)>] SocialCommentsResponse data, response status code and response headers
-    def get_comments_with_http_info(account_id, post_id, opts = {})
+    def get_comments_with_http_info(account_id, post_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: SocialJanuaryApi.get_comments ..."
+        @api_client.config.logger.debug "Calling API: SocialSpringSummerApi.get_comments ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialJanuaryApi.get_comments" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialSpringSummerApi.get_comments" if account_id.nil?
       # verify the required parameter 'post_id' is set
-      fail ArgumentError, "Missing the required parameter 'post_id' when calling SocialJanuaryApi.get_comments" if post_id.nil?
+      fail ArgumentError, "Missing the required parameter 'post_id' when calling SocialSpringSummerApi.get_comments" if post_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling SocialSpringSummerApi.get_comments" if v.nil?
       if !opts[:'limit'].nil? && opts[:'limit'] > 100.0
-        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling SocialJanuaryApi.get_comments, must be smaller than or equal to 100.0.'
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling SocialSpringSummerApi.get_comments, must be smaller than or equal to 100.0.'
       end
 
       if opts[:'type'] && !['ALL', 'ROOT'].include?(opts[:'type'])
@@ -353,6 +377,7 @@ module YextClient
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
       query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
       query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
       query_params[:'type'] = opts[:'type'] if !opts[:'type'].nil?
@@ -382,7 +407,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'SocialCommentsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SocialJanuaryApi#get_comments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SocialSpringSummerApi#get_comments\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -391,10 +416,11 @@ module YextClient
     # Retrieve a specific Linked Account.
     # @param account_id 
     # @param linked_account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @return [LinkedAccountResponse]
-    def get_linked_account(account_id, linked_account_id, opts = {})
-      data, _status_code, _headers = get_linked_account_with_http_info(account_id, linked_account_id, opts)
+    def get_linked_account(account_id, linked_account_id, v, opts = {})
+      data, _status_code, _headers = get_linked_account_with_http_info(account_id, linked_account_id, v, opts)
       return data
     end
 
@@ -402,21 +428,25 @@ module YextClient
     # Retrieve a specific Linked Account.
     # @param account_id 
     # @param linked_account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @return [Array<(LinkedAccountResponse, Fixnum, Hash)>] LinkedAccountResponse data, response status code and response headers
-    def get_linked_account_with_http_info(account_id, linked_account_id, opts = {})
+    def get_linked_account_with_http_info(account_id, linked_account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: SocialJanuaryApi.get_linked_account ..."
+        @api_client.config.logger.debug "Calling API: SocialSpringSummerApi.get_linked_account ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialJanuaryApi.get_linked_account" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialSpringSummerApi.get_linked_account" if account_id.nil?
       # verify the required parameter 'linked_account_id' is set
-      fail ArgumentError, "Missing the required parameter 'linked_account_id' when calling SocialJanuaryApi.get_linked_account" if linked_account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'linked_account_id' when calling SocialSpringSummerApi.get_linked_account" if linked_account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling SocialSpringSummerApi.get_linked_account" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/linkedaccounts/{linkedAccountId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'linkedAccountId' + '}', linked_account_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
 
       # header parameters
       header_params = {}
@@ -443,7 +473,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'LinkedAccountResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SocialJanuaryApi#get_linked_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SocialSpringSummerApi#get_linked_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -451,6 +481,7 @@ module YextClient
     # Linked Accounts: List
     # Retrieve all Linked Accounts and their last known statuses.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return, up to 100. Default 100.  **Example** 20  (default to 100)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results. (default to 0)
@@ -458,14 +489,15 @@ module YextClient
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example** FACEBOOK, FOURSQUARE 
     # @option opts [String] :status Used to filter for Linked Accounts with a particular status. (default to ALL)
     # @return [LinkedAccountsResponse]
-    def get_linked_accounts(account_id, opts = {})
-      data, _status_code, _headers = get_linked_accounts_with_http_info(account_id, opts)
+    def get_linked_accounts(account_id, v, opts = {})
+      data, _status_code, _headers = get_linked_accounts_with_http_info(account_id, v, opts)
       return data
     end
 
     # Linked Accounts: List
     # Retrieve all Linked Accounts and their last known statuses.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return, up to 100. Default 100.  **Example** 20 
     # @option opts [Integer] :offset Number of results to skip. Used to page through results.
@@ -473,14 +505,16 @@ module YextClient
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example** FACEBOOK, FOURSQUARE 
     # @option opts [String] :status Used to filter for Linked Accounts with a particular status.
     # @return [Array<(LinkedAccountsResponse, Fixnum, Hash)>] LinkedAccountsResponse data, response status code and response headers
-    def get_linked_accounts_with_http_info(account_id, opts = {})
+    def get_linked_accounts_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: SocialJanuaryApi.get_linked_accounts ..."
+        @api_client.config.logger.debug "Calling API: SocialSpringSummerApi.get_linked_accounts ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialJanuaryApi.get_linked_accounts" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialSpringSummerApi.get_linked_accounts" if account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling SocialSpringSummerApi.get_linked_accounts" if v.nil?
       if !opts[:'limit'].nil? && opts[:'limit'] > 100.0
-        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling SocialJanuaryApi.get_linked_accounts, must be smaller than or equal to 100.0.'
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling SocialSpringSummerApi.get_linked_accounts, must be smaller than or equal to 100.0.'
       end
 
       if opts[:'status'] && !['ALL', 'OK', 'EXPIRED'].include?(opts[:'status'])
@@ -491,6 +525,7 @@ module YextClient
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
       query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
       query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
       query_params[:'locationIds'] = @api_client.build_collection_param(opts[:'location_ids'], :csv) if !opts[:'location_ids'].nil?
@@ -522,7 +557,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'LinkedAccountsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SocialJanuaryApi#get_linked_accounts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SocialSpringSummerApi#get_linked_accounts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -530,6 +565,7 @@ module YextClient
     # Posts: List
     # Retrieve list of Posts.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return, up to 100. Default 100.  **Example** 20  (default to 100)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results. (default to 0)
@@ -540,14 +576,15 @@ module YextClient
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example** FACEBOOK, FOURSQUARE 
     # @option opts [Array<String>] :keywords When provided, only Posts that mention the given keywords will be returned. Posts will be returned if the original post or any comments contain this string.  **Example** [&#39;pizza&#39;] 
     # @return [SocialPostsResponse]
-    def get_posts(account_id, opts = {})
-      data, _status_code, _headers = get_posts_with_http_info(account_id, opts)
+    def get_posts(account_id, v, opts = {})
+      data, _status_code, _headers = get_posts_with_http_info(account_id, v, opts)
       return data
     end
 
     # Posts: List
     # Retrieve list of Posts.
     # @param account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return, up to 100. Default 100.  **Example** 20 
     # @option opts [Integer] :offset Number of results to skip. Used to page through results.
@@ -558,14 +595,16 @@ module YextClient
     # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example** FACEBOOK, FOURSQUARE 
     # @option opts [Array<String>] :keywords When provided, only Posts that mention the given keywords will be returned. Posts will be returned if the original post or any comments contain this string.  **Example** [&#39;pizza&#39;] 
     # @return [Array<(SocialPostsResponse, Fixnum, Hash)>] SocialPostsResponse data, response status code and response headers
-    def get_posts_with_http_info(account_id, opts = {})
+    def get_posts_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: SocialJanuaryApi.get_posts ..."
+        @api_client.config.logger.debug "Calling API: SocialSpringSummerApi.get_posts ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialJanuaryApi.get_posts" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialSpringSummerApi.get_posts" if account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling SocialSpringSummerApi.get_posts" if v.nil?
       if !opts[:'limit'].nil? && opts[:'limit'] > 100.0
-        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling SocialJanuaryApi.get_posts, must be smaller than or equal to 100.0.'
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling SocialSpringSummerApi.get_posts, must be smaller than or equal to 100.0.'
       end
 
       # resource path
@@ -573,6 +612,7 @@ module YextClient
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
       query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
       query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
       query_params[:'locationIds'] = @api_client.build_collection_param(opts[:'location_ids'], :csv) if !opts[:'location_ids'].nil?
@@ -607,7 +647,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'SocialPostsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SocialJanuaryApi#get_posts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SocialSpringSummerApi#get_posts\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -617,11 +657,12 @@ module YextClient
     # @param account_id 
     # @param post_id 
     # @param comment_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param comment 
     # @param [Hash] opts the optional parameters
     # @return [ErrorResponse]
-    def update_comment(account_id, post_id, comment_id, comment, opts = {})
-      data, _status_code, _headers = update_comment_with_http_info(account_id, post_id, comment_id, comment, opts)
+    def update_comment(account_id, post_id, comment_id, v, comment, opts = {})
+      data, _status_code, _headers = update_comment_with_http_info(account_id, post_id, comment_id, v, comment, opts)
       return data
     end
 
@@ -630,26 +671,30 @@ module YextClient
     # @param account_id 
     # @param post_id 
     # @param comment_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param comment 
     # @param [Hash] opts the optional parameters
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
-    def update_comment_with_http_info(account_id, post_id, comment_id, comment, opts = {})
+    def update_comment_with_http_info(account_id, post_id, comment_id, v, comment, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: SocialJanuaryApi.update_comment ..."
+        @api_client.config.logger.debug "Calling API: SocialSpringSummerApi.update_comment ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialJanuaryApi.update_comment" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialSpringSummerApi.update_comment" if account_id.nil?
       # verify the required parameter 'post_id' is set
-      fail ArgumentError, "Missing the required parameter 'post_id' when calling SocialJanuaryApi.update_comment" if post_id.nil?
+      fail ArgumentError, "Missing the required parameter 'post_id' when calling SocialSpringSummerApi.update_comment" if post_id.nil?
       # verify the required parameter 'comment_id' is set
-      fail ArgumentError, "Missing the required parameter 'comment_id' when calling SocialJanuaryApi.update_comment" if comment_id.nil?
+      fail ArgumentError, "Missing the required parameter 'comment_id' when calling SocialSpringSummerApi.update_comment" if comment_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling SocialSpringSummerApi.update_comment" if v.nil?
       # verify the required parameter 'comment' is set
-      fail ArgumentError, "Missing the required parameter 'comment' when calling SocialJanuaryApi.update_comment" if comment.nil?
+      fail ArgumentError, "Missing the required parameter 'comment' when calling SocialSpringSummerApi.update_comment" if comment.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/posts/{postId}/comments/{commentId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'postId' + '}', post_id.to_s).sub('{' + 'commentId' + '}', comment_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
 
       # header parameters
       header_params = {}
@@ -676,7 +721,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ErrorResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SocialJanuaryApi#update_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SocialSpringSummerApi#update_comment\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -685,12 +730,13 @@ module YextClient
     # Assign or Unassign a Linked Account to one or more Locations.  **Note:** When assigning Locations to a Linked Account, if any of the Locations are already assigned to another Linked Account with the same Publisher, they will be re-assigned to this Linked Account, and lose their association with the previous Linked Account.  **Note:** It is an error to include the same Location ID in both the assignLocations and unassignLocations lists in the same request. 
     # @param account_id 
     # @param linked_account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :assign_location_ids Array of Location IDs to be assigned to this Linked Account.  Use this field to assign this Linked Account to Locations without affecting any other assigned Locations.  
     # @option opts [Array<String>] :unassign_location_ids Array of Location IDs to be unassigned from this Linked Account.  Use this field to unassign this Linked Account from Locations without affecting any other assigned Locations. 
     # @return [ErrorResponse]
-    def update_linked_account(account_id, linked_account_id, opts = {})
-      data, _status_code, _headers = update_linked_account_with_http_info(account_id, linked_account_id, opts)
+    def update_linked_account(account_id, linked_account_id, v, opts = {})
+      data, _status_code, _headers = update_linked_account_with_http_info(account_id, linked_account_id, v, opts)
       return data
     end
 
@@ -698,23 +744,27 @@ module YextClient
     # Assign or Unassign a Linked Account to one or more Locations.  **Note:** When assigning Locations to a Linked Account, if any of the Locations are already assigned to another Linked Account with the same Publisher, they will be re-assigned to this Linked Account, and lose their association with the previous Linked Account.  **Note:** It is an error to include the same Location ID in both the assignLocations and unassignLocations lists in the same request. 
     # @param account_id 
     # @param linked_account_id 
+    # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Array<String>] :assign_location_ids Array of Location IDs to be assigned to this Linked Account.  Use this field to assign this Linked Account to Locations without affecting any other assigned Locations.  
     # @option opts [Array<String>] :unassign_location_ids Array of Location IDs to be unassigned from this Linked Account.  Use this field to unassign this Linked Account from Locations without affecting any other assigned Locations. 
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
-    def update_linked_account_with_http_info(account_id, linked_account_id, opts = {})
+    def update_linked_account_with_http_info(account_id, linked_account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: SocialJanuaryApi.update_linked_account ..."
+        @api_client.config.logger.debug "Calling API: SocialSpringSummerApi.update_linked_account ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialJanuaryApi.update_linked_account" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling SocialSpringSummerApi.update_linked_account" if account_id.nil?
       # verify the required parameter 'linked_account_id' is set
-      fail ArgumentError, "Missing the required parameter 'linked_account_id' when calling SocialJanuaryApi.update_linked_account" if linked_account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'linked_account_id' when calling SocialSpringSummerApi.update_linked_account" if linked_account_id.nil?
+      # verify the required parameter 'v' is set
+      fail ArgumentError, "Missing the required parameter 'v' when calling SocialSpringSummerApi.update_linked_account" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/linkedaccounts/{linkedAccountId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'linkedAccountId' + '}', linked_account_id.to_s)
 
       # query parameters
       query_params = {}
+      query_params[:'v'] = v
       query_params[:'assignLocationIds'] = @api_client.build_collection_param(opts[:'assign_location_ids'], :csv) if !opts[:'assign_location_ids'].nil?
       query_params[:'unassignLocationIds'] = @api_client.build_collection_param(opts[:'unassign_location_ids'], :csv) if !opts[:'unassign_location_ids'].nil?
 
@@ -743,7 +793,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ErrorResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SocialJanuaryApi#update_linked_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SocialSpringSummerApi#update_linked_account\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

@@ -52,7 +52,7 @@ describe 'CustomField' do
   describe 'test attribute "type"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-       #validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["BOOLEAN", "DAILY_TIMES", "DATE", "GALLERY", "HOURS", "MULTILINE_TEXT", "MULTI_OPTION", "NUMBER", "PHOTO", "SINGLE_OPTION", "TEXT", "TEXT_LIST", "URL", "VIDEO"])
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["BOOLEAN", "DAILY_TIMES", "DATE", "GALLERY", "HOURS", "MULTILINE_TEXT", "MULTI_OPTION", "NUMBER", "PHOTO", "SINGLE_OPTION", "TEXT", "TEXT_LIST", "URL", "VIDEO", "VIDEO_GALLERY"])
        #validator.allowable_values.each do |value|
        #  expect { @instance.type = value }.not_to raise_error
        #end

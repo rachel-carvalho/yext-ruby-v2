@@ -1,23 +1,23 @@
-# YextClient::SocialJanuaryApi
+# YextClient::SocialSpringSummerApi
 
 All URIs are relative to *https://api.yext.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_comment**](SocialJanuaryApi.md#create_comment) | **POST** /accounts/{accountId}/posts/{postId}/comments | Comments: Create
-[**create_posts**](SocialJanuaryApi.md#create_posts) | **POST** /accounts/{accountId}/posts | Posts: Create
-[**delete_comment**](SocialJanuaryApi.md#delete_comment) | **DELETE** /accounts/{accountId}/posts/{postId}/comments/{commentId} | Comments: delete
-[**delete_post**](SocialJanuaryApi.md#delete_post) | **DELETE** /accounts/{accountId}/posts/{postId} | Posts: Delete
-[**get_comments**](SocialJanuaryApi.md#get_comments) | **GET** /accounts/{accountId}/posts/{postId}/comments | Comments: List
-[**get_linked_account**](SocialJanuaryApi.md#get_linked_account) | **GET** /accounts/{accountId}/linkedaccounts/{linkedAccountId} | Linked Accounts: Get
-[**get_linked_accounts**](SocialJanuaryApi.md#get_linked_accounts) | **GET** /accounts/{accountId}/linkedaccounts | Linked Accounts: List
-[**get_posts**](SocialJanuaryApi.md#get_posts) | **GET** /accounts/{accountId}/posts | Posts: List
-[**update_comment**](SocialJanuaryApi.md#update_comment) | **PUT** /accounts/{accountId}/posts/{postId}/comments/{commentId} | Comments: Update
-[**update_linked_account**](SocialJanuaryApi.md#update_linked_account) | **PUT** /accounts/{accountId}/linkedaccounts/{linkedAccountId} | Linked Accounts: Update
+[**create_comment**](SocialSpringSummerApi.md#create_comment) | **POST** /accounts/{accountId}/posts/{postId}/comments | Comments: Create
+[**create_posts**](SocialSpringSummerApi.md#create_posts) | **POST** /accounts/{accountId}/posts | Posts: Create
+[**delete_comment**](SocialSpringSummerApi.md#delete_comment) | **DELETE** /accounts/{accountId}/posts/{postId}/comments/{commentId} | Comments: delete
+[**delete_post**](SocialSpringSummerApi.md#delete_post) | **DELETE** /accounts/{accountId}/posts/{postId} | Posts: Delete
+[**get_comments**](SocialSpringSummerApi.md#get_comments) | **GET** /accounts/{accountId}/posts/{postId}/comments | Comments: List
+[**get_linked_account**](SocialSpringSummerApi.md#get_linked_account) | **GET** /accounts/{accountId}/linkedaccounts/{linkedAccountId} | Linked Accounts: Get
+[**get_linked_accounts**](SocialSpringSummerApi.md#get_linked_accounts) | **GET** /accounts/{accountId}/linkedaccounts | Linked Accounts: List
+[**get_posts**](SocialSpringSummerApi.md#get_posts) | **GET** /accounts/{accountId}/posts | Posts: List
+[**update_comment**](SocialSpringSummerApi.md#update_comment) | **PUT** /accounts/{accountId}/posts/{postId}/comments/{commentId} | Comments: Update
+[**update_linked_account**](SocialSpringSummerApi.md#update_linked_account) | **PUT** /accounts/{accountId}/linkedaccounts/{linkedAccountId} | Linked Accounts: Update
 
 
 # **create_comment**
-> IdResponse create_comment(account_id, post_id, parent_id, opts)
+> IdResponse create_comment(account_id, post_id, vparent_id, opts)
 
 Comments: Create
 
@@ -35,11 +35,13 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::SocialJanuaryApi.new
+api_instance = YextClient::SocialSpringSummerApi.new
 
 account_id = "account_id_example" # String | 
 
 post_id = "post_id_example" # String | 
+
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 parent_id = "parent_id_example" # String | The ID of the Comment this Comment is replying to.  **Example** 123 
 
@@ -51,10 +53,10 @@ opts = {
 
 begin
   #Comments: Create
-  result = api_instance.create_comment(account_id, post_id, parent_id, opts)
+  result = api_instance.create_comment(account_id, post_id, vparent_id, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling SocialJanuaryApi->create_comment: #{e}"
+  puts "Exception when calling SocialSpringSummerApi->create_comment: #{e}"
 end
 ```
 
@@ -64,6 +66,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **post_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **parent_id** | **String**| The ID of the Comment this Comment is replying to.  **Example** 123  | 
  **message** | **String**| The message included in the Comment, if any.  **Example** “Hello, World!”  | [optional] 
  **photo_url** | **String**| The URL of the photo included in the Comment, if any.  **Example** “https://…”  | [optional] 
@@ -85,7 +88,7 @@ Name | Type | Description  | Notes
 
 
 # **create_posts**
-> IdResponse create_posts(account_id, location_ids, publisher_ids, message, opts)
+> IdResponse create_posts(account_id, vlocation_ids, publisher_ids, message, opts)
 
 Posts: Create
 
@@ -103,9 +106,11 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::SocialJanuaryApi.new
+api_instance = YextClient::SocialSpringSummerApi.new
 
 account_id = "account_id_example" # String | 
+
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 location_ids = ["location_ids_example"] # Array<String> | List of Location IDs for this Post
 
@@ -120,10 +125,10 @@ opts = {
 
 begin
   #Posts: Create
-  result = api_instance.create_posts(account_id, location_ids, publisher_ids, message, opts)
+  result = api_instance.create_posts(account_id, vlocation_ids, publisher_ids, message, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling SocialJanuaryApi->create_posts: #{e}"
+  puts "Exception when calling SocialSpringSummerApi->create_posts: #{e}"
 end
 ```
 
@@ -132,6 +137,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| List of Location IDs for this Post | 
  **publisher_ids** | [**Array&lt;String&gt;**](String.md)| List of Publisher IDs for this Post | 
  **message** | **String**| The message included in the Post, if any.  **Example** \&quot;Hello, World!\&quot;  | 
@@ -154,7 +160,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_comment**
-> ErrorResponse delete_comment(account_id, post_id, comment_id)
+> ErrorResponse delete_comment(account_id, post_id, comment_id, v)
 
 Comments: delete
 
@@ -172,7 +178,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::SocialJanuaryApi.new
+api_instance = YextClient::SocialSpringSummerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -180,13 +186,15 @@ post_id = "post_id_example" # String |
 
 comment_id = "comment_id_example" # String | 
 
+v = "20161012" # String | A date in `YYYYMMDD` format.
+
 
 begin
   #Comments: delete
-  result = api_instance.delete_comment(account_id, post_id, comment_id)
+  result = api_instance.delete_comment(account_id, post_id, comment_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling SocialJanuaryApi->delete_comment: #{e}"
+  puts "Exception when calling SocialSpringSummerApi->delete_comment: #{e}"
 end
 ```
 
@@ -197,6 +205,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **post_id** | **String**|  | 
  **comment_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -214,7 +223,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_post**
-> ErrorResponse delete_post(account_id, post_id, )
+> ErrorResponse delete_post(account_id, post_id, v)
 
 Posts: Delete
 
@@ -232,19 +241,21 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::SocialJanuaryApi.new
+api_instance = YextClient::SocialSpringSummerApi.new
 
 account_id = "account_id_example" # String | 
 
 post_id = "post_id_example" # String | 
 
+v = "20161012" # String | A date in `YYYYMMDD` format.
+
 
 begin
   #Posts: Delete
-  result = api_instance.delete_post(account_id, post_id, )
+  result = api_instance.delete_post(account_id, post_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling SocialJanuaryApi->delete_post: #{e}"
+  puts "Exception when calling SocialSpringSummerApi->delete_post: #{e}"
 end
 ```
 
@@ -254,6 +265,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **post_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -271,7 +283,7 @@ Name | Type | Description  | Notes
 
 
 # **get_comments**
-> SocialCommentsResponse get_comments(account_id, post_id, , opts)
+> SocialCommentsResponse get_comments(account_id, post_id, v, opts)
 
 Comments: List
 
@@ -289,11 +301,13 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::SocialJanuaryApi.new
+api_instance = YextClient::SocialSpringSummerApi.new
 
 account_id = "account_id_example" # String | 
 
 post_id = "post_id_example" # String | 
+
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
   limit: 100, # Integer | Number of results to return, up to 100. Default 100.  **Example** 20 
@@ -303,10 +317,10 @@ opts = {
 
 begin
   #Comments: List
-  result = api_instance.get_comments(account_id, post_id, , opts)
+  result = api_instance.get_comments(account_id, post_id, v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling SocialJanuaryApi->get_comments: #{e}"
+  puts "Exception when calling SocialSpringSummerApi->get_comments: #{e}"
 end
 ```
 
@@ -316,6 +330,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **post_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **limit** | **Integer**| Number of results to return, up to 100. Default 100.  **Example** 20  | [optional] [default to 100]
  **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
  **type** | **String**| Determines which type of Comments are returned | [optional] 
@@ -336,7 +351,7 @@ Name | Type | Description  | Notes
 
 
 # **get_linked_account**
-> LinkedAccountResponse get_linked_account(account_id, linked_account_id)
+> LinkedAccountResponse get_linked_account(account_id, linked_account_id, v)
 
 Linked Accounts: Get
 
@@ -354,19 +369,21 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::SocialJanuaryApi.new
+api_instance = YextClient::SocialSpringSummerApi.new
 
 account_id = "account_id_example" # String | 
 
 linked_account_id = "linked_account_id_example" # String | 
 
+v = "20161012" # String | A date in `YYYYMMDD` format.
+
 
 begin
   #Linked Accounts: Get
-  result = api_instance.get_linked_account(account_id, linked_account_id)
+  result = api_instance.get_linked_account(account_id, linked_account_id, v)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling SocialJanuaryApi->get_linked_account: #{e}"
+  puts "Exception when calling SocialSpringSummerApi->get_linked_account: #{e}"
 end
 ```
 
@@ -376,6 +393,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **linked_account_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
 
 ### Return type
 
@@ -393,7 +411,7 @@ Name | Type | Description  | Notes
 
 
 # **get_linked_accounts**
-> LinkedAccountsResponse get_linked_accounts(account_id, , opts)
+> LinkedAccountsResponse get_linked_accounts(account_id, v, opts)
 
 Linked Accounts: List
 
@@ -411,9 +429,11 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::SocialJanuaryApi.new
+api_instance = YextClient::SocialSpringSummerApi.new
 
 account_id = "account_id_example" # String | 
+
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
   limit: 100, # Integer | Number of results to return, up to 100. Default 100.  **Example** 20 
@@ -425,10 +445,10 @@ opts = {
 
 begin
   #Linked Accounts: List
-  result = api_instance.get_linked_accounts(account_id, , opts)
+  result = api_instance.get_linked_accounts(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling SocialJanuaryApi->get_linked_accounts: #{e}"
+  puts "Exception when calling SocialSpringSummerApi->get_linked_accounts: #{e}"
 end
 ```
 
@@ -437,6 +457,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **limit** | **Integer**| Number of results to return, up to 100. Default 100.  **Example** 20  | [optional] [default to 100]
  **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription.  **Example** 123, 456, 789  | [optional] 
@@ -459,7 +480,7 @@ Name | Type | Description  | Notes
 
 
 # **get_posts**
-> SocialPostsResponse get_posts(account_id, , opts)
+> SocialPostsResponse get_posts(account_id, v, opts)
 
 Posts: List
 
@@ -477,9 +498,11 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::SocialJanuaryApi.new
+api_instance = YextClient::SocialSpringSummerApi.new
 
 account_id = "account_id_example" # String | 
+
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
   limit: 100, # Integer | Number of results to return, up to 100. Default 100.  **Example** 20 
@@ -494,10 +517,10 @@ opts = {
 
 begin
   #Posts: List
-  result = api_instance.get_posts(account_id, , opts)
+  result = api_instance.get_posts(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling SocialJanuaryApi->get_posts: #{e}"
+  puts "Exception when calling SocialSpringSummerApi->get_posts: #{e}"
 end
 ```
 
@@ -506,6 +529,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **limit** | **Integer**| Number of results to return, up to 100. Default 100.  **Example** 20  | [optional] [default to 100]
  **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| When provided, only Posts that involve the requested locations will be returned.  By defaults, Posts will be returned for all locations subscribed to Social Posting.  **Example** 123, 456, 789  | [optional] 
@@ -531,7 +555,7 @@ Name | Type | Description  | Notes
 
 
 # **update_comment**
-> ErrorResponse update_comment(account_id, post_id, comment_idcomment)
+> ErrorResponse update_comment(account_id, post_id, comment_id, vcomment)
 
 Comments: Update
 
@@ -549,7 +573,7 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::SocialJanuaryApi.new
+api_instance = YextClient::SocialSpringSummerApi.new
 
 account_id = "account_id_example" # String | 
 
@@ -557,15 +581,17 @@ post_id = "post_id_example" # String |
 
 comment_id = "comment_id_example" # String | 
 
+v = "20161012" # String | A date in `YYYYMMDD` format.
+
 comment = YextClient::PostEntry.new # PostEntry | 
 
 
 begin
   #Comments: Update
-  result = api_instance.update_comment(account_id, post_id, comment_idcomment)
+  result = api_instance.update_comment(account_id, post_id, comment_id, vcomment)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling SocialJanuaryApi->update_comment: #{e}"
+  puts "Exception when calling SocialSpringSummerApi->update_comment: #{e}"
 end
 ```
 
@@ -576,6 +602,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **post_id** | **String**|  | 
  **comment_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **comment** | [**PostEntry**](PostEntry.md)|  | 
 
 ### Return type
@@ -594,7 +621,7 @@ Name | Type | Description  | Notes
 
 
 # **update_linked_account**
-> ErrorResponse update_linked_account(account_id, linked_account_id, opts)
+> ErrorResponse update_linked_account(account_id, linked_account_id, v, opts)
 
 Linked Accounts: Update
 
@@ -612,11 +639,13 @@ YextClient.configure do |config|
   #config.api_key_prefix['api_key'] = 'Bearer'
 end
 
-api_instance = YextClient::SocialJanuaryApi.new
+api_instance = YextClient::SocialSpringSummerApi.new
 
 account_id = "account_id_example" # String | 
 
 linked_account_id = "linked_account_id_example" # String | 
+
+v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
   assign_location_ids: ["assign_location_ids_example"], # Array<String> | Array of Location IDs to be assigned to this Linked Account.  Use this field to assign this Linked Account to Locations without affecting any other assigned Locations.  
@@ -625,10 +654,10 @@ opts = {
 
 begin
   #Linked Accounts: Update
-  result = api_instance.update_linked_account(account_id, linked_account_id, opts)
+  result = api_instance.update_linked_account(account_id, linked_account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
-  puts "Exception when calling SocialJanuaryApi->update_linked_account: #{e}"
+  puts "Exception when calling SocialSpringSummerApi->update_linked_account: #{e}"
 end
 ```
 
@@ -638,6 +667,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **linked_account_id** | **String**|  | 
+ **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **assign_location_ids** | [**Array&lt;String&gt;**](String.md)| Array of Location IDs to be assigned to this Linked Account.  Use this field to assign this Linked Account to Locations without affecting any other assigned Locations.   | [optional] 
  **unassign_location_ids** | [**Array&lt;String&gt;**](String.md)| Array of Location IDs to be unassigned from this Linked Account.  Use this field to unassign this Linked Account from Locations without affecting any other assigned Locations.  | [optional] 
 

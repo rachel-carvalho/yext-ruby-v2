@@ -71,37 +71,6 @@ describe 'UserApi' do
     end
   end
 
-  # unit tests for get_link_optimization_task
-  # Optimization Tasks: Get Link
-  # Retrieve a link to perform any pending Optimization Tasks given a set of Optimization Tasks and a location
-  # @param account_id 
-  # @param v A date in &#x60;YYYYMMDD&#x60; format.
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
-  # @option opts [String] :location_id Location ID to be used as a filter.  If no ID is provided, defaults to all Locations in the account. 
-  # @option opts [String] :mode When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress. 
-  # @return [OptimizationTaskLinksResponse]
-  describe 'get_link_optimization_task test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
-  # unit tests for get_optimization_tasks
-  # Optimization Tasks: List
-  # List Optimization Tasks for the account, optionally filtered by task and location.
-  # @param account_id 
-  # @param v A date in &#x60;YYYYMMDD&#x60; format.
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
-  # @option opts [String] :location_ids Comma-separated list of Location IDs to be used as a filter.  If no IDs are provided, defaults to all Locations in the account. 
-  # @return [OptimizationTasksResponse]
-  describe 'get_optimization_tasks test' do
-    it "should work" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for get_roles
   # Roles: Get
   # Retrieves a list of the roles that users can have within a customer’s account.

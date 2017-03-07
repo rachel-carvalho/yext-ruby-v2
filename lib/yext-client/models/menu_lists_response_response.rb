@@ -29,14 +29,14 @@ module YextClient
     # Total number of Menus that meet filter criteria (ignores limit / offset).
     attr_accessor :count
 
-    attr_accessor :bios
+    attr_accessor :menus
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'count' => :'count',
-        :'bios' => :'bios'
+        :'menus' => :'menus'
       }
     end
 
@@ -44,7 +44,7 @@ module YextClient
     def self.swagger_types
       {
         :'count' => :'Integer',
-        :'bios' => :'Array<Menu>'
+        :'menus' => :'Array<Menu>'
       }
     end
 
@@ -60,9 +60,9 @@ module YextClient
         self.count = attributes[:'count']
       end
 
-      if attributes.has_key?(:'bios')
-        if (value = attributes[:'bios']).is_a?(Array)
-          self.bios = value
+      if attributes.has_key?(:'menus')
+        if (value = attributes[:'menus']).is_a?(Array)
+          self.menus = value
         end
       end
 
@@ -87,7 +87,7 @@ module YextClient
       return true if self.equal?(o)
       self.class == o.class &&
           count == o.count &&
-          bios == o.bios
+          menus == o.menus
     end
 
     # @see the `==` method
@@ -99,7 +99,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [count, bios].hash
+      [count, menus].hash
     end
 
     # Builds the object from hash

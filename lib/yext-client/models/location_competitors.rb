@@ -25,27 +25,27 @@ require 'date'
 
 module YextClient
 
-  class MaximumDatesResponseResponse
-    # The date through which reporting data is available from PowerListings® publishers other than Bing.
-    attr_accessor :standard_max_date
+  class LocationCompetitors
+    # The competitor's website.
+    attr_accessor :website
 
-    # The date through which Bing data is available.
-    attr_accessor :bing_max_date
+    # The competitor's name
+    attr_accessor :name
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'standard_max_date' => :'standardMaxDate',
-        :'bing_max_date' => :'bingMaxDate'
+        :'website' => :'website',
+        :'name' => :'name'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'standard_max_date' => :'Date',
-        :'bing_max_date' => :'Date'
+        :'website' => :'String',
+        :'name' => :'String'
       }
     end
 
@@ -57,12 +57,12 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'standardMaxDate')
-        self.standard_max_date = attributes[:'standardMaxDate']
+      if attributes.has_key?(:'website')
+        self.website = attributes[:'website']
       end
 
-      if attributes.has_key?(:'bingMaxDate')
-        self.bing_max_date = attributes[:'bingMaxDate']
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
       end
 
     end
@@ -85,8 +85,8 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          standard_max_date == o.standard_max_date &&
-          bing_max_date == o.bing_max_date
+          website == o.website &&
+          name == o.name
     end
 
     # @see the `==` method
@@ -98,7 +98,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [standard_max_date, bing_max_date].hash
+      [website, name].hash
     end
 
     # Builds the object from hash

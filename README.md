@@ -66,13 +66,15 @@ api_instance = YextClient::AnalyticsApi.new
 
 account_id = "account_id_example" # String | 
 
+v = "20161012" # String | A date in `YYYYMMDD` format.
+
 opts = { 
   body: YextClient::ActivityLogRequest.new # ActivityLogRequest | 
 }
 
 begin
   #Activity Log
-  result = api_instance.activity_log(account_id, , opts)
+  result = api_instance.activity_log(account_id, v, opts)
   p result
 rescue YextClient::ApiError => e
   puts "Exception when calling AnalyticsApi->activity_log: #{e}"
@@ -90,69 +92,72 @@ Class | Method | HTTP request | Description
 *YextClient::AnalyticsApi* | [**create_reports**](docs/AnalyticsApi.md#create_reports) | **POST** /accounts/{accountId}/analytics/reports | Create Reports
 *YextClient::AnalyticsApi* | [**get_max_dates**](docs/AnalyticsApi.md#get_max_dates) | **GET** /accounts/{accountId}/analytics/maxdates | Max Dates
 *YextClient::AnalyticsApi* | [**report_status**](docs/AnalyticsApi.md#report_status) | **GET** /accounts/{accountId}/analytics/standardreports/{reportId} | Report Status
-*YextClient::LocationManagerApi* | [**create_bio**](docs/LocationManagerApi.md#create_bio) | **POST** /accounts/{accountId}/bios | Bios: Create
-*YextClient::LocationManagerApi* | [**create_event**](docs/LocationManagerApi.md#create_event) | **POST** /accounts/{accountId}/locations/events | Events: Create
-*YextClient::LocationManagerApi* | [**create_location**](docs/LocationManagerApi.md#create_location) | **POST** /accounts/{accountId}/locations | Locations: Create
-*YextClient::LocationManagerApi* | [**create_menu**](docs/LocationManagerApi.md#create_menu) | **POST** /accounts/{accountId}/menus | Menus: Create
-*YextClient::LocationManagerApi* | [**create_product**](docs/LocationManagerApi.md#create_product) | **POST** /accounts/{accountId}/products | Products: Create
-*YextClient::LocationManagerApi* | [**delete_bio_list**](docs/LocationManagerApi.md#delete_bio_list) | **DELETE** /accounts/{accountId}/bios/{listId} | Bios: Delete
-*YextClient::LocationManagerApi* | [**delete_event_list**](docs/LocationManagerApi.md#delete_event_list) | **DELETE** /accounts/{accountId}/locations/events/{listId} | Events: Delete
-*YextClient::LocationManagerApi* | [**delete_language_profile**](docs/LocationManagerApi.md#delete_language_profile) | **DELETE** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Delete
-*YextClient::LocationManagerApi* | [**delete_menu_list**](docs/LocationManagerApi.md#delete_menu_list) | **DELETE** /accounts/{accountId}/menus/{listId} | Menus: Delete
-*YextClient::LocationManagerApi* | [**delete_product_list**](docs/LocationManagerApi.md#delete_product_list) | **DELETE** /accounts/{accountId}/locations/products/{listId} | Products: Delete
-*YextClient::LocationManagerApi* | [**get_bio**](docs/LocationManagerApi.md#get_bio) | **GET** /accounts/{accountId}/bios/{listId} | Bios: Get
-*YextClient::LocationManagerApi* | [**get_bios**](docs/LocationManagerApi.md#get_bios) | **GET** /accounts/{accountId}/bios | Bios: List
-*YextClient::LocationManagerApi* | [**get_business_categories**](docs/LocationManagerApi.md#get_business_categories) | **GET** /categories | Categories: List
-*YextClient::LocationManagerApi* | [**get_custom_fields**](docs/LocationManagerApi.md#get_custom_fields) | **GET** /accounts/{accountId}/customfields | Custom Fields: List
-*YextClient::LocationManagerApi* | [**get_event**](docs/LocationManagerApi.md#get_event) | **GET** /accounts/{accountId}/locations/events/{listId} | Events: Get
-*YextClient::LocationManagerApi* | [**get_events**](docs/LocationManagerApi.md#get_events) | **GET** /accounts/{accountId}/locations/events | Events: List
-*YextClient::LocationManagerApi* | [**get_google_keywords**](docs/LocationManagerApi.md#get_google_keywords) | **GET** /googlefields | Google Fields: List
-*YextClient::LocationManagerApi* | [**get_language_profile**](docs/LocationManagerApi.md#get_language_profile) | **GET** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Get
-*YextClient::LocationManagerApi* | [**get_language_profiles**](docs/LocationManagerApi.md#get_language_profiles) | **GET** /accounts/{accountId}/locations/{locationId}/profiles | Language Profiles: List
-*YextClient::LocationManagerApi* | [**get_location**](docs/LocationManagerApi.md#get_location) | **GET** /accounts/{accountId}/locations/{locationId} | Locations: Get
-*YextClient::LocationManagerApi* | [**get_location_folders**](docs/LocationManagerApi.md#get_location_folders) | **GET** /accounts/{accountId}/folders | Folders: List
-*YextClient::LocationManagerApi* | [**get_locations**](docs/LocationManagerApi.md#get_locations) | **GET** /accounts/{accountId}/locations | Locations: List
-*YextClient::LocationManagerApi* | [**get_menu**](docs/LocationManagerApi.md#get_menu) | **GET** /accounts/{accountId}/menus/{listId} | Menus: Get
-*YextClient::LocationManagerApi* | [**get_menus**](docs/LocationManagerApi.md#get_menus) | **GET** /accounts/{accountId}/menus | Menus: List
-*YextClient::LocationManagerApi* | [**get_product**](docs/LocationManagerApi.md#get_product) | **GET** /accounts/{accountId}/locations/products/{listId} | Products: Get
-*YextClient::LocationManagerApi* | [**get_products**](docs/LocationManagerApi.md#get_products) | **GET** /accounts/{accountId}/products | Products: List
-*YextClient::LocationManagerApi* | [**update_bio**](docs/LocationManagerApi.md#update_bio) | **PUT** /accounts/{accountId}/bios/{listId} | Bios: Update
-*YextClient::LocationManagerApi* | [**update_event**](docs/LocationManagerApi.md#update_event) | **PUT** /accounts/{accountId}/locations/events/{listId} | Events: Update
-*YextClient::LocationManagerApi* | [**update_location**](docs/LocationManagerApi.md#update_location) | **PUT** /accounts/{accountId}/locations/{locationId} | Locations: Update
-*YextClient::LocationManagerApi* | [**update_menu**](docs/LocationManagerApi.md#update_menu) | **PUT** /accounts/{accountId}/menus/{listId} | Menus: Update
-*YextClient::LocationManagerApi* | [**update_product**](docs/LocationManagerApi.md#update_product) | **PUT** /accounts/{accountId}/locations/products/{listId} | Products: Update
-*YextClient::LocationManagerApi* | [**upsert_language_profile**](docs/LocationManagerApi.md#upsert_language_profile) | **PUT** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Upsert
-*YextClient::PowerListingsApi* | [**create_duplicate**](docs/PowerListingsApi.md#create_duplicate) | **POST** /accounts/{accountId}/powerlistings/duplicates | Duplicates: Create (January 2017)
-*YextClient::PowerListingsApi* | [**delete_duplicate**](docs/PowerListingsApi.md#delete_duplicate) | **DELETE** /accounts/{accountId}/powerlistings/duplicates/{duplicateId} | Duplicates: Delete (January 2017)
+*YextClient::HealthCheckApi* | [**health_check**](docs/HealthCheckApi.md#health_check) | **GET** /healthy | Health Check
+*YextClient::KnowledgeManagerApi* | [**create_bio**](docs/KnowledgeManagerApi.md#create_bio) | **POST** /accounts/{accountId}/bios | Bios: Create
+*YextClient::KnowledgeManagerApi* | [**create_event**](docs/KnowledgeManagerApi.md#create_event) | **POST** /accounts/{accountId}/events | Events: Create
+*YextClient::KnowledgeManagerApi* | [**create_location**](docs/KnowledgeManagerApi.md#create_location) | **POST** /accounts/{accountId}/locations | Locations: Create
+*YextClient::KnowledgeManagerApi* | [**create_menu**](docs/KnowledgeManagerApi.md#create_menu) | **POST** /accounts/{accountId}/menus | Menus: Create
+*YextClient::KnowledgeManagerApi* | [**create_product**](docs/KnowledgeManagerApi.md#create_product) | **POST** /accounts/{accountId}/products | Products: Create
+*YextClient::KnowledgeManagerApi* | [**delete_bio_list**](docs/KnowledgeManagerApi.md#delete_bio_list) | **DELETE** /accounts/{accountId}/bios/{listId} | Bios: Delete
+*YextClient::KnowledgeManagerApi* | [**delete_event_list**](docs/KnowledgeManagerApi.md#delete_event_list) | **DELETE** /accounts/{accountId}/events/{listId} | Events: Delete
+*YextClient::KnowledgeManagerApi* | [**delete_language_profile**](docs/KnowledgeManagerApi.md#delete_language_profile) | **DELETE** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Delete
+*YextClient::KnowledgeManagerApi* | [**delete_menu_list**](docs/KnowledgeManagerApi.md#delete_menu_list) | **DELETE** /accounts/{accountId}/menus/{listId} | Menus: Delete
+*YextClient::KnowledgeManagerApi* | [**delete_product_list**](docs/KnowledgeManagerApi.md#delete_product_list) | **DELETE** /accounts/{accountId}/products/{listId} | Products: Delete
+*YextClient::KnowledgeManagerApi* | [**get_bio**](docs/KnowledgeManagerApi.md#get_bio) | **GET** /accounts/{accountId}/bios/{listId} | Bios: Get
+*YextClient::KnowledgeManagerApi* | [**get_bios**](docs/KnowledgeManagerApi.md#get_bios) | **GET** /accounts/{accountId}/bios | Bios: List
+*YextClient::KnowledgeManagerApi* | [**get_business_categories**](docs/KnowledgeManagerApi.md#get_business_categories) | **GET** /categories | Categories: List
+*YextClient::KnowledgeManagerApi* | [**get_custom_fields**](docs/KnowledgeManagerApi.md#get_custom_fields) | **GET** /accounts/{accountId}/customfields | Custom Fields: List
+*YextClient::KnowledgeManagerApi* | [**get_event**](docs/KnowledgeManagerApi.md#get_event) | **GET** /accounts/{accountId}/events/{listId} | Events: Get
+*YextClient::KnowledgeManagerApi* | [**get_events**](docs/KnowledgeManagerApi.md#get_events) | **GET** /accounts/{accountId}/events | Events: List
+*YextClient::KnowledgeManagerApi* | [**get_google_keywords**](docs/KnowledgeManagerApi.md#get_google_keywords) | **GET** /googlefields | Google Fields: List
+*YextClient::KnowledgeManagerApi* | [**get_language_profile**](docs/KnowledgeManagerApi.md#get_language_profile) | **GET** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Get
+*YextClient::KnowledgeManagerApi* | [**get_language_profiles**](docs/KnowledgeManagerApi.md#get_language_profiles) | **GET** /accounts/{accountId}/locations/{locationId}/profiles | Language Profiles: List
+*YextClient::KnowledgeManagerApi* | [**get_location**](docs/KnowledgeManagerApi.md#get_location) | **GET** /accounts/{accountId}/locations/{locationId} | Locations: Get
+*YextClient::KnowledgeManagerApi* | [**get_location_folders**](docs/KnowledgeManagerApi.md#get_location_folders) | **GET** /accounts/{accountId}/folders | Folders: List
+*YextClient::KnowledgeManagerApi* | [**get_locations**](docs/KnowledgeManagerApi.md#get_locations) | **GET** /accounts/{accountId}/locations | Locations: List
+*YextClient::KnowledgeManagerApi* | [**get_menu**](docs/KnowledgeManagerApi.md#get_menu) | **GET** /accounts/{accountId}/menus/{listId} | Menus: Get
+*YextClient::KnowledgeManagerApi* | [**get_menus**](docs/KnowledgeManagerApi.md#get_menus) | **GET** /accounts/{accountId}/menus | Menus: List
+*YextClient::KnowledgeManagerApi* | [**get_product**](docs/KnowledgeManagerApi.md#get_product) | **GET** /accounts/{accountId}/products/{listId} | Products: Get
+*YextClient::KnowledgeManagerApi* | [**get_products**](docs/KnowledgeManagerApi.md#get_products) | **GET** /accounts/{accountId}/products | Products: List
+*YextClient::KnowledgeManagerApi* | [**update_bio**](docs/KnowledgeManagerApi.md#update_bio) | **PUT** /accounts/{accountId}/bios/{listId} | Bios: Update
+*YextClient::KnowledgeManagerApi* | [**update_event**](docs/KnowledgeManagerApi.md#update_event) | **PUT** /accounts/{accountId}/events/{listId} | Events: Update
+*YextClient::KnowledgeManagerApi* | [**update_location**](docs/KnowledgeManagerApi.md#update_location) | **PUT** /accounts/{accountId}/locations/{locationId} | Locations: Update
+*YextClient::KnowledgeManagerApi* | [**update_menu**](docs/KnowledgeManagerApi.md#update_menu) | **PUT** /accounts/{accountId}/menus/{listId} | Menus: Update
+*YextClient::KnowledgeManagerApi* | [**update_product**](docs/KnowledgeManagerApi.md#update_product) | **PUT** /accounts/{accountId}/products/{listId} | Products: Update
+*YextClient::KnowledgeManagerApi* | [**upsert_language_profile**](docs/KnowledgeManagerApi.md#upsert_language_profile) | **PUT** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Upsert
+*YextClient::OptimizationTasksApi* | [**get_link_optimization_task**](docs/OptimizationTasksApi.md#get_link_optimization_task) | **GET** /accounts/{accountId}/optimizationlink | Optimization Tasks: Get Link
+*YextClient::OptimizationTasksApi* | [**get_optimization_tasks**](docs/OptimizationTasksApi.md#get_optimization_tasks) | **GET** /accounts/{accountId}/optimizationtasks | Optimization Tasks: List
+*YextClient::PowerListingsApi* | [**create_duplicate**](docs/PowerListingsApi.md#create_duplicate) | **POST** /accounts/{accountId}/powerlistings/duplicates | Duplicates: Create
+*YextClient::PowerListingsApi* | [**delete_duplicate**](docs/PowerListingsApi.md#delete_duplicate) | **DELETE** /accounts/{accountId}/powerlistings/duplicates/{duplicateId} | Duplicates: Delete
 *YextClient::PowerListingsApi* | [**get_publisher_suggestion**](docs/PowerListingsApi.md#get_publisher_suggestion) | **GET** /accounts/{accountId}/powerlistings/publishersuggestions/{suggestionId} | Publisher Suggestions: Get
-*YextClient::PowerListingsApi* | [**list_duplicates**](docs/PowerListingsApi.md#list_duplicates) | **GET** /accounts/{accountId}/powerlistings/duplicates | Duplicates: List (January 2017)
+*YextClient::PowerListingsApi* | [**list_duplicates**](docs/PowerListingsApi.md#list_duplicates) | **GET** /accounts/{accountId}/powerlistings/duplicates | Duplicates: List
 *YextClient::PowerListingsApi* | [**list_listings**](docs/PowerListingsApi.md#list_listings) | **GET** /accounts/{accountId}/powerlistings/listings | Listings: List
 *YextClient::PowerListingsApi* | [**list_publisher_suggestions**](docs/PowerListingsApi.md#list_publisher_suggestions) | **GET** /accounts/{accountId}/powerlistings/publishersuggestions | Publisher Suggestions: List
 *YextClient::PowerListingsApi* | [**list_publishers**](docs/PowerListingsApi.md#list_publishers) | **GET** /accounts/{accountId}/powerlistings/publishers | Publishers: List
 *YextClient::PowerListingsApi* | [**opt_in_listings**](docs/PowerListingsApi.md#opt_in_listings) | **PUT** /accounts/{accountId}/powerlistings/listings/optin | Listings: Opt In
 *YextClient::PowerListingsApi* | [**opt_out_listings**](docs/PowerListingsApi.md#opt_out_listings) | **PUT** /accounts/{accountId}/powerlistings/listings/optout | Listings: Opt Out
-*YextClient::PowerListingsApi* | [**suppress_duplicate**](docs/PowerListingsApi.md#suppress_duplicate) | **PUT** /accounts/{accountId}/powerlistings/duplicates/{duplicateId} | Duplicates: Suppress (January 2017)
+*YextClient::PowerListingsApi* | [**suppress_duplicate**](docs/PowerListingsApi.md#suppress_duplicate) | **PUT** /accounts/{accountId}/powerlistings/duplicates/{duplicateId} | Duplicates: Suppress
 *YextClient::PowerListingsApi* | [**update_publisher_suggestion**](docs/PowerListingsApi.md#update_publisher_suggestion) | **PUT** /accounts/{accountId}/powerlistings/publishersuggestions/{suggestionId} | Publisher Suggestions: Update
 *YextClient::ReviewsApi* | [**create_comment**](docs/ReviewsApi.md#create_comment) | **POST** /accounts/{accountId}/reviews/{reviewId}/comments | Comments: Create
 *YextClient::ReviewsApi* | [**create_review**](docs/ReviewsApi.md#create_review) | **POST** /accounts/{accountId}/reviews | Reviews: Create
 *YextClient::ReviewsApi* | [**create_review_invites**](docs/ReviewsApi.md#create_review_invites) | **POST** /accounts/{accountId}/reviewinvites | Review Invitations: Create
 *YextClient::ReviewsApi* | [**get_review**](docs/ReviewsApi.md#get_review) | **GET** /accounts/{accountId}/reviews/{reviewId} | Reviews: Get
+*YextClient::ReviewsApi* | [**get_review_generation_settings**](docs/ReviewsApi.md#get_review_generation_settings) | **GET** /accounts/{accountId}/reviews/settings/generation | Review Generation Settings: Get
 *YextClient::ReviewsApi* | [**list_reviews**](docs/ReviewsApi.md#list_reviews) | **GET** /accounts/{accountId}/reviews | Reviews: List
 *YextClient::ReviewsApi* | [**update_review**](docs/ReviewsApi.md#update_review) | **PUT** /accounts/{accountId}/reviews/{reviewId} | Reviews: Update
-*YextClient::SocialJanuaryApi* | [**create_comment**](docs/SocialJanuaryApi.md#create_comment) | **POST** /accounts/{accountId}/posts/{postId}/comments | Comments: Create
-*YextClient::SocialJanuaryApi* | [**create_posts**](docs/SocialJanuaryApi.md#create_posts) | **POST** /accounts/{accountId}/posts | Posts: Create
-*YextClient::SocialJanuaryApi* | [**delete_comment**](docs/SocialJanuaryApi.md#delete_comment) | **DELETE** /accounts/{accountId}/posts/{postId}/comments/{commentId} | Comments: delete
-*YextClient::SocialJanuaryApi* | [**delete_post**](docs/SocialJanuaryApi.md#delete_post) | **DELETE** /accounts/{accountId}/posts/{postId} | Posts: Delete
-*YextClient::SocialJanuaryApi* | [**get_comments**](docs/SocialJanuaryApi.md#get_comments) | **GET** /accounts/{accountId}/posts/{postId}/comments | Comments: List
-*YextClient::SocialJanuaryApi* | [**get_linked_account**](docs/SocialJanuaryApi.md#get_linked_account) | **GET** /accounts/{accountId}/linkedaccounts/{linkedAccountId} | Linked Accounts: Get
-*YextClient::SocialJanuaryApi* | [**get_linked_accounts**](docs/SocialJanuaryApi.md#get_linked_accounts) | **GET** /accounts/{accountId}/linkedaccounts | Linked Accounts: List
-*YextClient::SocialJanuaryApi* | [**get_posts**](docs/SocialJanuaryApi.md#get_posts) | **GET** /accounts/{accountId}/posts | Posts: List
-*YextClient::SocialJanuaryApi* | [**update_comment**](docs/SocialJanuaryApi.md#update_comment) | **PUT** /accounts/{accountId}/posts/{postId}/comments/{commentId} | Comments: Update
-*YextClient::SocialJanuaryApi* | [**update_linked_account**](docs/SocialJanuaryApi.md#update_linked_account) | **PUT** /accounts/{accountId}/linkedaccounts/{linkedAccountId} | Linked Accounts: Update
+*YextClient::ReviewsApi* | [**update_review_generation_settings**](docs/ReviewsApi.md#update_review_generation_settings) | **POST** /accounts/{accountId}/reviews/settings/generation | Review Generation Settings: Update
+*YextClient::SocialSpringSummerApi* | [**create_comment**](docs/SocialSpringSummerApi.md#create_comment) | **POST** /accounts/{accountId}/posts/{postId}/comments | Comments: Create
+*YextClient::SocialSpringSummerApi* | [**create_posts**](docs/SocialSpringSummerApi.md#create_posts) | **POST** /accounts/{accountId}/posts | Posts: Create
+*YextClient::SocialSpringSummerApi* | [**delete_comment**](docs/SocialSpringSummerApi.md#delete_comment) | **DELETE** /accounts/{accountId}/posts/{postId}/comments/{commentId} | Comments: delete
+*YextClient::SocialSpringSummerApi* | [**delete_post**](docs/SocialSpringSummerApi.md#delete_post) | **DELETE** /accounts/{accountId}/posts/{postId} | Posts: Delete
+*YextClient::SocialSpringSummerApi* | [**get_comments**](docs/SocialSpringSummerApi.md#get_comments) | **GET** /accounts/{accountId}/posts/{postId}/comments | Comments: List
+*YextClient::SocialSpringSummerApi* | [**get_linked_account**](docs/SocialSpringSummerApi.md#get_linked_account) | **GET** /accounts/{accountId}/linkedaccounts/{linkedAccountId} | Linked Accounts: Get
+*YextClient::SocialSpringSummerApi* | [**get_linked_accounts**](docs/SocialSpringSummerApi.md#get_linked_accounts) | **GET** /accounts/{accountId}/linkedaccounts | Linked Accounts: List
+*YextClient::SocialSpringSummerApi* | [**get_posts**](docs/SocialSpringSummerApi.md#get_posts) | **GET** /accounts/{accountId}/posts | Posts: List
+*YextClient::SocialSpringSummerApi* | [**update_comment**](docs/SocialSpringSummerApi.md#update_comment) | **PUT** /accounts/{accountId}/posts/{postId}/comments/{commentId} | Comments: Update
+*YextClient::SocialSpringSummerApi* | [**update_linked_account**](docs/SocialSpringSummerApi.md#update_linked_account) | **PUT** /accounts/{accountId}/linkedaccounts/{linkedAccountId} | Linked Accounts: Update
 *YextClient::UserApi* | [**create_user**](docs/UserApi.md#create_user) | **POST** /accounts/{accountId}/users | Users: Create
 *YextClient::UserApi* | [**delete_user**](docs/UserApi.md#delete_user) | **DELETE** /accounts/{accountId}/users/{userId} | Users: Delete
-*YextClient::UserApi* | [**get_link_optimization_task**](docs/UserApi.md#get_link_optimization_task) | **GET** /accounts/{accountId}/optimizationlink | Optimization Tasks: Get Link
-*YextClient::UserApi* | [**get_optimization_tasks**](docs/UserApi.md#get_optimization_tasks) | **GET** /accounts/{accountId}/optimizationtasks | Optimization Tasks: List
 *YextClient::UserApi* | [**get_roles**](docs/UserApi.md#get_roles) | **GET** /accounts/{accountId}/roles | Roles: Get
 *YextClient::UserApi* | [**get_user**](docs/UserApi.md#get_user) | **GET** /accounts/{accountId}/users/{userId} | Users: Get
 *YextClient::UserApi* | [**get_users**](docs/UserApi.md#get_users) | **GET** /accounts/{accountId}/users | Users: List
@@ -208,6 +213,7 @@ Class | Method | HTTP request | Description
  - [YextClient::Folder](docs/Folder.md)
  - [YextClient::FoldersResponse](docs/FoldersResponse.md)
  - [YextClient::FoldersResponseResponse](docs/FoldersResponseResponse.md)
+ - [YextClient::GetReviewGenerationSettingsResponse](docs/GetReviewGenerationSettingsResponse.md)
  - [YextClient::GoogleCategory](docs/GoogleCategory.md)
  - [YextClient::GoogleField](docs/GoogleField.md)
  - [YextClient::GoogleFieldsResponse](docs/GoogleFieldsResponse.md)
@@ -228,6 +234,7 @@ Class | Method | HTTP request | Description
  - [YextClient::ListingsResponseResponse](docs/ListingsResponseResponse.md)
  - [YextClient::Location](docs/Location.md)
  - [YextClient::LocationClosed](docs/LocationClosed.md)
+ - [YextClient::LocationCompetitors](docs/LocationCompetitors.md)
  - [YextClient::LocationEducationList](docs/LocationEducationList.md)
  - [YextClient::LocationGoogleAttributes](docs/LocationGoogleAttributes.md)
  - [YextClient::LocationHolidayHours](docs/LocationHolidayHours.md)
@@ -271,6 +278,7 @@ Class | Method | HTTP request | Description
  - [YextClient::ResponseMeta](docs/ResponseMeta.md)
  - [YextClient::Review](docs/Review.md)
  - [YextClient::ReviewComment](docs/ReviewComment.md)
+ - [YextClient::ReviewGenerationSettings](docs/ReviewGenerationSettings.md)
  - [YextClient::ReviewInvitation](docs/ReviewInvitation.md)
  - [YextClient::ReviewResponse](docs/ReviewResponse.md)
  - [YextClient::ReviewsResponse](docs/ReviewsResponse.md)

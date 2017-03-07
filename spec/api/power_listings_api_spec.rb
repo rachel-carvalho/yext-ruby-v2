@@ -44,13 +44,13 @@ describe 'PowerListingsApi' do
   end
 
   # unit tests for create_duplicate
-  # Duplicates: Create (January 2017)
+  # Duplicates: Create
   # Creates a new Duplicate with status SUPPRESSION_REQUESTED
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param url URL of the Duplicate listing
   # @param [Hash] opts the optional parameters
-  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
   # @return [IdResponse]
   describe 'create_duplicate test' do
@@ -60,7 +60,7 @@ describe 'PowerListingsApi' do
   end
 
   # unit tests for delete_duplicate
-  # Duplicates: Delete (January 2017)
+  # Duplicates: Delete
   # Indicates that a Duplicate should be ignored
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -88,14 +88,14 @@ describe 'PowerListingsApi' do
   end
 
   # unit tests for list_duplicates
-  # Duplicates: List (January 2017)
+  # Duplicates: List
   # Retrieve Duplicates for an account
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return
   # @option opts [Integer] :offset Number of results to skip. Used to page through results.
-  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
   # @option opts [Array<String>] :statuses When specified, only Duplicates with the provided statuses will be returned  **Example:** POSSIBLE_DUPLICATE,SUPPRESSION_REQUESTED 
   # @return [DuplicatesResponse]
@@ -113,7 +113,7 @@ describe 'PowerListingsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return
   # @option opts [Integer] :offset Number of results to skip. Used to page through results.
-  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
   # @option opts [String] :language One of the language codes that we support: - cs - Czech - da - Danish - nl - Dutch - en - English - en_GB - English (UK) - fi - Finnish - fr - French (France) - de - German (Germany) - hu - Hungarian - it - Italian - ja - Japanese - no - Norwegian - pt - Portuguese (Portugal) - sk - Slovak - es - Spanish (Spain) - sv - Swedish - tr - Turkish - zh_Hans - Chinese (Simplified) - zh_Hant - Chinese (Traditional) 
   # @return [ListingsResponse]
@@ -131,7 +131,7 @@ describe 'PowerListingsApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return
   # @option opts [Integer] :offset Number of results to skip. Used to page through results.
-  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
   # @option opts [Array<String>] :statuses When specified, only Publisher Suggestions with the provided statuses will be returned  **Example:** WAITING_ON_CUSTOMER,EXPIRED 
   # @return [PublisherSuggestionsResponse]
@@ -143,11 +143,10 @@ describe 'PowerListingsApi' do
 
   # unit tests for list_publishers
   # Publishers: List
-  # Retrieve list of Publishers
+  # Retrieve a list of publishers included in an account&#39;s subscription 
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :subset **ALL** - return all publishers  **RELEVANT_ONLY** - only return publishers relevant to the account based on supported countries and location types 
   # @return [PublishersResponse]
   describe 'list_publishers test' do
     it "should work" do
@@ -161,7 +160,7 @@ describe 'PowerListingsApi' do
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
-  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
   # @return [ErrorResponse]
   describe 'opt_in_listings test' do
@@ -176,7 +175,7 @@ describe 'PowerListingsApi' do
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
-  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example:** loc123,loc456,loc789 
+  # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings® subscription.  **Example:** loc123,loc456,loc789 
   # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
   # @return [ErrorResponse]
   describe 'opt_out_listings test' do
@@ -186,7 +185,7 @@ describe 'PowerListingsApi' do
   end
 
   # unit tests for suppress_duplicate
-  # Duplicates: Suppress (January 2017)
+  # Duplicates: Suppress
   # Request suppression of a Duplicate
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.

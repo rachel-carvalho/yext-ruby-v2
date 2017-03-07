@@ -58,7 +58,7 @@ describe 'ActivityFilter' do
   describe 'test attribute "activity_types"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["LOCATION_UPDATED", "PUBLISHER_SUGGESTION_CREATED", "PUBLISHER_SUGGESTION_APPROVED", "PUBLISHER_SUGGESTION_REJECTED", "PUBLISHER_SUGGESTION_EXPIRED", "REVIEW_CREATED", "REVIEW_RESPONDED", "SOCIAL_POST_CREATED", "SOCIAL_POST_UPDATED", "SOCIAL_POST_COMMENT_CREATED", "SOCIAL_POST_COMMENT_UPDATED", "LISTING_LIVE", "DUPLICATE_DETECTED", "DUPLICATE_SUPPRESSED", "DUPLICATE_IGNORED"])
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["LOCATION_UPDATED", "PUBLISHER_SUGGESTION_CREATED", "PUBLISHER_SUGGESTION_APPROVED", "PUBLISHER_SUGGESTION_REJECTED", "REVIEW_CREATED", "SOCIAL_POST_CREATED", "LISTING_LIVE", "DUPLICATE_SUPPRESSED"])
        #validator.allowable_values.each do |value|
        #  expect { @instance.activity_types = value }.not_to raise_error
        #end

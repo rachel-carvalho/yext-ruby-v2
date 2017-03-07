@@ -73,6 +73,16 @@ describe 'Location' do
     end
   end
 
+  describe 'test attribute "tracking_sites"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["GOOGLE_DESKTOP", "GOOGLE_MOBILE", "BING_DESKTOP", "YAHOO_DESKTOP"])
+       #validator.allowable_values.each do |value|
+       #  expect { @instance.tracking_sites = value }.not_to raise_error
+       #end
+    end
+  end
+
   describe 'test attribute "middle_name"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -97,7 +107,7 @@ describe 'Location' do
     end
   end
 
-  describe 'test attribute "pickup_lng"' do
+  describe 'test attribute "degrees"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -389,6 +399,16 @@ describe 'Location' do
     end
   end
 
+  describe 'test attribute "query_templates"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["KEYWORD", "KEYWORD_ZIP", "KEYWORD_CITY", "KEYWORD_IN_CITY", "KEYWORD_NEAR_ME", "KEYWORD_CITY_STATE"])
+       #validator.allowable_values.each do |value|
+       #  expect { @instance.query_templates = value }.not_to raise_error
+       #end
+    end
+  end
+
   describe 'test attribute "products"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -413,7 +433,19 @@ describe 'Location' do
     end
   end
 
+  describe 'test attribute "custom_keywords"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "dropoff_lng"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "intelligent_search_tracking_enabled"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -497,6 +529,12 @@ describe 'Location' do
     end
   end
 
+  describe 'test attribute "pickup_lng"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "custom_fields"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -518,7 +556,7 @@ describe 'Location' do
   describe 'test attribute "uber_link_type"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-       #validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["TEXT", "BUTTON"])
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["LINK", "BUTTON"])
        #validator.allowable_values.each do |value|
        #  expect { @instance.uber_link_type = value }.not_to raise_error
        #end
@@ -621,6 +659,16 @@ describe 'Location' do
     end
   end
 
+  describe 'test attribute "location_keywords"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["NAME", "PRIMARY_CATEGORY"])
+       #validator.allowable_values.each do |value|
+       #  expect { @instance.location_keywords = value }.not_to raise_error
+       #end
+    end
+  end
+
   describe 'test attribute "google_website_override"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -633,6 +681,22 @@ describe 'Location' do
     end
   end
 
+  describe 'test attribute "alternate_websites"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "intelligent_search_tracking_frequency"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["WEEKLY", "MONTHLY", "QUARTERLY"])
+       #validator.allowable_values.each do |value|
+       #  expect { @instance.intelligent_search_tracking_frequency = value }.not_to raise_error
+       #end
+    end
+  end
+
   describe 'test attribute "event_list_ids"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -640,6 +704,12 @@ describe 'Location' do
   end
 
   describe 'test attribute "display_lat"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "competitors"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -700,6 +770,12 @@ describe 'Location' do
   end
 
   describe 'test attribute "yext_routable_lat"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "alternate_names"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

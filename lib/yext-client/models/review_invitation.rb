@@ -26,17 +26,20 @@ require 'date'
 module YextClient
 
   class ReviewInvitation
+    # The consumer’s first name
+    attr_accessor :first_name
+
     # The consumer’s last name
     attr_accessor :last_name
+
+    # Only valid if “contact” is a phone number  If true, include a brand image with the phone number - otherwise nothing 
+    attr_accessor :image
 
     # The email address or phone number of the consumer.  Phone numbers should be formatted in one of the following ways: * E.164 standard international format, with a leading \"+\" * National format, according to the country of the corresponding location 
     attr_accessor :contact
 
     # ID of the location that will be reviewed
     attr_accessor :location_id
-
-    # The consumer’s first name
-    attr_accessor :first_name
 
     # If specified, the ID of the template used to format the email.  If not specified, the location’s default email template is used.  If the location has no default template, the account’s default template is used. 
     attr_accessor :template_id
@@ -45,10 +48,11 @@ module YextClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'first_name' => :'firstName',
         :'last_name' => :'lastName',
+        :'image' => :'image',
         :'contact' => :'contact',
         :'location_id' => :'locationId',
-        :'first_name' => :'firstName',
         :'template_id' => :'templateId'
       }
     end
@@ -56,10 +60,11 @@ module YextClient
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'first_name' => :'String',
         :'last_name' => :'String',
+        :'image' => :'BOOLEAN',
         :'contact' => :'String',
         :'location_id' => :'String',
-        :'first_name' => :'String',
         :'template_id' => :'String'
       }
     end
@@ -72,8 +77,16 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
+      if attributes.has_key?(:'firstName')
+        self.first_name = attributes[:'firstName']
+      end
+
       if attributes.has_key?(:'lastName')
         self.last_name = attributes[:'lastName']
+      end
+
+      if attributes.has_key?(:'image')
+        self.image = attributes[:'image']
       end
 
       if attributes.has_key?(:'contact')
@@ -82,10 +95,6 @@ module YextClient
 
       if attributes.has_key?(:'locationId')
         self.location_id = attributes[:'locationId']
-      end
-
-      if attributes.has_key?(:'firstName')
-        self.first_name = attributes[:'firstName']
       end
 
       if attributes.has_key?(:'templateId')
@@ -112,10 +121,11 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          first_name == o.first_name &&
           last_name == o.last_name &&
+          image == o.image &&
           contact == o.contact &&
           location_id == o.location_id &&
-          first_name == o.first_name &&
           template_id == o.template_id
     end
 
@@ -128,7 +138,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [last_name, contact, location_id, first_name, template_id].hash
+      [first_name, last_name, image, contact, location_id, template_id].hash
     end
 
     # Builds the object from hash

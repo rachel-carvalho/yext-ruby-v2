@@ -24,7 +24,7 @@ limitations under the License.
 require "uri"
 
 module YextClient
-  class LocationManagerApi
+  class KnowledgeManagerApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
@@ -52,14 +52,14 @@ module YextClient
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_bio_with_http_info(account_id, v, body, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.create_bio ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.create_bio ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_bio" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.create_bio" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_bio" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.create_bio" if v.nil?
       # verify the required parameter 'body' is set
-      fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.create_bio" if body.nil?
+      fail ArgumentError, "Missing the required parameter 'body' when calling KnowledgeManagerApi.create_bio" if body.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/bios".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -92,7 +92,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'IdResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#create_bio\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#create_bio\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -118,16 +118,16 @@ module YextClient
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_event_with_http_info(account_id, v, body, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.create_event ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.create_event ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_event" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.create_event" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_event" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.create_event" if v.nil?
       # verify the required parameter 'body' is set
-      fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.create_event" if body.nil?
+      fail ArgumentError, "Missing the required parameter 'body' when calling KnowledgeManagerApi.create_event" if body.nil?
       # resource path
-      local_var_path = "/accounts/{accountId}/locations/events".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+      local_var_path = "/accounts/{accountId}/events".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
       # query parameters
       query_params = {}
@@ -158,7 +158,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'IdResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#create_event\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#create_event\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -184,14 +184,14 @@ module YextClient
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_location_with_http_info(account_id, v, location_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.create_location ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.create_location ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_location" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.create_location" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_location" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.create_location" if v.nil?
       # verify the required parameter 'location_request' is set
-      fail ArgumentError, "Missing the required parameter 'location_request' when calling LocationManagerApi.create_location" if location_request.nil?
+      fail ArgumentError, "Missing the required parameter 'location_request' when calling KnowledgeManagerApi.create_location" if location_request.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/locations".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -224,7 +224,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'IdResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#create_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#create_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -250,14 +250,14 @@ module YextClient
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_menu_with_http_info(account_id, v, body, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.create_menu ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.create_menu ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_menu" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.create_menu" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_menu" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.create_menu" if v.nil?
       # verify the required parameter 'body' is set
-      fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.create_menu" if body.nil?
+      fail ArgumentError, "Missing the required parameter 'body' when calling KnowledgeManagerApi.create_menu" if body.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/menus".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -290,7 +290,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'IdResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#create_menu\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#create_menu\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -316,14 +316,14 @@ module YextClient
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def create_product_with_http_info(account_id, v, body, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.create_product ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.create_product ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.create_product" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.create_product" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.create_product" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.create_product" if v.nil?
       # verify the required parameter 'body' is set
-      fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.create_product" if body.nil?
+      fail ArgumentError, "Missing the required parameter 'body' when calling KnowledgeManagerApi.create_product" if body.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/products".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
@@ -356,7 +356,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'IdResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#create_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#create_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -382,14 +382,14 @@ module YextClient
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def delete_bio_list_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.delete_bio_list ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.delete_bio_list ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.delete_bio_list" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.delete_bio_list" if account_id.nil?
       # verify the required parameter 'list_id' is set
-      fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.delete_bio_list" if list_id.nil?
+      fail ArgumentError, "Missing the required parameter 'list_id' when calling KnowledgeManagerApi.delete_bio_list" if list_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_bio_list" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.delete_bio_list" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/bios/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -422,7 +422,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ErrorResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#delete_bio_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#delete_bio_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -448,16 +448,16 @@ module YextClient
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def delete_event_list_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.delete_event_list ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.delete_event_list ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.delete_event_list" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.delete_event_list" if account_id.nil?
       # verify the required parameter 'list_id' is set
-      fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.delete_event_list" if list_id.nil?
+      fail ArgumentError, "Missing the required parameter 'list_id' when calling KnowledgeManagerApi.delete_event_list" if list_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_event_list" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.delete_event_list" if v.nil?
       # resource path
-      local_var_path = "/accounts/{accountId}/locations/events/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
+      local_var_path = "/accounts/{accountId}/events/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
       # query parameters
       query_params = {}
@@ -488,7 +488,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ErrorResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#delete_event_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#delete_event_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -516,16 +516,16 @@ module YextClient
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def delete_language_profile_with_http_info(account_id, location_id, language_code, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.delete_language_profile ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.delete_language_profile ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.delete_language_profile" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.delete_language_profile" if account_id.nil?
       # verify the required parameter 'location_id' is set
-      fail ArgumentError, "Missing the required parameter 'location_id' when calling LocationManagerApi.delete_language_profile" if location_id.nil?
+      fail ArgumentError, "Missing the required parameter 'location_id' when calling KnowledgeManagerApi.delete_language_profile" if location_id.nil?
       # verify the required parameter 'language_code' is set
-      fail ArgumentError, "Missing the required parameter 'language_code' when calling LocationManagerApi.delete_language_profile" if language_code.nil?
+      fail ArgumentError, "Missing the required parameter 'language_code' when calling KnowledgeManagerApi.delete_language_profile" if language_code.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_language_profile" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.delete_language_profile" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}/profiles/{language_code}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s).sub('{' + 'language_code' + '}', language_code.to_s)
 
@@ -558,7 +558,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ErrorResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#delete_language_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#delete_language_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -584,14 +584,14 @@ module YextClient
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def delete_menu_list_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.delete_menu_list ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.delete_menu_list ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.delete_menu_list" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.delete_menu_list" if account_id.nil?
       # verify the required parameter 'list_id' is set
-      fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.delete_menu_list" if list_id.nil?
+      fail ArgumentError, "Missing the required parameter 'list_id' when calling KnowledgeManagerApi.delete_menu_list" if list_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_menu_list" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.delete_menu_list" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/menus/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -624,7 +624,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ErrorResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#delete_menu_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#delete_menu_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -650,16 +650,16 @@ module YextClient
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def delete_product_list_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.delete_product_list ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.delete_product_list ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.delete_product_list" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.delete_product_list" if account_id.nil?
       # verify the required parameter 'list_id' is set
-      fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.delete_product_list" if list_id.nil?
+      fail ArgumentError, "Missing the required parameter 'list_id' when calling KnowledgeManagerApi.delete_product_list" if list_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.delete_product_list" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.delete_product_list" if v.nil?
       # resource path
-      local_var_path = "/accounts/{accountId}/locations/products/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
+      local_var_path = "/accounts/{accountId}/products/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
       # query parameters
       query_params = {}
@@ -690,7 +690,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ErrorResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#delete_product_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#delete_product_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -716,14 +716,14 @@ module YextClient
     # @return [Array<(BioListResponse, Fixnum, Hash)>] BioListResponse data, response status code and response headers
     def get_bio_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_bio ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_bio ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_bio" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_bio" if account_id.nil?
       # verify the required parameter 'list_id' is set
-      fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.get_bio" if list_id.nil?
+      fail ArgumentError, "Missing the required parameter 'list_id' when calling KnowledgeManagerApi.get_bio" if list_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_bio" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_bio" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/bios/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -756,7 +756,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'BioListResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_bio\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_bio\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -784,14 +784,14 @@ module YextClient
     # @return [Array<(BioListsResponse, Fixnum, Hash)>] BioListsResponse data, response status code and response headers
     def get_bios_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_bios ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_bios ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_bios" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_bios" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_bios" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_bios" if v.nil?
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
-        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_bios, must be smaller than or equal to 50.0.'
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling KnowledgeManagerApi.get_bios, must be smaller than or equal to 50.0.'
       end
 
       # resource path
@@ -828,7 +828,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'BioListsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_bios\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_bios\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -854,10 +854,10 @@ module YextClient
     # @return [Array<(BusinessCategoriesResponse, Fixnum, Hash)>] BusinessCategoriesResponse data, response status code and response headers
     def get_business_categories_with_http_info(v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_business_categories ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_business_categories ..."
       end
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_business_categories" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_business_categories" if v.nil?
       # resource path
       local_var_path = "/categories".sub('{format}','json')
 
@@ -892,7 +892,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'BusinessCategoriesResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_business_categories\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_business_categories\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -920,14 +920,14 @@ module YextClient
     # @return [Array<(CustomFieldsResponse, Fixnum, Hash)>] CustomFieldsResponse data, response status code and response headers
     def get_custom_fields_with_http_info(v, account_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_custom_fields ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_custom_fields ..."
       end
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_custom_fields" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_custom_fields" if v.nil?
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_custom_fields" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_custom_fields" if account_id.nil?
       if !opts[:'limit'].nil? && opts[:'limit'] > 1000.0
-        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_custom_fields, must be smaller than or equal to 1000.0.'
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling KnowledgeManagerApi.get_custom_fields, must be smaller than or equal to 1000.0.'
       end
 
       # resource path
@@ -964,7 +964,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'CustomFieldsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_custom_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_custom_fields\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -990,16 +990,16 @@ module YextClient
     # @return [Array<(EventListResponse, Fixnum, Hash)>] EventListResponse data, response status code and response headers
     def get_event_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_event ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_event ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_event" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_event" if account_id.nil?
       # verify the required parameter 'list_id' is set
-      fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.get_event" if list_id.nil?
+      fail ArgumentError, "Missing the required parameter 'list_id' when calling KnowledgeManagerApi.get_event" if list_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_event" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_event" if v.nil?
       # resource path
-      local_var_path = "/accounts/{accountId}/locations/events/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
+      local_var_path = "/accounts/{accountId}/events/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1030,7 +1030,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'EventListResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_event\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_event\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1058,18 +1058,18 @@ module YextClient
     # @return [Array<(EventListsResponse, Fixnum, Hash)>] EventListsResponse data, response status code and response headers
     def get_events_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_events ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_events ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_events" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_events" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_events" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_events" if v.nil?
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
-        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_events, must be smaller than or equal to 50.0.'
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling KnowledgeManagerApi.get_events, must be smaller than or equal to 50.0.'
       end
 
       # resource path
-      local_var_path = "/accounts/{accountId}/locations/events".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
+      local_var_path = "/accounts/{accountId}/events".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1102,13 +1102,13 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'EventListsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_events\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_events\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
 
     # Google Fields: List
-    # Use the Google Attributes API to retrieve a complete list of Google's location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locations via the googleKeywords field in the Locations API.
+    # Use the Google Fields endpoint to retrieve a complete list of Google's location attributes for each business category. This list includes attributes that may not apply to all Locations in an account. The set of attributes available to a Location depends on its primary business category. You can view and edit the attributes of Locations in the googleAttributes Location field.
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @return [GoogleFieldsResponse]
@@ -1118,16 +1118,16 @@ module YextClient
     end
 
     # Google Fields: List
-    # Use the Google Attributes API to retrieve a complete list of Google&#39;s location attributes for each business category. This list includes attributes that may not apply to all Partner Locations in an account. The attributes available to a Partner Location depends on its primary business category. You can view and edit the attributes of Partner Locations via the googleKeywords field in the Locations API.
+    # Use the Google Fields endpoint to retrieve a complete list of Google&#39;s location attributes for each business category. This list includes attributes that may not apply to all Locations in an account. The set of attributes available to a Location depends on its primary business category. You can view and edit the attributes of Locations in the googleAttributes Location field.
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @return [Array<(GoogleFieldsResponse, Fixnum, Hash)>] GoogleFieldsResponse data, response status code and response headers
     def get_google_keywords_with_http_info(v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_google_keywords ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_google_keywords ..."
       end
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_google_keywords" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_google_keywords" if v.nil?
       # resource path
       local_var_path = "/googlefields".sub('{format}','json')
 
@@ -1160,7 +1160,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'GoogleFieldsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_google_keywords\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_google_keywords\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1188,16 +1188,16 @@ module YextClient
     # @return [Array<(LocationResponse, Fixnum, Hash)>] LocationResponse data, response status code and response headers
     def get_language_profile_with_http_info(account_id, location_id, language_code, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_language_profile ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_language_profile ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_language_profile" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_language_profile" if account_id.nil?
       # verify the required parameter 'location_id' is set
-      fail ArgumentError, "Missing the required parameter 'location_id' when calling LocationManagerApi.get_language_profile" if location_id.nil?
+      fail ArgumentError, "Missing the required parameter 'location_id' when calling KnowledgeManagerApi.get_language_profile" if location_id.nil?
       # verify the required parameter 'language_code' is set
-      fail ArgumentError, "Missing the required parameter 'language_code' when calling LocationManagerApi.get_language_profile" if language_code.nil?
+      fail ArgumentError, "Missing the required parameter 'language_code' when calling KnowledgeManagerApi.get_language_profile" if language_code.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_language_profile" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_language_profile" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}/profiles/{language_code}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s).sub('{' + 'language_code' + '}', language_code.to_s)
 
@@ -1230,7 +1230,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'LocationResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_language_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_language_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1256,14 +1256,14 @@ module YextClient
     # @return [Array<(LanguageProfilesResponse, Fixnum, Hash)>] LanguageProfilesResponse data, response status code and response headers
     def get_language_profiles_with_http_info(account_id, location_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_language_profiles ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_language_profiles ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_language_profiles" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_language_profiles" if account_id.nil?
       # verify the required parameter 'location_id' is set
-      fail ArgumentError, "Missing the required parameter 'location_id' when calling LocationManagerApi.get_language_profiles" if location_id.nil?
+      fail ArgumentError, "Missing the required parameter 'location_id' when calling KnowledgeManagerApi.get_language_profiles" if location_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_language_profiles" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_language_profiles" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}/profiles".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s)
 
@@ -1296,7 +1296,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'LanguageProfilesResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_language_profiles\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_language_profiles\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1322,14 +1322,14 @@ module YextClient
     # @return [Array<(LocationResponse, Fixnum, Hash)>] LocationResponse data, response status code and response headers
     def get_location_with_http_info(account_id, location_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_location ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_location ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_location" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_location" if account_id.nil?
       # verify the required parameter 'location_id' is set
-      fail ArgumentError, "Missing the required parameter 'location_id' when calling LocationManagerApi.get_location" if location_id.nil?
+      fail ArgumentError, "Missing the required parameter 'location_id' when calling KnowledgeManagerApi.get_location" if location_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_location" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_location" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s)
 
@@ -1362,7 +1362,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'LocationResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1390,14 +1390,14 @@ module YextClient
     # @return [Array<(FoldersResponse, Fixnum, Hash)>] FoldersResponse data, response status code and response headers
     def get_location_folders_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_location_folders ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_location_folders ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_location_folders" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_location_folders" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_location_folders" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_location_folders" if v.nil?
       if !opts[:'limit'].nil? && opts[:'limit'] > 1000.0
-        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_location_folders, must be smaller than or equal to 1000.0.'
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling KnowledgeManagerApi.get_location_folders, must be smaller than or equal to 1000.0.'
       end
 
       # resource path
@@ -1434,7 +1434,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'FoldersResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_location_folders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_location_folders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1462,14 +1462,14 @@ module YextClient
     # @return [Array<(LocationsResponse, Fixnum, Hash)>] LocationsResponse data, response status code and response headers
     def get_locations_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_locations ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_locations ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_locations" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_locations" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_locations" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_locations" if v.nil?
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
-        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_locations, must be smaller than or equal to 50.0.'
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling KnowledgeManagerApi.get_locations, must be smaller than or equal to 50.0.'
       end
 
       # resource path
@@ -1506,7 +1506,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'LocationsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_locations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_locations\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1532,14 +1532,14 @@ module YextClient
     # @return [Array<(MenuListResponse, Fixnum, Hash)>] MenuListResponse data, response status code and response headers
     def get_menu_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_menu ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_menu ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_menu" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_menu" if account_id.nil?
       # verify the required parameter 'list_id' is set
-      fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.get_menu" if list_id.nil?
+      fail ArgumentError, "Missing the required parameter 'list_id' when calling KnowledgeManagerApi.get_menu" if list_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_menu" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_menu" if v.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/menus/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -1572,7 +1572,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'MenuListResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_menu\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_menu\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1600,14 +1600,14 @@ module YextClient
     # @return [Array<(MenuListsResponse, Fixnum, Hash)>] MenuListsResponse data, response status code and response headers
     def get_menus_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_menus ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_menus ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_menus" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_menus" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_menus" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_menus" if v.nil?
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
-        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_menus, must be smaller than or equal to 50.0.'
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling KnowledgeManagerApi.get_menus, must be smaller than or equal to 50.0.'
       end
 
       # resource path
@@ -1644,7 +1644,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'MenuListsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_menus\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_menus\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1670,16 +1670,16 @@ module YextClient
     # @return [Array<(ProductListResponse, Fixnum, Hash)>] ProductListResponse data, response status code and response headers
     def get_product_with_http_info(account_id, list_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_product ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_product ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_product" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_product" if account_id.nil?
       # verify the required parameter 'list_id' is set
-      fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.get_product" if list_id.nil?
+      fail ArgumentError, "Missing the required parameter 'list_id' when calling KnowledgeManagerApi.get_product" if list_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_product" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_product" if v.nil?
       # resource path
-      local_var_path = "/accounts/{accountId}/locations/products/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
+      local_var_path = "/accounts/{accountId}/products/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1710,7 +1710,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ProductListResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1738,14 +1738,14 @@ module YextClient
     # @return [Array<(ProductListsResponse, Fixnum, Hash)>] ProductListsResponse data, response status code and response headers
     def get_products_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.get_products ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.get_products ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.get_products" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.get_products" if account_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.get_products" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.get_products" if v.nil?
       if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
-        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling LocationManagerApi.get_products, must be smaller than or equal to 50.0.'
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling KnowledgeManagerApi.get_products, must be smaller than or equal to 50.0.'
       end
 
       # resource path
@@ -1782,7 +1782,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ProductListsResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#get_products\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#get_products\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1810,16 +1810,16 @@ module YextClient
     # @return [Array<(BioListResponse, Fixnum, Hash)>] BioListResponse data, response status code and response headers
     def update_bio_with_http_info(account_id, list_id, v, body, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.update_bio ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.update_bio ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.update_bio" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.update_bio" if account_id.nil?
       # verify the required parameter 'list_id' is set
-      fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.update_bio" if list_id.nil?
+      fail ArgumentError, "Missing the required parameter 'list_id' when calling KnowledgeManagerApi.update_bio" if list_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_bio" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.update_bio" if v.nil?
       # verify the required parameter 'body' is set
-      fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.update_bio" if body.nil?
+      fail ArgumentError, "Missing the required parameter 'body' when calling KnowledgeManagerApi.update_bio" if body.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/bios/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -1852,7 +1852,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'BioListResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#update_bio\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#update_bio\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1880,18 +1880,18 @@ module YextClient
     # @return [Array<(EventListResponse, Fixnum, Hash)>] EventListResponse data, response status code and response headers
     def update_event_with_http_info(account_id, list_id, v, body, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.update_event ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.update_event ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.update_event" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.update_event" if account_id.nil?
       # verify the required parameter 'list_id' is set
-      fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.update_event" if list_id.nil?
+      fail ArgumentError, "Missing the required parameter 'list_id' when calling KnowledgeManagerApi.update_event" if list_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_event" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.update_event" if v.nil?
       # verify the required parameter 'body' is set
-      fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.update_event" if body.nil?
+      fail ArgumentError, "Missing the required parameter 'body' when calling KnowledgeManagerApi.update_event" if body.nil?
       # resource path
-      local_var_path = "/accounts/{accountId}/locations/events/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
+      local_var_path = "/accounts/{accountId}/events/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
       # query parameters
       query_params = {}
@@ -1922,7 +1922,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'EventListResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#update_event\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#update_event\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -1950,16 +1950,16 @@ module YextClient
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
     def update_location_with_http_info(account_id, location_id, v, location_request, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.update_location ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.update_location ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.update_location" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.update_location" if account_id.nil?
       # verify the required parameter 'location_id' is set
-      fail ArgumentError, "Missing the required parameter 'location_id' when calling LocationManagerApi.update_location" if location_id.nil?
+      fail ArgumentError, "Missing the required parameter 'location_id' when calling KnowledgeManagerApi.update_location" if location_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_location" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.update_location" if v.nil?
       # verify the required parameter 'location_request' is set
-      fail ArgumentError, "Missing the required parameter 'location_request' when calling LocationManagerApi.update_location" if location_request.nil?
+      fail ArgumentError, "Missing the required parameter 'location_request' when calling KnowledgeManagerApi.update_location" if location_request.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s)
 
@@ -1992,7 +1992,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'IdResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#update_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#update_location\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2020,16 +2020,16 @@ module YextClient
     # @return [Array<(MenuListResponse, Fixnum, Hash)>] MenuListResponse data, response status code and response headers
     def update_menu_with_http_info(account_id, list_id, v, body, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.update_menu ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.update_menu ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.update_menu" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.update_menu" if account_id.nil?
       # verify the required parameter 'list_id' is set
-      fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.update_menu" if list_id.nil?
+      fail ArgumentError, "Missing the required parameter 'list_id' when calling KnowledgeManagerApi.update_menu" if list_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_menu" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.update_menu" if v.nil?
       # verify the required parameter 'body' is set
-      fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.update_menu" if body.nil?
+      fail ArgumentError, "Missing the required parameter 'body' when calling KnowledgeManagerApi.update_menu" if body.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/menus/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
@@ -2062,7 +2062,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'MenuListResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#update_menu\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#update_menu\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2090,18 +2090,18 @@ module YextClient
     # @return [Array<(ProductListResponse, Fixnum, Hash)>] ProductListResponse data, response status code and response headers
     def update_product_with_http_info(account_id, list_id, v, body, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.update_product ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.update_product ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.update_product" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.update_product" if account_id.nil?
       # verify the required parameter 'list_id' is set
-      fail ArgumentError, "Missing the required parameter 'list_id' when calling LocationManagerApi.update_product" if list_id.nil?
+      fail ArgumentError, "Missing the required parameter 'list_id' when calling KnowledgeManagerApi.update_product" if list_id.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.update_product" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.update_product" if v.nil?
       # verify the required parameter 'body' is set
-      fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.update_product" if body.nil?
+      fail ArgumentError, "Missing the required parameter 'body' when calling KnowledgeManagerApi.update_product" if body.nil?
       # resource path
-      local_var_path = "/accounts/{accountId}/locations/products/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
+      local_var_path = "/accounts/{accountId}/products/{listId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'listId' + '}', list_id.to_s)
 
       # query parameters
       query_params = {}
@@ -2132,7 +2132,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ProductListResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#update_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#update_product\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2164,18 +2164,18 @@ module YextClient
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
     def upsert_language_profile_with_http_info(account_id, location_id, language_code, v, body, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: LocationManagerApi.upsert_language_profile ..."
+        @api_client.config.logger.debug "Calling API: KnowledgeManagerApi.upsert_language_profile ..."
       end
       # verify the required parameter 'account_id' is set
-      fail ArgumentError, "Missing the required parameter 'account_id' when calling LocationManagerApi.upsert_language_profile" if account_id.nil?
+      fail ArgumentError, "Missing the required parameter 'account_id' when calling KnowledgeManagerApi.upsert_language_profile" if account_id.nil?
       # verify the required parameter 'location_id' is set
-      fail ArgumentError, "Missing the required parameter 'location_id' when calling LocationManagerApi.upsert_language_profile" if location_id.nil?
+      fail ArgumentError, "Missing the required parameter 'location_id' when calling KnowledgeManagerApi.upsert_language_profile" if location_id.nil?
       # verify the required parameter 'language_code' is set
-      fail ArgumentError, "Missing the required parameter 'language_code' when calling LocationManagerApi.upsert_language_profile" if language_code.nil?
+      fail ArgumentError, "Missing the required parameter 'language_code' when calling KnowledgeManagerApi.upsert_language_profile" if language_code.nil?
       # verify the required parameter 'v' is set
-      fail ArgumentError, "Missing the required parameter 'v' when calling LocationManagerApi.upsert_language_profile" if v.nil?
+      fail ArgumentError, "Missing the required parameter 'v' when calling KnowledgeManagerApi.upsert_language_profile" if v.nil?
       # verify the required parameter 'body' is set
-      fail ArgumentError, "Missing the required parameter 'body' when calling LocationManagerApi.upsert_language_profile" if body.nil?
+      fail ArgumentError, "Missing the required parameter 'body' when calling KnowledgeManagerApi.upsert_language_profile" if body.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/locations/{locationId}/profiles/{language_code}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'locationId' + '}', location_id.to_s).sub('{' + 'language_code' + '}', language_code.to_s)
 
@@ -2209,7 +2209,7 @@ module YextClient
         :auth_names => auth_names,
         :return_type => 'ErrorResponse')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: LocationManagerApi#upsert_language_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: KnowledgeManagerApi#upsert_language_profile\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
