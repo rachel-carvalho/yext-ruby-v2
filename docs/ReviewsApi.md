@@ -83,11 +83,11 @@ Name | Type | Description  | Notes
 
 
 # **create_review**
-> IdResponse create_review(account_id, vlocation_id, author_name, author_email, rating, content, opts)
+> IdResponse create_review(account_id, vlocation_id, author_name, rating, content, opts)
 
 Reviews: Create
 
-Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`authorEmail`** * **`rating`** * **`content`**   ## Optional fields * **`status`** 
+Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`**   ## Optional fields * **`authorEmail`** * **`status`** 
 
 ### Example
 ```ruby
@@ -111,19 +111,18 @@ location_id = 56 # Integer | The ID of the location associated with the review.
 
 author_name = "author_name_example" # String | The name of the person who wrote the review.
 
-author_email = "author_email_example" # String | The email address of the person who wrote the review.
-
 rating = 56 # Integer | The rating of the review from 1 to 5.
 
 content = "content_example" # String | The content of the review.
 
 opts = { 
+  author_email: "author_email_example", # String | The email address of the person who wrote the review.
   status: "QUARANTINED" # String | 
 }
 
 begin
   #Reviews: Create
-  result = api_instance.create_review(account_id, vlocation_id, author_name, author_email, rating, content, opts)
+  result = api_instance.create_review(account_id, vlocation_id, author_name, rating, content, opts)
   p result
 rescue YextClient::ApiError => e
   puts "Exception when calling ReviewsApi->create_review: #{e}"
@@ -138,9 +137,9 @@ Name | Type | Description  | Notes
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **location_id** | **Integer**| The ID of the location associated with the review. | 
  **author_name** | **String**| The name of the person who wrote the review. | 
- **author_email** | **String**| The email address of the person who wrote the review. | 
  **rating** | **Integer**| The rating of the review from 1 to 5. | 
  **content** | **String**| The content of the review. | 
+ **author_email** | **String**| The email address of the person who wrote the review. | [optional] 
  **status** | **String**|  | [optional] [default to QUARANTINED]
 
 ### Return type
@@ -159,7 +158,7 @@ Name | Type | Description  | Notes
 
 
 # **create_review_invites**
-> Array&lt;CreateReviewInvitationResponse&gt; create_review_invites(account_id, vreviews)
+> CreateReviewInvitationsResponse create_review_invites(account_id, vreviews)
 
 Review Invitations: Create
 
@@ -205,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Array&lt;CreateReviewInvitationResponse&gt;**](CreateReviewInvitationResponse.md)
+[**CreateReviewInvitationsResponse**](CreateReviewInvitationsResponse.md)
 
 ### Authorization
 

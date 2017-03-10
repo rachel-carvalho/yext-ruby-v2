@@ -26,7 +26,7 @@ require 'date'
 module YextClient
 
   class CustomField
-    # List of options for the Custom Field.  Present if and only if `type` is `SINGLE_OPTION` or `MULTI_OPTION`.
+    # Present if and only if `type` is `SINGLE_OPTION` or `MULTI_OPTION`.  List of options (key/value pairs) for the Custom Field.  Example: {   {      \"key\": \"2413\",     \"value\": \"Temporarily Closed\"   },   {     \"key\": \"2414\",     \"value\": \"Coming Soon\"   },   {     \"key\": \"2415\",     \"value\": \"Closed\"   },   {     \"key\": \"2416\",     \"value\": \"Open\"   } } 
     attr_accessor :options
 
     # The data type of the Custom Field's contents.

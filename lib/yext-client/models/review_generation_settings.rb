@@ -26,54 +26,33 @@ require 'date'
 module YextClient
 
   class ReviewGenerationSettings
-    #  If null is provided, no maximum contact frequency will be enforced. 
+    # Indicates the minimum number of days that must pass before a given contact can be sent another review invitation. This setting will prevent you from contacting the same person repeatedly in a short time period.  If null, no maximum contact frequency will be enforced. 
     attr_accessor :max_contact_frequency
 
-    #  If null is provided, review invitations by text will be disabled. 
+    # Enables review invitations by text and indicates the maximum number of text invites our system will send on a per-location, per-day basis. We will send a maximum of 20 text invites per location per day.  If null, review invitations by text will be disabled. 
     attr_accessor :max_texts_per_day
 
-    #  NOTE: First retrieve sites via the Publishers: List endpoint. Valid sites will have REVIEW MONITORING returned in the feature array. 
+    #  A list of third-party sites to generate reviews on. Sites may also be weighted, resulting in certain sites generating more reviews than others. The balancing algorithm will attempt to achieve Weight/(Sum of All Weights)% of review count on each specified site.  Can contain a maximum of 10 sites. Including 0 sites is also acceptable.  Each site in the request must have a corresponding weight.  Valid weights are integers 1-9  NOTE: Retrieve site **`id`**s via the Publishers: List endpoint. Valid sites will have `REVIEW MONITORING` listed in **`features`**. 
     attr_accessor :site_distribution
 
-    #  Must include one of these choices:  * **`DISTRIBUTION`**: The balancing algorithm will prefer following the weighting distribution outlined in Target Distribution of Reviews by Site, even if this means sending users to sites they are not logged into. * **`MORE_REVIEWS`**: The balancing algorithm will attempt to generate as many reviews as possible by sending users to sites they are logged into, even if this means less closely following the distribution. 
+    #  Sets optimization settings for the balancing algorithm.  Must include one of the following:  * **`DISTRIBUTION`**: The balancing algorithm will prefer following the weighting distribution specified in **`siteDistribution`**, even if users will be sent to sites they are not logged in to as a result. * **`MORE_REVIEWS`**: The balancing algorithm will attempt to generate as many reviews as possible by sending users to sites they are logged in to, even if the distribution will be less closely followed as a result. 
     attr_accessor :balancing_optimization
 
-    #  Must include zero or more of these choices:  * **`WEBSITE`**: Generate more first party reviews when a 1-star review is visible on the first page, that is, within the last five reviews. * **`RATING`**: Focus on selected sites that have a rating significantly below the location average. * **`RECENCY`**: Ensure each selected site has one review within the last month. 
+    #  Specifies one or more algorithms to address problems with your reviews. If more than one algorithm is specifed, the algorithms are applied in the order they are listed.  Must include at least one of the following:  * **`WEBSITE`**: Generate more first-party reviews when a 1-star review is visible on the first page (i.e., within the last five reviews). * **`RATING`**: Focus on selected sites that have a rating significantly below the location's average. * **`RECENCY`**: Ensure each selected site has one review within the last month. 
     attr_accessor :algorithm_configuration
 
-    # Prevents 1st party reviews from immediately showing up on your website or wherever else they may appear. During this quarantine period, users may respond to reviews, increasing the likelihood consumers revise or remove their negative reviews. This may be set to at most 7 days. 
+    # Prevents first-party reviews from immediately showing up on your website or wherever else you show your reviews. During this quarantine period, you may respond to reviews, increasing the likelihood that your customers will revise or remove their negative reviews. 
     attr_accessor :review_quarantine_days
 
-    #  Update request must contain a URL or null. Null indicates that the Yext privacy policy default will be used.
+    # Review-collection pages contain a link to the Yext privacy policy by default. This field lets you replace that link with a link to your own privacy policy.  Update request must contain a URL or null. If null, the Yext privacy policy link will be used.
     attr_accessor :privacy_policy_override
 
-    #  Must contain an integer value between 0 and 200. If 0 or null is provided, review invitations by email will be disabled. 
+    # Enables review invitations by email and indicates the maximum number of email invites our system will send on a per-location, per-day basis.  Must contain an integer value between 0 and 200. If 0 or null, review invitations by email will be disabled. 
     attr_accessor :max_emails_per_day
 
-    #  If null is provided, the system enforced maximum will act as the enabled max. 
+    # Indicates the maximum number of text invites our system will send on a per-location, per-month basis. 
     attr_accessor :max_texts_per_month
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -195,8 +174,6 @@ module YextClient
     def valid?
       return false if !@max_texts_per_day.nil? && @max_texts_per_day > 20.0
       return false if !@max_texts_per_day.nil? && @max_texts_per_day < 1.0
-      balancing_optimization_validator = EnumAttributeValidator.new('String', ["DISTRIBUTION", "MORE_REVIEWS"])
-      return false unless balancing_optimization_validator.valid?(@balancing_optimization)
       return false if !@review_quarantine_days.nil? && @review_quarantine_days > 7.0
       return false if !@review_quarantine_days.nil? && @review_quarantine_days < 0.0
       return false if !@max_emails_per_day.nil? && @max_emails_per_day > 200.0
@@ -218,16 +195,6 @@ module YextClient
       end
 
       @max_texts_per_day = max_texts_per_day
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] balancing_optimization Object to be assigned
-    def balancing_optimization=(balancing_optimization)
-      validator = EnumAttributeValidator.new('String', ["DISTRIBUTION", "MORE_REVIEWS"])
-      unless validator.valid?(balancing_optimization)
-        fail ArgumentError, "invalid value for 'balancing_optimization', must be one of #{validator.allowable_values}."
-      end
-      @balancing_optimization = balancing_optimization
     end
 
     # Custom attribute writer method with validation

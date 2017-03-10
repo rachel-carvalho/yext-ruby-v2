@@ -25,77 +25,25 @@ require 'date'
 
 module YextClient
 
-  class CreateReviewInvitationResponse
-    # The consumer’s first name
-    attr_accessor :first_name
+  class CreateReviewInvitationsResponse
+    attr_accessor :meta
 
-    # The consumer’s last name
-    attr_accessor :last_name
+    attr_accessor :response
 
-    # Only valid if “contact” is a phone number  If true, include a brand image with the phone number - otherwise nothing 
-    attr_accessor :image
-
-    # The email address or phone number of the consumer.  Phone numbers should be formatted in one of the following ways: * E.164 standard international format, with a leading \"+\" * National format, according to the country of the corresponding location 
-    attr_accessor :contact
-
-    # ID of the location that will be reviewed
-    attr_accessor :location_id
-
-    # If specified, the ID of the template used to format the email.  If not specified, the location’s default email template is used.  If the location has no default template, the account’s default template is used. 
-    attr_accessor :template_id
-
-    attr_accessor :status
-
-    # If status is REJECTED, describes why the invitation could not be processed.
-    attr_accessor :details
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'first_name' => :'firstName',
-        :'last_name' => :'lastName',
-        :'image' => :'image',
-        :'contact' => :'contact',
-        :'location_id' => :'locationId',
-        :'template_id' => :'templateId',
-        :'status' => :'status',
-        :'details' => :'details'
+        :'meta' => :'meta',
+        :'response' => :'response'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'first_name' => :'String',
-        :'last_name' => :'String',
-        :'image' => :'BOOLEAN',
-        :'contact' => :'String',
-        :'location_id' => :'String',
-        :'template_id' => :'String',
-        :'status' => :'String',
-        :'details' => :'String'
+        :'meta' => :'ResponseMeta',
+        :'response' => :'Array<CreateReviewInvitationResponse>'
       }
     end
 
@@ -107,36 +55,14 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'firstName')
-        self.first_name = attributes[:'firstName']
+      if attributes.has_key?(:'meta')
+        self.meta = attributes[:'meta']
       end
 
-      if attributes.has_key?(:'lastName')
-        self.last_name = attributes[:'lastName']
-      end
-
-      if attributes.has_key?(:'image')
-        self.image = attributes[:'image']
-      end
-
-      if attributes.has_key?(:'contact')
-        self.contact = attributes[:'contact']
-      end
-
-      if attributes.has_key?(:'locationId')
-        self.location_id = attributes[:'locationId']
-      end
-
-      if attributes.has_key?(:'templateId')
-        self.template_id = attributes[:'templateId']
-      end
-
-      if attributes.has_key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.has_key?(:'details')
-        self.details = attributes[:'details']
+      if attributes.has_key?(:'response')
+        if (value = attributes[:'response']).is_a?(Array)
+          self.response = value
+        end
       end
 
     end
@@ -151,19 +77,7 @@ module YextClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      status_validator = EnumAttributeValidator.new('String', ["ACCEPTED", "REJECTED"])
-      return false unless status_validator.valid?(@status)
       return true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] status Object to be assigned
-    def status=(status)
-      validator = EnumAttributeValidator.new('String', ["ACCEPTED", "REJECTED"])
-      unless validator.valid?(status)
-        fail ArgumentError, "invalid value for 'status', must be one of #{validator.allowable_values}."
-      end
-      @status = status
     end
 
     # Checks equality by comparing each attribute.
@@ -171,14 +85,8 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          first_name == o.first_name &&
-          last_name == o.last_name &&
-          image == o.image &&
-          contact == o.contact &&
-          location_id == o.location_id &&
-          template_id == o.template_id &&
-          status == o.status &&
-          details == o.details
+          meta == o.meta &&
+          response == o.response
     end
 
     # @see the `==` method
@@ -190,7 +98,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [first_name, last_name, image, contact, location_id, template_id, status, details].hash
+      [meta, response].hash
     end
 
     # Builds the object from hash

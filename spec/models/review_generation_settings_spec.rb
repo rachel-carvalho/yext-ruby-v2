@@ -64,10 +64,6 @@ describe 'ReviewGenerationSettings' do
   describe 'test attribute "balancing_optimization"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-       #validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["DISTRIBUTION", "MORE_REVIEWS"])
-       #validator.allowable_values.each do |value|
-       #  expect { @instance.balancing_optimization = value }.not_to raise_error
-       #end
     end
   end
 

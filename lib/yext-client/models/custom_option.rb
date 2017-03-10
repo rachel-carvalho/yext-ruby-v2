@@ -26,7 +26,7 @@ require 'date'
 module YextClient
 
   class CustomOption
-    # The Option's value.
+    # The Option's name.
     attr_accessor :value
 
     # The Option's unique ID.

@@ -62,15 +62,15 @@ describe 'ReviewsApi' do
 
   # unit tests for create_review
   # Reviews: Create
-  # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;authorEmail&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;**   ## Optional fields * **&#x60;status&#x60;** 
+  # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;**   ## Optional fields * **&#x60;authorEmail&#x60;** * **&#x60;status&#x60;** 
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param location_id The ID of the location associated with the review.
   # @param author_name The name of the person who wrote the review.
-  # @param author_email The email address of the person who wrote the review.
   # @param rating The rating of the review from 1 to 5.
   # @param content The content of the review.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :author_email The email address of the person who wrote the review.
   # @option opts [String] :status 
   # @return [IdResponse]
   describe 'create_review test' do
@@ -86,7 +86,7 @@ describe 'ReviewsApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param reviews 
   # @param [Hash] opts the optional parameters
-  # @return [Array<CreateReviewInvitationResponse>]
+  # @return [CreateReviewInvitationsResponse]
   describe 'create_review_invites test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

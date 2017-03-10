@@ -194,6 +194,7 @@ Class | Method | HTTP request | Description
  - [YextClient::CreateReportsResponse](docs/CreateReportsResponse.md)
  - [YextClient::CreateReportsResponseResponse](docs/CreateReportsResponseResponse.md)
  - [YextClient::CreateReviewInvitationResponse](docs/CreateReviewInvitationResponse.md)
+ - [YextClient::CreateReviewInvitationsResponse](docs/CreateReviewInvitationsResponse.md)
  - [YextClient::CreateUserRequest](docs/CreateUserRequest.md)
  - [YextClient::CustomField](docs/CustomField.md)
  - [YextClient::CustomFieldsResponse](docs/CustomFieldsResponse.md)

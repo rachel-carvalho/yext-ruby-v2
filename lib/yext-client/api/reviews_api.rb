@@ -110,35 +110,35 @@ module YextClient
     end
 
     # Reviews: Create
-    # Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`authorEmail`** * **`rating`** * **`content`**   ## Optional fields * **`status`** 
+    # Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`**   ## Optional fields * **`authorEmail`** * **`status`** 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param location_id The ID of the location associated with the review.
     # @param author_name The name of the person who wrote the review.
-    # @param author_email The email address of the person who wrote the review.
     # @param rating The rating of the review from 1 to 5.
     # @param content The content of the review.
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :author_email The email address of the person who wrote the review.
     # @option opts [String] :status  (default to QUARANTINED)
     # @return [IdResponse]
-    def create_review(account_id, v, location_id, author_name, author_email, rating, content, opts = {})
-      data, _status_code, _headers = create_review_with_http_info(account_id, v, location_id, author_name, author_email, rating, content, opts)
+    def create_review(account_id, v, location_id, author_name, rating, content, opts = {})
+      data, _status_code, _headers = create_review_with_http_info(account_id, v, location_id, author_name, rating, content, opts)
       return data
     end
 
     # Reviews: Create
-    # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;authorEmail&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;**   ## Optional fields * **&#x60;status&#x60;** 
+    # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;**   ## Optional fields * **&#x60;authorEmail&#x60;** * **&#x60;status&#x60;** 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param location_id The ID of the location associated with the review.
     # @param author_name The name of the person who wrote the review.
-    # @param author_email The email address of the person who wrote the review.
     # @param rating The rating of the review from 1 to 5.
     # @param content The content of the review.
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :author_email The email address of the person who wrote the review.
     # @option opts [String] :status 
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
-    def create_review_with_http_info(account_id, v, location_id, author_name, author_email, rating, content, opts = {})
+    def create_review_with_http_info(account_id, v, location_id, author_name, rating, content, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.create_review ..."
       end
@@ -150,8 +150,6 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'location_id' when calling ReviewsApi.create_review" if location_id.nil?
       # verify the required parameter 'author_name' is set
       fail ArgumentError, "Missing the required parameter 'author_name' when calling ReviewsApi.create_review" if author_name.nil?
-      # verify the required parameter 'author_email' is set
-      fail ArgumentError, "Missing the required parameter 'author_email' when calling ReviewsApi.create_review" if author_email.nil?
       # verify the required parameter 'rating' is set
       fail ArgumentError, "Missing the required parameter 'rating' when calling ReviewsApi.create_review" if rating.nil?
       # verify the required parameter 'content' is set
@@ -167,9 +165,9 @@ module YextClient
       query_params[:'v'] = v
       query_params[:'locationId'] = location_id
       query_params[:'authorName'] = author_name
-      query_params[:'authorEmail'] = author_email
       query_params[:'rating'] = rating
       query_params[:'content'] = content
+      query_params[:'authorEmail'] = opts[:'author_email'] if !opts[:'author_email'].nil?
       query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
 
       # header parameters
@@ -208,7 +206,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param reviews 
     # @param [Hash] opts the optional parameters
-    # @return [Array<CreateReviewInvitationResponse>]
+    # @return [CreateReviewInvitationsResponse]
     def create_review_invites(account_id, v, reviews, opts = {})
       data, _status_code, _headers = create_review_invites_with_http_info(account_id, v, reviews, opts)
       return data
@@ -220,7 +218,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param reviews 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<CreateReviewInvitationResponse>, Fixnum, Hash)>] Array<CreateReviewInvitationResponse> data, response status code and response headers
+    # @return [Array<(CreateReviewInvitationsResponse, Fixnum, Hash)>] CreateReviewInvitationsResponse data, response status code and response headers
     def create_review_invites_with_http_info(account_id, v, reviews, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.create_review_invites ..."
@@ -261,7 +259,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<CreateReviewInvitationResponse>')
+        :return_type => 'CreateReviewInvitationsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReviewsApi#create_review_invites\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
