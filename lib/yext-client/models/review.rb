@@ -26,7 +26,7 @@ require 'date'
 module YextClient
 
   class Review
-    # The current status of the review; only returned for First Party and External First Party reviews.
+    # The current status of the review; only returned for First Party and External First Party reviews. Defaults to `QUARANTINED` when creating.
     attr_accessor :status
 
     # Normalized rating out of 5. This value is omitted if the review does not include a rating. 

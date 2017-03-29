@@ -32,31 +32,27 @@ module YextClient
     end
 
     # Comments: Create
-    # Creates a new Comment on a Review.
+    # Creates a new Comment on a Review. <br><br>  ## Required fields * **`content`** <br><br>  ## Optional fields * **`parentId`** <br><br> Other fields will be ignored. 
     # @param account_id 
     # @param review_id ID of this Review.
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param comment_request 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :content Content of the new comment.
-    # @option opts [String] :visibility  (default to PUBLIC)
-    # @option opts [Integer] :parent_id If this Comment is in response to another Comment, use this field to specify the ID of the parent Comment.
     # @return [ErrorResponse]
-    def create_comment(account_id, review_id, v, opts = {})
-      data, _status_code, _headers = create_comment_with_http_info(account_id, review_id, v, opts)
+    def create_comment(account_id, review_id, v, comment_request, opts = {})
+      data, _status_code, _headers = create_comment_with_http_info(account_id, review_id, v, comment_request, opts)
       return data
     end
 
     # Comments: Create
-    # Creates a new Comment on a Review.
+    # Creates a new Comment on a Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;content&#x60;** &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;parentId&#x60;** &lt;br&gt;&lt;br&gt; Other fields will be ignored. 
     # @param account_id 
     # @param review_id ID of this Review.
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param comment_request 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :content Content of the new comment.
-    # @option opts [String] :visibility 
-    # @option opts [Integer] :parent_id If this Comment is in response to another Comment, use this field to specify the ID of the parent Comment.
     # @return [Array<(ErrorResponse, Fixnum, Hash)>] ErrorResponse data, response status code and response headers
-    def create_comment_with_http_info(account_id, review_id, v, opts = {})
+    def create_comment_with_http_info(account_id, review_id, v, comment_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.create_comment ..."
       end
@@ -66,18 +62,14 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'review_id' when calling ReviewsApi.create_comment" if review_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.create_comment" if v.nil?
-      if opts[:'visibility'] && !['PUBLIC', 'PRIVATE'].include?(opts[:'visibility'])
-        fail ArgumentError, 'invalid value for "visibility", must be one of PUBLIC, PRIVATE'
-      end
+      # verify the required parameter 'comment_request' is set
+      fail ArgumentError, "Missing the required parameter 'comment_request' when calling ReviewsApi.create_comment" if comment_request.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/reviews/{reviewId}/comments".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'reviewId' + '}', review_id.to_s)
 
       # query parameters
       query_params = {}
       query_params[:'v'] = v
-      query_params[:'content'] = opts[:'content'] if !opts[:'content'].nil?
-      query_params[:'visibility'] = opts[:'visibility'] if !opts[:'visibility'].nil?
-      query_params[:'parentId'] = opts[:'parent_id'] if !opts[:'parent_id'].nil?
 
       # header parameters
       header_params = {}
@@ -94,7 +86,7 @@ module YextClient
       form_params = {}
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(comment_request)
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
@@ -110,35 +102,25 @@ module YextClient
     end
 
     # Reviews: Create
-    # Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`**   ## Optional fields * **`authorEmail`** * **`status`** 
+    # Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`** <br><br>  ## Optional fields * **`authorEmail`** * **`status`** * **`url`** * **`title`** <br><br> Other fields will be ignored. 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
-    # @param location_id The ID of the location associated with the review.
-    # @param author_name The name of the person who wrote the review.
-    # @param rating The rating of the review from 1 to 5.
-    # @param content The content of the review.
+    # @param review_request 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :author_email The email address of the person who wrote the review.
-    # @option opts [String] :status  (default to QUARANTINED)
     # @return [IdResponse]
-    def create_review(account_id, v, location_id, author_name, rating, content, opts = {})
-      data, _status_code, _headers = create_review_with_http_info(account_id, v, location_id, author_name, rating, content, opts)
+    def create_review(account_id, v, review_request, opts = {})
+      data, _status_code, _headers = create_review_with_http_info(account_id, v, review_request, opts)
       return data
     end
 
     # Reviews: Create
-    # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;**   ## Optional fields * **&#x60;authorEmail&#x60;** * **&#x60;status&#x60;** 
+    # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;** &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;authorEmail&#x60;** * **&#x60;status&#x60;** * **&#x60;url&#x60;** * **&#x60;title&#x60;** &lt;br&gt;&lt;br&gt; Other fields will be ignored. 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
-    # @param location_id The ID of the location associated with the review.
-    # @param author_name The name of the person who wrote the review.
-    # @param rating The rating of the review from 1 to 5.
-    # @param content The content of the review.
+    # @param review_request 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :author_email The email address of the person who wrote the review.
-    # @option opts [String] :status 
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
-    def create_review_with_http_info(account_id, v, location_id, author_name, rating, content, opts = {})
+    def create_review_with_http_info(account_id, v, review_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.create_review ..."
       end
@@ -146,29 +128,14 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling ReviewsApi.create_review" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.create_review" if v.nil?
-      # verify the required parameter 'location_id' is set
-      fail ArgumentError, "Missing the required parameter 'location_id' when calling ReviewsApi.create_review" if location_id.nil?
-      # verify the required parameter 'author_name' is set
-      fail ArgumentError, "Missing the required parameter 'author_name' when calling ReviewsApi.create_review" if author_name.nil?
-      # verify the required parameter 'rating' is set
-      fail ArgumentError, "Missing the required parameter 'rating' when calling ReviewsApi.create_review" if rating.nil?
-      # verify the required parameter 'content' is set
-      fail ArgumentError, "Missing the required parameter 'content' when calling ReviewsApi.create_review" if content.nil?
-      if opts[:'status'] && !['QUARANTINED', 'LIVE'].include?(opts[:'status'])
-        fail ArgumentError, 'invalid value for "status", must be one of QUARANTINED, LIVE'
-      end
+      # verify the required parameter 'review_request' is set
+      fail ArgumentError, "Missing the required parameter 'review_request' when calling ReviewsApi.create_review" if review_request.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/reviews".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s)
 
       # query parameters
       query_params = {}
       query_params[:'v'] = v
-      query_params[:'locationId'] = location_id
-      query_params[:'authorName'] = author_name
-      query_params[:'rating'] = rating
-      query_params[:'content'] = content
-      query_params[:'authorEmail'] = opts[:'author_email'] if !opts[:'author_email'].nil?
-      query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
 
       # header parameters
       header_params = {}
@@ -185,7 +152,7 @@ module YextClient
       form_params = {}
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(review_request)
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
@@ -518,35 +485,27 @@ module YextClient
     end
 
     # Reviews: Update
-    # Updates an External First Party Review. <br><br> **NOTE:** Despite using the `PUT` method, Reviews: Update only updates supplied fields. Omitted fields are not modified. 
+    # Updates an External First Party Review. <br><br> **NOTE:** Despite using the `PUT` method, Reviews: Update only updates supplied fields. Omitted fields are not modified. <br><br>  ## Required fields <br><br>  ## Optional fields * **`rating`** * **`title`** * **`content`** * **`authorName`** * **`authorEmail`** * **`url`** * **`status`** <br><br> Other fields will be ignored. 
     # @param account_id 
     # @param review_id ID of this Review.
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param review_request 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :author_name The name of the person who wrote the review.
-    # @option opts [String] :author_email The email address of the person who wrote the review.
-    # @option opts [Integer] :rating The rating of the review from 1 to 5.
-    # @option opts [String] :content The content of the review.
-    # @option opts [String] :status 
     # @return [IdResponse]
-    def update_review(account_id, review_id, v, opts = {})
-      data, _status_code, _headers = update_review_with_http_info(account_id, review_id, v, opts)
+    def update_review(account_id, review_id, v, review_request, opts = {})
+      data, _status_code, _headers = update_review_with_http_info(account_id, review_id, v, review_request, opts)
       return data
     end
 
     # Reviews: Update
-    # Updates an External First Party Review. &lt;br&gt;&lt;br&gt; **NOTE:** Despite using the &#x60;PUT&#x60; method, Reviews: Update only updates supplied fields. Omitted fields are not modified. 
+    # Updates an External First Party Review. &lt;br&gt;&lt;br&gt; **NOTE:** Despite using the &#x60;PUT&#x60; method, Reviews: Update only updates supplied fields. Omitted fields are not modified. &lt;br&gt;&lt;br&gt;  ## Required fields &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;rating&#x60;** * **&#x60;title&#x60;** * **&#x60;content&#x60;** * **&#x60;authorName&#x60;** * **&#x60;authorEmail&#x60;** * **&#x60;url&#x60;** * **&#x60;status&#x60;** &lt;br&gt;&lt;br&gt; Other fields will be ignored. 
     # @param account_id 
     # @param review_id ID of this Review.
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
+    # @param review_request 
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :author_name The name of the person who wrote the review.
-    # @option opts [String] :author_email The email address of the person who wrote the review.
-    # @option opts [Integer] :rating The rating of the review from 1 to 5.
-    # @option opts [String] :content The content of the review.
-    # @option opts [String] :status 
     # @return [Array<(IdResponse, Fixnum, Hash)>] IdResponse data, response status code and response headers
-    def update_review_with_http_info(account_id, review_id, v, opts = {})
+    def update_review_with_http_info(account_id, review_id, v, review_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.update_review ..."
       end
@@ -556,20 +515,14 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'review_id' when calling ReviewsApi.update_review" if review_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.update_review" if v.nil?
-      if opts[:'status'] && !['QUARANTINED', 'LIVE'].include?(opts[:'status'])
-        fail ArgumentError, 'invalid value for "status", must be one of QUARANTINED, LIVE'
-      end
+      # verify the required parameter 'review_request' is set
+      fail ArgumentError, "Missing the required parameter 'review_request' when calling ReviewsApi.update_review" if review_request.nil?
       # resource path
       local_var_path = "/accounts/{accountId}/reviews/{reviewId}".sub('{format}','json').sub('{' + 'accountId' + '}', account_id.to_s).sub('{' + 'reviewId' + '}', review_id.to_s)
 
       # query parameters
       query_params = {}
       query_params[:'v'] = v
-      query_params[:'authorName'] = opts[:'author_name'] if !opts[:'author_name'].nil?
-      query_params[:'authorEmail'] = opts[:'author_email'] if !opts[:'author_email'].nil?
-      query_params[:'rating'] = opts[:'rating'] if !opts[:'rating'].nil?
-      query_params[:'content'] = opts[:'content'] if !opts[:'content'].nil?
-      query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
 
       # header parameters
       header_params = {}
@@ -586,7 +539,7 @@ module YextClient
       form_params = {}
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(review_request)
       auth_names = ['api_key']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
         :header_params => header_params,

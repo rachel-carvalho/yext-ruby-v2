@@ -26,11 +26,15 @@ require 'date'
 module YextClient
 
   class ReviewComment
+    # Content of the comment.
+    attr_accessor :content
+
     attr_accessor :author_role
 
     # The timestamp of the comment as reported by the publisher.  If edits impact the comment timestamp on the publisher, then this timestamp may change.  This timestamp always comes from the publisher and we respect whatever they have.
     attr_accessor :publisher_date
 
+    # Defaults to `PUBLIC` when creating a comment
     attr_accessor :visibility
 
     # The email address of the person who wrote the comment (if we have it).
@@ -41,9 +45,6 @@ module YextClient
 
     # If this comment is in response to another comment, this is the ID of the parent comment.
     attr_accessor :parent_id
-
-    # Content of the comment.
-    attr_accessor :message
 
     # ID of this comment (assigned by Yext).
     attr_accessor :id
@@ -73,13 +74,13 @@ module YextClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'content' => :'content',
         :'author_role' => :'authorRole',
         :'publisher_date' => :'publisherDate',
         :'visibility' => :'visibility',
         :'author_email' => :'authorEmail',
         :'author_name' => :'authorName',
         :'parent_id' => :'parentId',
-        :'message' => :'message',
         :'id' => :'id'
       }
     end
@@ -87,13 +88,13 @@ module YextClient
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'content' => :'String',
         :'author_role' => :'String',
         :'publisher_date' => :'Integer',
         :'visibility' => :'String',
         :'author_email' => :'String',
         :'author_name' => :'String',
         :'parent_id' => :'Integer',
-        :'message' => :'String',
         :'id' => :'Integer'
       }
     end
@@ -105,6 +106,10 @@ module YextClient
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
+
+      if attributes.has_key?(:'content')
+        self.content = attributes[:'content']
+      end
 
       if attributes.has_key?(:'authorRole')
         self.author_role = attributes[:'authorRole']
@@ -128,10 +133,6 @@ module YextClient
 
       if attributes.has_key?(:'parentId')
         self.parent_id = attributes[:'parentId']
-      end
-
-      if attributes.has_key?(:'message')
-        self.message = attributes[:'message']
       end
 
       if attributes.has_key?(:'id')
@@ -182,13 +183,13 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          content == o.content &&
           author_role == o.author_role &&
           publisher_date == o.publisher_date &&
           visibility == o.visibility &&
           author_email == o.author_email &&
           author_name == o.author_name &&
           parent_id == o.parent_id &&
-          message == o.message &&
           id == o.id
     end
 
@@ -201,7 +202,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [author_role, publisher_date, visibility, author_email, author_name, parent_id, message, id].hash
+      [content, author_role, publisher_date, visibility, author_email, author_name, parent_id, id].hash
     end
 
     # Builds the object from hash

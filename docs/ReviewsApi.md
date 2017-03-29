@@ -15,11 +15,11 @@ Method | HTTP request | Description
 
 
 # **create_comment**
-> ErrorResponse create_comment(account_id, review_id, v, opts)
+> ErrorResponse create_comment(account_id, review_id, vcomment_request)
 
 Comments: Create
 
-Creates a new Comment on a Review.
+Creates a new Comment on a Review. <br><br>  ## Required fields * **`content`** <br><br>  ## Optional fields * **`parentId`** <br><br> Other fields will be ignored. 
 
 ### Example
 ```ruby
@@ -41,15 +41,12 @@ review_id = 56 # Integer | ID of this Review.
 
 v = "20161012" # String | A date in `YYYYMMDD` format.
 
-opts = { 
-  content: "content_example", # String | Content of the new comment.
-  visibility: "PUBLIC", # String | 
-  parent_id: 56 # Integer | If this Comment is in response to another Comment, use this field to specify the ID of the parent Comment.
-}
+comment_request = YextClient::ReviewComment.new # ReviewComment | 
+
 
 begin
   #Comments: Create
-  result = api_instance.create_comment(account_id, review_id, v, opts)
+  result = api_instance.create_comment(account_id, review_id, vcomment_request)
   p result
 rescue YextClient::ApiError => e
   puts "Exception when calling ReviewsApi->create_comment: #{e}"
@@ -63,9 +60,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **review_id** | **Integer**| ID of this Review. | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
- **content** | **String**| Content of the new comment. | [optional] 
- **visibility** | **String**|  | [optional] [default to PUBLIC]
- **parent_id** | **Integer**| If this Comment is in response to another Comment, use this field to specify the ID of the parent Comment. | [optional] 
+ **comment_request** | [**ReviewComment**](ReviewComment.md)|  | 
 
 ### Return type
 
@@ -83,11 +78,11 @@ Name | Type | Description  | Notes
 
 
 # **create_review**
-> IdResponse create_review(account_id, vlocation_id, author_name, rating, content, opts)
+> IdResponse create_review(account_id, vreview_request)
 
 Reviews: Create
 
-Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`**   ## Optional fields * **`authorEmail`** * **`status`** 
+Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`** <br><br>  ## Optional fields * **`authorEmail`** * **`status`** * **`url`** * **`title`** <br><br> Other fields will be ignored. 
 
 ### Example
 ```ruby
@@ -107,22 +102,12 @@ account_id = "account_id_example" # String |
 
 v = "20161012" # String | A date in `YYYYMMDD` format.
 
-location_id = 56 # Integer | The ID of the location associated with the review.
+review_request = YextClient::Review.new # Review | 
 
-author_name = "author_name_example" # String | The name of the person who wrote the review.
-
-rating = 56 # Integer | The rating of the review from 1 to 5.
-
-content = "content_example" # String | The content of the review.
-
-opts = { 
-  author_email: "author_email_example", # String | The email address of the person who wrote the review.
-  status: "QUARANTINED" # String | 
-}
 
 begin
   #Reviews: Create
-  result = api_instance.create_review(account_id, vlocation_id, author_name, rating, content, opts)
+  result = api_instance.create_review(account_id, vreview_request)
   p result
 rescue YextClient::ApiError => e
   puts "Exception when calling ReviewsApi->create_review: #{e}"
@@ -135,12 +120,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
- **location_id** | **Integer**| The ID of the location associated with the review. | 
- **author_name** | **String**| The name of the person who wrote the review. | 
- **rating** | **Integer**| The rating of the review from 1 to 5. | 
- **content** | **String**| The content of the review. | 
- **author_email** | **String**| The email address of the person who wrote the review. | [optional] 
- **status** | **String**|  | [optional] [default to QUARANTINED]
+ **review_request** | [**Review**](Review.md)|  | 
 
 ### Return type
 
@@ -430,11 +410,11 @@ Name | Type | Description  | Notes
 
 
 # **update_review**
-> IdResponse update_review(account_id, review_id, v, opts)
+> IdResponse update_review(account_id, review_id, vreview_request)
 
 Reviews: Update
 
-Updates an External First Party Review. <br><br> **NOTE:** Despite using the `PUT` method, Reviews: Update only updates supplied fields. Omitted fields are not modified. 
+Updates an External First Party Review. <br><br> **NOTE:** Despite using the `PUT` method, Reviews: Update only updates supplied fields. Omitted fields are not modified. <br><br>  ## Required fields <br><br>  ## Optional fields * **`rating`** * **`title`** * **`content`** * **`authorName`** * **`authorEmail`** * **`url`** * **`status`** <br><br> Other fields will be ignored. 
 
 ### Example
 ```ruby
@@ -456,17 +436,12 @@ review_id = 56 # Integer | ID of this Review.
 
 v = "20161012" # String | A date in `YYYYMMDD` format.
 
-opts = { 
-  author_name: "author_name_example", # String | The name of the person who wrote the review.
-  author_email: "author_email_example", # String | The email address of the person who wrote the review.
-  rating: 56, # Integer | The rating of the review from 1 to 5.
-  content: "content_example", # String | The content of the review.
-  status: "status_example" # String | 
-}
+review_request = YextClient::Review.new # Review | 
+
 
 begin
   #Reviews: Update
-  result = api_instance.update_review(account_id, review_id, v, opts)
+  result = api_instance.update_review(account_id, review_id, vreview_request)
   p result
 rescue YextClient::ApiError => e
   puts "Exception when calling ReviewsApi->update_review: #{e}"
@@ -480,11 +455,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **review_id** | **Integer**| ID of this Review. | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
- **author_name** | **String**| The name of the person who wrote the review. | [optional] 
- **author_email** | **String**| The email address of the person who wrote the review. | [optional] 
- **rating** | **Integer**| The rating of the review from 1 to 5. | [optional] 
- **content** | **String**| The content of the review. | [optional] 
- **status** | **String**|  | [optional] 
+ **review_request** | [**Review**](Review.md)|  | 
 
 ### Return type
 
