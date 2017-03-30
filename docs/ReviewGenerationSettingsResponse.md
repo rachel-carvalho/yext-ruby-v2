@@ -1,4 +1,4 @@
-# YextClient::GetReviewGenerationSettingsResponse
+# YextClient::ReviewGenerationSettingsResponse
 
 ## Properties
 Name | Type | Description | Notes

@@ -138,13 +138,13 @@ Class | Method | HTTP request | Description
 *YextClient::PowerListingsApi* | [**opt_out_listings**](docs/PowerListingsApi.md#opt_out_listings) | **PUT** /accounts/{accountId}/powerlistings/listings/optout | Listings: Opt Out
 *YextClient::PowerListingsApi* | [**suppress_duplicate**](docs/PowerListingsApi.md#suppress_duplicate) | **PUT** /accounts/{accountId}/powerlistings/duplicates/{duplicateId} | Duplicates: Suppress
 *YextClient::PowerListingsApi* | [**update_publisher_suggestion**](docs/PowerListingsApi.md#update_publisher_suggestion) | **PUT** /accounts/{accountId}/powerlistings/publishersuggestions/{suggestionId} | Publisher Suggestions: Update
-*YextClient::ReviewsApi* | [**create_comment**](docs/ReviewsApi.md#create_comment) | **POST** /accounts/{accountId}/reviews/{reviewId}/comments | Comments: Create
+*YextClient::ReviewsApi* | [**create_comment**](docs/ReviewsApi.md#create_comment) | **POST** /accounts/{accountId}/reviews/{reviewId}/comments | Comment: Create
 *YextClient::ReviewsApi* | [**create_review**](docs/ReviewsApi.md#create_review) | **POST** /accounts/{accountId}/reviews | Reviews: Create
 *YextClient::ReviewsApi* | [**create_review_invites**](docs/ReviewsApi.md#create_review_invites) | **POST** /accounts/{accountId}/reviewinvites | Review Invitations: Create
-*YextClient::ReviewsApi* | [**get_review**](docs/ReviewsApi.md#get_review) | **GET** /accounts/{accountId}/reviews/{reviewId} | Reviews: Get
+*YextClient::ReviewsApi* | [**get_review**](docs/ReviewsApi.md#get_review) | **GET** /accounts/{accountId}/reviews/{reviewId} | Review: Get
 *YextClient::ReviewsApi* | [**get_review_generation_settings**](docs/ReviewsApi.md#get_review_generation_settings) | **GET** /accounts/{accountId}/reviews/settings/generation | Review Generation Settings: Get
 *YextClient::ReviewsApi* | [**list_reviews**](docs/ReviewsApi.md#list_reviews) | **GET** /accounts/{accountId}/reviews | Reviews: List
-*YextClient::ReviewsApi* | [**update_review**](docs/ReviewsApi.md#update_review) | **PUT** /accounts/{accountId}/reviews/{reviewId} | Reviews: Update
+*YextClient::ReviewsApi* | [**update_review**](docs/ReviewsApi.md#update_review) | **PUT** /accounts/{accountId}/reviews/{reviewId} | Review: Update
 *YextClient::ReviewsApi* | [**update_review_generation_settings**](docs/ReviewsApi.md#update_review_generation_settings) | **POST** /accounts/{accountId}/reviews/settings/generation | Review Generation Settings: Update
 *YextClient::SocialSpringSummerApi* | [**create_comment**](docs/SocialSpringSummerApi.md#create_comment) | **POST** /accounts/{accountId}/posts/{postId}/comments | Comments: Create
 *YextClient::SocialSpringSummerApi* | [**create_posts**](docs/SocialSpringSummerApi.md#create_posts) | **POST** /accounts/{accountId}/posts | Posts: Create
@@ -214,7 +214,6 @@ Class | Method | HTTP request | Description
  - [YextClient::Folder](docs/Folder.md)
  - [YextClient::FoldersResponse](docs/FoldersResponse.md)
  - [YextClient::FoldersResponseResponse](docs/FoldersResponseResponse.md)
- - [YextClient::GetReviewGenerationSettingsResponse](docs/GetReviewGenerationSettingsResponse.md)
  - [YextClient::GoogleCategory](docs/GoogleCategory.md)
  - [YextClient::GoogleField](docs/GoogleField.md)
  - [YextClient::GoogleFieldsResponse](docs/GoogleFieldsResponse.md)
@@ -280,6 +279,7 @@ Class | Method | HTTP request | Description
  - [YextClient::Review](docs/Review.md)
  - [YextClient::ReviewComment](docs/ReviewComment.md)
  - [YextClient::ReviewGenerationSettings](docs/ReviewGenerationSettings.md)
+ - [YextClient::ReviewGenerationSettingsResponse](docs/ReviewGenerationSettingsResponse.md)
  - [YextClient::ReviewInvitation](docs/ReviewInvitation.md)
  - [YextClient::ReviewResponse](docs/ReviewResponse.md)
  - [YextClient::ReviewsResponse](docs/ReviewsResponse.md)

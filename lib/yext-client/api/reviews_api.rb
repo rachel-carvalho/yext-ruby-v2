@@ -31,8 +31,8 @@ module YextClient
       @api_client = api_client
     end
 
-    # Comments: Create
-    # Creates a new Comment on a Review. <br><br>  ## Required fields * **`content`** <br><br>  ## Optional fields * **`parentId`** <br><br> Other fields will be ignored. 
+    # Comment: Create
+    # Creates a new Comment on a Review. <br><br>  ## Required fields * **`content`** <br><br>  ## Optional fields * **`parentId`** * **`visiblity`** <br><br> 
     # @param account_id 
     # @param review_id ID of this Review.
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -44,8 +44,8 @@ module YextClient
       return data
     end
 
-    # Comments: Create
-    # Creates a new Comment on a Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;content&#x60;** &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;parentId&#x60;** &lt;br&gt;&lt;br&gt; Other fields will be ignored. 
+    # Comment: Create
+    # Creates a new Comment on a Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;content&#x60;** &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;parentId&#x60;** * **&#x60;visiblity&#x60;** &lt;br&gt;&lt;br&gt; 
     # @param account_id 
     # @param review_id ID of this Review.
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -102,7 +102,7 @@ module YextClient
     end
 
     # Reviews: Create
-    # Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`** <br><br>  ## Optional fields * **`authorEmail`** * **`status`** * **`url`** * **`title`** <br><br> Other fields will be ignored. 
+    # Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`** <br><br>  ## Optional fields * **`authorEmail`** * **`status`** <br><br> 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param review_request 
@@ -114,7 +114,7 @@ module YextClient
     end
 
     # Reviews: Create
-    # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;** &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;authorEmail&#x60;** * **&#x60;status&#x60;** * **&#x60;url&#x60;** * **&#x60;title&#x60;** &lt;br&gt;&lt;br&gt; Other fields will be ignored. 
+    # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;** &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;authorEmail&#x60;** * **&#x60;status&#x60;** &lt;br&gt;&lt;br&gt; 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param review_request 
@@ -233,7 +233,7 @@ module YextClient
       return data, status_code, headers
     end
 
-    # Reviews: Get
+    # Review: Get
     # Retrieve a specific Review.
     # @param account_id 
     # @param review_id ID of this Review.
@@ -245,7 +245,7 @@ module YextClient
       return data
     end
 
-    # Reviews: Get
+    # Review: Get
     # Retrieve a specific Review.
     # @param account_id 
     # @param review_id ID of this Review.
@@ -304,7 +304,7 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
-    # @return [GetReviewGenerationSettingsResponse]
+    # @return [ReviewGenerationSettingsResponse]
     def get_review_generation_settings(account_id, v, opts = {})
       data, _status_code, _headers = get_review_generation_settings_with_http_info(account_id, v, opts)
       return data
@@ -315,7 +315,7 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
-    # @return [Array<(GetReviewGenerationSettingsResponse, Fixnum, Hash)>] GetReviewGenerationSettingsResponse data, response status code and response headers
+    # @return [Array<(ReviewGenerationSettingsResponse, Fixnum, Hash)>] ReviewGenerationSettingsResponse data, response status code and response headers
     def get_review_generation_settings_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.get_review_generation_settings ..."
@@ -354,7 +354,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetReviewGenerationSettingsResponse')
+        :return_type => 'ReviewGenerationSettingsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReviewsApi#get_review_generation_settings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -366,7 +366,7 @@ module YextClient
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :limit Number of results to return. (default to 100)
+    # @option opts [Integer] :limit Number of results to return. (default to 10)
     # @option opts [Integer] :offset Number of results to skip. Used to page through results. (default to 0)
     # @option opts [Array<String>] :location_ids When provided, only reviews for the requested locations will be returned.  By default, reviews will be returned for all locations subscribed to Review Monitoring.  **Example:** loc123,loc456,loc789 
     # @option opts [String] :folder_id When provided, only reviews for locations in the given folder and its subfolders will be included in the results.
@@ -375,7 +375,7 @@ module YextClient
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @option opts [String] :review_content When specified, only reviews that include the provided content will be returned.
     # @option opts [Float] :min_rating When specified, only reviews with the provided minimum rating or higher will be returned.
-    # @option opts [Float] :max_rating 
+    # @option opts [Float] :max_rating When specified, only reviews with the provided maximum rating or lower will be returned.
     # @option opts [Date] :min_publisher_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or after the given date will be returned.
     # @option opts [Date] :max_publisher_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or before the given date will be returned.
     # @option opts [Date] :min_last_yext_update_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a last Yext update date on or after the given date will be returned.
@@ -404,7 +404,7 @@ module YextClient
     # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
     # @option opts [String] :review_content When specified, only reviews that include the provided content will be returned.
     # @option opts [Float] :min_rating When specified, only reviews with the provided minimum rating or higher will be returned.
-    # @option opts [Float] :max_rating 
+    # @option opts [Float] :max_rating When specified, only reviews with the provided maximum rating or lower will be returned.
     # @option opts [Date] :min_publisher_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or after the given date will be returned.
     # @option opts [Date] :max_publisher_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or before the given date will be returned.
     # @option opts [Date] :min_last_yext_update_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a last Yext update date on or after the given date will be returned.
@@ -422,8 +422,8 @@ module YextClient
       fail ArgumentError, "Missing the required parameter 'account_id' when calling ReviewsApi.list_reviews" if account_id.nil?
       # verify the required parameter 'v' is set
       fail ArgumentError, "Missing the required parameter 'v' when calling ReviewsApi.list_reviews" if v.nil?
-      if !opts[:'limit'].nil? && opts[:'limit'] > 100.0
-        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling ReviewsApi.list_reviews, must be smaller than or equal to 100.0.'
+      if !opts[:'limit'].nil? && opts[:'limit'] > 50.0
+        fail ArgumentError, 'invalid value for "opts[:"limit"]" when calling ReviewsApi.list_reviews, must be smaller than or equal to 50.0.'
       end
 
       if opts[:'awaiting_response'] && !['REVIEW', 'COMMENT', 'REVIEW_OR_COMMENT'].include?(opts[:'awaiting_response'])
@@ -484,8 +484,8 @@ module YextClient
       return data, status_code, headers
     end
 
-    # Reviews: Update
-    # Updates an External First Party Review. <br><br> **NOTE:** Despite using the `PUT` method, Reviews: Update only updates supplied fields. Omitted fields are not modified. <br><br>  ## Required fields <br><br>  ## Optional fields * **`rating`** * **`title`** * **`content`** * **`authorName`** * **`authorEmail`** * **`url`** * **`status`** <br><br> Other fields will be ignored. 
+    # Review: Update
+    # Updates an External First Party Review. <br><br> **NOTE:** Despite using the `PUT` method, Reviews: Update only updates supplied fields. Omitted fields are not modified. <br><br>  ## Optional fields * **`rating`** * **`content`** * **`authorName`** * **`authorEmail`** * **`status`** <br><br> 
     # @param account_id 
     # @param review_id ID of this Review.
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -497,8 +497,8 @@ module YextClient
       return data
     end
 
-    # Reviews: Update
-    # Updates an External First Party Review. &lt;br&gt;&lt;br&gt; **NOTE:** Despite using the &#x60;PUT&#x60; method, Reviews: Update only updates supplied fields. Omitted fields are not modified. &lt;br&gt;&lt;br&gt;  ## Required fields &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;rating&#x60;** * **&#x60;title&#x60;** * **&#x60;content&#x60;** * **&#x60;authorName&#x60;** * **&#x60;authorEmail&#x60;** * **&#x60;url&#x60;** * **&#x60;status&#x60;** &lt;br&gt;&lt;br&gt; Other fields will be ignored. 
+    # Review: Update
+    # Updates an External First Party Review. &lt;br&gt;&lt;br&gt; **NOTE:** Despite using the &#x60;PUT&#x60; method, Reviews: Update only updates supplied fields. Omitted fields are not modified. &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;rating&#x60;** * **&#x60;content&#x60;** * **&#x60;authorName&#x60;** * **&#x60;authorEmail&#x60;** * **&#x60;status&#x60;** &lt;br&gt;&lt;br&gt; 
     # @param account_id 
     # @param review_id ID of this Review.
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -560,7 +560,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param review_generation_settings_request 
     # @param [Hash] opts the optional parameters
-    # @return [GetReviewGenerationSettingsResponse]
+    # @return [ReviewGenerationSettingsResponse]
     def update_review_generation_settings(account_id, v, review_generation_settings_request, opts = {})
       data, _status_code, _headers = update_review_generation_settings_with_http_info(account_id, v, review_generation_settings_request, opts)
       return data
@@ -572,7 +572,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param review_generation_settings_request 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(GetReviewGenerationSettingsResponse, Fixnum, Hash)>] GetReviewGenerationSettingsResponse data, response status code and response headers
+    # @return [Array<(ReviewGenerationSettingsResponse, Fixnum, Hash)>] ReviewGenerationSettingsResponse data, response status code and response headers
     def update_review_generation_settings_with_http_info(account_id, v, review_generation_settings_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: ReviewsApi.update_review_generation_settings ..."
@@ -613,7 +613,7 @@ module YextClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'GetReviewGenerationSettingsResponse')
+        :return_type => 'ReviewGenerationSettingsResponse')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReviewsApi#update_review_generation_settings\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

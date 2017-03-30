@@ -4,22 +4,22 @@ All URIs are relative to *https://api.yext.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_comment**](ReviewsApi.md#create_comment) | **POST** /accounts/{accountId}/reviews/{reviewId}/comments | Comments: Create
+[**create_comment**](ReviewsApi.md#create_comment) | **POST** /accounts/{accountId}/reviews/{reviewId}/comments | Comment: Create
 [**create_review**](ReviewsApi.md#create_review) | **POST** /accounts/{accountId}/reviews | Reviews: Create
 [**create_review_invites**](ReviewsApi.md#create_review_invites) | **POST** /accounts/{accountId}/reviewinvites | Review Invitations: Create
-[**get_review**](ReviewsApi.md#get_review) | **GET** /accounts/{accountId}/reviews/{reviewId} | Reviews: Get
+[**get_review**](ReviewsApi.md#get_review) | **GET** /accounts/{accountId}/reviews/{reviewId} | Review: Get
 [**get_review_generation_settings**](ReviewsApi.md#get_review_generation_settings) | **GET** /accounts/{accountId}/reviews/settings/generation | Review Generation Settings: Get
 [**list_reviews**](ReviewsApi.md#list_reviews) | **GET** /accounts/{accountId}/reviews | Reviews: List
-[**update_review**](ReviewsApi.md#update_review) | **PUT** /accounts/{accountId}/reviews/{reviewId} | Reviews: Update
+[**update_review**](ReviewsApi.md#update_review) | **PUT** /accounts/{accountId}/reviews/{reviewId} | Review: Update
 [**update_review_generation_settings**](ReviewsApi.md#update_review_generation_settings) | **POST** /accounts/{accountId}/reviews/settings/generation | Review Generation Settings: Update
 
 
 # **create_comment**
 > ErrorResponse create_comment(account_id, review_id, vcomment_request)
 
-Comments: Create
+Comment: Create
 
-Creates a new Comment on a Review. <br><br>  ## Required fields * **`content`** <br><br>  ## Optional fields * **`parentId`** <br><br> Other fields will be ignored. 
+Creates a new Comment on a Review. <br><br>  ## Required fields * **`content`** <br><br>  ## Optional fields * **`parentId`** * **`visiblity`** <br><br> 
 
 ### Example
 ```ruby
@@ -45,7 +45,7 @@ comment_request = YextClient::ReviewComment.new # ReviewComment |
 
 
 begin
-  #Comments: Create
+  #Comment: Create
   result = api_instance.create_comment(account_id, review_id, vcomment_request)
   p result
 rescue YextClient::ApiError => e
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 Reviews: Create
 
-Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`** <br><br>  ## Optional fields * **`authorEmail`** * **`status`** * **`url`** * **`title`** <br><br> Other fields will be ignored. 
+Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`** <br><br>  ## Optional fields * **`authorEmail`** * **`status`** <br><br> 
 
 ### Example
 ```ruby
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 # **get_review**
 > ReviewResponse get_review(account_id, review_id, v)
 
-Reviews: Get
+Review: Get
 
 Retrieve a specific Review.
 
@@ -226,7 +226,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 
 begin
-  #Reviews: Get
+  #Review: Get
   result = api_instance.get_review(account_id, review_id, v)
   p result
 rescue YextClient::ApiError => e
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 
 # **get_review_generation_settings**
-> GetReviewGenerationSettingsResponse get_review_generation_settings(account_id, v)
+> ReviewGenerationSettingsResponse get_review_generation_settings(account_id, v)
 
 Review Generation Settings: Get
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetReviewGenerationSettingsResponse**](GetReviewGenerationSettingsResponse.md)
+[**ReviewGenerationSettingsResponse**](ReviewGenerationSettingsResponse.md)
 
 ### Authorization
 
@@ -340,7 +340,7 @@ account_id = "account_id_example" # String |
 v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
-  limit: 100, # Integer | Number of results to return.
+  limit: 10, # Integer | Number of results to return.
   offset: 0 # Integer | Number of results to skip. Used to page through results.
   location_ids: ["location_ids_example"], # Array<String> | When provided, only reviews for the requested locations will be returned.  By default, reviews will be returned for all locations subscribed to Review Monitoring.  **Example:** loc123,loc456,loc789 
   folder_id: "folder_id_example", # String | When provided, only reviews for locations in the given folder and its subfolders will be included in the results.
@@ -349,7 +349,7 @@ opts = {
   publisher_ids: ["publisher_ids_example"], # Array<String> | List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
   review_content: "review_content_example", # String | When specified, only reviews that include the provided content will be returned.
   min_rating: 1.2, # Float | When specified, only reviews with the provided minimum rating or higher will be returned.
-  max_rating: 1.2, # Float | 
+  max_rating: 1.2, # Float | When specified, only reviews with the provided maximum rating or lower will be returned.
   min_publisher_date: Date.parse("2013-10-20"), # Date | (`YYYY-MM-DD` format) When specified, only reviews with a publisher date on or after the given date will be returned.
   max_publisher_date: Date.parse("2013-10-20"), # Date | (`YYYY-MM-DD` format) When specified, only reviews with a publisher date on or before the given date will be returned.
   min_last_yext_update_date: Date.parse("2013-10-20"), # Date | (`YYYY-MM-DD` format) When specified, only reviews with a last Yext update date on or after the given date will be returned.
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
- **limit** | **Integer**| Number of results to return. | [optional] [default to 100]
+ **limit** | **Integer**| Number of results to return. | [optional] [default to 10]
  **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| When provided, only reviews for the requested locations will be returned.  By default, reviews will be returned for all locations subscribed to Review Monitoring.  **Example:** loc123,loc456,loc789  | [optional] 
  **folder_id** | **String**| When provided, only reviews for locations in the given folder and its subfolders will be included in the results. | [optional] 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
  **publisher_ids** | [**Array&lt;String&gt;**](String.md)| List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP  | [optional] 
  **review_content** | **String**| When specified, only reviews that include the provided content will be returned. | [optional] 
  **min_rating** | **Float**| When specified, only reviews with the provided minimum rating or higher will be returned. | [optional] 
- **max_rating** | **Float**|  | [optional] 
+ **max_rating** | **Float**| When specified, only reviews with the provided maximum rating or lower will be returned. | [optional] 
  **min_publisher_date** | **Date**| (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or after the given date will be returned. | [optional] 
  **max_publisher_date** | **Date**| (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or before the given date will be returned. | [optional] 
  **min_last_yext_update_date** | **Date**| (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a last Yext update date on or after the given date will be returned. | [optional] 
@@ -412,9 +412,9 @@ Name | Type | Description  | Notes
 # **update_review**
 > IdResponse update_review(account_id, review_id, vreview_request)
 
-Reviews: Update
+Review: Update
 
-Updates an External First Party Review. <br><br> **NOTE:** Despite using the `PUT` method, Reviews: Update only updates supplied fields. Omitted fields are not modified. <br><br>  ## Required fields <br><br>  ## Optional fields * **`rating`** * **`title`** * **`content`** * **`authorName`** * **`authorEmail`** * **`url`** * **`status`** <br><br> Other fields will be ignored. 
+Updates an External First Party Review. <br><br> **NOTE:** Despite using the `PUT` method, Reviews: Update only updates supplied fields. Omitted fields are not modified. <br><br>  ## Optional fields * **`rating`** * **`content`** * **`authorName`** * **`authorEmail`** * **`status`** <br><br> 
 
 ### Example
 ```ruby
@@ -440,7 +440,7 @@ review_request = YextClient::Review.new # Review |
 
 
 begin
-  #Reviews: Update
+  #Review: Update
   result = api_instance.update_review(account_id, review_id, vreview_request)
   p result
 rescue YextClient::ApiError => e
@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 
 # **update_review_generation_settings**
-> GetReviewGenerationSettingsResponse update_review_generation_settings(account_id, vreview_generation_settings_request)
+> ReviewGenerationSettingsResponse update_review_generation_settings(account_id, vreview_generation_settings_request)
 
 Review Generation Settings: Update
 
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetReviewGenerationSettingsResponse**](GetReviewGenerationSettingsResponse.md)
+[**ReviewGenerationSettingsResponse**](ReviewGenerationSettingsResponse.md)
 
 ### Authorization
 

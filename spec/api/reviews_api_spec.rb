@@ -44,8 +44,8 @@ describe 'ReviewsApi' do
   end
 
   # unit tests for create_comment
-  # Comments: Create
-  # Creates a new Comment on a Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;content&#x60;** &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;parentId&#x60;** &lt;br&gt;&lt;br&gt; Other fields will be ignored. 
+  # Comment: Create
+  # Creates a new Comment on a Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;content&#x60;** &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;parentId&#x60;** * **&#x60;visiblity&#x60;** &lt;br&gt;&lt;br&gt; 
   # @param account_id 
   # @param review_id ID of this Review.
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -60,7 +60,7 @@ describe 'ReviewsApi' do
 
   # unit tests for create_review
   # Reviews: Create
-  # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;** &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;authorEmail&#x60;** * **&#x60;status&#x60;** * **&#x60;url&#x60;** * **&#x60;title&#x60;** &lt;br&gt;&lt;br&gt; Other fields will be ignored. 
+  # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;** &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;authorEmail&#x60;** * **&#x60;status&#x60;** &lt;br&gt;&lt;br&gt; 
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param review_request 
@@ -87,7 +87,7 @@ describe 'ReviewsApi' do
   end
 
   # unit tests for get_review
-  # Reviews: Get
+  # Review: Get
   # Retrieve a specific Review.
   # @param account_id 
   # @param review_id ID of this Review.
@@ -106,7 +106,7 @@ describe 'ReviewsApi' do
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
-  # @return [GetReviewGenerationSettingsResponse]
+  # @return [ReviewGenerationSettingsResponse]
   describe 'get_review_generation_settings test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -128,7 +128,7 @@ describe 'ReviewsApi' do
   # @option opts [Array<String>] :publisher_ids List of publisher IDs. If no IDs are specified, defaults to all publishers subscribed by account.  **Example:** MAPQUEST,YELP 
   # @option opts [String] :review_content When specified, only reviews that include the provided content will be returned.
   # @option opts [Float] :min_rating When specified, only reviews with the provided minimum rating or higher will be returned.
-  # @option opts [Float] :max_rating 
+  # @option opts [Float] :max_rating When specified, only reviews with the provided maximum rating or lower will be returned.
   # @option opts [Date] :min_publisher_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or after the given date will be returned.
   # @option opts [Date] :max_publisher_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a publisher date on or before the given date will be returned.
   # @option opts [Date] :min_last_yext_update_date (&#x60;YYYY-MM-DD&#x60; format) When specified, only reviews with a last Yext update date on or after the given date will be returned.
@@ -145,8 +145,8 @@ describe 'ReviewsApi' do
   end
 
   # unit tests for update_review
-  # Reviews: Update
-  # Updates an External First Party Review. &lt;br&gt;&lt;br&gt; **NOTE:** Despite using the &#x60;PUT&#x60; method, Reviews: Update only updates supplied fields. Omitted fields are not modified. &lt;br&gt;&lt;br&gt;  ## Required fields &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;rating&#x60;** * **&#x60;title&#x60;** * **&#x60;content&#x60;** * **&#x60;authorName&#x60;** * **&#x60;authorEmail&#x60;** * **&#x60;url&#x60;** * **&#x60;status&#x60;** &lt;br&gt;&lt;br&gt; Other fields will be ignored. 
+  # Review: Update
+  # Updates an External First Party Review. &lt;br&gt;&lt;br&gt; **NOTE:** Despite using the &#x60;PUT&#x60; method, Reviews: Update only updates supplied fields. Omitted fields are not modified. &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;rating&#x60;** * **&#x60;content&#x60;** * **&#x60;authorName&#x60;** * **&#x60;authorEmail&#x60;** * **&#x60;status&#x60;** &lt;br&gt;&lt;br&gt; 
   # @param account_id 
   # @param review_id ID of this Review.
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
@@ -166,7 +166,7 @@ describe 'ReviewsApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param review_generation_settings_request 
   # @param [Hash] opts the optional parameters
-  # @return [GetReviewGenerationSettingsResponse]
+  # @return [ReviewGenerationSettingsResponse]
   describe 'update_review_generation_settings test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

@@ -25,7 +25,7 @@ require 'date'
 
 module YextClient
 
-  class GetReviewGenerationSettingsResponse
+  class ReviewGenerationSettingsResponse
     attr_accessor :meta
 
     attr_accessor :response
