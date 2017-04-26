@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 Reviews: Create
 
-Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`** <br><br>  ## Optional fields * **`authorEmail`** * **`status`** <br><br> 
+Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`** <br><br>  ## Optional fields * **`authorEmail`** * **`status`** * **`date`** <br><br> 
 
 ### Example
 ```ruby
@@ -341,7 +341,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
   limit: 10, # Integer | Number of results to return.
-  offset: 0 # Integer | Number of results to skip. Used to page through results.
+  offset: 0 # Integer | Number of results to return.
   location_ids: ["location_ids_example"], # Array<String> | When provided, only reviews for the requested locations will be returned.  By default, reviews will be returned for all locations subscribed to Review Monitoring.  **Example:** loc123,loc456,loc789 
   folder_id: "folder_id_example", # String | When provided, only reviews for locations in the given folder and its subfolders will be included in the results.
   countries: ["countries_example"], # Array<String> | When present, only reviews for locations in the given countries will be returned. Countries are denoted by ISO 3166 2-letter country codes.
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **limit** | **Integer**| Number of results to return. | [optional] [default to 10]
- **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
+ **offset** | **Integer**| Number of results to return. | [optional] [default to 0]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| When provided, only reviews for the requested locations will be returned.  By default, reviews will be returned for all locations subscribed to Review Monitoring.  **Example:** loc123,loc456,loc789  | [optional] 
  **folder_id** | **String**| When provided, only reviews for locations in the given folder and its subfolders will be included in the results. | [optional] 
  **countries** | [**Array&lt;String&gt;**](String.md)| When present, only reviews for locations in the given countries will be returned. Countries are denoted by ISO 3166 2-letter country codes. | [optional] 

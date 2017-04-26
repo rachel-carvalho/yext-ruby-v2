@@ -87,9 +87,13 @@ describe 'AnalyticsFilter' do
     end
   end
 
-  describe 'test attribute "platforms"' do
+  describe 'test attribute "listings_live_type"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["CLAIMED", "CREATED"])
+       #validator.allowable_values.each do |value|
+       #  expect { @instance.listings_live_type = value }.not_to raise_error
+       #end
     end
   end
 
@@ -132,6 +136,16 @@ describe 'AnalyticsFilter' do
   describe 'test attribute "ratings"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "page_types"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["STORE", "DIRECTORY", "SEARCH"])
+       #validator.allowable_values.each do |value|
+       #  expect { @instance.page_types = value }.not_to raise_error
+       #end
     end
   end
 
@@ -178,6 +192,22 @@ describe 'AnalyticsFilter' do
   end
 
   describe 'test attribute "min_search_frequency"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "publisher_suggestion_type"' do
+    it 'should work' do
+       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+       #validator = Petstore::EnumTest::EnumAttributeValidator.new('Array<String>', ["ACCEPTED", "REJECTED", "NEW"])
+       #validator.allowable_values.each do |value|
+       #  expect { @instance.publisher_suggestion_type = value }.not_to raise_error
+       #end
+    end
+  end
+
+  describe 'test attribute "platforms"' do
     it 'should work' do
        # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

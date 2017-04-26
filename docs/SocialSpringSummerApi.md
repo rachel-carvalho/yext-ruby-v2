@@ -311,7 +311,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
   limit: 100, # Integer | Number of results to return, up to 100. Default 100.  **Example** 20 
-  offset: 0 # Integer | Number of results to skip. Used to page through results.
+  offset: 0 # Integer | Number of results to return.
   type: "type_example" # String | Determines which type of Comments are returned
 }
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
  **post_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **limit** | **Integer**| Number of results to return, up to 100. Default 100.  **Example** 20  | [optional] [default to 100]
- **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
+ **offset** | **Integer**| Number of results to return. | [optional] [default to 0]
  **type** | **String**| Determines which type of Comments are returned | [optional] 
 
 ### Return type
@@ -437,7 +437,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
   limit: 100, # Integer | Number of results to return, up to 100. Default 100.  **Example** 20 
-  offset: 0 # Integer | Number of results to skip. Used to page through results.
+  offset: 0 # Integer | Number of results to return.
   location_ids: ["location_ids_example"], # Array<String> | Defaults to all account locations with a PowerListings subscription.  **Example** 123, 456, 789 
   publisher_ids: ["publisher_ids_example"], # Array<String> | Defaults to all publishers subscribed by account  **Example** FACEBOOK, FOURSQUARE 
   status: "ALL" # String | Used to filter for Linked Accounts with a particular status.
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **limit** | **Integer**| Number of results to return, up to 100. Default 100.  **Example** 20  | [optional] [default to 100]
- **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
+ **offset** | **Integer**| Number of results to return. | [optional] [default to 0]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all account locations with a PowerListings subscription.  **Example** 123, 456, 789  | [optional] 
  **publisher_ids** | [**Array&lt;String&gt;**](String.md)| Defaults to all publishers subscribed by account  **Example** FACEBOOK, FOURSQUARE  | [optional] 
  **status** | **String**| Used to filter for Linked Accounts with a particular status. | [optional] [default to ALL]
@@ -506,7 +506,7 @@ v = "20161012" # String | A date in `YYYYMMDD` format.
 
 opts = { 
   limit: 100, # Integer | Number of results to return, up to 100. Default 100.  **Example** 20 
-  offset: 0 # Integer | Number of results to skip. Used to page through results.
+  offset: 0 # Integer | Number of results to return.
   location_ids: ["location_ids_example"], # Array<String> | When provided, only Posts that involve the requested locations will be returned.  By defaults, Posts will be returned for all locations subscribed to Social Posting.  **Example** 123, 456, 789 
   folder_id: "folder_id_example", # String | When provided, only Posts for locations in the given folder and its subfolders will be included in the results.  **Example** 123 
   countries: ["countries_example"], # Array<String> | Array of 3166 Alpha-2 country codes. When present, only Posts for locations in the given countries will be returned.  **Example** ['US', 'CA'] 
@@ -531,7 +531,7 @@ Name | Type | Description  | Notes
  **account_id** | **String**|  | 
  **v** | **String**| A date in &#x60;YYYYMMDD&#x60; format. | [default to 20161012]
  **limit** | **Integer**| Number of results to return, up to 100. Default 100.  **Example** 20  | [optional] [default to 100]
- **offset** | **Integer**| Number of results to skip. Used to page through results. | [optional] [default to 0]
+ **offset** | **Integer**| Number of results to return. | [optional] [default to 0]
  **location_ids** | [**Array&lt;String&gt;**](String.md)| When provided, only Posts that involve the requested locations will be returned.  By defaults, Posts will be returned for all locations subscribed to Social Posting.  **Example** 123, 456, 789  | [optional] 
  **folder_id** | **String**| When provided, only Posts for locations in the given folder and its subfolders will be included in the results.  **Example** 123  | [optional] 
  **countries** | [**Array&lt;String&gt;**](String.md)| Array of 3166 Alpha-2 country codes. When present, only Posts for locations in the given countries will be returned.  **Example** [&#39;US&#39;, &#39;CA&#39;]  | [optional] 

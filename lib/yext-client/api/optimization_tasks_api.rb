@@ -38,7 +38,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
     # @option opts [String] :location_id Location ID to be used as a filter.  If no ID is provided, defaults to all Locations in the account. 
-    # @option opts [String] :mode When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress.  (default to PENDING_ONLY)
+    # @option opts [String] :mode When mode is &#x60;PENDING_ONLY&#x60;, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is &#x60;ALL_TASKS&#x60;, the resulting link will show the user all specified tasks for all specified locations, regardless of their status. If a task has been completed, the user is given the option to update the content they entered when completing the task.  (default to PENDING_ONLY)
     # @return [OptimizationTaskLinksResponse]
     def get_link_optimization_task(account_id, v, opts = {})
       data, _status_code, _headers = get_link_optimization_task_with_http_info(account_id, v, opts)
@@ -52,7 +52,7 @@ module YextClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :task_ids Comma-separated list of Optimization Task IDs corresponding to Optimization Tasks that should be included in the response.  If no IDs are provided, defaults to all available Optimization Tasks in the account. 
     # @option opts [String] :location_id Location ID to be used as a filter.  If no ID is provided, defaults to all Locations in the account. 
-    # @option opts [String] :mode When mode is PENDING_ONLY, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is ALL_TASKS, the resulting link will ask the user to complete all specified tasks for all specified locations, regardless of whether they have been completed before, are pending, or are in progress. 
+    # @option opts [String] :mode When mode is &#x60;PENDING_ONLY&#x60;, the resulting link will only ask the user to complete tasks that are pending or in progress (that have not been completed before).  When mode is &#x60;ALL_TASKS&#x60;, the resulting link will show the user all specified tasks for all specified locations, regardless of their status. If a task has been completed, the user is given the option to update the content they entered when completing the task. 
     # @return [Array<(OptimizationTaskLinksResponse, Fixnum, Hash)>] OptimizationTaskLinksResponse data, response status code and response headers
     def get_link_optimization_task_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging

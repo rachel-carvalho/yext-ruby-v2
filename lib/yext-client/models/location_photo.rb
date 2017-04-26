@@ -26,31 +26,45 @@ require 'date'
 module YextClient
 
   class LocationPhoto
-    # Valid URL to image. Accepted formats: .jpg, .png.  If the image could not be downloaded, or if its URL is invalid, the image will be ignored. The success response will contain a warning message explaining why the image was not stored in the system. 
-    attr_accessor :url
-
-    # The alternate text to be used for accessibility purposes.
-    attr_accessor :alternate_text
+    attr_accessor :derivatives
 
     # Image description.
     attr_accessor :description
+
+    # Valid URL to image. Accepted formats: .jpg, .png.  If the image could not be downloaded, or if its URL is invalid, the image will be ignored. The success response will contain a warning message explaining why the image was not stored in the system. 
+    attr_accessor :url
+
+    # Original photo height.
+    attr_accessor :height
+
+    # Original photo width.
+    attr_accessor :width
+
+    # The alternate text to be used for accessibility purposes.
+    attr_accessor :alternate_text
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'derivatives' => :'derivatives',
+        :'description' => :'description',
         :'url' => :'url',
-        :'alternate_text' => :'alternateText',
-        :'description' => :'description'
+        :'height' => :'height',
+        :'width' => :'width',
+        :'alternate_text' => :'alternateText'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'derivatives' => :'Array<LocationPhotoDerivatives>',
+        :'description' => :'String',
         :'url' => :'String',
-        :'alternate_text' => :'String',
-        :'description' => :'String'
+        :'height' => :'Integer',
+        :'width' => :'Integer',
+        :'alternate_text' => :'String'
       }
     end
 
@@ -62,16 +76,30 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'url')
-        self.url = attributes[:'url']
-      end
-
-      if attributes.has_key?(:'alternateText')
-        self.alternate_text = attributes[:'alternateText']
+      if attributes.has_key?(:'derivatives')
+        if (value = attributes[:'derivatives']).is_a?(Array)
+          self.derivatives = value
+        end
       end
 
       if attributes.has_key?(:'description')
         self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'url')
+        self.url = attributes[:'url']
+      end
+
+      if attributes.has_key?(:'height')
+        self.height = attributes[:'height']
+      end
+
+      if attributes.has_key?(:'width')
+        self.width = attributes[:'width']
+      end
+
+      if attributes.has_key?(:'alternateText')
+        self.alternate_text = attributes[:'alternateText']
       end
 
     end
@@ -94,9 +122,12 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          derivatives == o.derivatives &&
+          description == o.description &&
           url == o.url &&
-          alternate_text == o.alternate_text &&
-          description == o.description
+          height == o.height &&
+          width == o.width &&
+          alternate_text == o.alternate_text
     end
 
     # @see the `==` method
@@ -108,7 +139,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [url, alternate_text, description].hash
+      [derivatives, description, url, height, width, alternate_text].hash
     end
 
     # Builds the object from hash

@@ -94,11 +94,13 @@ Class | Method | HTTP request | Description
 *YextClient::AnalyticsApi* | [**report_status**](docs/AnalyticsApi.md#report_status) | **GET** /accounts/{accountId}/analytics/standardreports/{reportId} | Report Status
 *YextClient::HealthCheckApi* | [**health_check**](docs/HealthCheckApi.md#health_check) | **GET** /healthy | Health Check
 *YextClient::KnowledgeManagerApi* | [**create_bio**](docs/KnowledgeManagerApi.md#create_bio) | **POST** /accounts/{accountId}/bios | Bios: Create
+*YextClient::KnowledgeManagerApi* | [**create_custom_field**](docs/KnowledgeManagerApi.md#create_custom_field) | **POST** /accounts/{accountId}/customfields | Custom Fields: Create
 *YextClient::KnowledgeManagerApi* | [**create_event**](docs/KnowledgeManagerApi.md#create_event) | **POST** /accounts/{accountId}/events | Events: Create
 *YextClient::KnowledgeManagerApi* | [**create_location**](docs/KnowledgeManagerApi.md#create_location) | **POST** /accounts/{accountId}/locations | Locations: Create
 *YextClient::KnowledgeManagerApi* | [**create_menu**](docs/KnowledgeManagerApi.md#create_menu) | **POST** /accounts/{accountId}/menus | Menus: Create
 *YextClient::KnowledgeManagerApi* | [**create_product**](docs/KnowledgeManagerApi.md#create_product) | **POST** /accounts/{accountId}/products | Products: Create
 *YextClient::KnowledgeManagerApi* | [**delete_bio_list**](docs/KnowledgeManagerApi.md#delete_bio_list) | **DELETE** /accounts/{accountId}/bios/{listId} | Bios: Delete
+*YextClient::KnowledgeManagerApi* | [**delete_custom_field**](docs/KnowledgeManagerApi.md#delete_custom_field) | **DELETE** /accounts/{accountId}/customFields/{customFieldId} | Custom Fields: Delete
 *YextClient::KnowledgeManagerApi* | [**delete_event_list**](docs/KnowledgeManagerApi.md#delete_event_list) | **DELETE** /accounts/{accountId}/events/{listId} | Events: Delete
 *YextClient::KnowledgeManagerApi* | [**delete_language_profile**](docs/KnowledgeManagerApi.md#delete_language_profile) | **DELETE** /accounts/{accountId}/locations/{locationId}/profiles/{language_code} | Language Profiles: Delete
 *YextClient::KnowledgeManagerApi* | [**delete_menu_list**](docs/KnowledgeManagerApi.md#delete_menu_list) | **DELETE** /accounts/{accountId}/menus/{listId} | Menus: Delete
@@ -106,6 +108,7 @@ Class | Method | HTTP request | Description
 *YextClient::KnowledgeManagerApi* | [**get_bio**](docs/KnowledgeManagerApi.md#get_bio) | **GET** /accounts/{accountId}/bios/{listId} | Bios: Get
 *YextClient::KnowledgeManagerApi* | [**get_bios**](docs/KnowledgeManagerApi.md#get_bios) | **GET** /accounts/{accountId}/bios | Bios: List
 *YextClient::KnowledgeManagerApi* | [**get_business_categories**](docs/KnowledgeManagerApi.md#get_business_categories) | **GET** /categories | Categories: List
+*YextClient::KnowledgeManagerApi* | [**get_custom_field**](docs/KnowledgeManagerApi.md#get_custom_field) | **GET** /accounts/{accountId}/customFields/{customFieldId} | Custom Fields: Get
 *YextClient::KnowledgeManagerApi* | [**get_custom_fields**](docs/KnowledgeManagerApi.md#get_custom_fields) | **GET** /accounts/{accountId}/customfields | Custom Fields: List
 *YextClient::KnowledgeManagerApi* | [**get_event**](docs/KnowledgeManagerApi.md#get_event) | **GET** /accounts/{accountId}/events/{listId} | Events: Get
 *YextClient::KnowledgeManagerApi* | [**get_events**](docs/KnowledgeManagerApi.md#get_events) | **GET** /accounts/{accountId}/events | Events: List
@@ -119,7 +122,9 @@ Class | Method | HTTP request | Description
 *YextClient::KnowledgeManagerApi* | [**get_menus**](docs/KnowledgeManagerApi.md#get_menus) | **GET** /accounts/{accountId}/menus | Menus: List
 *YextClient::KnowledgeManagerApi* | [**get_product**](docs/KnowledgeManagerApi.md#get_product) | **GET** /accounts/{accountId}/products/{listId} | Products: Get
 *YextClient::KnowledgeManagerApi* | [**get_products**](docs/KnowledgeManagerApi.md#get_products) | **GET** /accounts/{accountId}/products | Products: List
+*YextClient::KnowledgeManagerApi* | [**search_locations**](docs/KnowledgeManagerApi.md#search_locations) | **GET** /accounts/{accountId}/locationsearch | Locations: Search
 *YextClient::KnowledgeManagerApi* | [**update_bio**](docs/KnowledgeManagerApi.md#update_bio) | **PUT** /accounts/{accountId}/bios/{listId} | Bios: Update
+*YextClient::KnowledgeManagerApi* | [**update_custom_field**](docs/KnowledgeManagerApi.md#update_custom_field) | **PUT** /accounts/{accountId}/customFields/{customFieldId} | Custom Fields: Update
 *YextClient::KnowledgeManagerApi* | [**update_event**](docs/KnowledgeManagerApi.md#update_event) | **PUT** /accounts/{accountId}/events/{listId} | Events: Update
 *YextClient::KnowledgeManagerApi* | [**update_location**](docs/KnowledgeManagerApi.md#update_location) | **PUT** /accounts/{accountId}/locations/{locationId} | Locations: Update
 *YextClient::KnowledgeManagerApi* | [**update_menu**](docs/KnowledgeManagerApi.md#update_menu) | **PUT** /accounts/{accountId}/menus/{listId} | Menus: Update
@@ -173,6 +178,9 @@ Class | Method | HTTP request | Description
  - [YextClient::ActivityFilter](docs/ActivityFilter.md)
  - [YextClient::ActivityLogRequest](docs/ActivityLogRequest.md)
  - [YextClient::AnalyticsFilter](docs/AnalyticsFilter.md)
+ - [YextClient::Asset](docs/Asset.md)
+ - [YextClient::AssetForLocations](docs/AssetForLocations.md)
+ - [YextClient::AssetTextContent](docs/AssetTextContent.md)
  - [YextClient::Author](docs/Author.md)
  - [YextClient::BaseEcl](docs/BaseEcl.md)
  - [YextClient::BaseEclItem](docs/BaseEclItem.md)
@@ -197,9 +205,12 @@ Class | Method | HTTP request | Description
  - [YextClient::CreateReviewInvitationsResponse](docs/CreateReviewInvitationsResponse.md)
  - [YextClient::CreateUserRequest](docs/CreateUserRequest.md)
  - [YextClient::CustomField](docs/CustomField.md)
+ - [YextClient::CustomFieldResponse](docs/CustomFieldResponse.md)
+ - [YextClient::CustomFieldUpdate](docs/CustomFieldUpdate.md)
  - [YextClient::CustomFieldsResponse](docs/CustomFieldsResponse.md)
  - [YextClient::CustomFieldsResponseResponse](docs/CustomFieldsResponseResponse.md)
  - [YextClient::CustomOption](docs/CustomOption.md)
+ - [YextClient::CustomValidation](docs/CustomValidation.md)
  - [YextClient::Duplicate](docs/Duplicate.md)
  - [YextClient::DuplicateUnavailableReason](docs/DuplicateUnavailableReason.md)
  - [YextClient::DuplicatesResponse](docs/DuplicatesResponse.md)
@@ -229,6 +240,7 @@ Class | Method | HTTP request | Description
  - [YextClient::LinkedAccountsResponse](docs/LinkedAccountsResponse.md)
  - [YextClient::LinkedAccountsResponseResponse](docs/LinkedAccountsResponseResponse.md)
  - [YextClient::Listing](docs/Listing.md)
+ - [YextClient::ListingAlternateBrands](docs/ListingAlternateBrands.md)
  - [YextClient::ListingStatusDetail](docs/ListingStatusDetail.md)
  - [YextClient::ListingsResponse](docs/ListingsResponse.md)
  - [YextClient::ListingsResponseResponse](docs/ListingsResponseResponse.md)
@@ -239,6 +251,7 @@ Class | Method | HTTP request | Description
  - [YextClient::LocationGoogleAttributes](docs/LocationGoogleAttributes.md)
  - [YextClient::LocationHolidayHours](docs/LocationHolidayHours.md)
  - [YextClient::LocationPhoto](docs/LocationPhoto.md)
+ - [YextClient::LocationPhotoDerivatives](docs/LocationPhotoDerivatives.md)
  - [YextClient::LocationResponse](docs/LocationResponse.md)
  - [YextClient::LocationServiceArea](docs/LocationServiceArea.md)
  - [YextClient::LocationType](docs/LocationType.md)
@@ -272,6 +285,7 @@ Class | Method | HTTP request | Description
  - [YextClient::PublisherSuggestionsResponse](docs/PublisherSuggestionsResponse.md)
  - [YextClient::PublisherSuggestionsResponseResponse](docs/PublisherSuggestionsResponseResponse.md)
  - [YextClient::PublishersResponse](docs/PublishersResponse.md)
+ - [YextClient::PublishersResponseResponse](docs/PublishersResponseResponse.md)
  - [YextClient::ReportStatusResponse](docs/ReportStatusResponse.md)
  - [YextClient::ReportStatusResponseResponse](docs/ReportStatusResponseResponse.md)
  - [YextClient::ResponseError](docs/ResponseError.md)

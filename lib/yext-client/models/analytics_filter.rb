@@ -26,13 +26,13 @@ require 'date'
 module YextClient
 
   class AnalyticsFilter
-    # The inclusive start date for the report data.  Defaults to 90 days before the end date. Must be before the date given in `endDate`. E.g. ‘2016-08-22’ NOTE: If `WEEKS`, `MONTHS`, or `MONTHS_RETAIL` is in dimensions, startDate must coincide with the beginning and end of a week or month, depending on the dimension chosen.
+    # The inclusive start date for the report data.  Defaults to 90 days before the end date. Must be before the date given in `endDate`. E.g. ‘2016-08-22’ NOTE: If `WEEKS`, `MONTHS`, or `MONTHS_RETAIL` is in dimensions, startDate must coincide with the beginning and end of a week or month, depending on the dimension chosen. 
     attr_accessor :start_date
 
     # Array of location labels
     attr_accessor :location_labels
 
-    # The exclusive end date for the report data.  Defaults to the lowest common denominator of the relevant maximum reporting dates. Must be after the date given in `startDate`. E.g. ‘2016-08-30’ NOTE: If `WEEKS`, `MONTHS`, or `MONTHS_RETAIL` is in dimensions, endDate must coincide with the beginning and end of a week or month, depending on the dimension chosen.
+    # The exclusive end date for the report data.  Defaults to the lowest common denominator of the relevant maximum reporting dates. Must be after the date given in `startDate`. E.g. ‘2016-08-30’ NOTE: If `WEEKS`, `MONTHS`, or `MONTHS_RETAIL` is in dimensions, endDate must coincide with the beginning and end of a week or month, depending on the dimension chosen. 
     attr_accessor :end_date
 
     attr_accessor :instagram_content_type
@@ -43,8 +43,8 @@ module YextClient
     # Specifies the type of queries to be included in the report. Can only be used with the `GOOGLE_SEARCHES` metric.
     attr_accessor :google_query_type
 
-    # Array of platform IDs.
-    attr_accessor :platforms
+    # Specifies the type of listings live that should be included in the report. Can only be used with `LISTINGS_LIVE` metric.
+    attr_accessor :listings_live_type
 
     attr_accessor :search_term
 
@@ -63,6 +63,9 @@ module YextClient
     # Specifies the ratings to be included in the report. Can only be used with Reviews metrics.
     attr_accessor :ratings
 
+    # Specifies the Pages page types that should be included in the report. Can only be used with Store Pages metrics
+    attr_accessor :page_types
+
     attr_accessor :foursquare_checkin_gender
 
     attr_accessor :foursquare_checkin_type
@@ -72,7 +75,7 @@ module YextClient
 
     attr_accessor :max_search_frequency
 
-    # Specifies the folder whose locations and subfolders should be included in the results. Default is 0 (root folder). Cannot be used when `ACCOUNT_ID` is in dimensions.
+    # Specifies the folder whose locations and subfolders should be included in the results. Default is 0 (root folder). Cannot be used when `ACCOUNT_ID` is in dimensions. 
     attr_accessor :folder_id
 
     # Array of locationIds
@@ -82,6 +85,12 @@ module YextClient
     attr_accessor :countries
 
     attr_accessor :min_search_frequency
+
+    # Specifies the types of publisher suggestions that should be included in the report. Can only be used with `PUBLISHER_SUGGESTIONS` metric.
+    attr_accessor :publisher_suggestion_type
+
+    # Array of platform IDs.
+    attr_accessor :platforms
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -114,7 +123,7 @@ module YextClient
         :'instagram_content_type' => :'instagramContentType',
         :'google_action_type' => :'googleActionType',
         :'google_query_type' => :'googleQueryType',
-        :'platforms' => :'platforms',
+        :'listings_live_type' => :'listingsLiveType',
         :'search_term' => :'searchTerm',
         :'partners' => :'partners',
         :'search_type' => :'searchType',
@@ -122,6 +131,7 @@ module YextClient
         :'frequent_words' => :'frequentWords',
         :'foursquare_checkin_time_of_day' => :'foursquareCheckinTimeOfDay',
         :'ratings' => :'ratings',
+        :'page_types' => :'pageTypes',
         :'foursquare_checkin_gender' => :'foursquareCheckinGender',
         :'foursquare_checkin_type' => :'foursquareCheckinType',
         :'hours' => :'hours',
@@ -129,7 +139,9 @@ module YextClient
         :'folder_id' => :'folderId',
         :'location_ids' => :'locationIds',
         :'countries' => :'countries',
-        :'min_search_frequency' => :'minSearchFrequency'
+        :'min_search_frequency' => :'minSearchFrequency',
+        :'publisher_suggestion_type' => :'publisherSuggestionType',
+        :'platforms' => :'platforms'
       }
     end
 
@@ -142,7 +154,7 @@ module YextClient
         :'instagram_content_type' => :'String',
         :'google_action_type' => :'Array<String>',
         :'google_query_type' => :'Array<String>',
-        :'platforms' => :'Array<String>',
+        :'listings_live_type' => :'String',
         :'search_term' => :'String',
         :'partners' => :'Array<Float>',
         :'search_type' => :'String',
@@ -150,6 +162,7 @@ module YextClient
         :'frequent_words' => :'Array<String>',
         :'foursquare_checkin_time_of_day' => :'String',
         :'ratings' => :'Array<Integer>',
+        :'page_types' => :'Array<String>',
         :'foursquare_checkin_gender' => :'String',
         :'foursquare_checkin_type' => :'String',
         :'hours' => :'Array<Float>',
@@ -157,7 +170,9 @@ module YextClient
         :'folder_id' => :'Integer',
         :'location_ids' => :'Array<String>',
         :'countries' => :'Array<String>',
-        :'min_search_frequency' => :'Float'
+        :'min_search_frequency' => :'Float',
+        :'publisher_suggestion_type' => :'Array<String>',
+        :'platforms' => :'Array<String>'
       }
     end
 
@@ -199,10 +214,8 @@ module YextClient
         end
       end
 
-      if attributes.has_key?(:'platforms')
-        if (value = attributes[:'platforms']).is_a?(Array)
-          self.platforms = value
-        end
+      if attributes.has_key?(:'listingsLiveType')
+        self.listings_live_type = attributes[:'listingsLiveType']
       end
 
       if attributes.has_key?(:'searchTerm')
@@ -236,6 +249,12 @@ module YextClient
       if attributes.has_key?(:'ratings')
         if (value = attributes[:'ratings']).is_a?(Array)
           self.ratings = value
+        end
+      end
+
+      if attributes.has_key?(:'pageTypes')
+        if (value = attributes[:'pageTypes']).is_a?(Array)
+          self.page_types = value
         end
       end
 
@@ -277,6 +296,18 @@ module YextClient
         self.min_search_frequency = attributes[:'minSearchFrequency']
       end
 
+      if attributes.has_key?(:'publisherSuggestionType')
+        if (value = attributes[:'publisherSuggestionType']).is_a?(Array)
+          self.publisher_suggestion_type = value
+        end
+      end
+
+      if attributes.has_key?(:'platforms')
+        if (value = attributes[:'platforms']).is_a?(Array)
+          self.platforms = value
+        end
+      end
+
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -289,7 +320,19 @@ module YextClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      listings_live_type_validator = EnumAttributeValidator.new('String', ["CLAIMED", "CREATED"])
+      return false unless listings_live_type_validator.valid?(@listings_live_type)
       return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] listings_live_type Object to be assigned
+    def listings_live_type=(listings_live_type)
+      validator = EnumAttributeValidator.new('String', ["CLAIMED", "CREATED"])
+      unless validator.valid?(listings_live_type)
+        fail ArgumentError, "invalid value for 'listings_live_type', must be one of #{validator.allowable_values}."
+      end
+      @listings_live_type = listings_live_type
     end
 
     # Checks equality by comparing each attribute.
@@ -303,7 +346,7 @@ module YextClient
           instagram_content_type == o.instagram_content_type &&
           google_action_type == o.google_action_type &&
           google_query_type == o.google_query_type &&
-          platforms == o.platforms &&
+          listings_live_type == o.listings_live_type &&
           search_term == o.search_term &&
           partners == o.partners &&
           search_type == o.search_type &&
@@ -311,6 +354,7 @@ module YextClient
           frequent_words == o.frequent_words &&
           foursquare_checkin_time_of_day == o.foursquare_checkin_time_of_day &&
           ratings == o.ratings &&
+          page_types == o.page_types &&
           foursquare_checkin_gender == o.foursquare_checkin_gender &&
           foursquare_checkin_type == o.foursquare_checkin_type &&
           hours == o.hours &&
@@ -318,7 +362,9 @@ module YextClient
           folder_id == o.folder_id &&
           location_ids == o.location_ids &&
           countries == o.countries &&
-          min_search_frequency == o.min_search_frequency
+          min_search_frequency == o.min_search_frequency &&
+          publisher_suggestion_type == o.publisher_suggestion_type &&
+          platforms == o.platforms
     end
 
     # @see the `==` method
@@ -330,7 +376,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [start_date, location_labels, end_date, instagram_content_type, google_action_type, google_query_type, platforms, search_term, partners, search_type, foursquare_checkin_age, frequent_words, foursquare_checkin_time_of_day, ratings, foursquare_checkin_gender, foursquare_checkin_type, hours, max_search_frequency, folder_id, location_ids, countries, min_search_frequency].hash
+      [start_date, location_labels, end_date, instagram_content_type, google_action_type, google_query_type, listings_live_type, search_term, partners, search_type, foursquare_checkin_age, frequent_words, foursquare_checkin_time_of_day, ratings, page_types, foursquare_checkin_gender, foursquare_checkin_type, hours, max_search_frequency, folder_id, location_ids, countries, min_search_frequency, publisher_suggestion_type, platforms].hash
     end
 
     # Builds the object from hash

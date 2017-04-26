@@ -297,7 +297,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return. (default to 10)
-    # @option opts [Integer] :offset Number of results to skip. Used to page through results. (default to 0)
+    # @option opts [Integer] :offset Number of results to return. (default to 0)
     # @return [UsersResponse]
     def get_users(account_id, v, opts = {})
       data, _status_code, _headers = get_users_with_http_info(account_id, v, opts)
@@ -310,7 +310,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return.
-    # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+    # @option opts [Integer] :offset Number of results to return.
     # @return [Array<(UsersResponse, Fixnum, Hash)>] UsersResponse data, response status code and response headers
     def get_users_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging

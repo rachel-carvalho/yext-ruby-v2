@@ -105,7 +105,7 @@ describe 'UserApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return.
-  # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+  # @option opts [Integer] :offset Number of results to return.
   # @return [UsersResponse]
   describe 'get_users test' do
     it "should work" do

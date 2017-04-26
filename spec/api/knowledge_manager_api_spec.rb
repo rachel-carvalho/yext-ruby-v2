@@ -57,6 +57,20 @@ describe 'KnowledgeManagerApi' do
     end
   end
 
+  # unit tests for create_custom_field
+  # Custom Fields: Create
+  # Creates a new Custom Field in an Account. 
+  # @param v A date in &#x60;YYYYMMDD&#x60; format.
+  # @param account_id 
+  # @param body 
+  # @param [Hash] opts the optional parameters
+  # @return [IdResponse]
+  describe 'create_custom_field test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for create_event
   # Events: Create
   # Create a new Event List.
@@ -122,6 +136,20 @@ describe 'KnowledgeManagerApi' do
   # @param [Hash] opts the optional parameters
   # @return [ErrorResponse]
   describe 'delete_bio_list test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for delete_custom_field
+  # Custom Fields: Delete
+  # Deletes a Custom Field in an Account.  The Custom Field will be removed from all locations, and all content entered in the Custom Field will be deleted permanently. 
+  # @param v A date in &#x60;YYYYMMDD&#x60; format.
+  # @param account_id 
+  # @param custom_field_id 
+  # @param [Hash] opts the optional parameters
+  # @return [ErrorResponse]
+  describe 'delete_custom_field test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -205,7 +233,7 @@ describe 'KnowledgeManagerApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return.
-  # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+  # @option opts [Integer] :offset Number of results to return.
   # @return [BioListsResponse]
   describe 'get_bios test' do
     it "should work" do
@@ -227,13 +255,27 @@ describe 'KnowledgeManagerApi' do
     end
   end
 
+  # unit tests for get_custom_field
+  # Custom Fields: Get
+  # Gets a specific Custom Field in an Account.
+  # @param v A date in &#x60;YYYYMMDD&#x60; format.
+  # @param account_id 
+  # @param custom_field_id 
+  # @param [Hash] opts the optional parameters
+  # @return [CustomFieldResponse]
+  describe 'get_custom_field test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_custom_fields
   # Custom Fields: List
   # Returns a list of Custom Fields in an Account.
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param account_id 
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+  # @option opts [Integer] :offset Number of results to return.
   # @option opts [Integer] :limit Number of results to return.
   # @return [CustomFieldsResponse]
   describe 'get_custom_fields test' do
@@ -263,7 +305,7 @@ describe 'KnowledgeManagerApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return.
-  # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+  # @option opts [Integer] :offset Number of results to return.
   # @return [EventListsResponse]
   describe 'get_events test' do
     it "should work" do
@@ -291,6 +333,7 @@ describe 'KnowledgeManagerApi' do
   # @param language_code Locale code.
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :resolve_placeholders Optional parameter to resolve all embedded fields in a Location object response. - &#x60;false&#x60; (default): Location object returns placeholder labels, e.g. \&quot;Your [[CITY]] store\&quot; - &#x60;true&#x60;: Location object returns placeholder values, e.g. \&quot;Your Fairfax store\&quot;  
   # @return [LocationResponse]
   describe 'get_language_profile test' do
     it "should work" do
@@ -305,6 +348,7 @@ describe 'KnowledgeManagerApi' do
   # @param location_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :resolve_placeholders Optional parameter to resolve all embedded fields in a Location object response. - &#x60;false&#x60; (default): Location object returns placeholder labels, e.g. \&quot;Your [[CITY]] store\&quot; - &#x60;true&#x60;: Location object returns placeholder values, e.g. \&quot;Your Fairfax store\&quot;  
   # @return [LanguageProfilesResponse]
   describe 'get_language_profiles test' do
     it "should work" do
@@ -319,6 +363,7 @@ describe 'KnowledgeManagerApi' do
   # @param location_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :resolve_placeholders Optional parameter to resolve all embedded fields in a Location object response. - &#x60;false&#x60; (default): Location object returns placeholder labels, e.g. \&quot;Your [[CITY]] store\&quot; - &#x60;true&#x60;: Location object returns placeholder values, e.g. \&quot;Your Fairfax store\&quot;  
   # @return [LocationResponse]
   describe 'get_location test' do
     it "should work" do
@@ -332,7 +377,7 @@ describe 'KnowledgeManagerApi' do
   # @param account_id 
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+  # @option opts [Integer] :offset Number of results to return.
   # @option opts [Integer] :limit Number of results to return.
   # @return [FoldersResponse]
   describe 'get_location_folders test' do
@@ -348,7 +393,8 @@ describe 'KnowledgeManagerApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return.
-  # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+  # @option opts [Integer] :offset Number of results to return.
+  # @option opts [BOOLEAN] :resolve_placeholders Optional parameter to resolve all embedded fields in a Location object response. - &#x60;false&#x60; (default): Location object returns placeholder labels, e.g. \&quot;Your [[CITY]] store\&quot; - &#x60;true&#x60;: Location object returns placeholder values, e.g. \&quot;Your Fairfax store\&quot;  
   # @return [LocationsResponse]
   describe 'get_locations test' do
     it "should work" do
@@ -377,7 +423,7 @@ describe 'KnowledgeManagerApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return.
-  # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+  # @option opts [Integer] :offset Number of results to return.
   # @return [MenuListsResponse]
   describe 'get_menus test' do
     it "should work" do
@@ -406,9 +452,25 @@ describe 'KnowledgeManagerApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return.
-  # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+  # @option opts [Integer] :offset Number of results to return.
   # @return [ProductListsResponse]
   describe 'get_products test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for search_locations
+  # Locations: Search
+  # Get multiple Locations (primary profiles only) that match provided filters.
+  # @param account_id 
+  # @param v A date in &#x60;YYYYMMDD&#x60; format.
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :limit Number of results to return.
+  # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+  # @option opts [String] :filters A set of filters that is applied to the set of locations that would otherwise be returned. Should be provided as a URL-encoded string containing a JSON object. The JSON object will be an array with one or more filter objects defined. All filter objects will apply as an intersection (i.e. AND). Field names reference Location fields, as well as custom fields using the format custom###, where ### is the custom field’s ID.  The filter types are the following. Note there may be multiple available specifications for a given filter type:  &lt;table style&#x3D;\&quot;width:100%\&quot;&gt;   &lt;tr&gt;     &lt;th&gt;Filter Type&lt;/th&gt;     &lt;th&gt;Syntax&lt;/th&gt;     &lt;th&gt;Description&lt;/th&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Full&lt;/td&gt;     &lt;td&gt;fieldName: {contains: $search}&lt;/td&gt;     &lt;td&gt;$search is the search string&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;fieldName: {$type: [$search,...]}&lt;/td&gt;     &lt;td&gt;$type is one of [contains,doesNotContain,startsWith,equalTo], $search is an array of search strings, combined with OR&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;fieldName: $type&lt;/td&gt;     &lt;td&gt;$type is one of [empty,notEmpty]&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Number&lt;/td&gt;     &lt;td&gt;fieldName: {$type: $value}&lt;/td&gt;     &lt;td&gt;$type is one of [eq,lt,gt,le,ge], $value is the numeric value&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Number&lt;/td&gt;     &lt;td&gt;fieldName: {$type: [$value1, $value2]}&lt;/td&gt;     &lt;td&gt;$type is one of [between], $value1 and $value2 are numeric values&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Date&lt;/td&gt;     &lt;td&gt;fieldName: {$type: $value}&lt;/td&gt;     &lt;td&gt;$type is one of [eq,lt,gt,le,ge], $value is a string of \&quot;YYYY-MM-DD” formatted date&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Date&lt;/td&gt;     &lt;td&gt;fieldName: $type&lt;/td&gt;     &lt;td&gt;$type is one of [empty,notEmpty]&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Date&lt;/td&gt;     &lt;td&gt;fieldName: {$type: [$value1, $value2]}&lt;/td&gt;     &lt;td&gt;$type is one of [between], $value1 and $value2 are strings of \&quot;YYYY-MM-DD” formatted date&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Categories&lt;/td&gt;     &lt;td&gt;fieldName: {$type: [$id,...]}&lt;/td&gt;     &lt;td&gt;$type is one of [includes,notIncludes], $id is an array of numeric category IDs, combined with OR&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Categories&lt;/td&gt;     &lt;td&gt;fieldName: $type&lt;/td&gt;     &lt;td&gt;$type is one of [none]&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Assets&lt;/td&gt;     &lt;td&gt;fieldName: {$type: [$id,...]}&lt;/td&gt;     &lt;td&gt;$type is one of [includes,notIncludes], $id is an array of numeric category IDs, combined with OR&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Assets&lt;/td&gt;     &lt;td&gt;fieldName: $type&lt;/td&gt;     &lt;td&gt;$type is one of [none]&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Country&lt;/td&gt;     &lt;td&gt;fieldName: {$type: [$country,...]}&lt;/td&gt;     &lt;td&gt;$type is one of [includes,notIncludes], $country is an array of country code strings, combined with OR&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;PrimaryLanguage&lt;/td&gt;     &lt;td&gt;fieldName: {$type: [$language,...]}&lt;/td&gt;     &lt;td&gt;$type is one of [is,isNot], $language is an array of language code strings, combined with OR&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;AlternateLanguage&lt;/td&gt;     &lt;td&gt;fieldName: {$type: [$language,...]}&lt;/td&gt;     &lt;td&gt;$type is one of [is,isNot], $language is an array of language code strings, combined with OR&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;StringSingle&lt;/td&gt;     &lt;td&gt;fieldName: {$type: [$string,...]}&lt;/td&gt;     &lt;td&gt;$type is one of [is,isNot], $string is an array of strings, combined with OR&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;StringList&lt;/td&gt;     &lt;td&gt;fieldName: {$type: [$string,...]}&lt;/td&gt;     &lt;td&gt;$type is one of [includes,notIncludes], $string is an array of strings, combined with OR&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;LocationType&lt;/td&gt;     &lt;td&gt;fieldName: {$type: [$id,...]}&lt;/td&gt;     &lt;td&gt;$type is one of [is,isNot], $id is an array of location type IDs, combined with OR&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Bool&lt;/td&gt;     &lt;td&gt;fieldName: $type&lt;/td&gt;     &lt;td&gt;$type is one of [true,false]&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Option&lt;/td&gt;     &lt;td&gt;fieldName: {$type: $id}&lt;/td&gt;     &lt;td&gt;$type is one of [is,isNot], $id is an option ID (For single option custom fields)&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;Option&lt;/td&gt;     &lt;td&gt;fieldName: {$type: [$id,...]}&lt;/td&gt;     &lt;td&gt;$type is one of [includes,notIncludes], $string is an array of strings, combined with OR (For multi option custom fields)&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;IdList&lt;/td&gt;     &lt;td&gt;fieldName: {$type: [$id,...]}&lt;/td&gt;     &lt;td&gt;$type is one of [includes,notIncludes], $id is an array of IDs, combined with OR&lt;/td&gt;   &lt;/tr&gt; &lt;/table&gt;  The following fields can be specified in the request (Field name/Filter Type/Example(s)):  &lt;table style&#x3D;\&quot;width:100%\&quot;&gt;   &lt;tr&gt;     &lt;th&gt;Field Name&lt;/th&gt;     &lt;th&gt;Filter Type&lt;/th&gt;     &lt;th&gt;Example(s)&lt;/th&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;location&lt;/td&gt;     &lt;td&gt;Full&lt;/td&gt;     &lt;td&gt;\&quot;location”: {\&quot;contains”: \&quot;Atlanta”}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;name&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;name”: {\&quot;startsWith”: [\&quot;Guitar”]}, \&quot;name”: {\&quot;contains”: [\&quot;A”,”B”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;address&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;address”: {\&quot;startsWith”: [\&quot;South”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;address2&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;address2”: {\&quot;contains”: [\&quot;Suite”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;city&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;city”: {\&quot;contains”: [\&quot;Atlanta”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;state&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;state”: {\&quot;contains”: [\&quot;AK”,”VA”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;zip&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;zip”: {\&quot;contains”: [\&quot;M5K 7QB”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;phones&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;phones”: {\&quot;startsWith”: [\&quot;703”,”571”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;specialOffer&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;specialOffer”: \&quot;notEmpty”&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;emails&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;emails”: {\&quot;doesNotContain”: [\&quot;@yext.com”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;website&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;website”: {\&quot;equalTo”: [\&quot;https://www.yext.com/”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;categories&lt;/td&gt;     &lt;td&gt;Categories&lt;/td&gt;     &lt;td&gt;\&quot;categories”: {\&quot;includes”: [23,755,34]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;closed&lt;/td&gt;     &lt;td&gt;Bool&lt;/td&gt;     &lt;td&gt;\&quot;closed”: true&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;storeId&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;storeId”: {\&quot;equalTo”: [\&quot;MCD0001”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;countryCode&lt;/td&gt;     &lt;td&gt;Country&lt;/td&gt;     &lt;td&gt;\&quot;countryCode”: {\&quot;notIncludes”: [\&quot;US”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;products&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;products”: {\&quot;startsWith”: [\&quot;Burger”,”Fries”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;services&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;services”: {\&quot;contains”: [\&quot;Manicures”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;specialties&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;services”: \&quot;notEmpty”&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;associations&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;associations”: \&quot;empty”&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;brands&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;brands”: {\&quot;equalTo”: [\&quot;North Face”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;languages&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;languages”: {\&quot;equalTo”: [\&quot;English”,”Spanish”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;keywords&lt;/td&gt;     &lt;td&gt;Text&lt;/td&gt;     &lt;td&gt;\&quot;keywords”: {\&quot;startsWith”: [\&quot;Franchise”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;menuIds&lt;/td&gt;     &lt;td&gt;IdList&lt;/td&gt;     &lt;td&gt;\&quot;menuIds”: {\&quot;includes”: [23,755,34]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;productListIds&lt;/td&gt;     &lt;td&gt;IdList&lt;/td&gt;     &lt;td&gt;\&quot;productListIds”: {\&quot;notIncludes”: [2]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;calendarIds&lt;/td&gt;     &lt;td&gt;IdList&lt;/td&gt;     &lt;td&gt;\&quot;calendarIds”: {\&quot;notIncludes”: [34]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;bioIds&lt;/td&gt;     &lt;td&gt;IdList&lt;/td&gt;     &lt;td&gt;\&quot;bioIds”: {\&quot;includes”: [23,34]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;custom###&lt;/td&gt;     &lt;td&gt;Text, Number, Date, Bool, or Option&lt;/td&gt;     &lt;td&gt;\&quot;custom123”: {\&quot;equalTo”: [\&quot;asdf”]}&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;folder&lt;/td&gt;     &lt;td&gt;int64&lt;/td&gt;     &lt;td&gt;\&quot;folder”: 123&lt;/td&gt;   &lt;/tr&gt;   &lt;tr&gt;     &lt;td&gt;primary_language&lt;/td&gt;     &lt;td&gt;PrimaryLanguage&lt;/td&gt;     &lt;td&gt;\&quot;primary_language”: {\&quot;is”: \&quot;fr_CA”}&lt;/td&gt;   &lt;/tr&gt; &lt;/table&gt; 
+  # @return [LocationsResponse]
+  describe 'search_locations test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -424,6 +486,21 @@ describe 'KnowledgeManagerApi' do
   # @param [Hash] opts the optional parameters
   # @return [BioListResponse]
   describe 'update_bio test' do
+    it "should work" do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for update_custom_field
+  # Custom Fields: Update
+  # Updates a single Custom Field in an Account.  Note that the only updatable values in an existing Custom Field are its name, group, description, alternate language behavior, as well as available options if its &#x60;type&#x60; is &#x60;SINGLE_OPTION&#x60; or &#x60;MULTI_OPTION&#x60;.  * If options are modified, every location with that option selected will have the new value.  * If options are deleted, all locations with that option will no longer have that option selected.  * If the deleted options are the only options selected for a location, the location will no longer have a value set for that Custom Field. 
+  # @param v A date in &#x60;YYYYMMDD&#x60; format.
+  # @param account_id 
+  # @param custom_field_id 
+  # @param body 
+  # @param [Hash] opts the optional parameters
+  # @return [IdResponse]
+  describe 'update_custom_field test' do
     it "should work" do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

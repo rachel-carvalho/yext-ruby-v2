@@ -26,11 +26,11 @@ require 'date'
 module YextClient
 
   class CreateReportRequestBody
-    # The kinds of data the report should include. Specify up to 10 values.  * **`PROFILE_VIEWS`**: the number of times your listings were viewed. Does not include listings on Yelp, Facebook, Bing, or Google. * **`SEARCHES`**: the number of times your listings were included in search results. Does not include search results on Yelp, Facebook, Bing, or Google. * **`POWERLISTINGS_LIVE`**: the total number of your listings that were live * **`FEATURED_MESSAGE_CLICKS`**: the number of times consumers clicked on your Featured Messsage. Does not include Featured Messages on Yelp, Facebook, Bing, or Google. * **`YELP_PAGE_VIEWS`**: number of times your listings on Yelp (\"pages\") were viewed * **`BING_SEARCHES`**: the number of times your listings were included in Bing search results. Because Bing sends data for full weeks rather than individual days, **`dimensions`** cannot contain `DAYS`, `MONTHS`, or `MONTHS_RETAIL` if `BING_SEARCHES` is in **`metrics`**. Also, reports with `BING_SEARCHES` have different reporting maximum dates than reports with other metrics. * **`FACEBOOK_LIKES`**: the total number of consumers who have \"liked\" your Page * **`FACEBOOK_TALKING_ABOUT`**: the number of unique consumers who had an interaction with your Page. For an interaction to be included in this total, it must result in a story being posted to the newsfeeds of those consumers' friends. Examples of these interactions include, but are not limited to, sharing a post on your Page, liking your Page, or tagging your location in a photo. * **`FACEBOOK_WERE_HERE`**: the total number of consumers who have checked into your business on Facebook, along with the people tagged as being with them when checking in * **`FOURSQUARE_DAILY_CHECKINS`**: the number of consumers who checked into your business on Foursquare on a given date * **`INSTAGRAM_POSTS`**: the number of times consumers posted Instagram content geotagged at your business * **`GOOGLE_SEARCH_QUERIES`**: the number of times your listings appeared in search results on either Google Search or Google Maps * **`GOOGLE_SEARCH_VIEWS`**: the number of times your listings were viewed on Google Search * **`GOOGLE_MAP_VIEWS`**: the number of times your listings were viewed on Google Maps * **`GOOGLE_CUSTOMER_ACTIONS`**: the number of times consumers called your business, got driving directions to your business, or visited your website via the links your Google listings * **`GOOGLE_PHONE_CALLS`**: the number of times consumers called your business by clicking your phone numer in your Google listings during the past 90 days. You must use the `GOOGLE_PHONE_CALL_HOURS` dimension with this metric. * **`AVERAGE_RATING`**: the cumulative average of the ratings your business has received * **`NEW_REVIEWS`**: the number of new reviews your business has received 
+    # The kinds of data the report should include. Specify up to 10 values.  * **`PROFILE_VIEWS`**: the number of times your listings were viewed. Does not include listings on Yelp, Facebook, Bing, or Google. * **`SEARCHES`**: the number of times your listings were included in search results. Does not include search results on Yelp, Facebook, Bing, or Google. * **`POWERLISTINGS_LIVE`**: the total number of your listings that were live * **`FEATURED_MESSAGE_CLICKS`**: the number of times consumers clicked on your Featured Messsage. Does not include Featured Messages on Yelp, Facebook, Bing, or Google. * **`YELP_PAGE_VIEWS`**: number of times your listings on Yelp (\"pages\") were viewed * **`BING_SEARCHES`**: the number of times your listings were included in Bing search results. Because Bing sends data for full weeks rather than individual days, **`dimensions`** cannot contain `DAYS`, `MONTHS`, or `MONTHS_RETAIL` if `BING_SEARCHES` is in **`metrics`**. Also, reports with `BING_SEARCHES` have different reporting maximum dates than reports with other metrics. * **`FACEBOOK_LIKES`**: the total number of consumers who have \"liked\" your Page * **`FACEBOOK_TALKING_ABOUT`**: the number of unique consumers who had an interaction with your Page. For an interaction to be included in this total, it must result in a story being posted to the newsfeeds of those consumers' friends. Examples of these interactions include, but are not limited to, sharing a post on your Page, liking your Page, or tagging your location in a photo. * **`FACEBOOK_WERE_HERE`**: the total number of consumers who have checked into your business on Facebook, along with the people tagged as being with them when checking in * **`FOURSQUARE_DAILY_CHECKINS`**: the number of consumers who checked into your business on Foursquare on a given date * **`INSTAGRAM_POSTS`**: the number of times consumers posted Instagram content geotagged at your business * **`GOOGLE_SEARCH_QUERIES`**: the number of times your listings appeared in search results on either Google Search or Google Maps * **`GOOGLE_SEARCH_VIEWS`**: the number of times your listings were viewed on Google Search * **`GOOGLE_MAP_VIEWS`**: the number of times your listings were viewed on Google Maps * **`GOOGLE_CUSTOMER_ACTIONS`**: the number of times consumers called your business, got driving directions to your business, or visited your website via the links in your Google listings * **`GOOGLE_PHONE_CALLS`**: the number of times consumers called your business by clicking your phone number in your Google listings during the past 90 days. You must use the `GOOGLE_PHONE_CALL_HOURS` dimension with this metric. * **`AVERAGE_RATING`**: the cumulative average of the ratings your business has received * **`NEW_REVIEWS`**: the number of new reviews your business has received * **`STOREPAGES_SESSIONS`**:  the number of unique visitors (sessions) to your Store Pages. * **`STOREPAGES_PAGEVIEWS`**:  the number of page views on your Store Pages. * **`STOREPAGES_DRIVINGDIRECTIONS`**:  the number of times someone clicked for directions on your Store Pages. * **`STOREPAGES_PHONECALLS`**:  the number of times someone clicked to make a phone call from your Store Pages. * **`STOREPAGES_CALLTOACTIONCLICKS`**:  the number of times someone clicked a call to action on your Store Pages. * **`STOREPAGES_CLICKSTOWEBSITE`**:  the number of times someone clicked to go to your website from your Store Pages. * **`STOREPAGES_EVENT_eventtype`**:  the number of times the Store Pages custom event occurred. * **`PROFILE_UPDATES`**: Count of updates to your Yext profile. * **`PUBLISHER_SUGGESTIONS`**: Count of all publisher suggestions. * **`SOCIAL_ACTIVITIES`**: Count of all new social posts. * **`DUPLICATES_SUPPRESSED`**: Count of all duplicates suppressed. * **`DUPLICATES_DETECTED`**: Count of all duplicates detected. * **`LISTINGS_LIVE`**: Count of new listings live. 
     attr_accessor :metrics
 
-    # Determines how the data will be grouped. Specify up to 3 values. <br><br> **NOTES:** <br> You can only use one time-based dimension (e.g., `DAYS`, `WEEKS`) per report. <br> You can only use one location-based dimenion (e.g. `FOLDER_IDS`, `LOCATION_NAMES`) per report. <br><br> * **`ACCOUNT_IDS`** * **`LOCATION_IDS`** * **`FOLDER_IDS`** * **`LOCATION_NAMES`** * **`FOLDER_NAMES`** * **`DAYS`** * **`WEEKS`** * **`MONTHS`**: refers to the Gregorian calendar (January, February, etc.) * **`MONTHS_RETAIL`**: refers to the 4-5-4 merchandising calendar * **`PLATFORM`**: groups data by the platform on which the action measured in **`metrics`** was conducted (e.g., Desktop, Mobile) * **`FOURSQUARE_GENDER`**: groups checkins by users' sexes (`male` or `female`). Can only be used with the `FOURSQUARE_DAILY_CHECKINS` metric. * **`FOURSQUARE_AGE`**: groups checkins by the users' ages (`13-17`, `18-24`, `25-34`, `35-44`, `45-54`, `55+`). Can only be used with the `FOURSQUARE_DAILY_CHECKINS` metric. * **`FOURSQUARE_TIME`**: groups checkins by their times (`morning`: 7 AM - 10:59 AM, `noon`: 11 AM - 1:59 PM, `afternoon`: 2 PM - 5:59 PM, `evening`: 6 PM - 8:59 PM, `night`: 9 PM - 6:59 AM). Can only be used with the `FOURSQUARE_DAILY_CHECKINS` metric. * **`SEARCH_QUERY`**: groups searches according to the search criteria used. Can only be used with the `SEARCHES` metric. * **`GOOGLE_ACTION_TYPE`**: the type of action consumers took through your Google listings (Phone Calls, Get Directions, or Website Clicks). Can only be used with the `GOOGLE_CUSTOMER_ACTIONS` metric. * **`GOOGLE_QUERY_TYPE`**: groups search criteria based on whether they contained your brand name (branded) or not (unbranded). Can only be used with the `GOOGLE_SEARCH_QUERIES` metric. * **`GOOGLE_PHONE_CALL_HOURS`**: can only be used with the `GOOGLE_PHONE_CALLS` metric * **`RATINGS`**: can only be used with the `AVERAGE_RATING` and `NEW_REVIEWS` metrics * **`FREQUENT_WORDS`**: the words that most frequently appear in your reviews. Can only be used with the `AVERAGE_RATING` and `NEW_REVIEWS` metrics. * **`PARTNERS`**: the sites your reviews appear on. Can only be used with the `AVERAGE_RATING` and `NEW_REVIEWS` metrics. 
-    attr_accessor :dimensions
+    # Determines how the data will be grouped. Specify up to 3 values. <br><br> **NOTES:** <br> You can only use one time-based dimension (e.g., `DAYS`, `WEEKS`) per report. <br> You can only use one location-based dimenion (e.g., `FOLDER_IDS`, `LOCATION_NAMES`) per report. <br><br> * **`ACCOUNT_IDS`** * **`LOCATION_IDS`** * **`FOLDER_IDS`** * **`LOCATION_NAMES`** * **`FOLDER_NAMES`** * **`DAYS`** * **`WEEKS`** * **`MONTHS`**: refers to the Gregorian calendar (January, February, etc.) * **`MONTHS_RETAIL`**: refers to the 4-5-4 merchandising calendar * **`PLATFORM`**: groups data by the platform on which the action measured in **`metrics`** was conducted (e.g., Desktop, Mobile) * **`FOURSQUARE_GENDER`**: groups checkins by users' sexes (`male` or `female`). Can only be used with the `FOURSQUARE_DAILY_CHECKINS` metric. * **`FOURSQUARE_AGE`**: groups checkins by the users' ages (`13-17`, `18-24`, `25-34`, `35-44`, `45-54`, `55+`). Can only be used with the `FOURSQUARE_DAILY_CHECKINS` metric. * **`FOURSQUARE_TIME`**: groups checkins by their times (`morning`: 7 AM - 10:59 AM, `noon`: 11 AM - 1:59 PM, `afternoon`: 2 PM - 5:59 PM, `evening`: 6 PM - 8:59 PM, `night`: 9 PM - 6:59 AM). Can only be used with the `FOURSQUARE_DAILY_CHECKINS` metric. * **`SEARCH_QUERY`**: groups searches according to the search criteria used. Can only be used with the `SEARCHES` metric. * **`GOOGLE_ACTION_TYPE`**: the type of action consumers took through your Google listings (Phone Calls, Get Directions, or Website Clicks). Can only be used with the `GOOGLE_CUSTOMER_ACTIONS` metric. * **`GOOGLE_QUERY_TYPE`**: groups search criteria based on whether they contained your brand name (branded) or not (unbranded). Can only be used with the `GOOGLE_SEARCH_QUERIES` metric. * **`GOOGLE_PHONE_CALL_HOURS`**: can only be used with the `GOOGLE_PHONE_CALLS` metric * **`RATINGS`**: can only be used with the `AVERAGE_RATING` and `NEW_REVIEWS` metrics * **`FREQUENT_WORDS`**: the words that most frequently appear in your reviews. Can only be used with the `AVERAGE_RATING` and `NEW_REVIEWS` metrics. * **`PARTNERS`**: the sites your reviews appear on. Can only be used with the `AVERAGE_RATING` and `NEW_REVIEWS` metrics. * **`STOREPAGES_PAGE_TYPE`**: the page types for your Store Pages. Can only be used with Store Pages metrics. * **`STOREPAGES_PAGE_URL`**: the urls people visited on your Store Pages. Can only be used with Store Pages metrics. * **`STOREPAGES_DIRECTORY`**: the directories of your Store Pages. Can only be used with Store Pages metrics. * **`PUBLISHER_SUGGESTION_TYPE`**: the type of the publisher suggestion (can only be used with the `PUBLISHER_SUGGESTIONS` metric). * **`FIELD_NAME`**: the name of the field being updated in your profile (can only be used with the `PROFILE_UPDATES` metric). * **`LISTINGS_LIVE_TYPE`**: The type of of listings live, either be `Claimed` or `Created` (can only be used with `LISTINGS_LIVE` metric). 
+    attr_accessor :dimension
 
     attr_accessor :filters
 
@@ -39,7 +39,7 @@ module YextClient
     def self.attribute_map
       {
         :'metrics' => :'metrics',
-        :'dimensions' => :'dimensions',
+        :'dimension' => :'dimension',
         :'filters' => :'filters'
       }
     end
@@ -48,7 +48,7 @@ module YextClient
     def self.swagger_types
       {
         :'metrics' => :'Array<String>',
-        :'dimensions' => :'Array<String>',
+        :'dimension' => :'Array<String>',
         :'filters' => :'AnalyticsFilter'
       }
     end
@@ -67,9 +67,9 @@ module YextClient
         end
       end
 
-      if attributes.has_key?(:'dimensions')
-        if (value = attributes[:'dimensions']).is_a?(Array)
-          self.dimensions = value
+      if attributes.has_key?(:'dimension')
+        if (value = attributes[:'dimension']).is_a?(Array)
+          self.dimension = value
         end
       end
 
@@ -87,10 +87,6 @@ module YextClient
         invalid_properties.push("invalid value for 'metrics', metrics cannot be nil.")
       end
 
-      if @dimensions.nil?
-        invalid_properties.push("invalid value for 'dimensions', dimensions cannot be nil.")
-      end
-
       return invalid_properties
     end
 
@@ -98,7 +94,6 @@ module YextClient
     # @return true if the model is valid
     def valid?
       return false if @metrics.nil?
-      return false if @dimensions.nil?
       return true
     end
 
@@ -108,7 +103,7 @@ module YextClient
       return true if self.equal?(o)
       self.class == o.class &&
           metrics == o.metrics &&
-          dimensions == o.dimensions &&
+          dimension == o.dimension &&
           filters == o.filters
     end
 
@@ -121,7 +116,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [metrics, dimensions, filters].hash
+      [metrics, dimension, filters].hash
     end
 
     # Builds the object from hash

@@ -41,14 +41,17 @@ module YextClient
     # The timestamp of the review as reported by the publisher. If edits impact the review date on the publisher, then this date may change. This date always comes from the publisher and we respect whatever they have.
     attr_accessor :publisher_date
 
-    # This is the timestamp Yext last ingested an update for the review. This is a timestamp from Yext, and it always means the last time this review changed in Yext.
-    attr_accessor :last_yext_update_date
+    # ID of the account associated with this review
+    attr_accessor :business_id
 
     # An ordered array of Comments on the review.  **NOTE:** The order is a flattened tree with depth ties broken by publisher date. 
     attr_accessor :comments
 
     # Content of the review. 
     attr_accessor :content
+
+    # (`YYYY-MM-DD` format) If provided, the date you received the review from the customer. Defaults to the date the review was uploaded to Yext.
+    attr_accessor :date
 
     # The name of the person who wrote the review (if we have it).
     attr_accessor :author_name
@@ -58,6 +61,9 @@ module YextClient
 
     # ID of the location associated with this review
     attr_accessor :location_id
+
+    # This is the timestamp Yext last ingested an update for the review. This is a timestamp from Yext, and it always means the last time this review changed in Yext.
+    attr_accessor :last_yext_update_time
 
     # For third-party reviews, the ID of publisher associated with this listing. For first-party reviews, this will be FIRST_PARTY. 
     attr_accessor :publisher_id
@@ -95,12 +101,14 @@ module YextClient
         :'title' => :'title',
         :'url' => :'url',
         :'publisher_date' => :'publisherDate',
-        :'last_yext_update_date' => :'lastYextUpdateDate',
+        :'business_id' => :'businessId',
         :'comments' => :'comments',
         :'content' => :'content',
+        :'date' => :'date',
         :'author_name' => :'authorName',
         :'author_email' => :'authorEmail',
         :'location_id' => :'locationId',
+        :'last_yext_update_time' => :'lastYextUpdateTime',
         :'publisher_id' => :'publisherId',
         :'id' => :'id'
       }
@@ -114,12 +122,14 @@ module YextClient
         :'title' => :'String',
         :'url' => :'String',
         :'publisher_date' => :'Integer',
-        :'last_yext_update_date' => :'Integer',
+        :'business_id' => :'Integer',
         :'comments' => :'Array<ReviewComment>',
         :'content' => :'String',
+        :'date' => :'Date',
         :'author_name' => :'String',
         :'author_email' => :'String',
         :'location_id' => :'String',
+        :'last_yext_update_time' => :'Integer',
         :'publisher_id' => :'String',
         :'id' => :'Integer'
       }
@@ -153,8 +163,8 @@ module YextClient
         self.publisher_date = attributes[:'publisherDate']
       end
 
-      if attributes.has_key?(:'lastYextUpdateDate')
-        self.last_yext_update_date = attributes[:'lastYextUpdateDate']
+      if attributes.has_key?(:'businessId')
+        self.business_id = attributes[:'businessId']
       end
 
       if attributes.has_key?(:'comments')
@@ -167,6 +177,10 @@ module YextClient
         self.content = attributes[:'content']
       end
 
+      if attributes.has_key?(:'date')
+        self.date = attributes[:'date']
+      end
+
       if attributes.has_key?(:'authorName')
         self.author_name = attributes[:'authorName']
       end
@@ -177,6 +191,10 @@ module YextClient
 
       if attributes.has_key?(:'locationId')
         self.location_id = attributes[:'locationId']
+      end
+
+      if attributes.has_key?(:'lastYextUpdateTime')
+        self.last_yext_update_time = attributes[:'lastYextUpdateTime']
       end
 
       if attributes.has_key?(:'publisherId')
@@ -224,12 +242,14 @@ module YextClient
           title == o.title &&
           url == o.url &&
           publisher_date == o.publisher_date &&
-          last_yext_update_date == o.last_yext_update_date &&
+          business_id == o.business_id &&
           comments == o.comments &&
           content == o.content &&
+          date == o.date &&
           author_name == o.author_name &&
           author_email == o.author_email &&
           location_id == o.location_id &&
+          last_yext_update_time == o.last_yext_update_time &&
           publisher_id == o.publisher_id &&
           id == o.id
     end
@@ -243,7 +263,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [status, rating, title, url, publisher_date, last_yext_update_date, comments, content, author_name, author_email, location_id, publisher_id, id].hash
+      [status, rating, title, url, publisher_date, business_id, comments, content, date, author_name, author_email, location_id, last_yext_update_time, publisher_id, id].hash
     end
 
     # Builds the object from hash

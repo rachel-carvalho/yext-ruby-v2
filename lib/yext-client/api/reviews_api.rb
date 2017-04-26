@@ -102,7 +102,7 @@ module YextClient
     end
 
     # Reviews: Create
-    # Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`** <br><br>  ## Optional fields * **`authorEmail`** * **`status`** <br><br> 
+    # Create a new External First Party Review. <br><br>  ## Required fields * **`locationId`** * **`authorName`** * **`rating`** * **`content`** <br><br>  ## Optional fields * **`authorEmail`** * **`status`** * **`date`** <br><br> 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param review_request 
@@ -114,7 +114,7 @@ module YextClient
     end
 
     # Reviews: Create
-    # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;** &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;authorEmail&#x60;** * **&#x60;status&#x60;** &lt;br&gt;&lt;br&gt; 
+    # Create a new External First Party Review. &lt;br&gt;&lt;br&gt;  ## Required fields * **&#x60;locationId&#x60;** * **&#x60;authorName&#x60;** * **&#x60;rating&#x60;** * **&#x60;content&#x60;** &lt;br&gt;&lt;br&gt;  ## Optional fields * **&#x60;authorEmail&#x60;** * **&#x60;status&#x60;** * **&#x60;date&#x60;** &lt;br&gt;&lt;br&gt; 
     # @param account_id 
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param review_request 
@@ -367,7 +367,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return. (default to 10)
-    # @option opts [Integer] :offset Number of results to skip. Used to page through results. (default to 0)
+    # @option opts [Integer] :offset Number of results to return. (default to 0)
     # @option opts [Array<String>] :location_ids When provided, only reviews for the requested locations will be returned.  By default, reviews will be returned for all locations subscribed to Review Monitoring.  **Example:** loc123,loc456,loc789 
     # @option opts [String] :folder_id When provided, only reviews for locations in the given folder and its subfolders will be included in the results.
     # @option opts [Array<String>] :countries When present, only reviews for locations in the given countries will be returned. Countries are denoted by ISO 3166 2-letter country codes.
@@ -396,7 +396,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return.
-    # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+    # @option opts [Integer] :offset Number of results to return.
     # @option opts [Array<String>] :location_ids When provided, only reviews for the requested locations will be returned.  By default, reviews will be returned for all locations subscribed to Review Monitoring.  **Example:** loc123,loc456,loc789 
     # @option opts [String] :folder_id When provided, only reviews for locations in the given folder and its subfolders will be included in the results.
     # @option opts [Array<String>] :countries When present, only reviews for locations in the given countries will be returned. Countries are denoted by ISO 3166 2-letter country codes.

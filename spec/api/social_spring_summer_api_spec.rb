@@ -116,7 +116,7 @@ describe 'SocialSpringSummerApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return, up to 100. Default 100.  **Example** 20 
-  # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+  # @option opts [Integer] :offset Number of results to return.
   # @option opts [String] :type Determines which type of Comments are returned
   # @return [SocialCommentsResponse]
   describe 'get_comments test' do
@@ -146,7 +146,7 @@ describe 'SocialSpringSummerApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return, up to 100. Default 100.  **Example** 20 
-  # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+  # @option opts [Integer] :offset Number of results to return.
   # @option opts [Array<String>] :location_ids Defaults to all account locations with a PowerListings subscription.  **Example** 123, 456, 789 
   # @option opts [Array<String>] :publisher_ids Defaults to all publishers subscribed by account  **Example** FACEBOOK, FOURSQUARE 
   # @option opts [String] :status Used to filter for Linked Accounts with a particular status.
@@ -164,7 +164,7 @@ describe 'SocialSpringSummerApi' do
   # @param v A date in &#x60;YYYYMMDD&#x60; format.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Number of results to return, up to 100. Default 100.  **Example** 20 
-  # @option opts [Integer] :offset Number of results to skip. Used to page through results.
+  # @option opts [Integer] :offset Number of results to return.
   # @option opts [Array<String>] :location_ids When provided, only Posts that involve the requested locations will be returned.  By defaults, Posts will be returned for all locations subscribed to Social Posting.  **Example** 123, 456, 789 
   # @option opts [String] :folder_id When provided, only Posts for locations in the given folder and its subfolders will be included in the results.  **Example** 123 
   # @option opts [Array<String>] :countries Array of 3166 Alpha-2 country codes. When present, only Posts for locations in the given countries will be returned.  **Example** [&#39;US&#39;, &#39;CA&#39;] 

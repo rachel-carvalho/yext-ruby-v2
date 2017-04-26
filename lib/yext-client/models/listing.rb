@@ -39,6 +39,9 @@ module YextClient
     # ID of the location associated with this listing
     attr_accessor :location_id
 
+    # List of Publisher's alternate brands where the listing is syndicated (only present if **v** is \"20170420\" or later)
+    attr_accessor :alternate_brands
+
     # URL where the user can log in to the publisher to manage this listing at that publisher (only returned for Google My Business)
     attr_accessor :login_url
 
@@ -81,6 +84,7 @@ module YextClient
         :'additional_status' => :'additionalStatus',
         :'listing_url' => :'listingUrl',
         :'location_id' => :'locationId',
+        :'alternate_brands' => :'alternateBrands',
         :'login_url' => :'loginUrl',
         :'publisher_id' => :'publisherId',
         :'id' => :'id',
@@ -96,6 +100,7 @@ module YextClient
         :'additional_status' => :'String',
         :'listing_url' => :'String',
         :'location_id' => :'String',
+        :'alternate_brands' => :'Array<ListingAlternateBrands>',
         :'login_url' => :'String',
         :'publisher_id' => :'String',
         :'id' => :'String',
@@ -129,6 +134,12 @@ module YextClient
 
       if attributes.has_key?(:'locationId')
         self.location_id = attributes[:'locationId']
+      end
+
+      if attributes.has_key?(:'alternateBrands')
+        if (value = attributes[:'alternateBrands']).is_a?(Array)
+          self.alternate_brands = value
+        end
       end
 
       if attributes.has_key?(:'loginUrl')
@@ -198,6 +209,7 @@ module YextClient
           additional_status == o.additional_status &&
           listing_url == o.listing_url &&
           location_id == o.location_id &&
+          alternate_brands == o.alternate_brands &&
           login_url == o.login_url &&
           publisher_id == o.publisher_id &&
           id == o.id &&
@@ -213,7 +225,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [status, screenshot_url, additional_status, listing_url, location_id, login_url, publisher_id, id, status_details].hash
+      [status, screenshot_url, additional_status, listing_url, location_id, alternate_brands, login_url, publisher_id, id, status_details].hash
     end
 
     # Builds the object from hash

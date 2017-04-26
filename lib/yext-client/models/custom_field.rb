@@ -26,17 +26,28 @@ require 'date'
 module YextClient
 
   class CustomField
+    # The Custom Field's description which, if provided, will be shown as a tooltip next to the Custom Field in the Knowledge Manager. Providing a description is highly recommended when creating Apps. 
+    attr_accessor :description
+
+    # Custom Field multi-language profile behavior, which is one of:  `PRIMARY_ONLY`: The Custom Field can only have a value set on its primary language profile.  `OVERRIDABLE`: The Custom Field can have a value set on any alternate language profiles, which will override the primary language profile value when the alternate language profile is requested. When requested, if a value is not set for an alternate language profile, the primary language profile value will be returned.  `LANGUAGE_SPECIFIC`: The Custom Field can have a value set on any alternate language profiles. When requested, if a value is not set for an alternate language profile, no value will be returned. 
+    attr_accessor :alternate_language_behavior
+
+    # The Custom Field's group. 
+    attr_accessor :group
+
+    # The Custom Field's name.
+    attr_accessor :name
+
     # Present if and only if `type` is `SINGLE_OPTION` or `MULTI_OPTION`.  List of options (key/value pairs) for the Custom Field.  Example: {   {      \"key\": \"2413\",     \"value\": \"Temporarily Closed\"   },   {     \"key\": \"2414\",     \"value\": \"Coming Soon\"   },   {     \"key\": \"2415\",     \"value\": \"Closed\"   },   {     \"key\": \"2416\",     \"value\": \"Open\"   } } 
     attr_accessor :options
+
+    attr_accessor :validation
 
     # The data type of the Custom Field's contents.
     attr_accessor :type
 
     # The Custom Field ID.
     attr_accessor :id
-
-    # The Custom Field's name.
-    attr_accessor :name
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -63,20 +74,28 @@ module YextClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'description' => :'description',
+        :'alternate_language_behavior' => :'alternateLanguageBehavior',
+        :'group' => :'group',
+        :'name' => :'name',
         :'options' => :'options',
+        :'validation' => :'validation',
         :'type' => :'type',
-        :'id' => :'id',
-        :'name' => :'name'
+        :'id' => :'id'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'description' => :'String',
+        :'alternate_language_behavior' => :'String',
+        :'group' => :'String',
+        :'name' => :'String',
         :'options' => :'Array<CustomOption>',
+        :'validation' => :'CustomValidation',
         :'type' => :'String',
-        :'id' => :'String',
-        :'name' => :'String'
+        :'id' => :'String'
       }
     end
 
@@ -88,10 +107,30 @@ module YextClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
+      if attributes.has_key?(:'description')
+        self.description = attributes[:'description']
+      end
+
+      if attributes.has_key?(:'alternateLanguageBehavior')
+        self.alternate_language_behavior = attributes[:'alternateLanguageBehavior']
+      end
+
+      if attributes.has_key?(:'group')
+        self.group = attributes[:'group']
+      end
+
+      if attributes.has_key?(:'name')
+        self.name = attributes[:'name']
+      end
+
       if attributes.has_key?(:'options')
         if (value = attributes[:'options']).is_a?(Array)
           self.options = value
         end
+      end
+
+      if attributes.has_key?(:'validation')
+        self.validation = attributes[:'validation']
       end
 
       if attributes.has_key?(:'type')
@@ -100,10 +139,6 @@ module YextClient
 
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
-      end
-
-      if attributes.has_key?(:'name')
-        self.name = attributes[:'name']
       end
 
     end
@@ -118,9 +153,21 @@ module YextClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      group_validator = EnumAttributeValidator.new('String', ["NONE", "GROUP_1", "GROUP_2", "GROUP_3", "GROUP_4", "GROUP_5", "GROUP_6", "GROUP_7", "GROUP_8", "GROUP_9", "GROUP_10"])
+      return false unless group_validator.valid?(@group)
       type_validator = EnumAttributeValidator.new('String', ["BOOLEAN", "DAILY_TIMES", "DATE", "GALLERY", "HOURS", "MULTILINE_TEXT", "MULTI_OPTION", "NUMBER", "PHOTO", "SINGLE_OPTION", "TEXT", "TEXT_LIST", "URL", "VIDEO", "VIDEO_GALLERY"])
       return false unless type_validator.valid?(@type)
       return true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] group Object to be assigned
+    def group=(group)
+      validator = EnumAttributeValidator.new('String', ["NONE", "GROUP_1", "GROUP_2", "GROUP_3", "GROUP_4", "GROUP_5", "GROUP_6", "GROUP_7", "GROUP_8", "GROUP_9", "GROUP_10"])
+      unless validator.valid?(group)
+        fail ArgumentError, "invalid value for 'group', must be one of #{validator.allowable_values}."
+      end
+      @group = group
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -138,10 +185,14 @@ module YextClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          description == o.description &&
+          alternate_language_behavior == o.alternate_language_behavior &&
+          group == o.group &&
+          name == o.name &&
           options == o.options &&
+          validation == o.validation &&
           type == o.type &&
-          id == o.id &&
-          name == o.name
+          id == o.id
     end
 
     # @see the `==` method
@@ -153,7 +204,7 @@ module YextClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [options, type, id, name].hash
+      [description, alternate_language_behavior, group, name, options, validation, type, id].hash
     end
 
     # Builds the object from hash
