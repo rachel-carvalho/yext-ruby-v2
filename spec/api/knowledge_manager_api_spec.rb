@@ -375,10 +375,22 @@ describe 'KnowledgeManagerApi' do
     it 'parses query_params' do
       expect(YextClient::ApiClient.default).to receive(:call_api).with(:GET, '/accounts/account_id/locations/location_id',
         :header_params => Hash,
-        :query_params => { :v => 'v', :resolvePlaceholders => true, :access_token => 'token' },
+        :query_params => { :v => 'v', :resolvePlaceholders => true },
         :form_params => {},
         :body => nil,
         :auth_names => ['api_key'],
+        :return_type => 'LocationResponse').and_return([{}, 200, {}])
+
+      @instance.get_location_with_http_info('account_id', 'location_id', 'v', :limit => 50, :offset => 0, :resolve_placeholders => true)
+    end
+
+    it 'ignores api_key when access_token is present' do
+      expect(YextClient::ApiClient.default).to receive(:call_api).with(:GET, '/accounts/account_id/locations/location_id',
+        :header_params => Hash,
+        :query_params => { :v => 'v', :resolvePlaceholders => true, :access_token => 'token' },
+        :form_params => {},
+        :body => nil,
+        :auth_names => [],
         :return_type => 'LocationResponse').and_return([{}, 200, {}])
 
       @instance.get_location_with_http_info('account_id', 'location_id', 'v', :limit => 50, :offset => 0, :resolve_placeholders => true, :access_token => 'token')
@@ -420,10 +432,22 @@ describe 'KnowledgeManagerApi' do
     it 'parses query_params' do
       expect(YextClient::ApiClient.default).to receive(:call_api).with(:GET, '/accounts/account_id/locations',
         :header_params => Hash,
-        :query_params => { :v => 'v', :limit => 50, :offset => 0, :resolvePlaceholders => true, :access_token => 'token' },
+        :query_params => { :v => 'v', :limit => 50, :offset => 0, :resolvePlaceholders => true },
         :form_params => {},
         :body => nil,
         :auth_names => ['api_key'],
+        :return_type => 'LocationsResponse').and_return([{}, 200, {}])
+
+      @instance.get_locations_with_http_info('account_id', 'v', :limit => 50, :offset => 0, :resolve_placeholders => true)
+    end
+
+    it 'ignores api_key when access_token is present' do
+      expect(YextClient::ApiClient.default).to receive(:call_api).with(:GET, '/accounts/account_id/locations',
+        :header_params => Hash,
+        :query_params => { :v => 'v', :limit => 50, :offset => 0, :resolvePlaceholders => true, :access_token => 'token' },
+        :form_params => {},
+        :body => nil,
+        :auth_names => [],
         :return_type => 'LocationsResponse').and_return([{}, 200, {}])
 
       @instance.get_locations_with_http_info('account_id', 'v', :limit => 50, :offset => 0, :resolve_placeholders => true, :access_token => 'token')

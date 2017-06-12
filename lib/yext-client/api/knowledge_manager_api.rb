@@ -1562,7 +1562,7 @@ module YextClient
 
       # http body (model)
       post_body = nil
-      auth_names = ['api_key']
+      auth_names = opts[:'access_token'].nil? ? ['api_key'] : []
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
@@ -1711,7 +1711,7 @@ module YextClient
 
       # http body (model)
       post_body = nil
-      auth_names = ['api_key']
+      auth_names = opts[:'access_token'].nil? ? ['api_key'] : []
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
         :header_params => header_params,
         :query_params => query_params,
