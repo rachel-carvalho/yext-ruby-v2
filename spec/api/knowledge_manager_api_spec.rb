@@ -371,6 +371,20 @@ describe 'KnowledgeManagerApi' do
     end
   end
 
+  describe 'get_location_with_http_info test' do
+    it 'parses query_params' do
+      expect(YextClient::ApiClient.default).to receive(:call_api).with(:GET, '/accounts/account_id/locations/location_id',
+        :header_params => Hash,
+        :query_params => { :v => 'v', :resolvePlaceholders => true, :access_token => 'token' },
+        :form_params => {},
+        :body => nil,
+        :auth_names => ['api_key'],
+        :return_type => 'LocationResponse').and_return([{}, 200, {}])
+
+      @instance.get_location_with_http_info('account_id', 'location_id', 'v', :limit => 50, :offset => 0, :resolve_placeholders => true, :access_token => 'token')
+    end
+  end
+
   # unit tests for get_location_folders
   # Folders: List
   # Returns a list of Location Folders in an Account.

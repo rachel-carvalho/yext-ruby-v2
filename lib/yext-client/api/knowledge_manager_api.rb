@@ -1525,6 +1525,7 @@ module YextClient
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [BOOLEAN] :resolve_placeholders Optional parameter to resolve all embedded fields in a Location object response. - &#x60;false&#x60; (default): Location object returns placeholder labels, e.g. \&quot;Your [[CITY]] store\&quot; - &#x60;true&#x60;: Location object returns placeholder values, e.g. \&quot;Your Fairfax store\&quot;  
+    # @option opts [String] :access_token Optional parameter to use OAuth access_token when `account_id` is 'me'
     # @return [Array<(LocationResponse, Fixnum, Hash)>] LocationResponse data, response status code and response headers
     def get_location_with_http_info(account_id, location_id, v, opts = {})
       if @api_client.config.debugging
@@ -1543,6 +1544,7 @@ module YextClient
       query_params = {}
       query_params[:'v'] = v
       query_params[:'resolvePlaceholders'] = opts[:'resolve_placeholders'] if !opts[:'resolve_placeholders'].nil?
+      query_params[:'access_token'] = opts[:'access_token'] if !opts[:'access_token'].nil?
 
       # header parameters
       header_params = {}
