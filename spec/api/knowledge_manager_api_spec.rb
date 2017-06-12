@@ -402,6 +402,20 @@ describe 'KnowledgeManagerApi' do
     end
   end
 
+  describe 'get_locations_with_http_info test' do
+    it 'parses query_params' do
+      expect(YextClient::ApiClient.default).to receive(:call_api).with(:GET, '/accounts/account_id/locations',
+        :header_params => Hash,
+        :query_params => { :v => 'v', :limit => 50, :offset => 0, :resolvePlaceholders => true, :access_token => 'token' },
+        :form_params => {},
+        :body => nil,
+        :auth_names => ['api_key'],
+        :return_type => 'LocationsResponse').and_return([{}, 200, {}])
+
+      @instance.get_locations_with_http_info('account_id', 'v', :limit => 50, :offset => 0, :resolve_placeholders => true, :access_token => 'token')
+    end
+  end
+
   # unit tests for get_menu
   # Menus: Get
   # Retrieve a specific Menu.

@@ -1662,12 +1662,13 @@ module YextClient
 
     # Locations: List
     # Get multiple Locations (primary profiles only).
-    # @param account_id 
+    # @param account_id
     # @param v A date in &#x60;YYYYMMDD&#x60; format.
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Number of results to return.
     # @option opts [Integer] :offset Number of results to return.
-    # @option opts [BOOLEAN] :resolve_placeholders Optional parameter to resolve all embedded fields in a Location object response. - &#x60;false&#x60; (default): Location object returns placeholder labels, e.g. \&quot;Your [[CITY]] store\&quot; - &#x60;true&#x60;: Location object returns placeholder values, e.g. \&quot;Your Fairfax store\&quot;  
+    # @option opts [BOOLEAN] :resolve_placeholders Optional parameter to resolve all embedded fields in a Location object response. - &#x60;false&#x60; (default): Location object returns placeholder labels, e.g. \&quot;Your [[CITY]] store\&quot; - &#x60;true&#x60;: Location object returns placeholder values, e.g. \&quot;Your Fairfax store\&quot;
+    # @option opts [String] :access_token Optional parameter to use OAuth access_token when `account_id` is 'me'
     # @return [Array<(LocationsResponse, Fixnum, Hash)>] LocationsResponse data, response status code and response headers
     def get_locations_with_http_info(account_id, v, opts = {})
       if @api_client.config.debugging
@@ -1690,6 +1691,7 @@ module YextClient
       query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
       query_params[:'offset'] = opts[:'offset'] if !opts[:'offset'].nil?
       query_params[:'resolvePlaceholders'] = opts[:'resolve_placeholders'] if !opts[:'resolve_placeholders'].nil?
+      query_params[:'access_token'] = opts[:'access_token'] if !opts[:'access_token'].nil?
 
       # header parameters
       header_params = {}
